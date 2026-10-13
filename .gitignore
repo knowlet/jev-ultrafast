@@ -8,3 +8,5 @@ artifacts/
 *.egg-info/
 
 dist/
+.local-cache/
+benchmark/results/
