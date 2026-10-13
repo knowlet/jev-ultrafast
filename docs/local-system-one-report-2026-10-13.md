@@ -89,8 +89,10 @@ All runs used context 4096, logical/microbatch 512, 4 CPU threads, requested Met
 offload 99 layers and a fresh per-request KV cache. Decisions score legal
 candidates in a causal multi-slot input with no sampled/generated answer tokens;
 therefore generation TTFT is not defined. Reported scoring throughput includes
-the adapter's validation/preparation/native pipe timing. The typed adapter drops
-the separate native timer, so native-only forward speed is not available here.
+the adapter's validation/preparation/native pipe timing. The baseline typed adapter
+dropped the separate native timer, so native-only forward speed is not available
+here. The subsequent telemetry fix preserves optional `native_latency_ms` as native
+scoring wall time; it changes no policy and leaves all baseline raw samples intact.
 
 ## Actual browser tasks
 

@@ -96,7 +96,10 @@ task success; both quantizations receive the same exact request and settings.
 Decision latency is complete client request and validation time. Native throughput
 is reported input/prefill tokens divided by the adapter's timed preparation and
 scoring pipeline, never generated tokens per second or native-only compute speed.
-The existing typed adapter drops its separate native timing field from its reply.
+The baseline typed adapter dropped its separate native timing field from its reply.
+The telemetry fix now preserves `native_latency_ms` when the adapter supplies it;
+missing fields remain null. It measures native scoring wall time, not GPU-only
+forward time, and does not add native timing to the historical baseline samples.
 Decisions have no generation TTFT. Text TTFT is time
 to the first streamed content delta; provider timings and actual token usage are
 retained separately. Text completion tokens divided by full request duration is

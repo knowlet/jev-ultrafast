@@ -265,6 +265,7 @@ def choose(state, goal, history):
         "model": result["model"],
         "usage": result.get("usage", {}),
         "model_latency_ms": result.get("latency_ms"),
+        "native_latency_ms": result.get("native_latency_ms"),
         "native_token_count": result.get("native_token_count"),
         "preprocessing": result.get("preprocessing"),
         "raw_response": result,

@@ -102,6 +102,7 @@ def test_local_native_contract_serialization_and_real_probabilities(monkeypatch,
         return httpx.Response(200, json={
             "model": "verified-system-one-test-fixture",
             "latency_ms": 31.25,
+            "native_latency_ms": 29.0,
             "native_token_count": 42,
             "preprocessing": {"latency_ms": 1.5},
             "answers": {
@@ -121,6 +122,7 @@ def test_local_native_contract_serialization_and_real_probabilities(monkeypatch,
     assert result["provider"] == "local_system_one"
     assert "model" not in result["request"]
     assert result["model_latency_ms"] == 31.25
+    assert result["native_latency_ms"] == 29.0
     assert result["native_token_count"] == 42
     assert result["preprocessing"] == {"latency_ms": 1.5}
     assert result["raw_response"]["model"] == result["model"]
