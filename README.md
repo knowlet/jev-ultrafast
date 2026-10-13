@@ -57,6 +57,9 @@ For an existing local trained Gemma System One, use the
 both native decisions and text generation locally and use an owned Chromium
 profile with local fixtures. The [October 13 measurements](docs/local-system-one-report-2026-10-13.md)
 retain the observed goal failures alongside latency, token and memory evidence.
+The subsequent [opt-in Noul development policy](docs/local-system-one-noul-progress-2026-10-13.md)
+completed one fresh local click task with genuine DONE and independent DOM
+verification; broader quality and latency improvements remain unverified.
 
 ```bash
 git clone https://github.com/browser-use/jev-ultrafast.git

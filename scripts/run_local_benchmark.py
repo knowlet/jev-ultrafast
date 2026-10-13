@@ -1,4 +1,8 @@
-"""Own loopback services for a bounded benchmark of existing trained S1 weights."""
+"""Own loopback services for a bounded benchmark of existing trained S1 weights.
+
+Click smoke starts only the native decision model; it does not load a text model.
+Travel browser modes and the current all-mode child contract require the text helper.
+"""
 
 import argparse
 import json
@@ -19,6 +23,23 @@ ROOT = Path(__file__).resolve().parents[1]
 class NoRedirect(urllib.request.HTTPRedirectHandler):
     def redirect_request(self, request, response, code, message, headers, newurl):
         raise ValueError('Owned loopback readiness probes must not follow redirects')
+
+
+def needs_text_service(mode, fixture):
+    return mode == 'all' or (mode == 'smoke' and fixture == 'travel')
+
+
+def benchmark_command(args, *, mode, destination, metadata_path, warmup, count, fixture_port):
+    command = [sys.executable, str(ROOT / 'scripts/local_benchmark.py'), '--mode', mode,
+               '--policy', args.policy, '--output', str(destination), '--model-metadata', str(metadata_path),
+               '--warmup', str(warmup), '--decision-repeats', str(count),
+               '--repeats', str(args.repeats), '--task-timeout', str(args.task_timeout),
+               '--fixture', args.fixture, '--fixture-url', f'http://127.0.0.1:{fixture_port}']
+    if args.chrome_path is not None:
+        command.extend(['--chrome-path', str(args.chrome_path)])
+    if mode == 'helper-only':
+        command.extend(['--text-repeats', '1'])
+    return command
 
 
 def hardware_inventory():
@@ -55,12 +76,28 @@ def ready(url, process, deadline):
     raise TimeoutError(f'Owned loopback service not ready: {url}')
 
 
+def ready_fixture(url, expected, process, deadline):
+    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), NoRedirect())
+    while time.monotonic() < deadline:
+        if process.poll() is not None:
+            raise RuntimeError('Owned fixture service exited; no browser will launch')
+        try:
+            with opener.open(url, timeout=1) as response:
+                if response.read() != expected:
+                    raise ValueError('Owned fixture content does not match this checkout')
+                return
+        except OSError:
+            time.sleep(0.05)
+    raise TimeoutError('Owned fixture did not become ready within its startup budget')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--s1-repo', type=Path, required=True,
                         help='Existing trained System One repository; no model download occurs')
     parser.add_argument('--quantization', choices=['Q4_K_M', 'Q8_0'], default='Q4_K_M')
     parser.add_argument('--mode', choices=['smoke', 'all', 'decision-only'], default='smoke')
+    parser.add_argument('--policy', choices=['baseline', 'noul_v1'], default='baseline')
     parser.add_argument('--fixture', choices=['travel', 'click'], default='travel')
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--chrome-path', type=Path,
@@ -106,6 +143,7 @@ def main():
     decision_port, text_port, fixture_port = ports
     processes, handles = [], []
     metadata = {'artifact_path': str(model), 'version': manifest['source_hub_weights_revision'],
+                'policy': args.policy, 'text_helper_required': needs_text_service(args.mode, args.fixture),
                 'quantization': args.quantization, 'runtime': 'llama.cpp Metal',
                 's1_repo_head': revision(s1), 'jev_repo_head': revision(ROOT),
                 'llama_cpp_head': revision(s1 / 'artifacts/export-tools/llama.cpp'),
@@ -133,15 +171,8 @@ def main():
     def run_bench(mode, destination, warmup, count):
         snapshot = output / f'model-metadata-{destination.name}.json'
         snapshot.write_text(json.dumps(metadata, indent=2) + '\n')
-        command = [sys.executable, str(ROOT / 'scripts/local_benchmark.py'), '--mode', mode,
-                   '--output', str(destination), '--model-metadata', str(snapshot),
-                   '--warmup', str(warmup), '--decision-repeats', str(count),
-                   '--repeats', str(args.repeats), '--task-timeout', str(args.task_timeout),
-                   '--fixture', args.fixture, '--fixture-url', f'http://127.0.0.1:{fixture_port}']
-        if args.chrome_path is not None:
-            command.extend(['--chrome-path', str(args.chrome_path)])
-        if mode == 'helper-only':
-            command.extend(['--text-repeats', '1'])
+        command = benchmark_command(args, mode=mode, destination=destination, metadata_path=snapshot,
+                                    warmup=warmup, count=count, fixture_port=fixture_port)
         stdout_path = output / f'benchmark-{destination.name}.log'
         print(f'Running {mode}: {destination}', flush=True)
         with stdout_path.open('w') as stdout:
@@ -179,29 +210,26 @@ def main():
             return run_bench('decision-only', output / 'warm', args.warmup, args.decision_repeats)
         fixture, began = start('fixture', [sys.executable, '-m', 'http.server', str(fixture_port), '--bind',
                                          '127.0.0.1', '--directory', str(ROOT / 'jev_ultrafast/static')])
-        text, began = start('text-service', [str(s1 / 'artifacts/export-tools/llama.cpp/build/bin/llama-server'),
+        if needs_text_service(args.mode, args.fixture):
+            text, began = start('text-service', [str(s1 / 'artifacts/export-tools/llama.cpp/build/bin/llama-server'),
                            '--model', str(model), '--host', '127.0.0.1', '--port', str(text_port),
                            '--alias', 'system-one-trained-' + args.quantization, '--ctx-size', '4096',
                            '--batch-size', '512', '--ubatch-size', '512', '--threads', '4',
                            '--gpu-layers', '99', '--parallel', '1', '--seed', '17', '--temp', '0',
                            '--reasoning', 'off', '--no-cache-prompt', '--no-webui', '--offline'])
-        ready(f'http://127.0.0.1:{text_port}/health', text, began + 90)
-        models = ready(f'http://127.0.0.1:{text_port}/v1/models', text, began + 90)
-        if 'system-one-trained-' + args.quantization not in {item['id'] for item in models.get('data', [])}:
-            raise ValueError('Owned text runtime did not expose the expected trained model alias')
-        metadata['text_runtime_models'] = models
-        metadata['startup']['text_model_ready_ms'] = (time.monotonic() - began) * 1000
-        env.update(S1_TEXT_BASE_URL=f'http://127.0.0.1:{text_port}/v1',
-                   TEXT_MODEL='system-one-trained-' + args.quantization)
-        save()
-        if fixture.poll() is not None:
-            raise RuntimeError('Owned fixture service exited; no browser will launch')
-        opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), NoRedirect())
+            ready(f'http://127.0.0.1:{text_port}/health', text, began + 90)
+            models = ready(f'http://127.0.0.1:{text_port}/v1/models', text, began + 90)
+            if 'system-one-trained-' + args.quantization not in {item['id'] for item in models.get('data', [])}:
+                raise ValueError('Owned text runtime did not expose the expected trained model alias')
+            metadata['text_runtime_models'] = models
+            metadata['startup']['text_model_ready_ms'] = (time.monotonic() - began) * 1000
+            env.update(S1_TEXT_BASE_URL=f'http://127.0.0.1:{text_port}/v1',
+                       TEXT_MODEL='system-one-trained-' + args.quantization)
+            save()
         fixture_name = 'fixture.html' if args.fixture == 'travel' else 'local_click_fixture.html'
-        with opener.open(f'http://127.0.0.1:{fixture_port}/{fixture_name}', timeout=5) as response:
-            if response.read() != (ROOT / 'jev_ultrafast/static' / fixture_name).read_bytes():
-                raise ValueError('Owned fixture content does not match this checkout')
-        if run_bench('helper-only', output / 'helper-probe', 0, 1):
+        ready_fixture(f'http://127.0.0.1:{fixture_port}/{fixture_name}',
+                      (ROOT / 'jev_ultrafast/static' / fixture_name).read_bytes(), fixture, time.monotonic() + 5)
+        if needs_text_service(args.mode, args.fixture) and run_bench('helper-only', output / 'helper-probe', 0, 1):
             raise RuntimeError('Real text-helper smoke failed; no browser benchmark started')
         return run_bench(args.mode, output / 'warm', args.warmup, args.decision_repeats)
     finally:

@@ -1,0 +1,31 @@
+{
+  "planned_calls": 4,
+  "attempted_requests": 4,
+  "confirmed_model_calls": 4,
+  "failed_calls": 0,
+  "rankings": {
+    "click-pre-complete": {
+      "selected_operation": "CLICK",
+      "independent_p_true_scores": {
+        "CLICK": 0.9268275324346175,
+        "DONE": 0.1201898585718754
+      },
+      "tie_policy": "first candidate in the declared replay order",
+      "selection_source": "argmax_of_independent_native_noul_scores",
+      "categorical_probabilities": null,
+      "calibration_scope": "Existing BoolQ Noul temperature; navigation calibration not established"
+    },
+    "click-post-complete": {
+      "selected_operation": "DONE",
+      "independent_p_true_scores": {
+        "CLICK": 0.21031937261415215,
+        "DONE": 0.8085869090740286
+      },
+      "tie_policy": "first candidate in the declared replay order",
+      "selection_source": "argmax_of_independent_native_noul_scores",
+      "categorical_probabilities": null,
+      "calibration_scope": "Existing BoolQ Noul temperature; navigation calibration not established"
+    }
+  },
+  "interpretation": "Frozen replay scores only; no browser success or calibrated categorical policy claimed"
+}

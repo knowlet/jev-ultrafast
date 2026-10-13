@@ -180,7 +180,19 @@ def action_space(actions):
     return elements, targets, controls
 
 
+def choose_noul(state, goal, history, **settings):
+    """Explicit local experimental policy; binary scores retain their native meaning."""
+    from .noul_policy import choose_noul as local_choose
+
+    return local_choose(state, goal, history, **settings)
+
+
 def choose(state, goal, history):
+    policy = os.environ.get("S1_LOCAL_POLICY", "baseline")
+    if policy == "noul_v1":
+        return choose_noul(state, goal, history)
+    if policy != "baseline":
+        raise ValueError("Unsupported S1_LOCAL_POLICY; no model request or action executed.")
     local_endpoint = os.environ.get("S1_DECISION_URL")
     local_mode = local_endpoint is not None
     endpoint = (

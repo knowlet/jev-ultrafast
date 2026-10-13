@@ -37,6 +37,30 @@ def file_sha256(path: Path) -> str:
         return hashlib.file_digest(stream, "sha256").hexdigest()
 
 
+def verified_native_runner(value: Path, s1_repo: Path, expected_sha256=None, reuse_prefix=False):
+    """Permit a deliberately selected workspace experiment without altering the original repo."""
+    runner = value.expanduser().resolve(strict=True)
+    if not runner.is_file() or not os.access(runner, os.X_OK):
+        raise ValueError("--native-runner must be an existing executable")
+    original = runner.is_relative_to(s1_repo)
+    experiment = runner.is_relative_to(WORKSPACE / "tools/native-prefix")
+    if not original and not experiment:
+        raise ValueError("Native runner must be inside --s1-repo or workspace tools/native-prefix")
+    if expected_sha256 is not None and (
+        not isinstance(expected_sha256, str) or len(expected_sha256) != 64
+        or any(character not in "0123456789abcdef" for character in expected_sha256)
+    ):
+        raise ValueError("--native-runner-sha256 must be a lowercase SHA-256")
+    if not original and expected_sha256 is None:
+        raise ValueError("Workspace experimental runner requires --native-runner-sha256")
+    if reuse_prefix and original:
+        raise ValueError("--reuse-prefix requires a deliberately selected workspace experimental runner")
+    actual = file_sha256(runner)
+    if expected_sha256 is not None and actual != expected_sha256:
+        raise ValueError("Native runner differs from the explicit SHA-256; no process started")
+    return runner, actual, "original_s1_repository" if original else "workspace_experiment"
+
+
 def local_environment(cache: Path, s1_repo: Path) -> dict[str, str]:
     directories = {name: cache / name for name in ("hf", "torch", "xdg", "tmp")}
     for path in directories.values():
@@ -82,13 +106,12 @@ class Adapter:
         cache.mkdir(parents=True, exist_ok=True)
         s1_repo = args.s1_repo.expanduser().resolve(strict=True)
         package = args.model.expanduser().resolve(strict=True)
-        native_runner = args.native_runner.expanduser().resolve(strict=True)
+        native_runner, native_sha256, native_scope = verified_native_runner(
+            args.native_runner, s1_repo, getattr(args, "native_runner_sha256", None),
+            getattr(args, "reuse_prefix", False),
+        )
         if not package.is_dir() or not package.is_relative_to(s1_repo):
             raise ValueError("--model must be a local GGUF package directory inside --s1-repo")
-        if not native_runner.is_file() or not native_runner.is_relative_to(s1_repo):
-            raise ValueError("--native-runner must be an existing file inside --s1-repo")
-        if not os.access(native_runner, os.X_OK):
-            raise ValueError("--native-runner is not executable")
         python = s1_repo / ".venv/bin/python"
         adapter_script = s1_repo / "scripts/gguf_adapter.py"
         if not python.is_file() or not adapter_script.is_file():
@@ -104,7 +127,10 @@ class Adapter:
             "s1_repo": str(s1_repo),
             "model_package": str(package),
             "native_runner": str(native_runner),
-            "native_runner_sha256": file_sha256(native_runner),
+            "native_runner_sha256": native_sha256,
+            "native_runner_scope": native_scope,
+            "reuse_prefix": getattr(args, "reuse_prefix", False),
+            "bridge_source_sha256": file_sha256(Path(__file__)),
             "adapter_source_sha256": file_sha256(adapter_script),
             "model_file": str(package / manifest["model_file"]),
             "model_manifest_identity": files[manifest["model_file"]],
@@ -132,7 +158,9 @@ class Adapter:
             stream.write(
                 "#!/bin/sh\n"
                 f"exec 2>>{shlex.quote(str(self.native_raw_path))}\n"
-                f"exec /usr/bin/time -l {shlex.quote(str(native_runner))} \"$@\"\n"
+                f"exec /usr/bin/time -l {shlex.quote(str(native_runner))}"
+                + (" --reuse-prefix" if getattr(args, "reuse_prefix", False) else "")
+                + " \"$@\"\n"
             )
         wrapper.chmod(0o700)
         self.wrapper = wrapper
@@ -369,6 +397,8 @@ def main():
     parser.add_argument("--s1-repo", type=Path, required=True)
     parser.add_argument("--model", type=Path, required=True, help="Existing trained GGUF package directory")
     parser.add_argument("--native-runner", type=Path, required=True)
+    parser.add_argument("--native-runner-sha256", help="Required for an explicit workspace experimental binary")
+    parser.add_argument("--reuse-prefix", action="store_true", help="Opt-in workspace prefix-cache experiment")
     parser.add_argument("--port", type=int, required=True)
     parser.add_argument("--ctx-size", type=int, default=4096)
     parser.add_argument("--batch-size", type=int, default=512)

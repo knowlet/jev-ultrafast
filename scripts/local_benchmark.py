@@ -50,10 +50,66 @@ TEXT_CONTEXT = {
     "page": {"title": "Forma · Find a place to slow down", "text": "Destination\nFind stays"},
     "recent_actions": [],
 }
+POLICIES = {"baseline": "choose", "noul_v1": "choose_noul"}
 
 
 class BudgetTimeout(TimeoutError):
     """The finite wall-clock budget elapsed; never retry a mutation."""
+
+
+class NativeRequestBudgetError(RuntimeError):
+    """A preregistered physical scoring-request budget has been exhausted."""
+
+    budget_exhausted = True
+
+
+class NativeRequestBudget:
+    def __init__(self, limit):
+        self.limit, self.used = limit, 0
+
+    @property
+    def remaining(self):
+        return max(0, self.limit - self.used)
+
+    def account(self, calls):
+        count = sum(call.get("transport_attempted") is True for call in calls)
+        if count > self.remaining:
+            raise NativeRequestBudgetError("Native provider exceeded the preregistered physical request budget")
+        self.used += count
+
+
+def resolve_policy(name):
+    from jev_ultrafast import model
+
+    if name not in POLICIES or not hasattr(model, POLICIES[name]):
+        raise ValueError("Selected benchmark policy is not available; no fallback is allowed")
+    return getattr(model, POLICIES[name])
+
+
+def candidate_identity(metadata):
+    identity = metadata.get("decision_service_identity", {})
+    expected_model, temperature = identity.get("model_file"), identity.get("temperature")
+    if not isinstance(expected_model, str) or not expected_model:
+        raise ValueError("noul_v1 requires the verified decision-service model_file identity")
+    if type(temperature) not in (int, float) or not math.isfinite(temperature) or temperature <= 0:
+        raise ValueError("noul_v1 requires the verified decision-service calibration temperature")
+    return {"S1_EXPECTED_MODEL": expected_model, "S1_EXPECTED_TEMPERATURE": str(temperature)}
+
+
+def native_calls_for(call):
+    """Read explicit physical-call evidence; never equate a policy cycle with a GPU inference."""
+    if "native_calls" in call:
+        return call["native_calls"]
+    result = call.get("result", {})
+    return result.get("native_calls", []) if isinstance(result, dict) else []
+
+
+def scoring_calls_for(call):
+    native = native_calls_for(call)
+    if "native_calls" in call or native:
+        return [item for item in native if item.get("ok") is True]
+    # Preserve old raw trace arithmetic while new recorders provide actual physical-call evidence.
+    return [call["result"]] if call.get("kind") == "decision" and call.get("ok") else []
 
 
 @contextmanager
@@ -155,28 +211,83 @@ def source_metadata(model_path):
 class ModelRecorder:
     """Record real logical provider calls, including failures before Agent can log them."""
 
-    def __init__(self, phase):
+    def __init__(self, phase, policy="baseline", native_budget=None):
         from jev_ultrafast import model
 
-        self.phase, self.calls = phase, []
-        self.real_choose, self.real_text = model.choose, model.field_text
+        self.phase, self.calls, self.native_calls = phase, [], []
+        self.policy, self.native_budget = policy, native_budget
+        self.real_choose, self.real_text = resolve_policy(policy), model.field_text
 
-    def call(self, kind, function, *inputs):
+    def call(self, kind, function, *inputs, **kwargs):
+        from jev_ultrafast import model
+
         started = time.perf_counter()
         record = {"kind": kind, "phase": self.phase, "input": deepcopy(inputs), "ok": False}
         self.calls.append(record)
+        captured, native, previous_post = [], None, model.LOCAL_CLIENT.post
+
+        def capture_post(url, *args, **options):
+            item = {"kind": "decision", "phase": "combined", "transport_attempted": False,
+                    "model_execution_confirmed": False, "ok": False}
+            captured.append(item)
+            if self.native_budget and sum(c.get("transport_attempted") is True for c in captured) >= \
+                    self.native_budget.remaining:
+                raise NativeRequestBudgetError("Reached preregistered native scoring-request budget")
+            item["request"] = deepcopy(options.get("json"))
+            if item["request"] is None and options.get("content") is not None:
+                item["request"] = json.loads(options["content"])
+            item["transport_attempted"] = True
+            sent = time.perf_counter()
+            try:
+                response = previous_post(url, *args, **options)
+                item["http_status"] = response.status_code
+                try:
+                    raw = response.json()
+                    item.update(raw_response=raw, model_latency_ms=raw.get("latency_ms"),
+                                native_token_count=raw.get("native_token_count"),
+                                preprocessing=raw.get("preprocessing"))
+                    item["model_execution_confirmed"] = raw.get("status") == "ok"
+                    item["ok"] = not response.is_error and not response.is_redirect
+                except (ValueError, AttributeError):
+                    pass
+                return response
+            except Exception as exc:
+                item["error"] = error_record(exc)
+                raise
+            finally:
+                item["client_wall_ms"] = (time.perf_counter() - sent) * 1000
+
+        capture_baseline = kind == "decision" and self.policy == "baseline"
+        if capture_baseline:
+            model.LOCAL_CLIENT.post = capture_post
         try:
-            result = function(*inputs)
+            if kind == "decision" and self.native_budget and self.native_budget.remaining == 0:
+                raise NativeRequestBudgetError("Reached preregistered native scoring-request budget")
+            result = function(*inputs, **kwargs)
             record.update(ok=True, result=deepcopy(result))
+            if kind == "decision" and isinstance(result, dict) and "native_calls" in result:
+                native = result["native_calls"]
             return result
         except Exception as exc:
             record["error"] = error_record(exc)
+            if kind == "decision":
+                native = getattr(exc, "native_calls", None)
+                record["native_budget_exhausted"] = bool(getattr(exc, "budget_exhausted", False))
             raise
         finally:
+            if capture_baseline:
+                model.LOCAL_CLIENT.post = previous_post
             record["wall_ms"] = (time.perf_counter() - started) * 1000
+            if kind == "decision":
+                record["native_calls"] = deepcopy(captured if native is None else native)
+                self.native_calls.extend(record["native_calls"])
+                if self.native_budget:
+                    self.native_budget.account(record["native_calls"])
 
     def choose(self, *inputs):
-        return self.call("decision", self.real_choose, *inputs)
+        kwargs = {"max_native_calls": self.native_budget.remaining} if \
+            self.policy == "noul_v1" and self.native_budget else {}
+        return self.call("decision", self.real_choose, *inputs, **kwargs)
 
     def text(self, *inputs):
         return self.call("text_helper", self.real_text, *inputs)
@@ -249,10 +360,21 @@ def verify(browser, fixture):
     return {"verified": all(checks.values()), "checks": checks, "fresh_dom": state}
 
 
+def development_task_success(result):
+    """A matching DOM alone cannot convert model/automatic BLOCKED into success."""
+    state = result.get("agent_state", {})
+    decisions = state.get("decisions", [])
+    return (
+        result.get("stopped_cleanly") is True and result.get("verified") is True
+        and state.get("status") == "done" and bool(decisions) and decisions[-1].get("choice") == "DONE"
+        and not any(key in result for key in ("error", "verification_error", "teardown_error"))
+    )
+
+
 def browser_run(chromium, args, phase, index):
     from jev_ultrafast import Agent
 
-    recorder, events = ModelRecorder(phase), []
+    recorder, events = ModelRecorder(phase, args.policy), []
     path = "/fixture.html?scenario=travel" if args.fixture == "travel" else "/local_click_fixture.html"
     url = args.fixture_url + path
     goal = TRAVEL_GOAL if args.fixture == "travel" else CLICK_GOAL
@@ -318,15 +440,19 @@ def browser_run(chromium, args, phase, index):
         result["total_ms"] = (time.perf_counter() - total_started) * 1000
         result["python_peak_rss_bytes_cumulative"] = peak_python_rss_bytes()
         result["decision_calls"] = sum(c["kind"] == "decision" for c in recorder.calls)
+        result["native_scoring_requests"] = sum(c.get("transport_attempted") is True for c in recorder.native_calls)
+        result["native_model_executions_confirmed"] = sum(
+            c.get("model_execution_confirmed") is True for c in recorder.native_calls
+        )
         result["text_calls"] = sum(c["kind"] == "text_helper" for c in recorder.calls)
         result["model_wall_ms"] = sum(c["wall_ms"] for c in recorder.calls)
         result["browser_task_wall_ms"] = sum(e["wall_ms"] for e in events if e["phase"] == "task")
-        result["successful_task"] = result["verified"] and "error" not in result
+        result["successful_task"] = development_task_success(result)
     return result
 
 
 def micro_run(kind, phase, index, args):
-    recorder = ModelRecorder(phase)
+    recorder = ModelRecorder(phase, args.policy)
     result = {"kind": kind, "phase": phase, "index": index, "ok": False, "model_calls": recorder.calls}
     try:
         with deadline(args.task_timeout):
@@ -351,17 +477,14 @@ def summarize(records):
     tasks = [r for r in measured if r["kind"] == "browser_task"]
     ttfts, throughput, adapter_latencies, scoring_rates = [], [], [], []
     for call in decisions:
-        if not call["ok"]:
-            continue
-        response = call["result"]
-        adapter_ms = response.get("model_latency_ms")
-        tokens = response.get("native_token_count")
-        # The typed GGUF adapter drops native_latency_ms. Its retained latency_ms
-        # includes HF preparation and the native request/response pipe, not pure GPU time.
-        if type(adapter_ms) in (int, float) and math.isfinite(adapter_ms) and adapter_ms > 0:
-            adapter_latencies.append(adapter_ms)
-            if type(tokens) is int and tokens > 0:
-                scoring_rates.append(tokens / (adapter_ms / 1000))
+        for response in scoring_calls_for(call):
+            adapter_ms = response.get("model_latency_ms")
+            tokens = response.get("native_token_count")
+            # Adapter latency includes preparation and the native pipe, not pure GPU time.
+            if type(adapter_ms) in (int, float) and math.isfinite(adapter_ms) and adapter_ms > 0:
+                adapter_latencies.append(adapter_ms)
+                if type(tokens) is int and tokens > 0:
+                    scoring_rates.append(tokens / (adapter_ms / 1000))
     for call in helpers:
         if not call["ok"]:
             continue
@@ -397,6 +520,16 @@ def summarize(records):
             r["phase"] == "warmup" and not r.get("successful_task", r.get("ok", False)) for r in records
         ),
         "decision_wall_ms_all_attempts": distribution([c["wall_ms"] for c in decisions]),
+        "native_scoring_requests": sum(
+            item.get("transport_attempted") is True for call in decisions for item in native_calls_for(call)
+        ),
+        "native_model_executions_confirmed": sum(
+            item.get("model_execution_confirmed") is True for call in decisions for item in native_calls_for(call)
+        ),
+        "native_scoring_client_wall_ms_all_attempts": distribution([
+            item.get("client_wall_ms") for call in decisions for item in native_calls_for(call)
+            if item.get("transport_attempted") is True
+        ]),
         "decision_wall_ms_successful": distribution([c["wall_ms"] for c in decisions if c["ok"]]),
         "decision_adapter_scoring_ms_successful": distribution(adapter_latencies),
         "decision_input_tokens_per_scoring_second": distribution(scoring_rates),
@@ -432,6 +565,7 @@ def summarize(records):
 def parser():
     args = argparse.ArgumentParser(description=__doc__)
     args.add_argument("--mode", choices=("decision-only", "helper-only", "smoke", "all"), default="smoke")
+    args.add_argument("--policy", choices=tuple(POLICIES), default="baseline")
     args.add_argument("--output", type=Path, required=True)
     args.add_argument("--model-metadata", type=Path, required=True)
     args.add_argument("--fixture-url", default="http://127.0.0.1:8766")
@@ -459,6 +593,10 @@ def main():
                 raise ValueError("TEXT_MODEL must identify the actual local text runtime")
         if not args.model_metadata.is_file():
             raise ValueError("--model-metadata must reference root-verified local model metadata")
+        policy_settings = {"S1_LOCAL_POLICY": args.policy}
+        if args.policy == "noul_v1":
+            policy_settings.update(candidate_identity(json.loads(args.model_metadata.read_text())))
+        resolve_policy(args.policy)
         if not 0 <= args.warmup <= 2 or not 1 <= args.repeats <= 5 or not 1 <= args.decision_repeats <= 10:
             raise ValueError("Bounded repetitions: warmup 0..2, browser 1..5, decision 1..10")
         if not 0 <= args.text_repeats <= 3 or not 0 < args.task_timeout <= 180 or not 1 <= args.max_decisions <= 12:
@@ -472,6 +610,7 @@ def main():
     except ValueError as exc:
         cli.error(str(exc))
     args.output.mkdir(parents=True, exist_ok=True)
+    os.environ.update(policy_settings)
     metadata = source_metadata(args.model_metadata)
     metadata["configuration"] = {
         **{k: str(v) if isinstance(v, Path) else v for k, v in vars(args).items()},

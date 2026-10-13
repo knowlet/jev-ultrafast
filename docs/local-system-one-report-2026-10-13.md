@@ -175,3 +175,12 @@ default imports were made lazy for the authorized isolated transport.
 The model's original checkout and its existing `.agents/` changes were preserved.
 This report updates the public Gemma project through a separate report branch;
 its newer default-branch source is not presented as the runtime measured here.
+
+## Subsequent development result
+
+The preserved baseline above remains unchanged. A subsequent opt-in Noul policy
+completed one fresh development click task with genuine model DONE and matching
+fresh DOM: 2 logical decisions, 9 actual native requests, 104.689 seconds. See
+the [separate progress report](local-system-one-noul-progress-2026-10-13.md) for
+the full distributions, source freeze, raw evidence and limits. Travel and
+independent heldout quality remain unverified for this candidate.

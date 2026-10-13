@@ -24,6 +24,12 @@ exists; only a successful real prediction changes it to `ready`. An unavailable
 child returns HTTP 503. Startup hash checks and model loading can therefore be
 included in the first decision's wall time.
 
+An experimental runner must resolve beneath this checkout's
+`tools/native-prefix/` and have an explicit matching `--native-runner-sha256`.
+`--reuse-prefix` is allowed only for that verified workspace runner. The original
+S1 binary remains the default control; a symlink outside either allowed root is
+rejected. These flags alone do not establish model parity or a speed improvement.
+
 `POST /decide` takes the exact S1 `DecisionRequest` JSON shape and forwards it
 unchanged. Both named questions and the upstream list form are supported. For
 example:

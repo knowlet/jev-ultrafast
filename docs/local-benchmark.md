@@ -140,3 +140,18 @@ copies under `benchmark/public/` redact infrastructure paths and document their
 original and public file hashes; model inputs and numerical measurements remain
 unchanged. The executable source hashes identify the code used for each recorded
 run, including any differences from later publication edits.
+
+## Opt-in Noul development policy
+
+The [Noul progress report](local-system-one-noul-progress-2026-10-13.md) records one
+fresh CLICK → DONE browser success, using the existing trained checkpoint. Enable
+it with `--policy noul_v1` on either benchmark driver or convenience launcher.
+The default remains `baseline`. Click `smoke` uses only the native decision model;
+the launcher also records a separate process-cold decision probe. `all` retains
+the helper contract, and travel needs the existing local text helper.
+
+Operation values are independent binary P(true), with no categorical confidence
+or renormalization. All native requests are counted separately from logical
+decisions. Successful positive tasks require a genuine final model DONE and the
+independent fresh DOM checker. One development success does not establish
+heldout quality or a speedup over the preserved failed-task baseline.

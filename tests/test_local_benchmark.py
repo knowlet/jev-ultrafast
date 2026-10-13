@@ -79,3 +79,84 @@ def test_distinguishes_adapter_input_scoring_and_text_generation_throughput():
     assert summary["decision_adapter_scoring_ms_successful"]["p50"] == 250
     assert "decision_native_forward_ms_successful" not in summary
     assert summary["helper_provider_completion_tokens_per_full_request_second"]["p50"] == 20
+
+
+def test_recorder_retains_late_failure_native_prefix_and_unsent_budget_rejection():
+    native = [
+        {"transport_attempted": True, "model_execution_confirmed": True, "ok": True,
+         "phase": "operation", "client_wall_ms": 10},
+        {"transport_attempted": False, "model_execution_confirmed": False, "ok": False,
+         "phase": "target", "client_wall_ms": 0},
+    ]
+
+    class FailedPolicy(RuntimeError):
+        native_calls = native
+        budget_exhausted = True
+
+    budget = benchmark.NativeRequestBudget(1)
+    recorder = benchmark.ModelRecorder("measured", native_budget=budget)
+
+    def fail(*_args):
+        raise FailedPolicy("Budget reached after a real successful prefix")
+
+    recorder.real_choose = fail
+    with pytest.raises(FailedPolicy):
+        recorder.choose({}, "Original goal", [])
+    assert recorder.calls[0]["ok"] is False
+    assert recorder.calls[0]["native_calls"] == native
+    assert recorder.calls[0]["native_budget_exhausted"] is True
+    assert budget.used == 1 and budget.remaining == 0
+    native[0]["phase"] = "mutated after capture"
+    assert recorder.calls[0]["native_calls"][0]["phase"] == "operation"
+
+
+def test_candidate_identity_requires_real_metadata_and_never_guesses_model_or_calibration():
+    assert benchmark.candidate_identity({"decision_service_identity": {
+        "model_file": "Verified training artifact", "temperature": 3.25,
+    }}) == {"S1_EXPECTED_MODEL": "Verified training artifact", "S1_EXPECTED_TEMPERATURE": "3.25"}
+    with pytest.raises(ValueError):
+        benchmark.candidate_identity({})
+    with pytest.raises(ValueError):
+        benchmark.candidate_identity({"decision_service_identity": {"model_file": "Artifact", "temperature": None}})
+
+
+def test_serial_remaining_native_budget_is_forwarded_without_reserving_unused_calls(monkeypatch):
+    from jev_ultrafast import model
+
+    remaining = []
+
+    def candidate(_page, _goal, _history, *, max_native_calls):
+        remaining.append(max_native_calls)
+        count = min(2, max_native_calls)
+        return {"native_calls": [{"transport_attempted": True, "model_execution_confirmed": True,
+                                  "ok": True, "client_wall_ms": 1} for _ in range(count)]}
+
+    monkeypatch.setattr(model, "choose_noul", candidate, raising=False)
+    budget = benchmark.NativeRequestBudget(3)
+    recorder = benchmark.ModelRecorder("measured", "noul_v1", budget)
+    recorder.choose({}, "Original goal", [])
+    recorder.choose({}, "Original goal", [])
+    assert remaining == [3, 1]
+    assert budget.used == 3 and budget.remaining == 0
+    with pytest.raises(benchmark.NativeRequestBudgetError):
+        recorder.choose({}, "Original goal", [])
+    assert remaining == [3, 1]
+    assert recorder.calls[-1]["native_calls"] == []
+
+
+@pytest.mark.parametrize("status,choice,stopped", [
+    ("blocked", "BLOCKED", True), ("blocked", "e1", True),
+    ("done", "e1", True), ("done", "DONE", False),
+])
+def test_matching_development_dom_cannot_pass_blocked_or_automatic_stop(status, choice, stopped):
+    result = {"verified": True, "stopped_cleanly": stopped,
+              "agent_state": {"status": status, "decisions": [{"choice": choice}]}}
+    assert benchmark.development_task_success(result) is False
+
+
+def test_genuine_done_and_independent_matching_dom_pass_without_errors():
+    result = {"verified": True, "stopped_cleanly": True,
+              "agent_state": {"status": "done", "decisions": [{"choice": "DONE"}]}}
+    assert benchmark.development_task_success(result) is True
+    for error in ("error", "verification_error", "teardown_error"):
+        assert benchmark.development_task_success({**result, error: {"type": "Failure"}}) is False
