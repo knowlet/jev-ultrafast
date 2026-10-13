@@ -258,17 +258,22 @@ class ModelRecorder:
                 item["client_wall_ms"] = (time.perf_counter() - sent) * 1000
 
         capture_baseline = kind == "decision" and self.policy == "baseline"
+        capture_noul = kind == "decision" and self.policy == "noul_v1"
         if capture_baseline:
             model.LOCAL_CLIENT.post = capture_post
         try:
             if kind == "decision" and self.native_budget and self.native_budget.remaining == 0:
                 raise NativeRequestBudgetError("Reached preregistered native scoring-request budget")
+            if capture_noul:
+                if "_trace_calls" in kwargs:
+                    raise ValueError("ModelRecorder owns its private initially empty native trace sink")
+                kwargs["_trace_calls"] = captured
             result = function(*inputs, **kwargs)
             record.update(ok=True, result=deepcopy(result))
             if kind == "decision" and isinstance(result, dict) and "native_calls" in result:
                 native = result["native_calls"]
             return result
-        except Exception as exc:
+        except BaseException as exc:
             record["error"] = error_record(exc)
             if kind == "decision":
                 native = getattr(exc, "native_calls", None)
@@ -279,7 +284,7 @@ class ModelRecorder:
                 model.LOCAL_CLIENT.post = previous_post
             record["wall_ms"] = (time.perf_counter() - started) * 1000
             if kind == "decision":
-                record["native_calls"] = deepcopy(captured if native is None else native)
+                record["native_calls"] = deepcopy(captured if capture_noul or native is None else native)
                 self.native_calls.extend(record["native_calls"])
                 if self.native_budget:
                     self.native_budget.account(record["native_calls"])

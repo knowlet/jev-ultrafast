@@ -1,0 +1,32 @@
+{
+  "created_at_utc": "2026-10-13T17:17:49.167670+00:00",
+  "total_wall_seconds": 900,
+  "work_seconds": 840,
+  "cleanup_seconds": 60,
+  "measured_native_scoring_max": 288,
+  "warmup_native_scoring_max": 18,
+  "all_native_scoring_max": 306,
+  "warmup_text_helper_requests_max": 2,
+  "measured_text_helper_requests_max": 288,
+  "policy": "noul_v1",
+  "runtime": "unchanged original Q4 System One native plus same GGUF text helper",
+  "source_sha256": {
+    "scripts/run_heldout_window.py": "e45fc7745dedb34e8b9137f6797d7f446d331f55e6c99e622c0524d3025dc988",
+    "scripts/run_heldout_benchmark.py": "a990d32f3a0fe71be014b8ed7a7c8e370591d889f6bae8949d203a3ebce6ed84",
+    "jev_ultrafast/noul_policy.py": "22b75a550892445e8c423e1cc68b4842b96232fa8d8aeaf57faa0a9568589583",
+    "scripts/local_benchmark.py": "1793a4c3fed4d07932b35f13596bd259eba07636cac658b972e2c682c24e916a"
+  },
+  "fixture_and_checker_thresholds_changed": false,
+  "model_training_or_calibration_fit": false,
+  "retry_count": 0,
+  "prefix_candidate_used": false,
+  "expected_schedule_runs": 24,
+  "task_timeout_seconds": 180,
+  "decisions_per_task_max": 12,
+  "actions_per_task_max": 12,
+  "plan_sha256": "e94986f9429889379b368c5adcbf4ab3fcfc00487879ee54be5133fb37f91196",
+  "freeze_sha256": "ccbc97f8ecf5b29a3eac75bc5702695f72dcfbb2dc7ec33f217a1d34070c9041",
+  "machine": "arm64",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "scope": "preexecution receipt; caps are fixed upper bounds, not executed counts"
+}

@@ -433,3 +433,64 @@ def test_unoffered_operation_and_nonfinite_input_never_enter_payload():
     with pytest.raises(ValueError, match="actually offered"):
         policy.build_request(source, "UNSUPPORTED")
     assert math.isfinite(IDENTITY["temperature"])
+
+
+def test_private_trace_sink_is_the_same_complete_telemetry_without_changing_policy(local_transport):
+    requests = []
+
+    def handler(request):
+        body = json.loads(request.content)
+        requests.append(body)
+        return response(body, score=0.8 if operation_of(body) == "DONE" else 0.2)
+
+    local_transport(handler)
+    state = page(clicks=0, fill=False)
+    original = choose(state)
+    first_requests = deepcopy(requests)
+    requests.clear()
+    sink = []
+    traced = choose(state, _trace_calls=sink)
+    assert traced["native_calls"] is sink and len(sink) == 2
+    assert requests == first_requests
+    for key in ("choice", "operation", "target", "operation_scores", "source_request", "request", "settings",
+                "confidence", "categorical_operation_probabilities", "expected_native_identity"):
+        assert traced[key] == original[key]
+    assert all(call["transport_attempted"] and call["model_execution_confirmed"] for call in sink)
+
+
+@pytest.mark.parametrize("sink", [[{"previous": "immutable"}], {}, (), "not a list"])
+def test_private_trace_sink_rejects_existing_or_wrong_storage_before_transport(monkeypatch, sink):
+    before = deepcopy(sink)
+    monkeypatch.setattr(policy.httpx, "AsyncClient", lambda **_: pytest.fail("Invalid sink must not transport"))
+    with pytest.raises(policy.NoulPolicyError, match="initially empty") as error:
+        choose(page(), _trace_calls=sink)
+    assert error.value.native_calls == [] and sink == before
+
+
+def test_async_task_cancellation_preserves_attempted_prefix_in_private_sink(local_transport):
+    pending, requests, sink = asyncio.Event(), [], []
+
+    async def handler(request):
+        requests.append(request)
+        if len(requests) == 1:
+            return response(json.loads(request.content), score=0.2)
+        pending.set()
+        await asyncio.Event().wait()
+
+    local_transport(handler)
+
+    async def run():
+        task = asyncio.create_task(policy.choose_noul_async(
+            page(clicks=0, fill=False), "Generic original goal", [], decision_url=URL,
+            expected_identity=IDENTITY, _trace_calls=sink,
+        ))
+        await pending.wait()
+        task.cancel()
+        with pytest.raises(asyncio.CancelledError):
+            await task
+
+    asyncio.run(run())
+    assert len(requests) == len(sink) == 2
+    assert [call["transport_attempted"] for call in sink] == [True, True]
+    assert [call["model_execution_confirmed"] for call in sink] == [True, False]
+    assert sink[-1]["error"]["type"] == "CancelledError" and sink[-1]["client_wall_ms"] >= 0

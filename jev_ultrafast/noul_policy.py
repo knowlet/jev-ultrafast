@@ -229,9 +229,15 @@ def sum_real(calls, field):
 
 
 async def choose_noul_async(state, goal, history, *, decision_url=None, expected_identity=None,
-                            max_operations=MAX_OPERATIONS, timeout=MAX_TIMEOUT, max_native_calls=None):
+                            max_operations=MAX_OPERATIONS, timeout=MAX_TIMEOUT, max_native_calls=None,
+                            _trace_calls=None):
     started, calls = time.perf_counter(), []
     try:
+        if _trace_calls is not None:
+            if type(_trace_calls) is not list or _trace_calls:
+                raise ValueError("Private native trace sink must be an initially empty list")
+            # Share only telemetry storage so selector-level interruptions cannot lose physical attempts.
+            calls = _trace_calls
         if (type(max_operations) is not int or not 1 <= max_operations <= MAX_OPERATIONS
                 or type(timeout) not in (int, float) or not math.isfinite(timeout) or not 0 < timeout <= MAX_TIMEOUT):
             raise ValueError("Noul policy bound: at most8 offered operations and one shared <=90-second deadline")

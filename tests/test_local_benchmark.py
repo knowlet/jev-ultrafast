@@ -1,6 +1,12 @@
 """Offline checks for honest measurement boundaries and percentile arithmetic."""
 
+import asyncio
 import importlib.util
+import json
+import os
+import signal
+import threading
+from copy import deepcopy
 from pathlib import Path
 
 import pytest
@@ -125,11 +131,12 @@ def test_serial_remaining_native_budget_is_forwarded_without_reserving_unused_ca
 
     remaining = []
 
-    def candidate(_page, _goal, _history, *, max_native_calls):
+    def candidate(_page, _goal, _history, *, max_native_calls, _trace_calls):
         remaining.append(max_native_calls)
         count = min(2, max_native_calls)
-        return {"native_calls": [{"transport_attempted": True, "model_execution_confirmed": True,
-                                  "ok": True, "client_wall_ms": 1} for _ in range(count)]}
+        _trace_calls.extend({"transport_attempted": True, "model_execution_confirmed": True,
+                             "ok": True, "client_wall_ms": 1} for _ in range(count))
+        return {"native_calls": _trace_calls}
 
     monkeypatch.setattr(model, "choose_noul", candidate, raising=False)
     budget = benchmark.NativeRequestBudget(3)
@@ -160,3 +167,76 @@ def test_genuine_done_and_independent_matching_dom_pass_without_errors():
     assert benchmark.development_task_success(result) is True
     for error in ("error", "verification_error", "teardown_error"):
         assert benchmark.development_task_success({**result, error: {"type": "Failure"}}) is False
+
+
+@pytest.mark.parametrize("exception_type", [KeyboardInterrupt, SystemExit])
+def test_noul_recorder_accounts_private_trace_on_baseexception_and_reraises(exception_type):
+    budget = benchmark.NativeRequestBudget(3)
+    recorder = benchmark.ModelRecorder("measured", "noul_v1", budget)
+    original = {"transport_attempted": True, "model_execution_confirmed": False, "ok": False}
+
+    def interrupted(*_args, _trace_calls, **_kwargs):
+        _trace_calls.append(deepcopy(original))
+        raise exception_type("explicit offline interruption")
+
+    recorder.real_choose = interrupted
+    with pytest.raises(exception_type):
+        recorder.choose({}, "Generic goal", [])
+    assert budget.used == 1 and recorder.calls[0]["error"]["type"] == exception_type.__name__
+    assert recorder.native_calls == [original]
+    original["transport_attempted"] = False
+    assert recorder.native_calls[0]["transport_attempted"] is True
+
+
+def test_selector_signal_abort_preserves_real_mock_prefix_and_measured_budget(monkeypatch):
+    """Own-process signal and MockTransport only: no socket, model or browser execution."""
+    import httpx
+
+    from jev_ultrafast import noul_policy as policy
+
+    class BudgetTimeout(RuntimeError):
+        pass
+
+    identity = {"model": "synthetic-trained-artifact", "temperature": 2.0}
+    original_client, timers, requests = httpx.AsyncClient, [], []
+
+    async def handler(request):
+        body = json.loads(request.content)
+        requests.append(body)
+        if len(requests) == 1:
+            return httpx.Response(200, json={"status": "ok", **identity, "answers": {
+                "candidate": {"id": "candidate", "type": "noul", "probabilities": {"false": 0.8, "true": 0.2},
+                              "noul": 0.2, "confidence": 0.8}}, "latency_ms": 1.0})
+        timer = threading.Timer(0.02, lambda: os.kill(os.getpid(), signal.SIGUSR1))
+        timers.append(timer)
+        timer.start()
+        await asyncio.Event().wait()
+
+    monkeypatch.setattr(policy.httpx, "AsyncClient", lambda **kwargs: original_client(
+        transport=httpx.MockTransport(handler), **kwargs))
+    budget = benchmark.NativeRequestBudget(3)
+    recorder = benchmark.ModelRecorder("measured", "noul_v1", budget)
+
+    def choose(state, goal, history, **kwargs):
+        return policy.choose_noul(state, goal, history, decision_url="http://127.0.0.1:19999/decide",
+                                  expected_identity=identity, timeout=0.5, **kwargs)
+
+    recorder.real_choose = choose
+
+    def abort(*_):
+        raise BudgetTimeout("synthetic cooperative window interrupt")
+
+    previous = signal.signal(signal.SIGUSR1, abort)
+    try:
+        with pytest.raises(BudgetTimeout):
+            recorder.choose({"actions": [], "url": "http://127.0.0.1/", "title": "Local", "text": "observed page"},
+                            "Generic original goal", [])
+    finally:
+        for timer in timers:
+            timer.cancel()
+            timer.join(timeout=1)
+        signal.signal(signal.SIGUSR1, previous)
+    assert len(requests) == len(recorder.native_calls) == budget.used == 2
+    assert [call["model_execution_confirmed"] for call in recorder.native_calls] == [True, False]
+    assert recorder.native_calls[-1]["error"]["type"] == "CancelledError"
+    assert recorder.calls[-1]["error"]["type"] == "BudgetTimeout" and budget.remaining == 1

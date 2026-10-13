@@ -155,3 +155,33 @@ or renormalization. All native requests are counted separately from logical
 decisions. Successful positive tasks require a genuine final model DONE and the
 independent fresh DOM checker. One development success does not establish
 heldout quality or a speedup over the preserved failed-task baseline.
+
+## Frozen bounded task window
+
+The [independent task report](local-system-one-heldout-progress-2026-10-13.md)
+preserves the first six executed runs of the frozen 24-run schedule, including
+four failures and eighteen unexecuted runs. Its 840-second work deadline includes
+startup, with 60 seconds reserved for cleanup inside a 900-second total window.
+It uses the existing trained Q4 package, fixed seeds/settings, fresh isolated
+profiles, and the frozen local fixtures and acceptance checker. Warmups and
+physical score transports are recorded separately from logical decisions.
+
+Set explicit paths to existing resources; no model or browser download is needed:
+
+```bash
+export S1_REPO="/path/to/existing/System-One-repo"
+export CHROME_PATH="/path/to/existing/chrome-headless-shell"
+export S1_WINDOW_OUTPUT="benchmark/results/new-heldout-window"
+# Default prepares a receipt without starting the model or browser.
+.venv/bin/python scripts/run_heldout_window.py \
+  --s1-repo "$S1_REPO" --chrome-path "$CHROME_PATH" \
+  --output "$S1_WINDOW_OUTPUT"
+# A separately authorized execution uses a new output directory and --execute.
+```
+
+The exact executed controller and runner are archived under
+`benchmark/source-freezes/heldout-window-2026-10-13/`. The current controller
+additionally marks denied process-group liveness checks as unverified and exits
+unsuccessfully; that reporting fix was tested offline after the recorded window.
+No process probe or model run was repeated to validate it. The six revealed
+cases must become development data if used for subsequent tuning.

@@ -60,6 +60,9 @@ retain the observed goal failures alongside latency, token and memory evidence.
 The subsequent [opt-in Noul development policy](docs/local-system-one-noul-progress-2026-10-13.md)
 completed one fresh local click task with genuine DONE and independent DOM
 verification; broader quality and latency improvements remain unverified.
+The subsequent [frozen task window](docs/local-system-one-heldout-progress-2026-10-13.md)
+executed 6 of 24 scheduled runs: 2 passed, 4 failed and 18 were unexecuted when
+the bounded window expired. This partial candidate arm has no paired baseline.
 
 ```bash
 git clone https://github.com/browser-use/jev-ultrafast.git

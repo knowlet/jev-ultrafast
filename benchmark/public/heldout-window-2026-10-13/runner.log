@@ -1,0 +1,6 @@
+{"task_id": "repair_route", "repetition": 0, "policy": "noul_v1", "successful_task": false, "task_ms": 179412.52224999972, "error": {"type": "BudgetTimeout", "message": "Wall-clock budget of 180 seconds elapsed"}}
+{"task_id": "unknown_code", "repetition": 0, "policy": "noul_v1", "successful_task": true, "task_ms": 26612.97758299952, "error": null}
+{"task_id": "complete_stamp", "repetition": 0, "policy": "noul_v1", "successful_task": true, "task_ms": 34637.347416999546, "error": null}
+{"task_id": "form_bundle", "repetition": 0, "policy": "noul_v1", "successful_task": false, "task_ms": 179675.5567500004, "error": {"type": "BudgetTimeout", "message": "Wall-clock budget of 180 seconds elapsed"}}
+{"task_id": "form_card", "repetition": 0, "policy": "noul_v1", "successful_task": false, "task_ms": 131041.32083300009, "error": {"type": "NoulPolicyError", "message": ""}}
+{"task_id": "repair_preview", "repetition": 0, "policy": "noul_v1", "successful_task": false, "task_ms": 177228.88437500023, "error": {"type": "BudgetTimeout", "message": "External heldout window requested bounded abort; no further task"}}
