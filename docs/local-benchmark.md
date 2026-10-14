@@ -185,3 +185,11 @@ additionally marks denied process-group liveness checks as unverified and exits
 unsuccessfully; that reporting fix was tested offline after the recorded window.
 No process probe or model run was repeated to validate it. The six revealed
 cases must become development data if used for subsequent tuning.
+
+The [October 14 continuation](local-system-one-optimization-2026-10-14.md) fixes
+deadline/interruption and bridge lifecycle contracts (334 offline tests), and
+records 24 real native prefix-parity scores after newly authorized process and
+compiler checks. Candidate-off matches the original; four cached repeats exceed
+the fixed numerical tolerances. The browser comparison therefore remains
+unexecuted. A batch-boundary source correction is prepared but uncompiled; no
+accepted speedup or completion improvement is established.

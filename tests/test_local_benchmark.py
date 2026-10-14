@@ -240,3 +240,49 @@ def test_selector_signal_abort_preserves_real_mock_prefix_and_measured_budget(mo
     assert [call["model_execution_confirmed"] for call in recorder.native_calls] == [True, False]
     assert recorder.native_calls[-1]["error"]["type"] == "CancelledError"
     assert recorder.calls[-1]["error"]["type"] == "BudgetTimeout" and budget.remaining == 1
+
+
+@pytest.mark.parametrize("source", ["own_deadline", "provider_timeout", "external_budget"])
+def test_recorder_distinguishes_shared_deadline_from_foreign_timeout_without_losing_budget_flag(monkeypatch, source):
+    import httpx
+
+    from jev_ultrafast import noul_policy as policy
+
+    class ExternalBudgetTimeout(benchmark.BudgetTimeout):
+        budget_exhausted = True
+
+    identity = {"model": "synthetic-trained-artifact", "temperature": 2.0}
+    foreign = (ExternalBudgetTimeout("external window budget cause") if source == "external_budget"
+               else TimeoutError("provider timeout cause"))
+    original_client, requests = httpx.AsyncClient, []
+    async def handler(request):
+        requests.append(request)
+        if len(requests) == 1:
+            return httpx.Response(200, json={"status": "ok", **identity, "answers": {
+                "candidate": {"id": "candidate", "type": "noul", "probabilities": {"false": 0.8, "true": 0.2},
+                              "noul": 0.2, "confidence": 0.8}}, "latency_ms": 1.0})
+        if source == "own_deadline":
+            await asyncio.Event().wait()
+        raise foreign
+    monkeypatch.setattr(policy.httpx, "AsyncClient", lambda **kwargs: original_client(
+        transport=httpx.MockTransport(handler), **kwargs))
+    budget = benchmark.NativeRequestBudget(3)
+    recorder = benchmark.ModelRecorder("measured", "noul_v1", budget)
+    def choose(state, goal, history, **kwargs):
+        return policy.choose_noul(state, goal, history, decision_url="http://127.0.0.1:19999/decide",
+                                  expected_identity=identity, timeout=0.03, **kwargs)
+    recorder.real_choose = choose
+    expected = policy.NoulDecisionTimeoutError if source == "own_deadline" else type(foreign)
+    with pytest.raises(expected) as error:
+        recorder.choose({"actions": [], "url": "http://127.0.0.1/", "title": "Local", "text": "observed page"},
+                        "Generic original goal", [])
+    record = recorder.calls[0]
+    assert record["error"] == benchmark.error_record(error.value)
+    assert record["error"]["type"] == expected.__name__ and record["error"]["message"]
+    assert record["native_budget_exhausted"] is (source != "provider_timeout")
+    assert budget.used == len(requests) == len(recorder.native_calls) == 2 and budget.remaining == 1
+    assert [call["model_execution_confirmed"] for call in recorder.native_calls] == [True, False]
+    if source == "own_deadline":
+        assert recorder.native_calls[-1]["error"]["type"] == "CancelledError"
+    else:
+        assert error.value is foreign and record["error"]["message"] == str(foreign)

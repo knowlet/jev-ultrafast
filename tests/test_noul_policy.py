@@ -393,8 +393,11 @@ def test_one_shared_deadline_cancels_request_and_blocks_later_calls(local_transp
         return response(json.loads(request.content), score=0.5)
 
     local_transport(handler)
-    with pytest.raises(policy.NoulPolicyError) as error:
+    with pytest.raises(policy.NoulDecisionTimeoutError, match="shared 0.03-second decision deadline") as error:
         choose(page(), timeout=0.03)
+    assert error.value.budget_exhausted is True
+    assert type(error.value.__cause__) is TimeoutError
+    assert isinstance(error.value.__cause__.__cause__, asyncio.CancelledError)
     calls = error.value.native_calls
     assert len(requests) == 2 and len(calls) == 2
     assert calls[0]["ok"] and not calls[1]["ok"]
@@ -485,12 +488,155 @@ def test_async_task_cancellation_preserves_attempted_prefix_in_private_sink(loca
             expected_identity=IDENTITY, _trace_calls=sink,
         ))
         await pending.wait()
-        task.cancel()
-        with pytest.raises(asyncio.CancelledError):
+        task.cancel("external cancellation reason")
+        with pytest.raises(asyncio.CancelledError, match="external cancellation reason") as error:
             await task
+        assert not getattr(error.value, "budget_exhausted", False)
 
     asyncio.run(run())
     assert len(requests) == len(sink) == 2
     assert [call["transport_attempted"] for call in sink] == [True, True]
     assert [call["model_execution_confirmed"] for call in sink] == [True, False]
     assert sink[-1]["error"]["type"] == "CancelledError" and sink[-1]["client_wall_ms"] >= 0
+    assert sink[-1]["error"]["message"] == "external cancellation reason"
+
+
+@pytest.mark.parametrize("foreign_type", [TimeoutError, httpx.ReadTimeout])
+@pytest.mark.parametrize("stage", ["operation", "target"])
+def test_provider_timeout_retains_original_object_type_message_and_prefix(local_transport, foreign_type, stage):
+    requests = []
+    foreign = foreign_type("provider-specific timeout reason")
+
+    async def handler(request):
+        requests.append(request)
+        body = json.loads(request.content)
+        if stage == "operation" and len(requests) == 1:
+            return response(body, score=0.2)
+        if stage == "target" and "candidate" in body["questions"]:
+            return response(body, score=0.9 if operation_of(body) == "CLICK" else 0.1)
+        raise foreign
+
+    local_transport(handler)
+    with pytest.raises(foreign_type) as error:
+        choose(page(clicks=0 if stage == "operation" else 2, fill=False), timeout=0.5)
+    assert error.value is foreign and str(error.value) == "provider-specific timeout reason"
+    assert not getattr(error.value, "budget_exhausted", False)
+    calls = error.value.native_calls
+    assert len(requests) == len(calls) == (2 if stage == "operation" else 4)
+    assert all(call["ok"] for call in calls[:-1]) and not calls[-1]["ok"]
+    assert calls[-1]["phase"] == stage
+    assert calls[-1]["error"] == {"type": foreign_type.__name__, "message": str(foreign)}
+
+
+def test_nested_provider_deadline_is_not_the_outer_shared_deadline(local_transport):
+    requests, errors = [], []
+    async def handler(request):
+        requests.append(request)
+        try:
+            async with asyncio.timeout(0.005):
+                await asyncio.Event().wait()
+        except TimeoutError as error:
+            errors.append(error)
+            raise
+    local_transport(handler)
+    with pytest.raises(TimeoutError) as error:
+        choose(page(clicks=0, fill=False), timeout=0.5)
+    assert error.value is errors[0] and type(error.value) is TimeoutError
+    assert isinstance(error.value.__cause__, asyncio.CancelledError)
+    assert not getattr(error.value, "budget_exhausted", False)
+    assert len(requests) == len(error.value.native_calls) == 1
+
+
+def test_provider_rethrow_after_owned_cancellation_is_still_foreign_timeout(local_transport):
+    requests = []
+    foreign = TimeoutError("provider timeout raised after cancellation")
+
+    async def handler(request):
+        requests.append(request)
+        if len(requests) == 1:
+            return response(json.loads(request.content), score=0.2)
+        try:
+            await asyncio.Event().wait()
+        except asyncio.CancelledError as cancelled:
+            raise foreign from cancelled
+
+    local_transport(handler)
+    with pytest.raises(TimeoutError) as error:
+        choose(page(clicks=0, fill=False), timeout=0.02)
+    assert error.value is foreign and isinstance(error.value.__cause__, asyncio.CancelledError)
+    assert not getattr(error.value, "budget_exhausted", False)
+    assert len(requests) == len(error.value.native_calls) == 2
+    assert error.value.native_calls[-1]["error"]["type"] == "TimeoutError"
+
+
+def test_owned_deadline_before_transport_retains_unsent_request(monkeypatch):
+    values = iter([0.0, 0.0, 2.0])
+    monkeypatch.setattr(policy.time, "perf_counter", lambda: next(values, 2.0))
+    class Client:
+        async def __aenter__(self):
+            return self
+        async def __aexit__(self, *_args):
+            return False
+        async def post(self, *_args, **_kwargs):
+            pytest.fail("Expired shared deadline must not attempt transport")
+    monkeypatch.setattr(policy.httpx, "AsyncClient", lambda **_: Client())
+    with pytest.raises(policy.NoulDecisionTimeoutError, match="shared decision deadline") as error:
+        choose(page(clicks=0, fill=False), timeout=1)
+    assert error.value.budget_exhausted is True
+    assert len(error.value.native_calls) == 1
+    call = error.value.native_calls[0]
+    assert call["transport_attempted"] is False and call["model_execution_confirmed"] is False
+    assert call["raw_response"] is None and call["error"]["type"] == "NoulDecisionTimeoutError"
+
+
+def test_owned_deadline_during_target_retains_completed_operation_scores(local_transport):
+    requests = []
+    async def handler(request):
+        body = json.loads(request.content)
+        requests.append(request)
+        if "candidate" in body["questions"]:
+            return response(body, score=0.9 if operation_of(body) == "CLICK" else 0.1)
+        await asyncio.Event().wait()
+    local_transport(handler)
+    with pytest.raises(policy.NoulDecisionTimeoutError) as error:
+        choose(page(clicks=2, fill=False), timeout=0.03)
+    calls = error.value.native_calls
+    assert len(requests) == len(calls) == 4 and error.value.budget_exhausted
+    assert [call["operation"] for call in calls[:3]] == ["CLICK", "DONE", "BLOCKED"]
+    assert all(call["ok"] and call["raw_response"] is not None for call in calls[:3])
+    assert calls[-1]["phase"] == "target" and calls[-1]["head"] == "click_target"
+    assert calls[-1]["error"]["type"] == "CancelledError" and calls[-1]["raw_response"] is None
+    for call, request in zip(calls, requests, strict=True):
+        assert call["request_sha256"] == hashlib.sha256(request.content).hexdigest()
+
+
+@pytest.mark.parametrize("mode", ["rethrow", "suppress"])
+def test_client_cleanup_timeout_is_attributed_only_when_context_generated(monkeypatch, mode):
+    requests, closed = [], []
+    foreign = TimeoutError("foreign client cleanup timeout")
+    class Client:
+        async def __aenter__(self):
+            return self
+        async def post(self, _url, *, content, **_kwargs):
+            body = json.loads(content)
+            requests.append(body)
+            return response(body, score=0.2)
+        async def __aexit__(self, *_args):
+            closed.append(True)
+            try:
+                await asyncio.Event().wait()
+            except asyncio.CancelledError as cancelled:
+                if mode == "rethrow":
+                    raise foreign from cancelled
+                return True
+    monkeypatch.setattr(policy.httpx, "AsyncClient", lambda **_: Client())
+    expected = TimeoutError if mode == "rethrow" else policy.NoulDecisionTimeoutError
+    with pytest.raises(expected) as error:
+        choose(page(clicks=0, fill=False), timeout=0.02)
+    assert len(requests) == len(error.value.native_calls) == 2 and closed == [True]
+    assert all(call["ok"] and call["raw_response"] is not None for call in error.value.native_calls)
+    if mode == "rethrow":
+        assert error.value is foreign and isinstance(error.value.__cause__, asyncio.CancelledError)
+        assert not getattr(error.value, "budget_exhausted", False)
+    else:
+        assert error.value.budget_exhausted is True and "shared 0.02-second decision deadline" in str(error.value)

@@ -376,7 +376,20 @@ def development_task_success(result):
     )
 
 
-def browser_run(chromium, args, phase, index):
+def flush_interrupted_run(interruption, result, on_interrupt):
+    """Persist the partial attempt once, then preserve the caller's stop exception."""
+    if interruption is None:
+        return
+    result["interrupted"] = True
+    if on_interrupt is not None:
+        try:
+            on_interrupt(result)
+        except BaseException as save_error:
+            interruption.add_note(f"Partial evidence save failed: {type(save_error).__name__}")
+    raise interruption
+
+
+def browser_run(chromium, args, phase, index, *, on_interrupt=None):
     from jev_ultrafast import Agent
 
     recorder, events = ModelRecorder(phase, args.policy), []
@@ -388,7 +401,7 @@ def browser_run(chromium, args, phase, index):
         "url": url, "goal": goal, "verified": False, "stopped_cleanly": False,
         "model_calls": recorder.calls, "browser_events": events,
     }
-    agent, timed_browser = None, None
+    agent, timed_browser, interruption = None, None, None
     total_started = time.perf_counter()
 
     def factory(target_url):
@@ -400,7 +413,7 @@ def browser_run(chromium, args, phase, index):
             timed_browser = TimedBrowser(chromium.browser(target_url), events)
             event["ok"] = True
             return timed_browser
-        except Exception as exc:
+        except BaseException as exc:
             event["error"] = error_record(exc)
             raise
         finally:
@@ -421,27 +434,45 @@ def browser_run(chromium, args, phase, index):
                 result["stopped_cleanly"] = True
             finally:
                 result["task_ms"] = (time.perf_counter() - task_started) * 1000
-    except Exception as exc:
+    except BaseException as exc:
         result["error"] = error_record(exc)
+        if not isinstance(exc, Exception):
+            interruption = exc
     finally:
         if agent is not None:
-            result["agent_state"] = agent.snapshot()
-            timed_browser.phase = "verification"
-            started = time.perf_counter()
             try:
-                with deadline(15):
-                    result["verification"] = verify(timed_browser, args.fixture)
-                    result["verified"] = result["verification"]["verified"]
-            except Exception as exc:
-                result["verification_error"] = error_record(exc)
-            finally:
-                result["verification_ms"] = (time.perf_counter() - started) * 1000
+                result["agent_state"] = agent.snapshot()
+            except BaseException as exc:
+                result["snapshot_error"] = error_record(exc)
+                if not isinstance(exc, Exception) and interruption is None:
+                    interruption = exc
+            if interruption is None:
+                timed_browser.phase = "verification"
+                started = time.perf_counter()
+                try:
+                    with deadline(15):
+                        result["verification"] = verify(timed_browser, args.fixture)
+                        result["verified"] = result["verification"]["verified"]
+                except BaseException as exc:
+                    result["verification_error"] = error_record(exc)
+                    if not isinstance(exc, Exception):
+                        interruption = exc
+                finally:
+                    result["verification_ms"] = (time.perf_counter() - started) * 1000
+            else:
+                result["verification_skipped"] = "Run interrupted; no further DOM read or success inferred"
+        if timed_browser is not None:
             timed_browser.phase = "teardown"
             try:
                 with deadline(15):
-                    agent.close()
-            except Exception as exc:
+                    if agent is not None:
+                        agent.close()
+                    else:
+                        timed_browser.close()
+            except BaseException as exc:
                 result["teardown_error"] = error_record(exc)
+                if not isinstance(exc, Exception) and interruption is None:
+                    interruption = exc
         result["total_ms"] = (time.perf_counter() - total_started) * 1000
         result["python_peak_rss_bytes_cumulative"] = peak_python_rss_bytes()
         result["decision_calls"] = sum(c["kind"] == "decision" for c in recorder.calls)
@@ -453,12 +484,16 @@ def browser_run(chromium, args, phase, index):
         result["model_wall_ms"] = sum(c["wall_ms"] for c in recorder.calls)
         result["browser_task_wall_ms"] = sum(e["wall_ms"] for e in events if e["phase"] == "task")
         result["successful_task"] = development_task_success(result)
+        if interruption is not None:
+            result["successful_task"] = False
+    flush_interrupted_run(interruption, result, on_interrupt)
     return result
 
 
-def micro_run(kind, phase, index, args):
+def micro_run(kind, phase, index, args, *, on_interrupt=None):
     recorder = ModelRecorder(phase, args.policy)
     result = {"kind": kind, "phase": phase, "index": index, "ok": False, "model_calls": recorder.calls}
+    interruption = None
     try:
         with deadline(args.task_timeout):
             if kind == "decision_microbenchmark":
@@ -468,9 +503,13 @@ def micro_run(kind, phase, index, args):
             else:
                 text, _helper = recorder.text(deepcopy(TEXT_CONTEXT))
                 result.update(ok=True, intended_text=text == "Lisbon")
-    except Exception as exc:
+    except BaseException as exc:
+        result["ok"] = False
         result["error"] = error_record(exc)
+        if not isinstance(exc, Exception):
+            interruption = exc
     result["python_peak_rss_bytes_cumulative"] = peak_python_rss_bytes()
+    flush_interrupted_run(interruption, result, on_interrupt)
     return result
 
 
@@ -648,16 +687,16 @@ def main():
         print(json.dumps({k: record.get(k) for k in
                          ("kind", "phase", "index", "ok", "successful_task", "task_ms", "error")}), flush=True)
 
-    browser_error = None
+    browser_error, batch_interruption = None, None
     try:
         if args.mode in {"decision-only", "all"}:
             for phase, count in (("warmup", args.warmup), ("measured", args.decision_repeats)):
                 for index in range(count):
-                    save(micro_run("decision_microbenchmark", phase, index, args))
+                    save(micro_run("decision_microbenchmark", phase, index, args, on_interrupt=save))
         if args.mode in {"helper-only", "all"} and args.text_repeats:
             for phase, count in (("warmup", args.warmup), ("measured", args.text_repeats)):
                 for index in range(count):
-                    save(micro_run("helper_microbenchmark", phase, index, args))
+                    save(micro_run("helper_microbenchmark", phase, index, args, on_interrupt=save))
         if args.mode in {"smoke", "all"}:
             from jev_ultrafast.isolated_browser import IsolatedChromium
 
@@ -679,7 +718,7 @@ def main():
                             )
                             for phase, count in counts:
                                 for index in range(count):
-                                    save(browser_run(chromium, args, phase, index))
+                                    save(browser_run(chromium, args, phase, index, on_interrupt=save))
                         finally:
                             if chromium.transport is not None:
                                 metadata["chromium_cdp_blocked_requests"] = chromium.transport.blocked_requests
@@ -691,15 +730,36 @@ def main():
                     metadata["chromium_resource_usage_scope"] = (
                         "macOS wait4 for the owned Chromium main PID; this is not the sum of its process tree."
                     )
-    except Exception as exc:
+    except BaseException as exc:
         browser_error = error_record(exc)
         metadata["batch_error"] = browser_error
+        if not isinstance(exc, Exception):
+            batch_interruption = exc
     finally:
-        summary = summarize(records)
+        try:
+            summary = summarize(records)
+        except BaseException as exc:
+            if batch_interruption is None:
+                raise
+            batch_interruption.add_note(f"Final summary calculation failed: {type(exc).__name__}")
+            summary = {"summary_error": error_record(exc)}
         summary["batch_error"] = browser_error
-        (args.output / "metadata.json").write_text(json.dumps(metadata, indent=2, ensure_ascii=False) + "\n")
-        (args.output / "summary.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False) + "\n")
-        print(json.dumps(summary, indent=2), flush=True)
+        actions = (
+            ("metadata save", lambda: (args.output / "metadata.json").write_text(
+                json.dumps(metadata, indent=2, ensure_ascii=False) + "\n")),
+            ("summary save", lambda: (args.output / "summary.json").write_text(
+                json.dumps(summary, indent=2, ensure_ascii=False) + "\n")),
+            ("summary output", lambda: print(json.dumps(summary, indent=2), flush=True)),
+        )
+        for label, action in actions:
+            try:
+                action()
+            except BaseException as exc:
+                if batch_interruption is None:
+                    raise
+                batch_interruption.add_note(f"Final {label} failed: {type(exc).__name__}")
+    if batch_interruption is not None:
+        raise batch_interruption
     failures = any(not r.get("successful_task", r.get("ok", False)) for r in records)
     return int(browser_error is not None or failures)
 

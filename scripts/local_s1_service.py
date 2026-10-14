@@ -94,6 +94,7 @@ class Adapter:
         self.log_lock = threading.Lock()
         self.failed = False
         self.closed = False
+        self.shutdown = None
         self.logs_closed = False
         self.completed = 0
         self.first_success_ms = None
@@ -175,6 +176,7 @@ class Adapter:
             "--ctx-size", str(args.ctx_size), "--batch-size", str(args.batch_size),
             "--threads", str(args.threads),
         ]
+        self.process = None
         try:
             self.process = subprocess.Popen(
                 command,
@@ -186,17 +188,16 @@ class Adapter:
                 bufsize=0,
                 start_new_session=True,
             )
-        except BaseException:
-            self.raw_log.close()
-            self.request_log.close()
-            self.wrapper.unlink(missing_ok=True)
-            raise
-        os.set_blocking(self.process.stdin.fileno(), False)
-        os.set_blocking(self.process.stdout.fileno(), False)
-        try:
+            os.set_blocking(self.process.stdin.fileno(), False)
+            os.set_blocking(self.process.stdout.fileno(), False)
             self.record({"event": "launch", "command": command, "identity": self.identity})
-        except BaseException:
-            self.close()
+        except BaseException as error:
+            try:
+                outcome = self.close()
+                if outcome["shutdown_errors"]:
+                    error.add_note("Owned cleanup was incomplete; see the shutdown record.")
+            except BaseException as cleanup_error:
+                error.add_note(f"Owned cleanup also failed: {type(cleanup_error).__name__}")
             raise
 
     def record(self, event: dict):
@@ -291,42 +292,88 @@ class Adapter:
     def close(self):
         with self.cleanup_lock:
             if self.closed:
-                return
+                return self.shutdown
             self.closed = True
-            if self.process.stdin:
+            outcome = {"event": "shutdown", "method": "orderly_eof", "exit_code": None,
+                       "leader_exit_confirmed": False, "group_shutdown_confirmed": False,
+                       "group_signal": "not_attempted", "shutdown_errors": [], "owned_resources_closed": False}
+            self.shutdown = outcome
+            interruptions = []
+            resources_closed = True
+
+            def failed(phase, error):
+                outcome["shutdown_errors"].append({"phase": phase, "type": type(error).__name__,
+                                                   "message": str(error)[:1000]})
+                if not isinstance(error, Exception):
+                    interruptions.append(error)
+
+            def release(stream, phase):
+                nonlocal resources_closed
+                if stream is None:
+                    return
                 try:
-                    self.process.stdin.close()
-                except OSError:
-                    pass
+                    stream.close()
+                except BaseException as error:
+                    resources_closed = False
+                    failed(phase, error)
+
             try:
-                # EOF runs the adapter's finally/native.close and lets both
-                # timers write their real peak RSS on an orderly shutdown.
-                self.process.wait(timeout=25)
-                shutdown = "orderly_eof"
-            except subprocess.TimeoutExpired:
-                shutdown = "owned_process_group_sigterm"
+                if self.process is None:
+                    outcome["method"] = "no_process_spawned"
+                else:
+                    release(self.process.stdin, "stdin_close")
+                    timed_out = False
+                    try:
+                        # EOF lets the unchanged adapter close its native child and flush its real timers.
+                        outcome["exit_code"] = self.process.wait(timeout=25)
+                        outcome["leader_exit_confirmed"] = True
+                    except subprocess.TimeoutExpired:
+                        timed_out = True
+                        outcome["method"] = "owned_process_group_sigterm"
+                    except BaseException as error:
+                        failed("eof_wait", error)
+                    denied = any(item["type"] == "PermissionError" for item in outcome["shutdown_errors"])
+                    if denied or interruptions:
+                        outcome["group_signal"] = "not_attempted_after_shutdown_error"
+                    else:
+                        # Signal this known owned group once. Neither EOF nor leader exit proves group shutdown.
+                        try:
+                            os.killpg(self.process.pid, signal.SIGTERM)
+                            outcome["group_signal"] = "sigterm_sent"
+                        except ProcessLookupError:
+                            outcome["group_signal"] = "group_not_found"
+                        except BaseException as error:
+                            outcome["group_signal"] = "sigterm_failed"
+                            failed("group_sigterm", error)
+                        if timed_out and outcome["group_signal"] == "sigterm_sent":
+                            try:
+                                outcome["exit_code"] = self.process.wait(timeout=5)
+                                outcome["leader_exit_confirmed"] = True
+                            except BaseException as error:
+                                failed("sigterm_wait", error)
+                    if timed_out and not outcome["leader_exit_confirmed"]:
+                        outcome["method"] = "leader_exit_unconfirmed; no_sigkill_used"
+                outcome["shutdown_error"] = bool(outcome["shutdown_errors"])
+                self.record({**outcome, "owned_resources_close_pending": True})
+            except BaseException as error:
+                failed("shutdown_record", error)
+            finally:
+                if self.process is not None:
+                    release(self.process.stdout, "stdout_close")
+                release(self.raw_log, "raw_log_close")
+                with self.log_lock:
+                    self.logs_closed = True
+                    release(self.request_log, "request_log_close")
                 try:
-                    os.killpg(self.process.pid, signal.SIGTERM)
-                except ProcessLookupError:
-                    pass
-                try:
-                    self.process.wait(timeout=5)
-                except subprocess.TimeoutExpired:
-                    shutdown = "sigterm_did_not_finish; no_sigkill_used"
-            # A crashed adapter or a timed native wrapper can leave descendants
-            # alive after the group leader exits. This group was created solely
-            # for this launch; terminating leftovers cannot touch other services.
-            try:
-                os.killpg(self.process.pid, signal.SIGTERM)
-            except ProcessLookupError:
-                pass
-            self.record({"event": "shutdown", "method": shutdown, "exit_code": self.process.poll()})
-            self.process.stdout.close()
-            self.raw_log.close()
-            with self.log_lock:
-                self.logs_closed = True
-                self.request_log.close()
-            self.wrapper.unlink(missing_ok=True)
+                    self.wrapper.unlink(missing_ok=True)
+                except BaseException as error:
+                    resources_closed = False
+                    failed("wrapper_unlink", error)
+                outcome["owned_resources_closed"] = resources_closed
+                outcome["shutdown_error"] = bool(outcome["shutdown_errors"])
+            if interruptions:
+                raise interruptions[0]
+            return outcome
 
 
 class Server(ThreadingHTTPServer):

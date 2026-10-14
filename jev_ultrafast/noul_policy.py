@@ -41,6 +41,12 @@ class NativeCallBudgetError(NoulPolicyError):
     budget_exhausted = True
 
 
+class NoulDecisionTimeoutError(NoulPolicyError):
+    """The policy's own shared logical deadline expired, not a provider timeout."""
+
+    budget_exhausted = True
+
+
 def endpoint(value):
     parsed = urlsplit(value or "")
     try:
@@ -164,7 +170,7 @@ def identity_settings(expected):
 def remaining(deadline):
     seconds = deadline - time.perf_counter()
     if seconds <= 0:
-        raise TimeoutError("Noul policy exceeded its shared decision deadline; no action selected")
+        raise NoulDecisionTimeoutError("Noul policy exceeded its shared decision deadline; no action selected", [])
     return seconds
 
 
@@ -232,6 +238,7 @@ async def choose_noul_async(state, goal, history, *, decision_url=None, expected
                             max_operations=MAX_OPERATIONS, timeout=MAX_TIMEOUT, max_native_calls=None,
                             _trace_calls=None):
     started, calls = time.perf_counter(), []
+    timeout_scope, escaped_error = None, None
     try:
         if _trace_calls is not None:
             if type(_trace_calls) is not list or _trace_calls:
@@ -252,37 +259,48 @@ async def choose_noul_async(state, goal, history, *, decision_url=None, expected
         budget = len(operations) + 1 if max_native_calls is None else min(max_native_calls, len(operations) + 1)
         deadline = started + timeout
         operation_answers, scores, target, target_answer, target_source = {}, {}, None, None, None
-        async with asyncio.timeout(remaining(deadline)):
-            async with httpx.AsyncClient(http2=True, trust_env=False, follow_redirects=False) as client:
-                for operation in operations:
-                    answer = await request_once(client, url, build_request(source, operation), operation,
-                                                "operation", HEAD, identity, deadline, calls, budget)
-                    operation_answers[operation] = deepcopy(answer)
-                    scores[operation] = answer["noul"]
-                operation = max(scores, key=scores.__getitem__)
-                probabilities, probability_source = {}, "no_categorical_operation_probability"
-                if operation in targets:
-                    candidates = targets[operation]
-                    if len(candidates) == 1:
-                        target = next(iter(candidates))
-                        target_source, probability_source = "single_legal_target", "single_legal_target"
-                        choice = candidates[target]["id"]
-                        probabilities = {choice: 1.0}
+        timeout_scope = asyncio.timeout(remaining(deadline))
+        async with timeout_scope:
+            try:
+                async with httpx.AsyncClient(http2=True, trust_env=False, follow_redirects=False) as client:
+                    for operation in operations:
+                        answer = await request_once(client, url, build_request(source, operation), operation,
+                                                    "operation", HEAD, identity, deadline, calls, budget)
+                        operation_answers[operation] = deepcopy(answer)
+                        scores[operation] = answer["noul"]
+                    operation = max(scores, key=scores.__getitem__)
+                    probabilities, probability_source = {}, "no_categorical_operation_probability"
+                    if operation in targets:
+                        candidates = targets[operation]
+                        if len(candidates) == 1:
+                            target = next(iter(candidates))
+                            target_source, probability_source = "single_legal_target", "single_legal_target"
+                            choice = candidates[target]["id"]
+                            probabilities = {choice: 1.0}
+                        else:
+                            head = operation.lower() + "_target"
+                            body = {"state": deepcopy(source["state"]),
+                                    "questions": {head: deepcopy(source["questions"][head])}}
+                            target_answer = await request_once(client, url, body, operation, "target", head,
+                                                               identity, deadline, calls, budget)
+                            target, target_source = target_answer["choice"], "model"
+                            choice = candidates[target]["id"]
+                            probabilities = {action["id"]: target_answer["probabilities"][index]
+                                             for index, action in candidates.items()}
+                            probability_source = "conditional_selected_operation_target"
                     else:
-                        head = operation.lower() + "_target"
-                        body = {"state": deepcopy(source["state"]),
-                                "questions": {head: deepcopy(source["questions"][head])}}
-                        target_answer = await request_once(client, url, body, operation, "target", head,
-                                                           identity, deadline, calls, budget)
-                        target, target_source = target_answer["choice"], "model"
-                        choice = candidates[target]["id"]
-                        probabilities = {action["id"]: target_answer["probabilities"][index]
-                                         for index, action in candidates.items()}
-                        probability_source = "conditional_selected_operation_target"
-                else:
-                    choice = controls[operation]["id"] if operation in controls else operation
-                    probabilities = {choice: None}
-                remaining(deadline)
+                        choice = controls[operation]["id"] if operation in controls else operation
+                        probabilities = {choice: None}
+                    remaining(deadline)
+            except BaseException as error:
+                # Include client cleanup: its own timeout must not be mistaken for
+                # asyncio.timeout's translation of this exact cancellation object.
+                escaped_error = error
+                raise
+        if timeout_scope.expired():
+            message = f"Noul policy exceeded its shared {timeout:g}-second decision deadline; no action selected"
+            raise NoulDecisionTimeoutError(message, calls)
+        remaining(deadline)
         raw_answers = {"operation_noul": operation_answers}
         if target_answer is not None:
             raw_answers[operation.lower() + "_target"] = deepcopy(target_answer)
@@ -310,6 +328,17 @@ async def choose_noul_async(state, goal, history, *, decision_url=None, expected
                          "retry_count": 0, "tie_policy": "first offered operation"},
             "expected_native_identity": identity, "calibration_scope": CALIBRATION_SCOPE,
         }
+    except NoulDecisionTimeoutError as error:
+        raise NoulDecisionTimeoutError(str(error), calls) from error
+    except (TimeoutError, httpx.TimeoutException) as error:
+        if (type(error) is TimeoutError and timeout_scope is not None and timeout_scope.expired()
+                and isinstance(escaped_error, asyncio.CancelledError) and error.__cause__ is escaped_error):
+            message = f"Noul policy exceeded its shared {timeout:g}-second decision deadline; no action selected"
+            raise NoulDecisionTimeoutError(message, calls) from error
+        # Foreign transport/external timeout type and cause remain intact. Only
+        # telemetry is attached; no retry, selection, or deadline is changed.
+        error.native_calls = deepcopy(calls)
+        raise
     except NativeCallBudgetError as error:
         raise NativeCallBudgetError(str(error), calls) from error
     except Exception as error:

@@ -1,0 +1,1133 @@
+{
+  "schema": "jev-offline-optimization-cause-analysis-v1",
+  "created_at_utc": "2026-10-14T08:22:55.851761+00:00",
+  "scope": "Read-only targeted existing-trace/source decomposition; no repeat of completed full reconciliation; only this new analysis directory is written",
+  "authorization_boundaries": {
+    "model_browser_network_process_probe_signals_compile_retry_gpg_heavy_jobs": "forbidden",
+    "cleanup_full_group_liveness": "unconfirmed",
+    "other_mac_light_python_workload": "reported_by_parent; no process inspection performed",
+    "runtime_gate": "pending; no denied operation reroute/retry"
+  },
+  "original_evidence_files_sha256": {
+    "benchmark/results/q4-heldout-window-20261013/heldout/runs.jsonl": "557211ba6875004e2e6a32b6216e88a99054135ffb554a87ee960aef39a8b1c8",
+    "benchmark/results/q4-heldout-window-20261013/heldout/metadata.json": "9fa073a58e7fef61de7ceca549943367508a981ef356d5e29ba2069d1021b390",
+    "benchmark/results/q4-heldout-window-20261013/native-requests.jsonl": "c722247ed3ba2f13c18e24c0deb769eabdb295d1334d13043547bb895d8e5d0c",
+    "benchmark/results/q4-heldout-window-20261013/window-receipt.json": "a2f79286437bc77c573ba84b2d40a23cca6a0b9e875e6bafcfce5202b91d655d",
+    "benchmark/diagnostics/heldout-window-20261013/verified-summary.json": "fe6dba21db2abdcdaf1d623624dcaf8d2f7f9e5bf7824accfe07f74b19ffecaf"
+  },
+  "executed_source_sha256": {
+    "jev_ultrafast/noul_policy.py": {
+      "executed_sha256": "22b75a550892445e8c423e1cc68b4842b96232fa8d8aeaf57faa0a9568589583",
+      "verified_at_start_of_this_read_only_task": true
+    },
+    "jev_ultrafast/model.py": {
+      "executed_sha256": "c9c6c92cb14f353ee6f7f5747d10eb69f32b74c7f7928257fd1cbb7c37c1dc85",
+      "verified_at_start_of_this_read_only_task": true
+    },
+    "jev_ultrafast/agent.py": {
+      "executed_sha256": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+      "verified_at_start_of_this_read_only_task": true
+    },
+    "jev_ultrafast/questions.py": {
+      "executed_sha256": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+      "verified_at_start_of_this_read_only_task": true
+    },
+    "scripts/local_s1_service.py": {
+      "executed_sha256": "15da5a3507df5d35db7f7975360cf4f74b2d14967201d12fb0f70be1069fc521",
+      "verified_at_start_of_this_read_only_task": true
+    },
+    "scripts/local_benchmark.py": {
+      "executed_sha256": "1793a4c3fed4d07932b35f13596bd259eba07636cac658b972e2c682c24e916a",
+      "verified_at_start_of_this_read_only_task": true
+    },
+    "$S1_REPO/scripts/gguf_adapter.py": {
+      "executed_sha256": "95e9343ead0656f13197c4371ab48b445826d48bd37f8cc9f03b94ae926351c1",
+      "verified_at_start_of_this_read_only_task": true
+    },
+    "$S1_REPO/src/s1/unified.py": {
+      "executed_sha256": "42ba5f076af164e0e54690a735e25a272bdd678279901946c2e5accefa385a6c",
+      "verified_at_start_of_this_read_only_task": true
+    },
+    "$S1_REPO/tools/gguf/s1_gguf.cpp": {
+      "executed_sha256": "8dd7f74a3ba38fda24d305c2bcbb7793d23eb38011ccb58f4f0230f677caa70e",
+      "verified_at_start_of_this_read_only_task": true
+    },
+    "benchmark/source-freezes/heldout-window-2026-10-13/scripts/run_heldout_benchmark.py": {
+      "executed_sha256": "a990d32f3a0fe71be014b8ed7a7c8e370591d889f6bae8949d203a3ebce6ed84",
+      "preserved_executed_copy": true
+    },
+    "benchmark/source-freezes/heldout-window-2026-10-13/scripts/run_heldout_window.py": {
+      "executed_sha256": "e45fc7745dedb34e8b9137f6797d7f446d331f55e6c99e622c0524d3025dc988",
+      "preserved_executed_copy": true
+    }
+  },
+  "background_closed_window_counts": {
+    "expected_runs": 24,
+    "executed_runs": 6,
+    "successful_runs": 2,
+    "failed_runs": 4,
+    "unexecuted_runs": 18
+  },
+  "work_decomposition": {
+    "measured": {
+      "physical_request_count": 93,
+      "distinct_full_request_sha_count": 93,
+      "exact_duplicate_requests": 0,
+      "operation_attempts": 86,
+      "target_attempts": 7,
+      "server_reported_input_tokens_including_cancelled_tails": 78036,
+      "client_confirmed_input_tokens": 74491,
+      "hf_prepare_ms": {
+        "n": 93,
+        "sum": 352.6909960000921,
+        "p50": 3.5779170002570027,
+        "p95": 6.259792200035005,
+        "min": 2.1977919996061246,
+        "max": 8.35291600014898
+      },
+      "queue_ms": {
+        "n": 93,
+        "sum": 9024.624957000015,
+        "p50": 0.07875000028434442,
+        "p95": 0.5002002002584023,
+        "min": 0.044208999497641344,
+        "max": 4062.440083000183
+      },
+      "adapter_latency_ms": {
+        "n": 93,
+        "sum": 719257.0209109972,
+        "p50": 6313.256333000027,
+        "p95": 15091.703341800167,
+        "min": 3267.916416999469,
+        "max": 15870.718084000146
+      },
+      "bridge_wall_ms": {
+        "n": 93,
+        "sum": 728314.8169469996,
+        "p50": 6455.376666999655,
+        "p95": 15100.95768300016,
+        "min": 3268.4108330004165,
+        "max": 18416.001917000358
+      }
+    },
+    "warmup": {
+      "physical_request_count": 10,
+      "distinct_full_request_sha_count": 5,
+      "duplicate_pairs": [
+        {
+          "request_sha256": "70d2d91cc52de05606c4c64f91ac77e24265bafccfc8f5a49146ba7fe9aef6bb",
+          "count": 2
+        },
+        {
+          "request_sha256": "a397f3bca469fb7eaeb55646284802c8e2808917f06b5a53e89537a007f71e5d",
+          "count": 2
+        },
+        {
+          "request_sha256": "fe31f6531a53aa7ef31e4399e1e7a4aa9ed7703338c594046d90661b76d23e20",
+          "count": 2
+        },
+        {
+          "request_sha256": "5e7bad30a301ba298a89dc4ce597c032d2da58b8d36d5749f634a36ca17a0040",
+          "count": 2
+        },
+        {
+          "request_sha256": "4c2dd67d34f0d5d32efca3b962784d1a8366a8897fab5c7d5b97162abbcb3955",
+          "count": 2
+        }
+      ],
+      "logical_decision_wall_ms": 93909.96529099903,
+      "helper_wall_ms": 8712.216707999687,
+      "total_wall_ms": 102622.18199899871,
+      "all_warmups_ok": true
+    },
+    "prompt_serialization": {
+      "logical_groups": 16,
+      "same_passage_per_operation_in_all_groups": true,
+      "groups_with_goal_duplicated_twice": 16,
+      "passage_utf8_bytes_once_per_group": 47797,
+      "passage_utf8_bytes_across_operation_attempts": 259263,
+      "repeated_passage_utf8_bytes": 211466,
+      "passage_json_string_bytes_once_per_group": 51117,
+      "passage_json_string_bytes_across_operation_attempts": 277396,
+      "repeated_passage_json_string_bytes": 226279,
+      "all_operation_compact_payload_bytes": 310641,
+      "repeated_passage_json_string_bytes_fraction_of_operation_payload_bytes": 0.7284260609513876,
+      "scope": "Byte-level string repetition only; not tokenizer/LCP/KV reuse counts, potential speedup, or measured saved work. No tokenizer/Torch/model imports."
+    }
+  },
+  "logical_trace_positions": [
+    {
+      "task_id": "repair_route",
+      "runs_jsonl_line": 1,
+      "model_calls_index": 0,
+      "raw_pointer": "/model_calls/0",
+      "ok": true,
+      "logical_wall_ms": 53941.56854100038,
+      "physical_attempts": 6,
+      "operation_attempts": 6,
+      "target_attempts": 0,
+      "operation_order": [
+        "TYPE_TEXT",
+        "CLICK",
+        "SELECT",
+        "WAIT",
+        "DONE",
+        "BLOCKED"
+      ],
+      "all_operations_same_passage": true,
+      "one_passage_utf8_bytes": 3122,
+      "one_passage_json_string_bytes": 3336,
+      "operation_compact_payload_bytes": 22333,
+      "goal_occurrences_in_each_passage": 2,
+      "goal_utf8_bytes": 171,
+      "chosen_operation": "TYPE_TEXT",
+      "chosen_target": "1",
+      "selected_raw_error": null
+    },
+    {
+      "task_id": "repair_route",
+      "runs_jsonl_line": 1,
+      "model_calls_index": 2,
+      "raw_pointer": "/model_calls/2",
+      "ok": true,
+      "logical_wall_ms": 42600.95120799997,
+      "physical_attempts": 7,
+      "operation_attempts": 6,
+      "target_attempts": 1,
+      "operation_order": [
+        "TYPE_TEXT",
+        "CLICK",
+        "SELECT",
+        "WAIT",
+        "DONE",
+        "BLOCKED"
+      ],
+      "all_operations_same_passage": true,
+      "one_passage_utf8_bytes": 3194,
+      "one_passage_json_string_bytes": 3422,
+      "operation_compact_payload_bytes": 22849,
+      "goal_occurrences_in_each_passage": 2,
+      "goal_utf8_bytes": 171,
+      "chosen_operation": "SELECT",
+      "chosen_target": "2:1",
+      "selected_raw_error": null
+    },
+    {
+      "task_id": "repair_route",
+      "runs_jsonl_line": 1,
+      "model_calls_index": 3,
+      "raw_pointer": "/model_calls/3",
+      "ok": true,
+      "logical_wall_ms": 44889.93937499981,
+      "physical_attempts": 7,
+      "operation_attempts": 6,
+      "target_attempts": 1,
+      "operation_order": [
+        "TYPE_TEXT",
+        "CLICK",
+        "SELECT",
+        "WAIT",
+        "DONE",
+        "BLOCKED"
+      ],
+      "all_operations_same_passage": true,
+      "one_passage_utf8_bytes": 3290,
+      "one_passage_json_string_bytes": 3530,
+      "operation_compact_payload_bytes": 23497,
+      "goal_occurrences_in_each_passage": 2,
+      "goal_utf8_bytes": 171,
+      "chosen_operation": "CLICK",
+      "chosen_target": "4",
+      "selected_raw_error": null
+    },
+    {
+      "task_id": "repair_route",
+      "runs_jsonl_line": 1,
+      "model_calls_index": 4,
+      "raw_pointer": "/model_calls/4",
+      "ok": false,
+      "logical_wall_ms": 31826.839583000037,
+      "physical_attempts": 5,
+      "operation_attempts": 5,
+      "target_attempts": 0,
+      "operation_order": [
+        "TYPE_TEXT",
+        "CLICK",
+        "SELECT",
+        "WAIT",
+        "DONE"
+      ],
+      "all_operations_same_passage": true,
+      "one_passage_utf8_bytes": 3369,
+      "one_passage_json_string_bytes": 3621,
+      "operation_compact_payload_bytes": 20050,
+      "goal_occurrences_in_each_passage": 2,
+      "goal_utf8_bytes": 171,
+      "chosen_operation": null,
+      "chosen_target": null,
+      "selected_raw_error": {
+        "type": "BudgetTimeout",
+        "message": "Wall-clock budget of 180 seconds elapsed"
+      }
+    },
+    {
+      "task_id": "unknown_code",
+      "runs_jsonl_line": 2,
+      "model_calls_index": 0,
+      "raw_pointer": "/model_calls/0",
+      "ok": true,
+      "logical_wall_ms": 26609.5963329999,
+      "physical_attempts": 5,
+      "operation_attempts": 5,
+      "target_attempts": 0,
+      "operation_order": [
+        "TYPE_TEXT",
+        "CLICK",
+        "WAIT",
+        "DONE",
+        "BLOCKED"
+      ],
+      "all_operations_same_passage": true,
+      "one_passage_utf8_bytes": 2458,
+      "one_passage_json_string_bytes": 2593,
+      "operation_compact_payload_bytes": 14913,
+      "goal_occurrences_in_each_passage": 2,
+      "goal_utf8_bytes": 113,
+      "chosen_operation": "BLOCKED",
+      "chosen_target": null,
+      "selected_raw_error": null
+    },
+    {
+      "task_id": "complete_stamp",
+      "runs_jsonl_line": 3,
+      "model_calls_index": 0,
+      "raw_pointer": "/model_calls/0",
+      "ok": true,
+      "logical_wall_ms": 20132.988041000317,
+      "physical_attempts": 5,
+      "operation_attempts": 4,
+      "target_attempts": 1,
+      "operation_order": [
+        "CLICK",
+        "WAIT",
+        "DONE",
+        "BLOCKED"
+      ],
+      "all_operations_same_passage": true,
+      "one_passage_utf8_bytes": 2141,
+      "one_passage_json_string_bytes": 2249,
+      "operation_compact_payload_bytes": 10514,
+      "goal_occurrences_in_each_passage": 2,
+      "goal_utf8_bytes": 72,
+      "chosen_operation": "CLICK",
+      "chosen_target": "1",
+      "selected_raw_error": null
+    },
+    {
+      "task_id": "complete_stamp",
+      "runs_jsonl_line": 3,
+      "model_calls_index": 1,
+      "raw_pointer": "/model_calls/1",
+      "ok": true,
+      "logical_wall_ms": 14459.814332999485,
+      "physical_attempts": 4,
+      "operation_attempts": 4,
+      "target_attempts": 0,
+      "operation_order": [
+        "CLICK",
+        "WAIT",
+        "DONE",
+        "BLOCKED"
+      ],
+      "all_operations_same_passage": true,
+      "one_passage_utf8_bytes": 2124,
+      "one_passage_json_string_bytes": 2224,
+      "operation_compact_payload_bytes": 10414,
+      "goal_occurrences_in_each_passage": 2,
+      "goal_utf8_bytes": 72,
+      "chosen_operation": "DONE",
+      "chosen_target": null,
+      "selected_raw_error": null
+    },
+    {
+      "task_id": "form_bundle",
+      "runs_jsonl_line": 4,
+      "model_calls_index": 0,
+      "raw_pointer": "/model_calls/0",
+      "ok": true,
+      "logical_wall_ms": 38501.37616699976,
+      "physical_attempts": 6,
+      "operation_attempts": 6,
+      "target_attempts": 0,
+      "operation_order": [
+        "TYPE_TEXT",
+        "CLICK",
+        "SELECT",
+        "WAIT",
+        "DONE",
+        "BLOCKED"
+      ],
+      "all_operations_same_passage": true,
+      "one_passage_utf8_bytes": 2977,
+      "one_passage_json_string_bytes": 3188,
+      "operation_compact_payload_bytes": 21445,
+      "goal_occurrences_in_each_passage": 2,
+      "goal_utf8_bytes": 150,
+      "chosen_operation": "TYPE_TEXT",
+      "chosen_target": "1",
+      "selected_raw_error": null
+    },
+    {
+      "task_id": "form_bundle",
+      "runs_jsonl_line": 4,
+      "model_calls_index": 2,
+      "raw_pointer": "/model_calls/2",
+      "ok": true,
+      "logical_wall_ms": 47257.34749999992,
+      "physical_attempts": 7,
+      "operation_attempts": 6,
+      "target_attempts": 1,
+      "operation_order": [
+        "TYPE_TEXT",
+        "CLICK",
+        "SELECT",
+        "WAIT",
+        "DONE",
+        "BLOCKED"
+      ],
+      "all_operations_same_passage": true,
+      "one_passage_utf8_bytes": 3069,
+      "one_passage_json_string_bytes": 3294,
+      "operation_compact_payload_bytes": 22081,
+      "goal_occurrences_in_each_passage": 2,
+      "goal_utf8_bytes": 150,
+      "chosen_operation": "SELECT",
+      "chosen_target": "2:2",
+      "selected_raw_error": null
+    },
+    {
+      "task_id": "form_bundle",
+      "runs_jsonl_line": 4,
+      "model_calls_index": 3,
+      "raw_pointer": "/model_calls/3",
+      "ok": true,
+      "logical_wall_ms": 64398.81762499954,
+      "physical_attempts": 7,
+      "operation_attempts": 6,
+      "target_attempts": 1,
+      "operation_order": [
+        "TYPE_TEXT",
+        "CLICK",
+        "SELECT",
+        "WAIT",
+        "DONE",
+        "BLOCKED"
+      ],
+      "all_operations_same_passage": true,
+      "one_passage_utf8_bytes": 3159,
+      "one_passage_json_string_bytes": 3396,
+      "operation_compact_payload_bytes": 22693,
+      "goal_occurrences_in_each_passage": 2,
+      "goal_utf8_bytes": 150,
+      "chosen_operation": "CLICK",
+      "chosen_target": "4",
+      "selected_raw_error": null
+    },
+    {
+      "task_id": "form_bundle",
+      "runs_jsonl_line": 4,
+      "model_calls_index": 4,
+      "raw_pointer": "/model_calls/4",
+      "ok": false,
+      "logical_wall_ms": 20584.7803329998,
+      "physical_attempts": 4,
+      "operation_attempts": 4,
+      "target_attempts": 0,
+      "operation_order": [
+        "TYPE_TEXT",
+        "CLICK",
+        "SELECT",
+        "WAIT"
+      ],
+      "all_operations_same_passage": true,
+      "one_passage_utf8_bytes": 3306,
+      "one_passage_json_string_bytes": 3558,
+      "operation_compact_payload_bytes": 15805,
+      "goal_occurrences_in_each_passage": 2,
+      "goal_utf8_bytes": 150,
+      "chosen_operation": null,
+      "chosen_target": null,
+      "selected_raw_error": {
+        "type": "BudgetTimeout",
+        "message": "Wall-clock budget of 180 seconds elapsed"
+      }
+    },
+    {
+      "task_id": "form_card",
+      "runs_jsonl_line": 5,
+      "model_calls_index": 0,
+      "raw_pointer": "/model_calls/0",
+      "ok": true,
+      "logical_wall_ms": 38349.908457999845,
+      "physical_attempts": 6,
+      "operation_attempts": 6,
+      "target_attempts": 0,
+      "operation_order": [
+        "TYPE_TEXT",
+        "CLICK",
+        "SELECT",
+        "WAIT",
+        "DONE",
+        "BLOCKED"
+      ],
+      "all_operations_same_passage": true,
+      "one_passage_utf8_bytes": 2958,
+      "one_passage_json_string_bytes": 3169,
+      "operation_compact_payload_bytes": 21331,
+      "goal_occurrences_in_each_passage": 2,
+      "goal_utf8_bytes": 148,
+      "chosen_operation": "TYPE_TEXT",
+      "chosen_target": "1",
+      "selected_raw_error": null
+    },
+    {
+      "task_id": "form_card",
+      "runs_jsonl_line": 5,
+      "model_calls_index": 2,
+      "raw_pointer": "/model_calls/2",
+      "ok": false,
+      "logical_wall_ms": 90003.71150000047,
+      "physical_attempts": 7,
+      "operation_attempts": 6,
+      "target_attempts": 1,
+      "operation_order": [
+        "TYPE_TEXT",
+        "CLICK",
+        "SELECT",
+        "WAIT",
+        "DONE",
+        "BLOCKED"
+      ],
+      "all_operations_same_passage": true,
+      "one_passage_utf8_bytes": 3049,
+      "one_passage_json_string_bytes": 3274,
+      "operation_compact_payload_bytes": 21961,
+      "goal_occurrences_in_each_passage": 2,
+      "goal_utf8_bytes": 148,
+      "chosen_operation": null,
+      "chosen_target": null,
+      "selected_raw_error": {
+        "type": "NoulPolicyError",
+        "message": ""
+      }
+    },
+    {
+      "task_id": "repair_preview",
+      "runs_jsonl_line": 6,
+      "model_calls_index": 0,
+      "raw_pointer": "/model_calls/0",
+      "ok": true,
+      "logical_wall_ms": 72091.42904100008,
+      "physical_attempts": 6,
+      "operation_attempts": 6,
+      "target_attempts": 0,
+      "operation_order": [
+        "TYPE_TEXT",
+        "CLICK",
+        "SELECT",
+        "WAIT",
+        "DONE",
+        "BLOCKED"
+      ],
+      "all_operations_same_passage": true,
+      "one_passage_utf8_bytes": 3116,
+      "one_passage_json_string_bytes": 3330,
+      "operation_compact_payload_bytes": 22297,
+      "goal_occurrences_in_each_passage": 2,
+      "goal_utf8_bytes": 183,
+      "chosen_operation": "TYPE_TEXT",
+      "chosen_target": "1",
+      "selected_raw_error": null
+    },
+    {
+      "task_id": "repair_preview",
+      "runs_jsonl_line": 6,
+      "model_calls_index": 2,
+      "raw_pointer": "/model_calls/2",
+      "ok": true,
+      "logical_wall_ms": 51083.77112499966,
+      "physical_attempts": 7,
+      "operation_attempts": 6,
+      "target_attempts": 1,
+      "operation_order": [
+        "TYPE_TEXT",
+        "CLICK",
+        "SELECT",
+        "WAIT",
+        "DONE",
+        "BLOCKED"
+      ],
+      "all_operations_same_passage": true,
+      "one_passage_utf8_bytes": 3190,
+      "one_passage_json_string_bytes": 3418,
+      "operation_compact_payload_bytes": 22825,
+      "goal_occurrences_in_each_passage": 2,
+      "goal_utf8_bytes": 183,
+      "chosen_operation": "SELECT",
+      "chosen_target": "2:2",
+      "selected_raw_error": null
+    },
+    {
+      "task_id": "repair_preview",
+      "runs_jsonl_line": 6,
+      "model_calls_index": 3,
+      "raw_pointer": "/model_calls/3",
+      "ok": false,
+      "logical_wall_ms": 51288.17658299977,
+      "physical_attempts": 4,
+      "operation_attempts": 4,
+      "target_attempts": 0,
+      "operation_order": [
+        "TYPE_TEXT",
+        "CLICK",
+        "SELECT",
+        "WAIT"
+      ],
+      "all_operations_same_passage": true,
+      "one_passage_utf8_bytes": 3275,
+      "one_passage_json_string_bytes": 3515,
+      "operation_compact_payload_bytes": 15633,
+      "goal_occurrences_in_each_passage": 2,
+      "goal_utf8_bytes": 183,
+      "chosen_operation": null,
+      "chosen_target": null,
+      "selected_raw_error": {
+        "type": "BudgetTimeout",
+        "message": "External heldout window requested bounded abort; no further task"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "id": "F01",
+      "classification": "confirmed_telemetry_defect",
+      "confidence": "high",
+      "title": "Logical deadline cause is lost during exception wrapping",
+      "source_evidence": [
+        {
+          "path": "jev_ultrafast/noul_policy.py",
+          "lines": [
+            253,
+            255,
+            315,
+            316
+          ],
+          "quote": "asyncio.timeout(remaining(deadline)); except Exception as error: raise NoulPolicyError(str(error), calls) from error"
+        },
+        {
+          "path": "scripts/local_benchmark.py",
+          "line": 276,
+          "quote": "record[\"error\"] = error_record(exc)"
+        }
+      ],
+      "trace_evidence": {
+        "runs_jsonl_line": 5,
+        "pointer": "/model_calls/2",
+        "logical_wall_ms": 90003.71150000047,
+        "completed_operation_wall_ms": 80855.3958750017,
+        "target_client_wall_ms": 9133.073291999608,
+        "target_pointer": "/model_calls/2/native_calls/6",
+        "raw_error": {
+          "type": "NoulPolicyError",
+          "message": ""
+        },
+        "raw_budget_exhausted": false,
+        "highest_completed_operation_score": 0.9173323352390859,
+        "highest_completed_operation": "SELECT",
+        "server_target_choice": "2:1",
+        "server_target_confidence": 0.9252875798768346,
+        "no_browser_select_action_executed": true
+      },
+      "safe_offline_correction": "Preserve typed logical-deadline cause plus phase, request SHA and elapsed/remaining budget without selecting an action, changing model inputs or rewriting historical raw. Keep logical deadline distinct from request-count and task-budget exhaustion. Root reports an explicit owned-logical-deadline exception implementation in progress; not independently re-audited here.",
+      "runtime_gate": "Transport/synthetic error-path validation can be designed offline; no real runtime validation or speed/quality claim yet."
+    },
+    {
+      "id": "F02",
+      "classification": "confirmed_deadline_boundary_and_cross_case_carryover",
+      "confidence": "high",
+      "title": "Client shared deadline is not propagated to service, so cancelled scoring continues and queues the next case",
+      "source_evidence": [
+        {
+          "path": "jev_ultrafast/noul_policy.py",
+          "lines": [
+            185,
+            189
+          ],
+          "quote": "HTTP uses remaining(deadline); no deadline/cancellation field is sent to service"
+        },
+        {
+          "path": "scripts/local_s1_service.py",
+          "lines": [
+            260,
+            289
+          ],
+          "quote": "deadline = started + REQUEST_TIMEOUT; hold lock while write_request/read_response, then release"
+        },
+        {
+          "path": "scripts/local_s1_service.py",
+          "lines": [
+            346,
+            350
+          ],
+          "quote": "BrokenPipeError/ConnectionResetError while writing completed response are swallowed"
+        }
+      ],
+      "trace_evidence": [
+        {
+          "task_id": "repair_route",
+          "runs_jsonl_line": 1,
+          "model_calls_index": 4,
+          "request_sha256": "cab65f3c6fd9de6e8b903344373b8bf5f669ee12e8b27435c9b0f075bbd69837",
+          "wire_decision_index_zero_based": 34,
+          "wire_jsonl_line": 36,
+          "phase": "operation",
+          "operation": "DONE",
+          "client_error": {
+            "type": "CancelledError",
+            "message": ""
+          },
+          "client_wall_ms": 4736.063874999672,
+          "server_adapter_latency_ms": 6890.092083000127,
+          "server_bridge_wall_ms": 6890.387749999718,
+          "nominal_adapter_minus_client_ms": 2154.0282080004545,
+          "next_case_first_wire_decision_index": 35,
+          "next_case_queue_ms": 1674.229958000069,
+          "difference_scope": "Different timing scopes and no per-request absolute event timestamp. Nominal duration difference is not exact residual CPU/wall time after client cancellation; next-case queue is separately measured."
+        },
+        {
+          "task_id": "form_bundle",
+          "runs_jsonl_line": 4,
+          "model_calls_index": 4,
+          "request_sha256": "5207fc70aa4023de9e26dfac89aa2a2c4bc7fbb099596f23a2c76583eb6cc524",
+          "wire_decision_index_zero_based": 72,
+          "wire_jsonl_line": 74,
+          "phase": "operation",
+          "operation": "WAIT",
+          "client_error": {
+            "type": "CancelledError",
+            "message": ""
+          },
+          "client_wall_ms": 2103.4654170007343,
+          "server_adapter_latency_ms": 6743.431834000148,
+          "server_bridge_wall_ms": 6743.900624999696,
+          "nominal_adapter_minus_client_ms": 4639.966416999414,
+          "next_case_first_wire_decision_index": 73,
+          "next_case_queue_ms": 4062.440083000183,
+          "difference_scope": "Different timing scopes and no per-request absolute event timestamp. Nominal duration difference is not exact residual CPU/wall time after client cancellation; next-case queue is separately measured."
+        },
+        {
+          "task_id": "form_card",
+          "runs_jsonl_line": 5,
+          "model_calls_index": 2,
+          "request_sha256": "59cd971c0220a693de0fd7cb3cb89c89c5eb563e8d983510f4d65938e986d5e8",
+          "wire_decision_index_zero_based": 85,
+          "wire_jsonl_line": 87,
+          "phase": "target",
+          "operation": "SELECT",
+          "client_error": {
+            "type": "CancelledError",
+            "message": ""
+          },
+          "client_wall_ms": 9133.073291999608,
+          "server_adapter_latency_ms": 12922.250417000214,
+          "server_bridge_wall_ms": 12922.657000000072,
+          "nominal_adapter_minus_client_ms": 3789.177125000606,
+          "next_case_first_wire_decision_index": 86,
+          "next_case_queue_ms": 3278.0447499999354,
+          "difference_scope": "Different timing scopes and no per-request absolute event timestamp. Nominal duration difference is not exact residual CPU/wall time after client cancellation; next-case queue is separately measured."
+        },
+        {
+          "task_id": "repair_preview",
+          "runs_jsonl_line": 6,
+          "model_calls_index": 3,
+          "request_sha256": "a01a34ad00d054cd3a02e9791f4e2634bbfddaea1790548f2b7125de66c24668",
+          "wire_decision_index_zero_based": 102,
+          "wire_jsonl_line": 104,
+          "phase": "operation",
+          "operation": "WAIT",
+          "client_error": {
+            "type": "CancelledError",
+            "message": ""
+          },
+          "client_wall_ms": 5497.987749999993,
+          "server_adapter_latency_ms": 15870.718084000146,
+          "server_bridge_wall_ms": 15871.16375000005,
+          "nominal_adapter_minus_client_ms": 10372.730334000153,
+          "next_case_first_wire_decision_index": null,
+          "next_case_queue_ms": null,
+          "difference_scope": "Different timing scopes and no per-request absolute event timestamp. Nominal duration difference is not exact residual CPU/wall time after client cancellation; next-case queue is separately measured."
+        }
+      ],
+      "safe_offline_correction": "Design request-id/in-flight/drain telemetry and a bounded inter-case idle/drain barrier with drain time separately accounted inside overall work/cleanup caps. Deadline header/queue-admission propagation is only a separate future candidate, not a default fix. In the current native protocol, shortening service read deadline can fail closed and close the whole adapter, aborting remaining tasks sooner; no safe in-flight cancellation protocol or E2E benefit is established. Do not release the serial lock or skip pending response reads to improve timing numbers.",
+      "runtime_gate": "Any new service requests, drain barrier, native interruption/shutdown or idle verification must wait for trusted runtime authorization and cleanup resolution. Existing server-only completions remain separate from client confirmation and task success.",
+      "next_case_first_request_trace_evidence": [
+        {
+          "wire_decision_index_zero_based": 35,
+          "wire_decision_number_one_based": 36,
+          "wire_jsonl_line_one_based": 37,
+          "task_id": "unknown_code",
+          "logical_decision_index_zero_based": 0,
+          "native_request_index_zero_based": 0,
+          "operation": "TYPE_TEXT",
+          "request_sha256": "0c0f5226ef1368083193e8b926f56ed2bf47a3652949071448c24c4f4295a0b2",
+          "queue_ms": 1674.229958000069
+        },
+        {
+          "wire_decision_index_zero_based": 73,
+          "wire_decision_number_one_based": 74,
+          "wire_jsonl_line_one_based": 75,
+          "task_id": "form_card",
+          "logical_decision_index_zero_based": 0,
+          "native_request_index_zero_based": 0,
+          "operation": "TYPE_TEXT",
+          "request_sha256": "332f10d4ade47797e661ebcd3fda854e1c5b5a6d78496bec6f0af4df5f8d55c7",
+          "queue_ms": 4062.440083000183
+        },
+        {
+          "wire_decision_index_zero_based": 86,
+          "wire_decision_number_one_based": 87,
+          "wire_jsonl_line_one_based": 88,
+          "task_id": "repair_preview",
+          "logical_decision_index_zero_based": 0,
+          "native_request_index_zero_based": 0,
+          "operation": "TYPE_TEXT",
+          "request_sha256": "e87a0efa98e48cf76fd4dfcab5e1398dc072763f2385ae279d72d72dd6e00cfa",
+          "queue_ms": 3278.0447499999354
+        }
+      ],
+      "short_service_deadline_default_fix_recommended": false,
+      "safe_inflight_native_cancellation_protocol_verified": false
+    },
+    {
+      "id": "F03",
+      "classification": "latent_warmup_acceptance_gap_not_triggered",
+      "confidence": "high_for_static_gap_only",
+      "title": "A generic failed warmup can fall through to measured dispatch",
+      "source_evidence": [
+        {
+          "path": "benchmark/source-freezes/heldout-window-2026-10-13/scripts/run_heldout_benchmark.py",
+          "lines": [
+            232,
+            253
+          ],
+          "quote": "warmup catches Exception and records ok=False; only abort_state or batch_stop_reason stops loop"
+        },
+        {
+          "path": "benchmark/source-freezes/heldout-window-2026-10-13/scripts/run_heldout_benchmark.py",
+          "lines": [
+            278,
+            309,
+            582,
+            587
+          ],
+          "quote": "batch_stop_reason only recognizes denial/service-unavailable; measured loop does not require every warmup ok=True"
+        }
+      ],
+      "trace_evidence": {
+        "metadata_pointer": "/development_warmups",
+        "actual_both_ok": true,
+        "warmup_total_wall_ms": 102622.18199899871
+      },
+      "safe_offline_correction": "Before any measured dispatch, require both fixed development warmups to have completed model/helper calls without transport/policy error. Save explicit warmup_complete/batch error and leave all expected tasks unexecuted on failure; no retry, extra readiness inference, or heldout checker feedback. Do not equate a warmup operation preference with task-quality failure.",
+      "runtime_gate": "Not a cause of these actual failures; both warmups succeeded. New fail-closed gate needs only synthetic/offline boundary design before any separately authorized real run."
+    },
+    {
+      "id": "F04",
+      "classification": "confirmed_design_cost_not_exact_duplicate_request_bug",
+      "confidence": "high",
+      "title": "Noul re-prefills the same passage once per offered operation; response caching has no measured exact hits",
+      "source_evidence": [
+        {
+          "path": "jev_ultrafast/noul_policy.py",
+          "lines": [
+            80,
+            88,
+            256,
+            263
+          ],
+          "quote": "build_request copies common passage, then separate operation-specific state.question; for operation in operations sends one serial request"
+        },
+        {
+          "path": "$S1_REPO/scripts/gguf_adapter.py",
+          "lines": [
+            377,
+            400
+          ],
+          "quote": "Every input line calls UnifiedDecisionModel.prepare then native.score"
+        },
+        {
+          "path": "$S1_REPO/tools/gguf/s1_gguf.cpp",
+          "lines": [
+            204,
+            208,
+            248,
+            275
+          ],
+          "quote": "llama_memory_clear(..., true) before every request, then decode full parts"
+        },
+        {
+          "path": "$S1_REPO/src/s1/unified.py",
+          "lines": [
+            295,
+            305,
+            328,
+            355
+          ],
+          "quote": "state becomes one shared user chat prefix; each question adds sequential instructions/options/answer slot"
+        }
+      ],
+      "trace_evidence": {
+        "measured": {
+          "physical_request_count": 93,
+          "distinct_full_request_sha_count": 93,
+          "exact_duplicate_requests": 0,
+          "operation_attempts": 86,
+          "target_attempts": 7,
+          "server_reported_input_tokens_including_cancelled_tails": 78036,
+          "client_confirmed_input_tokens": 74491,
+          "hf_prepare_ms": {
+            "n": 93,
+            "sum": 352.6909960000921,
+            "p50": 3.5779170002570027,
+            "p95": 6.259792200035005,
+            "min": 2.1977919996061246,
+            "max": 8.35291600014898
+          },
+          "queue_ms": {
+            "n": 93,
+            "sum": 9024.624957000015,
+            "p50": 0.07875000028434442,
+            "p95": 0.5002002002584023,
+            "min": 0.044208999497641344,
+            "max": 4062.440083000183
+          },
+          "adapter_latency_ms": {
+            "n": 93,
+            "sum": 719257.0209109972,
+            "p50": 6313.256333000027,
+            "p95": 15091.703341800167,
+            "min": 3267.916416999469,
+            "max": 15870.718084000146
+          },
+          "bridge_wall_ms": {
+            "n": 93,
+            "sum": 728314.8169469996,
+            "p50": 6455.376666999655,
+            "p95": 15100.95768300016,
+            "min": 3268.4108330004165,
+            "max": 18416.001917000358
+          }
+        },
+        "warmup": {
+          "physical_request_count": 10,
+          "distinct_full_request_sha_count": 5,
+          "duplicate_pairs": [
+            {
+              "request_sha256": "70d2d91cc52de05606c4c64f91ac77e24265bafccfc8f5a49146ba7fe9aef6bb",
+              "count": 2
+            },
+            {
+              "request_sha256": "a397f3bca469fb7eaeb55646284802c8e2808917f06b5a53e89537a007f71e5d",
+              "count": 2
+            },
+            {
+              "request_sha256": "fe31f6531a53aa7ef31e4399e1e7a4aa9ed7703338c594046d90661b76d23e20",
+              "count": 2
+            },
+            {
+              "request_sha256": "5e7bad30a301ba298a89dc4ce597c032d2da58b8d36d5749f634a36ca17a0040",
+              "count": 2
+            },
+            {
+              "request_sha256": "4c2dd67d34f0d5d32efca3b962784d1a8366a8897fab5c7d5b97162abbcb3955",
+              "count": 2
+            }
+          ],
+          "logical_decision_wall_ms": 93909.96529099903,
+          "helper_wall_ms": 8712.216707999687,
+          "total_wall_ms": 102622.18199899871,
+          "all_warmups_ok": true
+        },
+        "prompt_serialization": {
+          "logical_groups": 16,
+          "same_passage_per_operation_in_all_groups": true,
+          "groups_with_goal_duplicated_twice": 16,
+          "passage_utf8_bytes_once_per_group": 47797,
+          "passage_utf8_bytes_across_operation_attempts": 259263,
+          "repeated_passage_utf8_bytes": 211466,
+          "passage_json_string_bytes_once_per_group": 51117,
+          "passage_json_string_bytes_across_operation_attempts": 277396,
+          "repeated_passage_json_string_bytes": 226279,
+          "all_operation_compact_payload_bytes": 310641,
+          "repeated_passage_json_string_bytes_fraction_of_operation_payload_bytes": 0.7284260609513876,
+          "scope": "Byte-level string repetition only; not tokenizer/LCP/KV reuse counts, potential speedup, or measured saved work. No tokenizer/Torch/model imports."
+        }
+      },
+      "safe_offline_correction": "Plan exact-input prefix reuse with full-distribution/head/identity parity gates. Simply merging operation Noul heads changes global state.question and causal answer-slot context, so it is not exact-parity batching. Request/response cache would have zero hits in these 93 distinct measured requests; caching warmup responses would invalidate genuine warmup work. Goal dedup/prompt trimming is a new prompt variant, not a proven safe correction.",
+      "runtime_gate": "No prefix build, compile retry, tokenizer, Torch/model import or parity execution now. Byte repetition is not proof of reusable token prefix or speedup; all performance/parity tests remain gated."
+    },
+    {
+      "id": "F05",
+      "classification": "observed_model_target_ranking_weakness_not_proven_implementation_omission",
+      "confidence": "high_for_this_trace_only",
+      "title": "Requested checkbox is present but model selects submit first",
+      "source_evidence": [
+        {
+          "path": "jev_ultrafast/noul_policy.py",
+          "lines": [
+            125,
+            150,
+            263,
+            281
+          ],
+          "quote": "prepare_source preserves observed checked state; only selected operation target is queried and mapped"
+        },
+        {
+          "path": "jev_ultrafast/model.py",
+          "lines": [
+            150,
+            180
+          ],
+          "quote": "action_space maps each observed node to an operation-specific valid target"
+        }
+      ],
+      "trace_evidence": {
+        "runs_jsonl_line": 1,
+        "pointer": "/model_calls/3",
+        "goal_contains_requested_checkbox": true,
+        "observed_checkbox_checked": "false",
+        "checkbox_in_click_target_request": "{\"element\": \"[3] Show checkpoints\", \"current_value\": \"on\", \"role\": \"checkbox\", \"checked\": \"false\"}",
+        "checkbox_probability": 0.2430886986557616,
+        "chosen_button_target": "4",
+        "chosen_save_probability": 0.6110588475773449,
+        "chosen_action_label": "Save repair",
+        "fresh_dom_checked": false,
+        "scope": "Target exists and is passed; raw model selects submit before the requested checkbox. This is an observed target-ranking weakness, not proof of a dropped/misindexed action or universal quality."
+      },
+      "safe_offline_correction": "Retain genuine terminal/fresh-DOM acceptance and improve observable chosen target/checked-state diagnostics. Do not rerank checkbox, encode fixture answers, force a goal-specific action sequence, or auto-execute a server-only late target. A generic representation candidate requires separate development evaluation and newly frozen untouched tasks.",
+      "runtime_gate": "No claim that deadline/performance fixes solve semantic checkbox omission; no browser/task-quality validation happened in this offline audit."
+    }
+  ],
+  "shutdown_tail_scope": {
+    "final_cancelled_wire_decision_index": 102,
+    "final_server_response_status": "ok",
+    "last_native_event": {
+      "event": "shutdown",
+      "method": "orderly_eof",
+      "exit_code": 0
+    },
+    "runner_sigint_utc": "2026-10-13T17:32:28.295689+00:00",
+    "runner_exit_utc": "2026-10-13T17:32:28.792044+00:00",
+    "decision_service_sigterm_utc": "2026-10-13T17:32:28.792109+00:00",
+    "interpretation": "Runner SIGINT-to-exit interval was about0.496s. The last cancelled request was already in flight; its completed score remains in the server log before orderly EOF. Adapter-minus-client duration is nominally10.373s and supports keeping a safe drain of dispatched work, not an additional inference. Missing per-request absolute event timestamps prevent exact common-clock residual reconstruction; group liveness remains unknown."
+  },
+  "parent_reported_work_in_progress": [
+    "explicit owned-logical-deadline exception",
+    "bridge post-Popen initialization cleanup and PermissionError shutdown metadata; mocks only"
+  ],
+  "not_done": [
+    "No code/public repository edits",
+    "No model/browser/network/probes/signals/compilation/GPG/tokenizer/Torch imports",
+    "No baseline/heldout raw rewrites or extra inference",
+    "No runtime speedup or task success claim",
+    "No heldout-gold prompt/operation/checkbox reranking"
+  ],
+  "independent_review": {
+    "status": "passed",
+    "reviewed_at_utc": "2026-10-14T08:28:06.509258+00:00",
+    "scope": "Second read-only agent reviewed the two derived documents against previously inspected source evidence; no material errors found, no raw reread/tests/runtime operations"
+  },
+  "cross_case_queue_events": [
+    {
+      "wire_decision_index_zero_based": 35,
+      "wire_decision_number_one_based": 36,
+      "wire_jsonl_line_one_based": 37,
+      "task_id": "unknown_code",
+      "logical_decision_index_zero_based": 0,
+      "native_request_index_zero_based": 0,
+      "operation": "TYPE_TEXT",
+      "request_sha256": "0c0f5226ef1368083193e8b926f56ed2bf47a3652949071448c24c4f4295a0b2",
+      "queue_ms": 1674.229958000069
+    },
+    {
+      "wire_decision_index_zero_based": 73,
+      "wire_decision_number_one_based": 74,
+      "wire_jsonl_line_one_based": 75,
+      "task_id": "form_card",
+      "logical_decision_index_zero_based": 0,
+      "native_request_index_zero_based": 0,
+      "operation": "TYPE_TEXT",
+      "request_sha256": "332f10d4ade47797e661ebcd3fda854e1c5b5a6d78496bec6f0af4df5f8d55c7",
+      "queue_ms": 4062.440083000183
+    },
+    {
+      "wire_decision_index_zero_based": 86,
+      "wire_decision_number_one_based": 87,
+      "wire_jsonl_line_one_based": 88,
+      "task_id": "repair_preview",
+      "logical_decision_index_zero_based": 0,
+      "native_request_index_zero_based": 0,
+      "operation": "TYPE_TEXT",
+      "request_sha256": "e87a0efa98e48cf76fd4dfcab5e1398dc072763f2385ae279d72d72dd6e00cfa",
+      "queue_ms": 3278.0447499999354
+    }
+  ],
+  "index_convention": "wire_decision_index_zero_based counts decision events only, includes the10 warmups, excludes launch/shutdown; JSONL line1 is launch, so line=index+2. Task/model/native indices are zero-based; JSONL line numbers one-based.",
+  "public_reproduction": {
+    "manifest_sha256": "c21bc898405bbb09377d8953b2c33beeedf07b10aba6826f1ade94e26a9bce9e",
+    "schema": 1,
+    "transformation": "infrastructure-path-redaction-v1",
+    "manifest_entries": 19,
+    "packet_files_including_manifest": 20,
+    "selected_original_to_public_mapping": [
+      {
+        "path": "heldout/metadata.json",
+        "original_sha256": "9fa073a58e7fef61de7ceca549943367508a981ef356d5e29ba2069d1021b390",
+        "public_sha256": "6869a0e594e3366900d6e61129492c5e943d8e382dbb2037619ef05f4e2dfebc",
+        "original_bytes": 246042,
+        "public_bytes": 241452,
+        "model_requests_unchanged": true
+      },
+      {
+        "path": "heldout/runs.jsonl",
+        "original_sha256": "557211ba6875004e2e6a32b6216e88a99054135ffb554a87ee960aef39a8b1c8",
+        "public_sha256": "3d5ce8ef3a3d8cd67708217e2f1c77db7108461d6f321bd022484c15607e0813",
+        "original_bytes": 2409591,
+        "public_bytes": 2397579,
+        "model_requests_unchanged": true
+      },
+      {
+        "path": "native-requests.jsonl",
+        "original_sha256": "c722247ed3ba2f13c18e24c0deb769eabdb295d1334d13043547bb895d8e5d0c",
+        "public_sha256": "f37caa6fae5f7d9c317b9dff1eaed1813a00df5b40f3e74438f36c57a623a05c",
+        "original_bytes": 495522,
+        "public_bytes": 492250,
+        "model_requests_unchanged": true
+      },
+      {
+        "path": "window-receipt.json",
+        "original_sha256": "a2f79286437bc77c573ba84b2d40a23cca6a0b9e875e6bafcfce5202b91d655d",
+        "public_sha256": "f539cc4fc9961070eb43ae996ed644ba82631b0345cf9bc9ee8f325da540320c",
+        "original_bytes": 43733,
+        "public_bytes": 38171,
+        "model_requests_unchanged": true
+      }
+    ],
+    "scope": "Numeric traces and model requests are unchanged by existing sanitizer. Original evidence SHA and public-redacted file SHA are distinct; use public_sha256 for packet bytes. No model/native/tokenizer import is needed to reproduce this decomposition."
+  },
+  "parent_reported_validation": {
+    "interruption_tests": 26,
+    "ruff": "passed",
+    "scope": "Mocks/offline only, reported by root; not independently rerun and not runtime performance/quality validation"
+  }
+}
