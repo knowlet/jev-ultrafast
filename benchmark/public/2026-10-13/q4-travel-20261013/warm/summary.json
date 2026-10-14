@@ -1,0 +1,170 @@
+{
+  "groups": {
+    "decision_microbenchmark": {
+      "runs": 3,
+      "successful_runs": 3,
+      "failed_runs": 0,
+      "decision_wall_ms_all_attempts": {
+        "n": 3,
+        "p50": 6114.522624993697,
+        "p95": 7589.154249767307,
+        "min": 4827.918750001118,
+        "max": 7753.002208075486,
+        "mean": 6231.8145276901005
+      },
+      "helper_wall_ms_all_attempts": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null,
+        "mean": null
+      },
+      "intended_choice_runs": 3
+    },
+    "browser_task": {
+      "runs": 3,
+      "successful_runs": 0,
+      "failed_runs": 3,
+      "decision_wall_ms_all_attempts": {
+        "n": 12,
+        "p50": 10905.665166501421,
+        "p95": 17617.79671251424,
+        "min": 5769.619207945652,
+        "max": 23923.06862503756,
+        "mean": 11312.15567708326
+      },
+      "helper_wall_ms_all_attempts": {
+        "n": 3,
+        "p50": 2905.3350419271737,
+        "p95": 3386.859567090869,
+        "min": 2710.3361249901354,
+        "max": 3440.3622921090573,
+        "mean": 3018.6778196754553
+      }
+    }
+  },
+  "warmup_runs": 2,
+  "warmup_failed_runs": 1,
+  "decision_wall_ms_all_attempts": {
+    "n": 15,
+    "p50": 10743.144124979153,
+    "p95": 15898.177100007875,
+    "min": 4827.918750001118,
+    "max": 23923.06862503756,
+    "mean": 10296.087447204627
+  },
+  "decision_wall_ms_successful": {
+    "n": 15,
+    "p50": 10743.144124979153,
+    "p95": 15898.177100007875,
+    "min": 4827.918750001118,
+    "max": 23923.06862503756,
+    "mean": 10296.087447204627
+  },
+  "decision_adapter_scoring_ms_successful": {
+    "n": 15,
+    "p50": 10741.07499991078,
+    "p95": 15895.967804337839,
+    "min": 4825.78062498942,
+    "max": 23920.6689579878,
+    "mean": 10294.100949998634
+  },
+  "decision_input_tokens_per_scoring_second": {
+    "n": 15,
+    "p50": 186.0309227450435,
+    "p95": 195.93036237694196,
+    "min": 86.66145598356127,
+    "max": 196.25680454258807,
+    "mean": 165.9591465664479
+  },
+  "decision_failed_calls": 0,
+  "decision_ttft_ms": null,
+  "decision_ttft_reason": "Native choices are nonstreaming forward/scoring requests, without a first token event.",
+  "helper_wall_ms_all_attempts": {
+    "n": 3,
+    "p50": 2905.3350419271737,
+    "p95": 3386.859567090869,
+    "min": 2710.3361249901354,
+    "max": 3440.3622921090573,
+    "mean": 3018.6778196754553
+  },
+  "helper_failed_calls": 0,
+  "helper_first_content_delta_ms": {
+    "n": 3,
+    "p50": 2419.324,
+    "p95": 2799.2644,
+    "min": 2244.57,
+    "max": 2841.48,
+    "mean": 2501.791333333333
+  },
+  "helper_provider_completion_tokens_per_full_request_second": {
+    "n": 3,
+    "p50": 4.474526969315321,
+    "p95": 4.764260450819468,
+    "min": 3.7786718072736942,
+    "max": 4.796453059875485,
+    "mean": 4.349883945488167
+  },
+  "task_ms_all_runs": {
+    "n": 3,
+    "p50": 46889.916042098776,
+    "p95": 55879.39309166977,
+    "min": 41327.228249982,
+    "max": 56878.22387495544,
+    "mean": 48365.122722345404
+  },
+  "task_ms_successful": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "setup_ms": {
+    "n": 3,
+    "p50": 99.74391607102007,
+    "p95": 104.52239129226655,
+    "min": 87.78087492100894,
+    "max": 105.05333298351616,
+    "mean": 97.52604132518172
+  },
+  "verification_ms": {
+    "n": 3,
+    "p50": 0.40254206396639347,
+    "p95": 0.529516686219722,
+    "min": 0.37404103204607964,
+    "max": 0.543624977581203,
+    "mean": 0.4400693578645587
+  },
+  "end_to_end_ms": {
+    "n": 3,
+    "p50": 46978.3821250312,
+    "p95": 55983.617949683685,
+    "min": 41427.685584058054,
+    "max": 56984.199707978405,
+    "mean": 48463.42247235589
+  },
+  "browser_task_wall_ms": {
+    "n": 3,
+    "p50": 102.07683616317809,
+    "p95": 107.46618343982846,
+    "min": 82.49704004265368,
+    "max": 108.06499980390072,
+    "mean": 97.54629200324416
+  },
+  "model_wall_ms_per_task": {
+    "n": 3,
+    "p50": 46807.13554285467,
+    "p95": 55778.99025445804,
+    "min": 41218.90304097906,
+    "max": 56775.86300019175,
+    "mean": 48267.30052800849
+  },
+  "python_peak_rss_bytes_cumulative": 45056000,
+  "percentile_method": "linear interpolation at (n - 1) * q; p95 is descriptive for these small samples",
+  "memory_scope": "Current Python process cumulative peak only; service/Chromium RSS and cold load are external.",
+  "token_throughput_scope": "Text uses provider-reported completion_tokens/full request time. Choices use native_token_count divided by the typed adapter's reported latency_ms, including HF preparation and native pipe request/response. This is input scoring throughput, not native-only compute or generated tokens/s.",
+  "batch_error": null
+}

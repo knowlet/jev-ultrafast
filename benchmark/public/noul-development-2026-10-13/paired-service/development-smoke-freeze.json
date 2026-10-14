@@ -1,0 +1,26 @@
+{
+  "purpose": "single development click smoke, original runtime; source and budget fixed before actual browser outcome",
+  "policy": "noul_v1",
+  "fixture": "click",
+  "warmup_runs": 0,
+  "measured_runs": 1,
+  "task_timeout_seconds": 180,
+  "max_logical_decisions": 12,
+  "max_physical_requests_per_logical_decision": 9,
+  "native_retry_count": 0,
+  "acceptance": "genuine final model DONE, clean stop, independent fresh DOM goal verification, no errors",
+  "files": {
+    "scripts/local_benchmark.py": "123c9091f4b8874f79c13f8188db3bb1a546225c9155914384524d815b9481c7",
+    "scripts/run_heldout_benchmark.py": "88e822e544f36bb0bb8c676040d84a14a86e2e6b9fcd89a3085f58c17084e995",
+    "jev_ultrafast/questions.py": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+    "jev_ultrafast/__init__.py": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+    "jev_ultrafast/model.py": "c9c6c92cb14f353ee6f7f5747d10eb69f32b74c7f7928257fd1cbb7c37c1dc85",
+    "jev_ultrafast/browser.py": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+    "jev_ultrafast/agent.py": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+    "jev_ultrafast/noul_policy.py": "2c227bd20fc1f24681529ede0b7408fb679ae7becffb716ab87f3996b4c822ef",
+    "jev_ultrafast/isolated_browser.py": "c75c9bd09f09e8ff33b15d59522ea86c6deb5ca97be554d188d90525cae4973d",
+    "jev_ultrafast/demo.py": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+    "jev_ultrafast/static/app.js": "f033d1589af8f2b15b71529914ecc321e36989511311815bd1b92e59941caf11",
+    "jev_ultrafast/static/local_click_fixture.html": "4697cdf7554f0579e511ebaf9b5224ff70c662d2f3e051f678bb9a816a6fc6e9"
+  }
+}

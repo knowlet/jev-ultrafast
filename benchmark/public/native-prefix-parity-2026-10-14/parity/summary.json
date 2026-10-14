@@ -1,0 +1,454 @@
+{
+  "parity_pass": false,
+  "raw_abs_atol": 0.0001,
+  "prob_abs_atol": 1e-05,
+  "rtol": 0,
+  "comparisons": [
+    {
+      "mode": "prefix_off",
+      "index": 0,
+      "max_raw_abs_delta": 0.0,
+      "max_probability_abs_delta": 0.0,
+      "truth_label_match": true,
+      "within_fixed_tolerance": true
+    },
+    {
+      "mode": "prefix_off",
+      "index": 1,
+      "max_raw_abs_delta": 0.0,
+      "max_probability_abs_delta": 0.0,
+      "truth_label_match": true,
+      "within_fixed_tolerance": true
+    },
+    {
+      "mode": "prefix_off",
+      "index": 2,
+      "max_raw_abs_delta": 0.0,
+      "max_probability_abs_delta": 0.0,
+      "truth_label_match": true,
+      "within_fixed_tolerance": true
+    },
+    {
+      "mode": "prefix_off",
+      "index": 3,
+      "max_raw_abs_delta": 0.0,
+      "max_probability_abs_delta": 0.0,
+      "truth_label_match": true,
+      "within_fixed_tolerance": true
+    },
+    {
+      "mode": "prefix_off",
+      "index": 4,
+      "max_raw_abs_delta": 0.0,
+      "max_probability_abs_delta": 0.0,
+      "truth_label_match": true,
+      "within_fixed_tolerance": true
+    },
+    {
+      "mode": "prefix_off",
+      "index": 5,
+      "max_raw_abs_delta": 0.0,
+      "max_probability_abs_delta": 0.0,
+      "truth_label_match": true,
+      "within_fixed_tolerance": true
+    },
+    {
+      "mode": "prefix_off",
+      "index": 6,
+      "max_raw_abs_delta": 0.0,
+      "max_probability_abs_delta": 0.0,
+      "truth_label_match": true,
+      "within_fixed_tolerance": true
+    },
+    {
+      "mode": "prefix_off",
+      "index": 7,
+      "max_raw_abs_delta": 0.0,
+      "max_probability_abs_delta": 0.0,
+      "truth_label_match": true,
+      "within_fixed_tolerance": true
+    },
+    {
+      "mode": "prefix_on",
+      "index": 0,
+      "max_raw_abs_delta": 0.0,
+      "max_probability_abs_delta": 0.0,
+      "truth_label_match": true,
+      "within_fixed_tolerance": true
+    },
+    {
+      "mode": "prefix_on",
+      "index": 1,
+      "max_raw_abs_delta": 0.0065937042236328125,
+      "max_probability_abs_delta": 9.64140119810164e-05,
+      "truth_label_match": true,
+      "within_fixed_tolerance": false
+    },
+    {
+      "mode": "prefix_on",
+      "index": 2,
+      "max_raw_abs_delta": 0.0,
+      "max_probability_abs_delta": 0.0,
+      "truth_label_match": true,
+      "within_fixed_tolerance": true
+    },
+    {
+      "mode": "prefix_on",
+      "index": 3,
+      "max_raw_abs_delta": 0.0086212158203125,
+      "max_probability_abs_delta": 3.449753789164234e-05,
+      "truth_label_match": true,
+      "within_fixed_tolerance": false
+    },
+    {
+      "mode": "prefix_on",
+      "index": 4,
+      "max_raw_abs_delta": 0.0,
+      "max_probability_abs_delta": 0.0,
+      "truth_label_match": true,
+      "within_fixed_tolerance": true
+    },
+    {
+      "mode": "prefix_on",
+      "index": 5,
+      "max_raw_abs_delta": 0.009721755981445312,
+      "max_probability_abs_delta": 0.00027493166967917926,
+      "truth_label_match": true,
+      "within_fixed_tolerance": false
+    },
+    {
+      "mode": "prefix_on",
+      "index": 6,
+      "max_raw_abs_delta": 0.0,
+      "max_probability_abs_delta": 0.0,
+      "truth_label_match": true,
+      "within_fixed_tolerance": true
+    },
+    {
+      "mode": "prefix_on",
+      "index": 7,
+      "max_raw_abs_delta": 0.017385482788085938,
+      "max_probability_abs_delta": 0.0006715392832572775,
+      "truth_label_match": true,
+      "within_fixed_tolerance": false
+    }
+  ],
+  "rankings": {
+    "original": {
+      "click-pre-complete/repeat-0": "CLICK",
+      "click-post-complete/repeat-0": "DONE",
+      "click-pre-complete/repeat-1": "CLICK",
+      "click-post-complete/repeat-1": "DONE"
+    },
+    "prefix_off": {
+      "click-pre-complete/repeat-0": "CLICK",
+      "click-post-complete/repeat-0": "DONE",
+      "click-pre-complete/repeat-1": "CLICK",
+      "click-post-complete/repeat-1": "DONE"
+    },
+    "prefix_on": {
+      "click-pre-complete/repeat-0": "CLICK",
+      "click-post-complete/repeat-0": "DONE",
+      "click-pre-complete/repeat-1": "CLICK",
+      "click-post-complete/repeat-1": "DONE"
+    }
+  },
+  "ranking_agreement": true,
+  "raw_record_count": 24,
+  "attempted_requests": 24,
+  "confirmed_native_responses": 24,
+  "successful_responses": 24,
+  "numerical_parity_pass": false,
+  "cache_effectiveness_pass": true,
+  "cache_diagnostics": [
+    {
+      "mode": "prefix_off",
+      "index": 0,
+      "pass": true,
+      "reasons": [],
+      "reported_prefix_cache": {
+        "cache_hit": false,
+        "cache_valid_for_next_request": false,
+        "eligible": true,
+        "enabled": false,
+        "exact_common_prefix_tokens": 0,
+        "previous_input_tokens": 0,
+        "reason": "disabled",
+        "recomputed_token_positions": 601,
+        "requested_slots_recomputed": true,
+        "retained_kv_tokens": 0
+      }
+    },
+    {
+      "mode": "prefix_off",
+      "index": 1,
+      "pass": true,
+      "reasons": [],
+      "reported_prefix_cache": {
+        "cache_hit": false,
+        "cache_valid_for_next_request": false,
+        "eligible": true,
+        "enabled": false,
+        "exact_common_prefix_tokens": 0,
+        "previous_input_tokens": 0,
+        "reason": "disabled",
+        "recomputed_token_positions": 601,
+        "requested_slots_recomputed": true,
+        "retained_kv_tokens": 0
+      }
+    },
+    {
+      "mode": "prefix_off",
+      "index": 2,
+      "pass": true,
+      "reasons": [],
+      "reported_prefix_cache": {
+        "cache_hit": false,
+        "cache_valid_for_next_request": false,
+        "eligible": true,
+        "enabled": false,
+        "exact_common_prefix_tokens": 0,
+        "previous_input_tokens": 0,
+        "reason": "disabled",
+        "recomputed_token_positions": 591,
+        "requested_slots_recomputed": true,
+        "retained_kv_tokens": 0
+      }
+    },
+    {
+      "mode": "prefix_off",
+      "index": 3,
+      "pass": true,
+      "reasons": [],
+      "reported_prefix_cache": {
+        "cache_hit": false,
+        "cache_valid_for_next_request": false,
+        "eligible": true,
+        "enabled": false,
+        "exact_common_prefix_tokens": 0,
+        "previous_input_tokens": 0,
+        "reason": "disabled",
+        "recomputed_token_positions": 591,
+        "requested_slots_recomputed": true,
+        "retained_kv_tokens": 0
+      }
+    },
+    {
+      "mode": "prefix_off",
+      "index": 4,
+      "pass": true,
+      "reasons": [],
+      "reported_prefix_cache": {
+        "cache_hit": false,
+        "cache_valid_for_next_request": false,
+        "eligible": true,
+        "enabled": false,
+        "exact_common_prefix_tokens": 0,
+        "previous_input_tokens": 0,
+        "reason": "disabled",
+        "recomputed_token_positions": 590,
+        "requested_slots_recomputed": true,
+        "retained_kv_tokens": 0
+      }
+    },
+    {
+      "mode": "prefix_off",
+      "index": 5,
+      "pass": true,
+      "reasons": [],
+      "reported_prefix_cache": {
+        "cache_hit": false,
+        "cache_valid_for_next_request": false,
+        "eligible": true,
+        "enabled": false,
+        "exact_common_prefix_tokens": 0,
+        "previous_input_tokens": 0,
+        "reason": "disabled",
+        "recomputed_token_positions": 590,
+        "requested_slots_recomputed": true,
+        "retained_kv_tokens": 0
+      }
+    },
+    {
+      "mode": "prefix_off",
+      "index": 6,
+      "pass": true,
+      "reasons": [],
+      "reported_prefix_cache": {
+        "cache_hit": false,
+        "cache_valid_for_next_request": false,
+        "eligible": true,
+        "enabled": false,
+        "exact_common_prefix_tokens": 0,
+        "previous_input_tokens": 0,
+        "reason": "disabled",
+        "recomputed_token_positions": 580,
+        "requested_slots_recomputed": true,
+        "retained_kv_tokens": 0
+      }
+    },
+    {
+      "mode": "prefix_off",
+      "index": 7,
+      "pass": true,
+      "reasons": [],
+      "reported_prefix_cache": {
+        "cache_hit": false,
+        "cache_valid_for_next_request": false,
+        "eligible": true,
+        "enabled": false,
+        "exact_common_prefix_tokens": 0,
+        "previous_input_tokens": 0,
+        "reason": "disabled",
+        "recomputed_token_positions": 580,
+        "requested_slots_recomputed": true,
+        "retained_kv_tokens": 0
+      }
+    },
+    {
+      "mode": "prefix_on",
+      "index": 0,
+      "pass": true,
+      "reasons": [],
+      "reported_prefix_cache": {
+        "cache_hit": false,
+        "cache_valid_for_next_request": true,
+        "eligible": true,
+        "enabled": true,
+        "exact_common_prefix_tokens": 0,
+        "previous_input_tokens": 0,
+        "reason": "cold_or_invalidated",
+        "recomputed_token_positions": 601,
+        "requested_slots_recomputed": true,
+        "retained_kv_tokens": 0
+      }
+    },
+    {
+      "mode": "prefix_on",
+      "index": 1,
+      "pass": true,
+      "reasons": [],
+      "reported_prefix_cache": {
+        "cache_hit": true,
+        "cache_valid_for_next_request": true,
+        "eligible": true,
+        "enabled": true,
+        "exact_common_prefix_tokens": 601,
+        "previous_input_tokens": 601,
+        "reason": "exact_token_prefix",
+        "recomputed_token_positions": 1,
+        "requested_slots_recomputed": true,
+        "retained_kv_tokens": 600
+      }
+    },
+    {
+      "mode": "prefix_on",
+      "index": 2,
+      "pass": true,
+      "reasons": [],
+      "reported_prefix_cache": {
+        "cache_hit": true,
+        "cache_valid_for_next_request": true,
+        "eligible": true,
+        "enabled": true,
+        "exact_common_prefix_tokens": 526,
+        "previous_input_tokens": 601,
+        "reason": "exact_token_prefix",
+        "recomputed_token_positions": 65,
+        "requested_slots_recomputed": true,
+        "retained_kv_tokens": 526
+      }
+    },
+    {
+      "mode": "prefix_on",
+      "index": 3,
+      "pass": true,
+      "reasons": [],
+      "reported_prefix_cache": {
+        "cache_hit": true,
+        "cache_valid_for_next_request": true,
+        "eligible": true,
+        "enabled": true,
+        "exact_common_prefix_tokens": 591,
+        "previous_input_tokens": 591,
+        "reason": "exact_token_prefix",
+        "recomputed_token_positions": 1,
+        "requested_slots_recomputed": true,
+        "retained_kv_tokens": 590
+      }
+    },
+    {
+      "mode": "prefix_on",
+      "index": 4,
+      "pass": true,
+      "reasons": [],
+      "reported_prefix_cache": {
+        "cache_hit": true,
+        "cache_valid_for_next_request": true,
+        "eligible": true,
+        "enabled": true,
+        "exact_common_prefix_tokens": 93,
+        "previous_input_tokens": 591,
+        "reason": "exact_token_prefix",
+        "recomputed_token_positions": 497,
+        "requested_slots_recomputed": true,
+        "retained_kv_tokens": 93
+      }
+    },
+    {
+      "mode": "prefix_on",
+      "index": 5,
+      "pass": true,
+      "reasons": [],
+      "reported_prefix_cache": {
+        "cache_hit": true,
+        "cache_valid_for_next_request": true,
+        "eligible": true,
+        "enabled": true,
+        "exact_common_prefix_tokens": 590,
+        "previous_input_tokens": 590,
+        "reason": "exact_token_prefix",
+        "recomputed_token_positions": 1,
+        "requested_slots_recomputed": true,
+        "retained_kv_tokens": 589
+      }
+    },
+    {
+      "mode": "prefix_on",
+      "index": 6,
+      "pass": true,
+      "reasons": [],
+      "reported_prefix_cache": {
+        "cache_hit": true,
+        "cache_valid_for_next_request": true,
+        "eligible": true,
+        "enabled": true,
+        "exact_common_prefix_tokens": 515,
+        "previous_input_tokens": 590,
+        "reason": "exact_token_prefix",
+        "recomputed_token_positions": 65,
+        "requested_slots_recomputed": true,
+        "retained_kv_tokens": 515
+      }
+    },
+    {
+      "mode": "prefix_on",
+      "index": 7,
+      "pass": true,
+      "reasons": [],
+      "reported_prefix_cache": {
+        "cache_hit": true,
+        "cache_valid_for_next_request": true,
+        "eligible": true,
+        "enabled": true,
+        "exact_common_prefix_tokens": 580,
+        "previous_input_tokens": 580,
+        "reason": "exact_token_prefix",
+        "recomputed_token_positions": 1,
+        "requested_slots_recomputed": true,
+        "retained_kv_tokens": 579
+      }
+    }
+  ],
+  "acceptance_pass": false
+}

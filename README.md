@@ -52,6 +52,18 @@ There are no site-specific action scripts or prepared field strings in the polic
 
 ## Try it
 
+For an existing local trained Gemma System One, use the
+[loopback startup and benchmark commands](docs/local-benchmark.md). They route
+both native decisions and text generation locally and use an owned Chromium
+profile with local fixtures. The [October 13 measurements](docs/local-system-one-report-2026-10-13.md)
+retain the observed goal failures alongside latency, token and memory evidence.
+The subsequent [opt-in Noul development policy](docs/local-system-one-noul-progress-2026-10-13.md)
+completed one fresh local click task with genuine DONE and independent DOM
+verification; broader quality and latency improvements remain unverified.
+The subsequent [frozen task window](docs/local-system-one-heldout-progress-2026-10-13.md)
+executed 6 of 24 scheduled runs: 2 passed, 4 failed and 18 were unexecuted when
+the bounded window expired. This partial candidate arm has no paired baseline.
+
 ```bash
 git clone https://github.com/browser-use/jev-ultrafast.git
 cd jev-ultrafast

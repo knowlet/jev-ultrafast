@@ -1,0 +1,289 @@
+{
+  "schema": 1,
+  "kind": "explicit-selected-evidence-ledger",
+  "scope": "New derived ledger generated outside immutable sources; 27 original selected evidence files. Historical manifest/audit authorization and numeric fields are copied unchanged. No source execution, model call, browser, probe, compilation or network operation is performed by this publication step.",
+  "original_root": "<JEV_LAB_ROOT>",
+  "selected_file_count": 27,
+  "core_parity_files": 21,
+  "supporting_receipt_and_audit_files": 6,
+  "exclusions": [
+    "cpu-cache and temporary processor captures",
+    "profiles",
+    "model weights",
+    "compiled binaries",
+    "unselected report files"
+  ],
+  "path_redaction_next": "Existing PUBLIC scripts/sanitize_local_results.py and existing private-path-map.json; extension renames only here.",
+  "files": [
+    {
+      "selected_path": "parity/manifest.json",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/manifest.json",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/manifest.json",
+      "original_sha256": "180bb0e5658b71511f742ad8fdd59565cd14936d967560d1a4904f8f19a15c65",
+      "original_bytes": 48425,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "180bb0e5658b71511f742ad8fdd59565cd14936d967560d1a4904f8f19a15c65"
+    },
+    {
+      "selected_path": "parity/summary.json",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/summary.json",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/summary.json",
+      "original_sha256": "ba4e05f3735a21375dd6b35de94a9473b126b9d2cd7a898952cd97496c7072a7",
+      "original_bytes": 12373,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "ba4e05f3735a21375dd6b35de94a9473b126b9d2cd7a898952cd97496c7072a7"
+    },
+    {
+      "selected_path": "parity/prepared.jsonl",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/prepared.jsonl",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/prepared.jsonl",
+      "original_sha256": "059baac6ec029d1f381a6acee744dcc45b3f219f366b47b66735829cb2d09893",
+      "original_bytes": 93518,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "059baac6ec029d1f381a6acee744dcc45b3f219f366b47b66735829cb2d09893"
+    },
+    {
+      "selected_path": "parity/original/transport.jsonl",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/original/transport.jsonl",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/original/transport.jsonl",
+      "original_sha256": "2560b2d733eef74d1f848b80fb6b88261f4752c2c91f0e1f942e3238c0272135",
+      "original_bytes": 4809,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "2560b2d733eef74d1f848b80fb6b88261f4752c2c91f0e1f942e3238c0272135"
+    },
+    {
+      "selected_path": "parity/original/stderr-timestamps.jsonl",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/original/stderr-timestamps.jsonl",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/original/stderr-timestamps.jsonl",
+      "original_sha256": "63380609cbea346d4ed83262f9aa6df339971f42be7e053c0c683fdfe771f1cc",
+      "original_bytes": 662616,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "63380609cbea346d4ed83262f9aa6df339971f42be7e053c0c683fdfe771f1cc"
+    },
+    {
+      "selected_path": "parity/original/stderr.log",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/original/stderr.raw",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/original/stderr.raw",
+      "original_sha256": "bf0b824d63a9cf7fd70e1880934df93ac304895b0cd93e4f70907dd3b9a5645f",
+      "original_bytes": 355034,
+      "selection_transformation": "extension-rename-only",
+      "selected_sha256_before_redaction": "bf0b824d63a9cf7fd70e1880934df93ac304895b0cd93e4f70907dd3b9a5645f"
+    },
+    {
+      "selected_path": "parity/original/lifecycle.json",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/original/lifecycle.json",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/original/lifecycle.json",
+      "original_sha256": "d498da80acdb1a54e46b5fed6061ba03448c47bbbb99c316a09da601e5cca03b",
+      "original_bytes": 62,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "d498da80acdb1a54e46b5fed6061ba03448c47bbbb99c316a09da601e5cca03b"
+    },
+    {
+      "selected_path": "parity/original/records.jsonl",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/original/records.jsonl",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/original/records.jsonl",
+      "original_sha256": "fe9b335648b74eb2e9199014140bc38835b1ce72ca3bab7c7b848d724707ed56",
+      "original_bytes": 18665,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "fe9b335648b74eb2e9199014140bc38835b1ce72ca3bab7c7b848d724707ed56"
+    },
+    {
+      "selected_path": "parity/original/stdout.log",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/original/stdout.raw",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/original/stdout.raw",
+      "original_sha256": "95cc55f5fc5d99c27fe620e1561d52683a2f045b4d278ac504dae5a58f55924c",
+      "original_bytes": 6176,
+      "selection_transformation": "extension-rename-only",
+      "selected_sha256_before_redaction": "95cc55f5fc5d99c27fe620e1561d52683a2f045b4d278ac504dae5a58f55924c"
+    },
+    {
+      "selected_path": "parity/prefix_off/transport.jsonl",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_off/transport.jsonl",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_off/transport.jsonl",
+      "original_sha256": "1aa3966007e1535508e23e94bfbf2f076bca9fa0f22c542c40bc18266e187b26",
+      "original_bytes": 4846,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "1aa3966007e1535508e23e94bfbf2f076bca9fa0f22c542c40bc18266e187b26"
+    },
+    {
+      "selected_path": "parity/prefix_off/stderr-timestamps.jsonl",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_off/stderr-timestamps.jsonl",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_off/stderr-timestamps.jsonl",
+      "original_sha256": "cdde3bee46d66d667008322b71265a6ff0e3fb140dd177026367e4d237432623",
+      "original_bytes": 662613,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "cdde3bee46d66d667008322b71265a6ff0e3fb140dd177026367e4d237432623"
+    },
+    {
+      "selected_path": "parity/prefix_off/stderr.log",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_off/stderr.raw",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_off/stderr.raw",
+      "original_sha256": "c8cd59e71be82e778c891236b9e3c534f2e489b421918675a9942b8393394f38",
+      "original_bytes": 355040,
+      "selection_transformation": "extension-rename-only",
+      "selected_sha256_before_redaction": "c8cd59e71be82e778c891236b9e3c534f2e489b421918675a9942b8393394f38"
+    },
+    {
+      "selected_path": "parity/prefix_off/lifecycle.json",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_off/lifecycle.json",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_off/lifecycle.json",
+      "original_sha256": "d15bfe56ce48bc416636ed27dde28b2364bae86b6db71b784fa962c9bd81f771",
+      "original_bytes": 62,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "d15bfe56ce48bc416636ed27dde28b2364bae86b6db71b784fa962c9bd81f771"
+    },
+    {
+      "selected_path": "parity/prefix_off/records.jsonl",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_off/records.jsonl",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_off/records.jsonl",
+      "original_sha256": "aa6ad1a75c8665e91be445ea2c0b8e3937fd72f1dfc1036924dbd414061c91ec",
+      "original_bytes": 24440,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "aa6ad1a75c8665e91be445ea2c0b8e3937fd72f1dfc1036924dbd414061c91ec"
+    },
+    {
+      "selected_path": "parity/prefix_off/stdout.log",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_off/stdout.raw",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_off/stdout.raw",
+      "original_sha256": "c2a4789a2a674fbb1d36aff36a3c180e0c49eea4626a94ef1472c7157b8fbc20",
+      "original_bytes": 8852,
+      "selection_transformation": "extension-rename-only",
+      "selected_sha256_before_redaction": "c2a4789a2a674fbb1d36aff36a3c180e0c49eea4626a94ef1472c7157b8fbc20"
+    },
+    {
+      "selected_path": "parity/prefix_on/transport.jsonl",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_on/transport.jsonl",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_on/transport.jsonl",
+      "original_sha256": "80afe6b57343dc55dc14cf8b0a540ecdd36f43dcc736f4b109c33ebd4a6db4fa",
+      "original_bytes": 4862,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "80afe6b57343dc55dc14cf8b0a540ecdd36f43dcc736f4b109c33ebd4a6db4fa"
+    },
+    {
+      "selected_path": "parity/prefix_on/stderr-timestamps.jsonl",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_on/stderr-timestamps.jsonl",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_on/stderr-timestamps.jsonl",
+      "original_sha256": "4d69c1913f10af07f69b526c79575011eba8caa7714369eadf6ba8908a188809",
+      "original_bytes": 666151,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "4d69c1913f10af07f69b526c79575011eba8caa7714369eadf6ba8908a188809"
+    },
+    {
+      "selected_path": "parity/prefix_on/stderr.log",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_on/stderr.raw",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_on/stderr.raw",
+      "original_sha256": "95a4e8050adf7db790a1f3b565591dbbe87aa868a38ecf4a5fd7d806fc12ebb1",
+      "original_bytes": 357399,
+      "selection_transformation": "extension-rename-only",
+      "selected_sha256_before_redaction": "95a4e8050adf7db790a1f3b565591dbbe87aa868a38ecf4a5fd7d806fc12ebb1"
+    },
+    {
+      "selected_path": "parity/prefix_on/lifecycle.json",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_on/lifecycle.json",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_on/lifecycle.json",
+      "original_sha256": "0f8e79f90fdc9a930f498c647f7a3ef04023a0e9184d2e0d383bcf602ef7acb0",
+      "original_bytes": 62,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "0f8e79f90fdc9a930f498c647f7a3ef04023a0e9184d2e0d383bcf602ef7acb0"
+    },
+    {
+      "selected_path": "parity/prefix_on/records.jsonl",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_on/records.jsonl",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_on/records.jsonl",
+      "original_sha256": "cd1ecf17eef3478aaacf0f2f069169562de9d10efeac528ef7eeeb7c9992188a",
+      "original_bytes": 24882,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "cd1ecf17eef3478aaacf0f2f069169562de9d10efeac528ef7eeeb7c9992188a"
+    },
+    {
+      "selected_path": "parity/prefix_on/stdout.log",
+      "category": "core-parity",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_on/stdout.raw",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity/prefix_on/stdout.raw",
+      "original_sha256": "8e305e33164a44058235b0d0f936f8089b53a8a83e2b32a165411ff9a8614479",
+      "original_bytes": 9078,
+      "selection_transformation": "extension-rename-only",
+      "selected_sha256_before_redaction": "8e305e33164a44058235b0d0f936f8089b53a8a83e2b32a165411ff9a8614479"
+    },
+    {
+      "selected_path": "owned-group-signal0.json",
+      "category": "owned-group-read-only-signal-zero-receipt",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/owned-group-signal0.json",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/owned-group-signal0.json",
+      "original_sha256": "aa328a3fecd72bb10972ce0947e5ac43e9ebf7079c3dc2f6c6b65eeb7cf56103",
+      "original_bytes": 1094,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "aa328a3fecd72bb10972ce0947e5ac43e9ebf7079c3dc2f6c6b65eeb7cf56103"
+    },
+    {
+      "selected_path": "build-receipt.json",
+      "category": "executed-v2-build-receipt",
+      "immutable_original_path": "<JEV_LAB_ROOT>/tools/native-prefix/build-20261014-v2/build-receipt.json",
+      "immutable_original_relative_to_lab": "tools/native-prefix/build-20261014-v2/build-receipt.json",
+      "original_sha256": "48e916bcbc89ab03ecedd6e4038c011058cf753f12441d0bc18a88271057f80d",
+      "original_bytes": 4645,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "48e916bcbc89ab03ecedd6e4038c011058cf753f12441d0bc18a88271057f80d"
+    },
+    {
+      "selected_path": "compile.log",
+      "category": "executed-v2-build-receipt",
+      "immutable_original_path": "<JEV_LAB_ROOT>/tools/native-prefix/build-20261014-v2/compile.log",
+      "immutable_original_relative_to_lab": "tools/native-prefix/build-20261014-v2/compile.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_bytes": 0,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "selected_path": "build-selection.json",
+      "category": "executed-v2-build-selection",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/build-selection.json",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/build-selection.json",
+      "original_sha256": "376ec7a89aacad464da34a2c6c441ba056f59bc15f481e91d6ff7ed4df254598",
+      "original_bytes": 925,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "376ec7a89aacad464da34a2c6c441ba056f59bc15f481e91d6ff7ed4df254598"
+    },
+    {
+      "selected_path": "verified-summary.json",
+      "category": "independent-offline-parity-audit",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/parity-audit/verified-summary.json",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/parity-audit/verified-summary.json",
+      "original_sha256": "ec94ab5c691e1773c2de343cc1801a11eab2552e2d44a91416031d869bc00e85",
+      "original_bytes": 37721,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "ec94ab5c691e1773c2de343cc1801a11eab2552e2d44a91416031d869bc00e85"
+    },
+    {
+      "selected_path": "source-prep-batch-aligned.json",
+      "category": "uncompiled-subsequent-candidate-snapshot",
+      "immutable_original_path": "<JEV_LAB_ROOT>/benchmark/diagnostics/native-prefix-approved-20261014/source-prep-batch-aligned.json",
+      "immutable_original_relative_to_lab": "benchmark/diagnostics/native-prefix-approved-20261014/source-prep-batch-aligned.json",
+      "original_sha256": "892a718e73b1ce0f9b320d81b812bfd7719248ef708149d5a8284441f96cf947",
+      "original_bytes": 6083,
+      "selection_transformation": "byte-copy",
+      "selected_sha256_before_redaction": "892a718e73b1ce0f9b320d81b812bfd7719248ef708149d5a8284441f96cf947"
+    }
+  ]
+}
