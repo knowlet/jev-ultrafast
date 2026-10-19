@@ -34,16 +34,25 @@ class Browser:
         if transport is None:
             ensure_daemon()
         self.target = self.transport("Target.createTarget", url="about:blank", background=True)["targetId"]
-        self.session = self.transport("Target.attachToTarget", targetId=self.target, flatten=True)["sessionId"]
-        self.call("Emulation.setDeviceMetricsOverride", width=1120, height=780, deviceScaleFactor=1, mobile=False)
-        # Keep rAF/menus rendering in an owned background tab, without activating the user's Chrome tab.
-        self.call("Emulation.setFocusEmulationEnabled", enabled=True)
-        self.call("Page.navigate", url=url)
-        deadline = time.monotonic() + 15
-        while time.monotonic() < deadline:
-            if self.evaluate("document.readyState") == "complete":
-                break
-            time.sleep(0.02)
+        try:
+            self.session = self.transport("Target.attachToTarget", targetId=self.target, flatten=True)["sessionId"]
+            self.call("Emulation.setDeviceMetricsOverride", width=1120, height=780, deviceScaleFactor=1, mobile=False)
+            # Keep rAF/menus rendering in an owned background tab, without activating the user's Chrome tab.
+            self.call("Emulation.setFocusEmulationEnabled", enabled=True)
+            self.call("Page.navigate", url=url)
+            deadline = time.monotonic() + 15
+            while time.monotonic() < deadline:
+                if self.evaluate("document.readyState") == "complete":
+                    break
+                time.sleep(0.02)
+        except BaseException:
+            # Construction cannot hand ownership back to the caller on failure.
+            # Closing the owned target also tears down its attached CDP sessions.
+            try:
+                self.close()
+            except BaseException:
+                pass  # Cleanup must not replace the original startup failure.
+            raise
 
     def call(self, method, **params):
         return self.transport(method, session_id=self.session, **params)
