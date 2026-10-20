@@ -5,12 +5,14 @@ import json
 import math
 import os
 import time
+from threading import Lock
 
 import httpx
 
 from .questions import NEXT_ACTION, TARGET, TEXT_VALUE
 
-CLIENT = httpx.Client(http2=True, timeout=25)
+CLIENT = None
+_CLIENT_LOCK = Lock()
 # Local model requests never inherit HTTP(S)_PROXY or follow provider redirects.
 LOCAL_CLIENT = httpx.Client(http2=True, timeout=90, trust_env=False, follow_redirects=False)
 
@@ -42,10 +44,19 @@ def response_error(response):
         raise RuntimeError(f"Model provider returned HTTP {response.status_code}; no action executed.")
 
 
+def remote_client():
+    """Initialize proxy-aware transport only when a remote provider is requested."""
+    global CLIENT
+    with _CLIENT_LOCK:
+        if CLIENT is None:
+            CLIENT = httpx.Client(http2=True, timeout=25)
+        return CLIENT
+
+
 def post_json(url, key, body):
     if key is None:
         url = local_url(url, "Local model endpoint")
-    client = LOCAL_CLIENT if key is None else CLIENT
+    client = LOCAL_CLIENT if key is None else remote_client()
     headers = {"Authorization": f"Bearer {key}"} if key else {}
     attempts = 1 if key is None else 3
     for attempt in range(attempts):
