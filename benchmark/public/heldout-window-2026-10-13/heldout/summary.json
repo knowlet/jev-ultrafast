@@ -1,0 +1,646 @@
+{
+  "executed_runs": 6,
+  "successful_runs": 2,
+  "failed_runs": 4,
+  "expected_runs": 24,
+  "unexecuted_runs": 18,
+  "success_rate": 0.08333333333333333,
+  "complete": false,
+  "task_ms_all_runs": {
+    "n": 6,
+    "p50": 154135.10260400016,
+    "p95": 179609.79812500023,
+    "min": 26612.97758299952,
+    "max": 179675.5567500004,
+    "mean": 121434.76820133325
+  },
+  "task_ms_successful": {
+    "n": 2,
+    "p50": 30625.162499999533,
+    "p95": 34236.12892529955,
+    "min": 26612.97758299952,
+    "max": 34637.347416999546,
+    "mean": 30625.162499999533
+  },
+  "total_ms_all_runs": {
+    "n": 6,
+    "p50": 154600.36283300043,
+    "p95": 180194.94840624952,
+    "min": 27139.586082999813,
+    "max": 180209.07449999958,
+    "mean": 121978.74651366663
+  },
+  "executed_actions": 10,
+  "logical_decision_cycles": 16,
+  "decision_requests": 93,
+  "helper_requests": 4,
+  "budget_exhaustions": 3,
+  "policy": "noul_v1",
+  "all_task_success_rate": 0.08333333333333333,
+  "by_task": {
+    "complete_stamp": {
+      "executed_runs": 1,
+      "successful_runs": 1,
+      "failed_runs": 0,
+      "expected_runs": 3,
+      "unexecuted_runs": 2,
+      "success_rate": 0.3333333333333333,
+      "complete": false,
+      "task_ms_all_runs": {
+        "n": 1,
+        "p50": 34637.347416999546,
+        "p95": 34637.347416999546,
+        "min": 34637.347416999546,
+        "max": 34637.347416999546,
+        "mean": 34637.347416999546
+      },
+      "task_ms_successful": {
+        "n": 1,
+        "p50": 34637.347416999546,
+        "p95": 34637.347416999546,
+        "min": 34637.347416999546,
+        "max": 34637.347416999546,
+        "mean": 34637.347416999546
+      },
+      "total_ms_all_runs": {
+        "n": 1,
+        "p50": 35170.522708000135,
+        "p95": 35170.522708000135,
+        "min": 35170.522708000135,
+        "max": 35170.522708000135,
+        "mean": 35170.522708000135
+      },
+      "executed_actions": 1,
+      "logical_decision_cycles": 2,
+      "decision_requests": 9,
+      "helper_requests": 0,
+      "budget_exhaustions": 0
+    },
+    "complete_latch": {
+      "executed_runs": 0,
+      "successful_runs": 0,
+      "failed_runs": 0,
+      "expected_runs": 3,
+      "unexecuted_runs": 3,
+      "success_rate": 0.0,
+      "complete": false,
+      "task_ms_all_runs": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null,
+        "mean": null
+      },
+      "task_ms_successful": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null,
+        "mean": null
+      },
+      "total_ms_all_runs": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null,
+        "mean": null
+      },
+      "executed_actions": 0,
+      "logical_decision_cycles": 0,
+      "decision_requests": 0,
+      "helper_requests": 0,
+      "budget_exhaustions": 0
+    },
+    "form_card": {
+      "executed_runs": 1,
+      "successful_runs": 0,
+      "failed_runs": 1,
+      "expected_runs": 3,
+      "unexecuted_runs": 2,
+      "success_rate": 0.0,
+      "complete": false,
+      "task_ms_all_runs": {
+        "n": 1,
+        "p50": 131041.32083300009,
+        "p95": 131041.32083300009,
+        "min": 131041.32083300009,
+        "max": 131041.32083300009,
+        "mean": 131041.32083300009
+      },
+      "task_ms_successful": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null,
+        "mean": null
+      },
+      "total_ms_all_runs": {
+        "n": 1,
+        "p50": 131501.2622080003,
+        "p95": 131501.2622080003,
+        "min": 131501.2622080003,
+        "max": 131501.2622080003,
+        "mean": 131501.2622080003
+      },
+      "executed_actions": 1,
+      "logical_decision_cycles": 2,
+      "decision_requests": 13,
+      "helper_requests": 1,
+      "budget_exhaustions": 0
+    },
+    "form_bundle": {
+      "executed_runs": 1,
+      "successful_runs": 0,
+      "failed_runs": 1,
+      "expected_runs": 3,
+      "unexecuted_runs": 2,
+      "success_rate": 0.0,
+      "complete": false,
+      "task_ms_all_runs": {
+        "n": 1,
+        "p50": 179675.5567500004,
+        "p95": 179675.5567500004,
+        "min": 179675.5567500004,
+        "max": 179675.5567500004,
+        "mean": 179675.5567500004
+      },
+      "task_ms_successful": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null,
+        "mean": null
+      },
+      "total_ms_all_runs": {
+        "n": 1,
+        "p50": 180209.07449999958,
+        "p95": 180209.07449999958,
+        "min": 180209.07449999958,
+        "max": 180209.07449999958,
+        "mean": 180209.07449999958
+      },
+      "executed_actions": 3,
+      "logical_decision_cycles": 4,
+      "decision_requests": 24,
+      "helper_requests": 1,
+      "budget_exhaustions": 1
+    },
+    "repair_preview": {
+      "executed_runs": 1,
+      "successful_runs": 0,
+      "failed_runs": 1,
+      "expected_runs": 3,
+      "unexecuted_runs": 2,
+      "success_rate": 0.0,
+      "complete": false,
+      "task_ms_all_runs": {
+        "n": 1,
+        "p50": 177228.88437500023,
+        "p95": 177228.88437500023,
+        "min": 177228.88437500023,
+        "max": 177228.88437500023,
+        "mean": 177228.88437500023
+      },
+      "task_ms_successful": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null,
+        "mean": null
+      },
+      "total_ms_all_runs": {
+        "n": 1,
+        "p50": 177699.46345800054,
+        "p95": 177699.46345800054,
+        "min": 177699.46345800054,
+        "max": 177699.46345800054,
+        "mean": 177699.46345800054
+      },
+      "executed_actions": 2,
+      "logical_decision_cycles": 3,
+      "decision_requests": 17,
+      "helper_requests": 1,
+      "budget_exhaustions": 1
+    },
+    "repair_route": {
+      "executed_runs": 1,
+      "successful_runs": 0,
+      "failed_runs": 1,
+      "expected_runs": 3,
+      "unexecuted_runs": 2,
+      "success_rate": 0.0,
+      "complete": false,
+      "task_ms_all_runs": {
+        "n": 1,
+        "p50": 179412.52224999972,
+        "p95": 179412.52224999972,
+        "min": 179412.52224999972,
+        "max": 179412.52224999972,
+        "mean": 179412.52224999972
+      },
+      "task_ms_successful": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null,
+        "mean": null
+      },
+      "total_ms_all_runs": {
+        "n": 1,
+        "p50": 180152.57012499933,
+        "p95": 180152.57012499933,
+        "min": 180152.57012499933,
+        "max": 180152.57012499933,
+        "mean": 180152.57012499933
+      },
+      "executed_actions": 3,
+      "logical_decision_cycles": 4,
+      "decision_requests": 25,
+      "helper_requests": 1,
+      "budget_exhaustions": 1
+    },
+    "unknown_code": {
+      "executed_runs": 1,
+      "successful_runs": 1,
+      "failed_runs": 0,
+      "expected_runs": 3,
+      "unexecuted_runs": 2,
+      "success_rate": 0.3333333333333333,
+      "complete": false,
+      "task_ms_all_runs": {
+        "n": 1,
+        "p50": 26612.97758299952,
+        "p95": 26612.97758299952,
+        "min": 26612.97758299952,
+        "max": 26612.97758299952,
+        "mean": 26612.97758299952
+      },
+      "task_ms_successful": {
+        "n": 1,
+        "p50": 26612.97758299952,
+        "p95": 26612.97758299952,
+        "min": 26612.97758299952,
+        "max": 26612.97758299952,
+        "mean": 26612.97758299952
+      },
+      "total_ms_all_runs": {
+        "n": 1,
+        "p50": 27139.586082999813,
+        "p95": 27139.586082999813,
+        "min": 27139.586082999813,
+        "max": 27139.586082999813,
+        "mean": 27139.586082999813
+      },
+      "executed_actions": 0,
+      "logical_decision_cycles": 1,
+      "decision_requests": 5,
+      "helper_requests": 0,
+      "budget_exhaustions": 0
+    },
+    "unsupported_document": {
+      "executed_runs": 0,
+      "successful_runs": 0,
+      "failed_runs": 0,
+      "expected_runs": 3,
+      "unexecuted_runs": 3,
+      "success_rate": 0.0,
+      "complete": false,
+      "task_ms_all_runs": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null,
+        "mean": null
+      },
+      "task_ms_successful": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null,
+        "mean": null
+      },
+      "total_ms_all_runs": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null,
+        "mean": null
+      },
+      "executed_actions": 0,
+      "logical_decision_cycles": 0,
+      "decision_requests": 0,
+      "helper_requests": 0,
+      "budget_exhaustions": 0
+    }
+  },
+  "by_family": {
+    "unknown": {
+      "executed_runs": 1,
+      "successful_runs": 1,
+      "failed_runs": 0,
+      "expected_runs": 3,
+      "unexecuted_runs": 2,
+      "success_rate": 0.3333333333333333,
+      "complete": false,
+      "task_ms_all_runs": {
+        "n": 1,
+        "p50": 26612.97758299952,
+        "p95": 26612.97758299952,
+        "min": 26612.97758299952,
+        "max": 26612.97758299952,
+        "mean": 26612.97758299952
+      },
+      "task_ms_successful": {
+        "n": 1,
+        "p50": 26612.97758299952,
+        "p95": 26612.97758299952,
+        "min": 26612.97758299952,
+        "max": 26612.97758299952,
+        "mean": 26612.97758299952
+      },
+      "total_ms_all_runs": {
+        "n": 1,
+        "p50": 27139.586082999813,
+        "p95": 27139.586082999813,
+        "min": 27139.586082999813,
+        "max": 27139.586082999813,
+        "mean": 27139.586082999813
+      },
+      "executed_actions": 0,
+      "logical_decision_cycles": 1,
+      "decision_requests": 5,
+      "helper_requests": 0,
+      "budget_exhaustions": 0
+    },
+    "form": {
+      "executed_runs": 2,
+      "successful_runs": 0,
+      "failed_runs": 2,
+      "expected_runs": 6,
+      "unexecuted_runs": 4,
+      "success_rate": 0.0,
+      "complete": false,
+      "task_ms_all_runs": {
+        "n": 2,
+        "p50": 155358.43879150023,
+        "p95": 177243.84495415038,
+        "min": 131041.32083300009,
+        "max": 179675.5567500004,
+        "mean": 155358.43879150023
+      },
+      "task_ms_successful": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null,
+        "mean": null
+      },
+      "total_ms_all_runs": {
+        "n": 2,
+        "p50": 155855.16835399994,
+        "p95": 177773.6838853996,
+        "min": 131501.2622080003,
+        "max": 180209.07449999958,
+        "mean": 155855.16835399994
+      },
+      "executed_actions": 4,
+      "logical_decision_cycles": 6,
+      "decision_requests": 37,
+      "helper_requests": 2,
+      "budget_exhaustions": 1
+    },
+    "repair": {
+      "executed_runs": 2,
+      "successful_runs": 0,
+      "failed_runs": 2,
+      "expected_runs": 6,
+      "unexecuted_runs": 4,
+      "success_rate": 0.0,
+      "complete": false,
+      "task_ms_all_runs": {
+        "n": 2,
+        "p50": 178320.70331249997,
+        "p95": 179303.34035624974,
+        "min": 177228.88437500023,
+        "max": 179412.52224999972,
+        "mean": 178320.70331249997
+      },
+      "task_ms_successful": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null,
+        "mean": null
+      },
+      "total_ms_all_runs": {
+        "n": 2,
+        "p50": 178926.01679149992,
+        "p95": 180029.91479164938,
+        "min": 177699.46345800054,
+        "max": 180152.57012499933,
+        "mean": 178926.01679149992
+      },
+      "executed_actions": 5,
+      "logical_decision_cycles": 7,
+      "decision_requests": 42,
+      "helper_requests": 2,
+      "budget_exhaustions": 2
+    },
+    "unsupported": {
+      "executed_runs": 0,
+      "successful_runs": 0,
+      "failed_runs": 0,
+      "expected_runs": 3,
+      "unexecuted_runs": 3,
+      "success_rate": 0.0,
+      "complete": false,
+      "task_ms_all_runs": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null,
+        "mean": null
+      },
+      "task_ms_successful": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null,
+        "mean": null
+      },
+      "total_ms_all_runs": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null,
+        "mean": null
+      },
+      "executed_actions": 0,
+      "logical_decision_cycles": 0,
+      "decision_requests": 0,
+      "helper_requests": 0,
+      "budget_exhaustions": 0
+    },
+    "completion": {
+      "executed_runs": 1,
+      "successful_runs": 1,
+      "failed_runs": 0,
+      "expected_runs": 6,
+      "unexecuted_runs": 5,
+      "success_rate": 0.16666666666666666,
+      "complete": false,
+      "task_ms_all_runs": {
+        "n": 1,
+        "p50": 34637.347416999546,
+        "p95": 34637.347416999546,
+        "min": 34637.347416999546,
+        "max": 34637.347416999546,
+        "mean": 34637.347416999546
+      },
+      "task_ms_successful": {
+        "n": 1,
+        "p50": 34637.347416999546,
+        "p95": 34637.347416999546,
+        "min": 34637.347416999546,
+        "max": 34637.347416999546,
+        "mean": 34637.347416999546
+      },
+      "total_ms_all_runs": {
+        "n": 1,
+        "p50": 35170.522708000135,
+        "p95": 35170.522708000135,
+        "min": 35170.522708000135,
+        "max": 35170.522708000135,
+        "mean": 35170.522708000135
+      },
+      "executed_actions": 1,
+      "logical_decision_cycles": 2,
+      "decision_requests": 9,
+      "helper_requests": 0,
+      "budget_exhaustions": 0
+    }
+  },
+  "decision_wall_ms_all_attempts": {
+    "n": 16,
+    "p50": 43745.44529149989,
+    "p95": 76569.49965575017,
+    "min": 14459.814332999485,
+    "max": 90003.71150000047,
+    "mean": 44251.31348412492
+  },
+  "native_scoring_requests": 93,
+  "native_model_executions_confirmed": 89,
+  "native_scoring_client_wall_ms_all_attempts": {
+    "n": 93,
+    "p50": 6292.9792919994725,
+    "p95": 14941.008124800099,
+    "min": 2103.4654170007343,
+    "max": 18424.750457999835,
+    "mean": 7609.331029548415
+  },
+  "helper_wall_ms_all_attempts": {
+    "n": 4,
+    "p50": 4338.693499999863,
+    "p95": 8400.691781299654,
+    "min": 2651.0712079998484,
+    "max": 8823.841624999659,
+    "mean": 5038.074958249808
+  },
+  "helper_first_content_delta_ms": {
+    "n": 4,
+    "p50": 3457.6349999999998,
+    "p95": 5756.733249999999,
+    "min": 2054.056,
+    "max": 5923.456,
+    "mean": 3723.1955
+  },
+  "helper_reported_completion_tokens_per_full_request_second": {
+    "n": 4,
+    "p50": 3.242899243143407,
+    "p95": 4.841138280348143,
+    "min": 1.473281202505774,
+    "max": 4.903678166309271,
+    "mean": 3.215689463775465
+  },
+  "decision_input_tokens_per_adapter_scoring_second": {
+    "n": 89,
+    "p50": 140.00275571480975,
+    "p95": 165.67642570019106,
+    "min": 57.12465694445435,
+    "max": 182.37920556953364,
+    "mean": 125.65960762703519
+  },
+  "token_throughput_scope": "Helper rates require actual provider completion-token counts. Native choice rates are input scoring tokens/adapter latency, including preparation and transport; not generated tokens/s or pure GPU compute.",
+  "model_wall_ms_per_task": {
+    "n": 6,
+    "p50": 154071.30612399988,
+    "p95": 179490.15778099897,
+    "min": 26609.5963329999,
+    "max": 179566.16324999867,
+    "mean": 121362.21926316632
+  },
+  "browser_wall_ms_per_task": {
+    "n": 6,
+    "p50": 66.9572080000762,
+    "p95": 138.15203150011257,
+    "min": 3.11779099956766,
+    "max": 148.23558399984904,
+    "mean": 71.39750666662319
+  },
+  "chromium_startup_ms": {
+    "n": 6,
+    "p50": 225.96935399997164,
+    "p95": 398.75433324959886,
+    "min": 211.56491700003244,
+    "max": 445.56687499971304,
+    "mean": 263.1995346664553
+  },
+  "setup_ms": {
+    "n": 6,
+    "p50": 101.43372900029135,
+    "p95": 137.9094270000678,
+    "min": 63.71358300020802,
+    "max": 142.05137499993725,
+    "mean": 103.54408316682868
+  },
+  "verification_ms": {
+    "n": 6,
+    "p50": 1.4152710000416846,
+    "p95": 1.5113022498098871,
+    "min": 0.6439159997171373,
+    "max": 1.525374999800988,
+    "mean": 1.2319861666583165
+  },
+  "chromium_owned_main_peak_rss_bytes": {
+    "n": 6,
+    "p50": 98320384.0,
+    "p95": 99172352.0,
+    "min": 91095040,
+    "max": 99319808,
+    "mean": 96646485.33333333
+  },
+  "python_peak_rss_bytes_cumulative": 53772288,
+  "batch_error": {
+    "type": "WindowInterrupted",
+    "message": "Interrupted task saved; no further task"
+  },
+  "percentile_method": "linear interpolation at (n - 1) * q; descriptive small-sample p95",
+  "memory_scope": "Python cumulative own-process peak; each Chromium wait4 main PID, not process-tree total",
+  "decision_ttft_ms": null,
+  "decision_ttft_reason": "Nonstreaming native scoring has no emitted first-token event"
+}

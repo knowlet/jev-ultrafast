@@ -1,0 +1,903 @@
+{
+  "created_at_utc": "2026-10-13T17:18:28.342450+00:00",
+  "execution_requested": true,
+  "policy": "noul_v1",
+  "runtime": "original S1 Q4 GGUF, no prefix candidate",
+  "total_seconds": 900,
+  "work_seconds": 840,
+  "cleanup_reserved_seconds": 60,
+  "wall_scope": "Launcher main entry through startup, fixed suite and cleanup",
+  "expected_runs": 24,
+  "measured_physical_request_cap": 288,
+  "development_warmups": 2,
+  "warmup_scope": "Two fixed development observations, each choose plus text; separate from measured cap",
+  "ready_inferences": 0,
+  "scheduled_runs": [
+    {
+      "task_id": "repair_route",
+      "repetition": 0,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "unknown_code",
+      "repetition": 0,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "complete_stamp",
+      "repetition": 0,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "form_bundle",
+      "repetition": 0,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "form_card",
+      "repetition": 0,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "repair_preview",
+      "repetition": 0,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "complete_latch",
+      "repetition": 0,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "unsupported_document",
+      "repetition": 0,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "repair_route",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "unknown_code",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "complete_stamp",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "form_bundle",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "form_card",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "repair_preview",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "complete_latch",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "unsupported_document",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "repair_route",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "unknown_code",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "complete_stamp",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "form_bundle",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "form_card",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "repair_preview",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "complete_latch",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "unsupported_document",
+      "repetition": 2,
+      "policy": "noul_v1"
+    }
+  ],
+  "freeze": {
+    "schema": "jev-heldout-freeze-v1",
+    "frozen_at_utc": "2026-10-13T10:15:06.466020+00:00",
+    "model_runs_performed": 0,
+    "hash_algorithm": "sha256",
+    "task_seed": 20261013,
+    "files": {
+      "benchmark/heldout-plan.json": "e94986f9429889379b368c5adcbf4ab3fcfc00487879ee54be5133fb37f91196",
+      "benchmark/heldout_fixture.py": "6bdc92284b44b47ffb702e8f098275bdd9de4e15e1091e442b06e29b422fbf18",
+      "tests/test_heldout_fixture.py": "f858c92ad08c0d1122cb2e9e4b218cd86621fe511dd4cc37880e82e90a0b1732",
+      "docs/heldout-preregistration.md": "736575afa55414a741d814184a1c5e396b785a30ff26b9c05c8caf82be5164f6",
+      "benchmark/heldout-fixtures/complete_latch.html": "1e8e2988dc2d327b9c317565b54db06e924bf6c38ed1162577e396b15de229a6",
+      "benchmark/heldout-fixtures/complete_stamp.html": "408dc8a09892dee5d718923d02410f8076619939981dfde0ecba2166bc4ac3df",
+      "benchmark/heldout-fixtures/form_bundle.html": "dd35420b7e8006b927932528c0900517cf721a15809fc6e4c2f6eea4e15eec09",
+      "benchmark/heldout-fixtures/form_card.html": "4a48c901e16b63787251d3db75d94154f868a7c92c6be527dfde9fb7d88c2324",
+      "benchmark/heldout-fixtures/repair_preview.html": "2972b195aaa111b7d63addd8eb95fb5f7c397318577731c4fe56810f98f3b5fd",
+      "benchmark/heldout-fixtures/repair_route.html": "17afb918bff50d1c38dbf54065b14164954e536de44c0f27afd544a2a6cc003a",
+      "benchmark/heldout-fixtures/unknown_code.html": "a8342e07ed3dff163edbd94b19155d174b01611c869a2f819dc94978f8db7c89",
+      "benchmark/heldout-fixtures/unsupported_document.html": "59df4f9980a198effd326bd271f909758930a3c17823ba2d65709fb9eaad2ba7"
+    }
+  },
+  "source_sha256": {
+    "<JEV_LAB_ROOT>/benchmark/heldout-fixtures/complete_latch.html": "1e8e2988dc2d327b9c317565b54db06e924bf6c38ed1162577e396b15de229a6",
+    "<JEV_LAB_ROOT>/benchmark/heldout-fixtures/complete_stamp.html": "408dc8a09892dee5d718923d02410f8076619939981dfde0ecba2166bc4ac3df",
+    "<JEV_LAB_ROOT>/benchmark/heldout-fixtures/form_bundle.html": "dd35420b7e8006b927932528c0900517cf721a15809fc6e4c2f6eea4e15eec09",
+    "<JEV_LAB_ROOT>/benchmark/heldout-fixtures/form_card.html": "4a48c901e16b63787251d3db75d94154f868a7c92c6be527dfde9fb7d88c2324",
+    "<JEV_LAB_ROOT>/benchmark/heldout-fixtures/repair_preview.html": "2972b195aaa111b7d63addd8eb95fb5f7c397318577731c4fe56810f98f3b5fd",
+    "<JEV_LAB_ROOT>/benchmark/heldout-fixtures/repair_route.html": "17afb918bff50d1c38dbf54065b14164954e536de44c0f27afd544a2a6cc003a",
+    "<JEV_LAB_ROOT>/benchmark/heldout-fixtures/unknown_code.html": "a8342e07ed3dff163edbd94b19155d174b01611c869a2f819dc94978f8db7c89",
+    "<JEV_LAB_ROOT>/benchmark/heldout-fixtures/unsupported_document.html": "59df4f9980a198effd326bd271f909758930a3c17823ba2d65709fb9eaad2ba7",
+    "<JEV_LAB_ROOT>/benchmark/heldout-freeze.json": "ccbc97f8ecf5b29a3eac75bc5702695f72dcfbb2dc7ec33f217a1d34070c9041",
+    "<JEV_LAB_ROOT>/benchmark/heldout-plan.json": "e94986f9429889379b368c5adcbf4ab3fcfc00487879ee54be5133fb37f91196",
+    "<JEV_LAB_ROOT>/benchmark/heldout_fixture.py": "6bdc92284b44b47ffb702e8f098275bdd9de4e15e1091e442b06e29b422fbf18",
+    "<JEV_LAB_ROOT>/docs/heldout-preregistration.md": "736575afa55414a741d814184a1c5e396b785a30ff26b9c05c8caf82be5164f6",
+    "<JEV_LAB_ROOT>/jev_ultrafast/__init__.py": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+    "<JEV_LAB_ROOT>/jev_ultrafast/agent.py": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+    "<JEV_LAB_ROOT>/jev_ultrafast/browser.py": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+    "<JEV_LAB_ROOT>/jev_ultrafast/demo.py": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+    "<JEV_LAB_ROOT>/jev_ultrafast/isolated_browser.py": "c75c9bd09f09e8ff33b15d59522ea86c6deb5ca97be554d188d90525cae4973d",
+    "<JEV_LAB_ROOT>/jev_ultrafast/model.py": "c9c6c92cb14f353ee6f7f5747d10eb69f32b74c7f7928257fd1cbb7c37c1dc85",
+    "<JEV_LAB_ROOT>/jev_ultrafast/noul_policy.py": "22b75a550892445e8c423e1cc68b4842b96232fa8d8aeaf57faa0a9568589583",
+    "<JEV_LAB_ROOT>/jev_ultrafast/questions.py": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+    "<JEV_LAB_ROOT>/jev_ultrafast/snapshot.js": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+    "<JEV_LAB_ROOT>/scripts/local_benchmark.py": "1793a4c3fed4d07932b35f13596bd259eba07636cac658b972e2c682c24e916a",
+    "<JEV_LAB_ROOT>/scripts/local_s1_service.py": "15da5a3507df5d35db7f7975360cf4f74b2d14967201d12fb0f70be1069fc521",
+    "<JEV_LAB_ROOT>/scripts/run_heldout_benchmark.py": "a990d32f3a0fe71be014b8ed7a7c8e370591d889f6bae8949d203a3ebce6ed84",
+    "<JEV_LAB_ROOT>/scripts/run_heldout_window.py": "e45fc7745dedb34e8b9137f6797d7f446d331f55e6c99e622c0524d3025dc988",
+    "<JEV_LAB_ROOT>/tests/test_heldout_fixture.py": "f858c92ad08c0d1122cb2e9e4b218cd86621fe511dd4cc37880e82e90a0b1732",
+    "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/build/bin/llama-server": "9d64a6ca0f720e06384d2f2db6a627b464b60beb1a96b99899cf9cedc272c14e",
+    "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M/base_s1_config.json": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962",
+    "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M/chat_template.jinja": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4",
+    "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M/config.json": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0",
+    "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M/conversion-manifest.json": "3e07bde8e66308ce80a90e570b7eb04fe1c11f49d6b3ee3486574ee480aadd46",
+    "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M/processor_config.json": "6b938e76555b3e9946890770e1abcd442a4718f34041a58e8139dc8ad34545c9",
+    "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M/s1_config.json": "fcf22457f36ebf2b1a7675fbb6a83198cdc80b4111977efa5a39b73827bc0fcc",
+    "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M/tensor-inventory.json": "c7557a6f7dace16de31cbeb1815b7779063f6ee75102c30ba29dd3beb356fe27",
+    "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M/tokenizer.json": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f",
+    "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M/tokenizer_config.json": "794a39f8330ce05020774c70c091225bc5f031b9cacf41fc20e52eb54b4b52d8",
+    "<S1_PROJECT_ROOT>/artifacts/gguf-runtime/bin/s1-gguf": "d1e81415da71954981ebc44794c90393961a8e150559a18afdf948d60f8506be",
+    "<S1_PROJECT_ROOT>/scripts/gguf_adapter.py": "95e9343ead0656f13197c4371ab48b445826d48bd37f8cc9f03b94ae926351c1",
+    "<S1_PROJECT_ROOT>/src/s1/__init__.py": "c9c7ba0ea4cc81609fcf1f0ff2a853243a173a994257e0b9dd19be1a2e6dd52e",
+    "<S1_PROJECT_ROOT>/src/s1/api.py": "d9c5a043c05aa9cc3080303d28ee25aa2477f437b035612d25ff8c5adee286f5",
+    "<S1_PROJECT_ROOT>/src/s1/backends.py": "90c084fa5523dea71b49cf140ecfda1fd2165a9468368624bde6161e2dbf67bf",
+    "<S1_PROJECT_ROOT>/src/s1/benchmark.py": "4aef45f3d1607821d5041de5c972d6c586c61c4047373376bee028631739ed18",
+    "<S1_PROJECT_ROOT>/src/s1/checkpoint.py": "d26007c4e1cf691d041549fac4440dbdc2d77ee6b2376a62fc06bde632fa3ef6",
+    "<S1_PROJECT_ROOT>/src/s1/cli.py": "94615f41e71026c03d5ea3499fa20ac461ab805b12117597a4432c73cd54c53a",
+    "<S1_PROJECT_ROOT>/src/s1/contracts.py": "24c24c3ded9c35bfd263a4488bf88916a8960fa0b79283ccedbac232983f8a0a",
+    "<S1_PROJECT_ROOT>/src/s1/data_real.py": "33e4c09f7c4519edef2661c1332cbf0cf1c91df7bbebc313227157690533bb49",
+    "<S1_PROJECT_ROOT>/src/s1/data_synth.py": "d364c7a24e42c687d1c388868939d201bddfc9bcf81ccefbb336eba3b9ff7afa",
+    "<S1_PROJECT_ROOT>/src/s1/demo_page.py": "228d842a83d28917d735c04122b8b81f8269ee60227ab470bb54752d1720fd56",
+    "<S1_PROJECT_ROOT>/src/s1/demo_pages2.py": "b4c7433c4c5c96217e6555ad6db74e2a3b6a7ce8ab62b0be0fa0c39a13f8d605",
+    "<S1_PROJECT_ROOT>/src/s1/demo_pages3.py": "87f3ae5e1b6f5510a0f579fe339eeab906db5688ee044a3c25d1ed745c15a095",
+    "<S1_PROJECT_ROOT>/src/s1/demo_presets.py": "578c782c595fa49443440e42c2555ad09ec8dbea2151951f8b9314696250d151",
+    "<S1_PROJECT_ROOT>/src/s1/demo_race.py": "beed0f607adbf787ff9ace4d3305e36a42144273d4881591b5bcc85375b58368",
+    "<S1_PROJECT_ROOT>/src/s1/doom_sim.py": "b189a2e1501286c9143f795cd06cd8023c45f512ebd8f9c9bd1a152142546de2",
+    "<S1_PROJECT_ROOT>/src/s1/engine.py": "38c236e53c31cd9e2299967f0d61874760a2fa0fe752ff4dd1b11d4b18e42ec5",
+    "<S1_PROJECT_ROOT>/src/s1/errors.py": "e5ad1d9b7e700f07a704d74d3e4ade7156c7a9eaad304d3fe4296bad0dc8c997",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/__init__.py": "127cf68d534aa63995896f51d47ff5015c1d8fcb3563914752aa130f5ff25f51",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/adapters.py": "ee768ba0d226a8cbbc4623459f004b5fd9046b2d36ebf644bf074ef3d346c94d",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/artifacts.py": "dd72c4aeb68de32cf5a58db81eac259422c30d46a09dbbda081d109418df6ec5",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/baselines.py": "837a9ff84630ce90d1673459cb0f957535533ef3ce44ef8aab0abf8614e9b02d",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/calibration.py": "73937b8f82479c8c919c1568e9174498e83f5413ec2b260e2abbb832b758aca1",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/checkpoints.py": "54e0a9cb08689bd1e3b5c822baef62ef102acce1c6547c75850ecd7c7f55aaf0",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/clef.py": "7b55cb4d93e6e8119cc150676b599c775856d76e6eef394183675511053bba3d",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/comparison.py": "e16cd72c552b1aa2573b4da3d414dc2aa37863f537e6cbd3f9d05dc1652e850a",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/contracts.py": "afab553f4e1be747c16ee5997ba2cc9d88a2cff52b3acee8fc5643468a3b3d84",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/datasets.py": "4ad11baf145443441b4c726efc32c484681edcbe8621a657c9756ca98d3ecbf8",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/experiments.py": "b1d8932fb3a5273ca68da93ab2b5a336d56c230852af7e90051eb8aa320e9ddf",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/gates.py": "c6a70fa18c916c7871f51d5f1610239c43c86ec492437ad6b5be922a8c7d2087",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/gemma.py": "02cf34e6be837ee3858e3e10ae0fd22d308fd66696d203e788b6d5fd334b9b96",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/importing.py": "8363a6c57093a5c428b2603bd6f322ead992fd6d00daebe73403503f597724ad",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/integrity.py": "63e88ed20bced5fad86ca328c9f975f71cdcfea2de1db5f96cb9d9d58466b0d0",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/jev_omni.py": "b546b8431a70bd1d6206ba721ce2ec8cd7e18a43e70595dd5836d9a8b6d19d7b",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/loadgen.py": "1cd4ff55c5bfbc52191158668ba7e22c62028c5b8c82ff2294bb27283769b525",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/local_competitors.py": "2c0e81ac596c4de56fa53539b0a243d4a62f29260e7eb88778b76a14270379a0",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/metrics.py": "f15a8aed6c5b47ecd2b3d872a23df381f2ccd44b730df79870052d3e72065a5f",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/multimodal.py": "5528319227dda4d4b2652d0abbfc27634b4f97dc172affe228d5aac62fa6dd40",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/planning.py": "c285279055a0084a9f21de3b4efdc079be6dce130b5b02bb9154fe6c9abf4779",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/providers.py": "94890151fe3e9b02a4677af5cfc5aad3959ba6c31675c2dda689fb0c5a3fd025",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/registry.py": "1e996388fbd57f312b90446f429f0a104d6609be6d059085c640f4699c8130bc",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/reporting.py": "f523fe7ceb3d69621de1ac084ab7015756e5e10a1a7dec0126507e5362ded95a",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/reports.py": "1f910ca0296852e73c330db900621f34eccb73de708a1aa67ff19574ed546e09",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/responses.py": "e758340749f32e90d816fb8c7d35c845f6773a64de156eff0a5b86e9abcee3e9",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/runner.py": "0a340ed4465f5cf5ba38d6ea68c139bf0e0edb2bfc7658dbf32e5cc98a35cf0f",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/statistics.py": "0b9372e103f94d5c37d119e57e2f821c3e2c006ff97c222cacb8d372665b2e45",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/supervision.py": "588f088c911ac5c17712fa25bba44766ca28b3aba1e77221c5d51373e6fe6928",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/training_curve.py": "58cd81d637ca3cf6a8197678b605cd3167d95fef7675208764df05834df77609",
+    "<S1_PROJECT_ROOT>/src/s1/evaluation/workflow.py": "7fa074dad866657ac803930715715703f7ba4a849faa5307f146eb4ab60468c7",
+    "<S1_PROJECT_ROOT>/src/s1/metrics.py": "a75b865f707218ce8c2a18f89770397bf026e488e7f40b1dc528aa0b138143c8",
+    "<S1_PROJECT_ROOT>/src/s1/modal_common.py": "1eb852d6f6da87a22f659710b3bc93c26c46be41608426df076214368eff573c",
+    "<S1_PROJECT_ROOT>/src/s1/nvfp4.py": "e9dbd3076665234cd9e2699c628dbc42c0f5e77571e1af35443cd13e0a44f09f",
+    "<S1_PROJECT_ROOT>/src/s1/profiling.py": "4bfbcf641f81ee2ff3746ed89c136ba05b9ee87ebbec51ff70913feb0161f1c0",
+    "<S1_PROJECT_ROOT>/src/s1/quantization.py": "b6d39372fbe195cfe9fd2776138dd6e1fe6f1cd860b8be05783b7c984a61ace5",
+    "<S1_PROJECT_ROOT>/src/s1/resources.py": "47e05dfa91980ae1e7a0b3f725db5847fc81a1296c4f75d39477696b0ee2c33f",
+    "<S1_PROJECT_ROOT>/src/s1/runtime.py": "8f6103c600f73b64adc8186cf0c081475e69e891eb1d3d7e89c36c2e5417abda",
+    "<S1_PROJECT_ROOT>/src/s1/schema.py": "995cac528f3b5579dd7d9a12146fc69c335853e62e5063b1a5471645c12242d2",
+    "<S1_PROJECT_ROOT>/src/s1/training.py": "bcfe70c0c775af4f46bd61149858cebcfc642b8f9fd9e4349f9997c66fa42c65",
+    "<S1_PROJECT_ROOT>/src/s1/unified.py": "42ba5f076af164e0e54690a735e25a272bdd678279901946c2e5accefa385a6c",
+    "<S1_PROJECT_ROOT>/tools/gguf/s1_gguf.cpp": "8dd7f74a3ba38fda24d305c2bcbb7793d23eb38011ccb58f4f0230f677caa70e"
+  },
+  "model_manifest": {
+    "schema_version": 1,
+    "format": "gguf",
+    "status": "converted_and_structurally_verified",
+    "recorded_at": "2026-10-06T15:03:53.576747+00:00",
+    "source_model": "google/gemma-4-12B-it",
+    "source_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+    "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+    "source_checkpoint_files": [
+      {
+        "path": "config.json",
+        "size_bytes": 4953,
+        "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+      },
+      {
+        "path": "model.safetensors",
+        "size_bytes": 23919549408,
+        "sha256": "11144621122123135eb79c9cfd0466a2c51f230109124aefe401cdbec8c71a53"
+      }
+    ],
+    "source_s1_config_sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962",
+    "training_recipe_sha256": "2a708e5f4acfea4b688e88ba338aa62991608db875fef039ee6b4f33c3a74d73",
+    "source_hub_repository": "knowlet/Gemma-4-12B-Unified-System-One",
+    "source_hub_weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+    "llama_cpp_revision": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+    "conversion_record_source_revision": "1bc818be929c2545ebf65aa76ed6775c8fdc858c",
+    "recording_program_sha256": "cc71ebf5a27cc473c6e02439815de7c73eac52aef701ea6d446873328345f779",
+    "source_capture_manifest_sha256": "90e9fc465a6e372c81e1596e387fc7c62107730b41c4f3c1d5c7a8087a9bb51e",
+    "model_file": "s1-boolq-Q4_K_M.gguf",
+    "mmproj_file": "mmproj-s1-boolq-f16.gguf",
+    "quantization": {
+      "language_model": "Q4_K_M",
+      "multimodal_projector": "F16",
+      "direct_conversion": false
+    },
+    "source_tensor_count": 677,
+    "source_tensor_groups": {
+      "model.embed_audio": 1,
+      "model.embed_vision": 1,
+      "model.language_model": 666,
+      "model.vision_embedder": 9
+    },
+    "files": [
+      {
+        "path": "base_s1_config.json",
+        "size_bytes": 367,
+        "sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962"
+      },
+      {
+        "path": "chat_template.jinja",
+        "size_bytes": 18683,
+        "sha256": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4"
+      },
+      {
+        "path": "config.json",
+        "size_bytes": 4953,
+        "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+      },
+      {
+        "path": "mmproj-s1-boolq-f16.gguf",
+        "size_bytes": 122031744,
+        "sha256": "cffbff05efd290fef28d084ebcb653de7594f5e26bae0eabbedf30d6c782c1d1"
+      },
+      {
+        "path": "processor_config.json",
+        "size_bytes": 1382,
+        "sha256": "6b938e76555b3e9946890770e1abcd442a4718f34041a58e8139dc8ad34545c9"
+      },
+      {
+        "path": "s1-boolq-Q4_K_M.gguf",
+        "size_bytes": 7381383584,
+        "sha256": "daf56f5a5a0496e4e726e504858ef8dda1f6b02cd1bc7a68e9f1beb2bf178365"
+      },
+      {
+        "path": "tensor-inventory.json",
+        "size_bytes": 113174,
+        "sha256": "c7557a6f7dace16de31cbeb1815b7779063f6ee75102c30ba29dd3beb356fe27"
+      },
+      {
+        "path": "tokenizer.json",
+        "size_bytes": 32169626,
+        "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+      },
+      {
+        "path": "tokenizer_config.json",
+        "size_bytes": 3736,
+        "sha256": "794a39f8330ce05020774c70c091225bc5f031b9cacf41fc20e52eb54b4b52d8"
+      }
+    ],
+    "versions": {
+      "torch": "2.8.0",
+      "transformers": "5.17.0",
+      "numpy": "2.5.3",
+      "safetensors": "0.8.0"
+    },
+    "commands": [
+      "convert artifacts/release/checkpoint to F16 intermediate, then llama-quantize to Q4_K_M (direct_conversion=False); see quant-sweep plan; prefer F16 source over Q8 requantize",
+      "mmproj F16 -> mmproj-s1-boolq-f16.gguf"
+    ],
+    "scope": "Structural conversion receipt; runtime quality requires the separate full-population evaluation."
+  },
+  "calibration": {
+    "temperature": 3.232734824261939,
+    "source_model": "google/gemma-4-12B-it",
+    "source_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+    "prompt_version": 1,
+    "training_recipe_sha256": "2a708e5f4acfea4b688e88ba338aa62991608db875fef039ee6b4f33c3a74d73",
+    "calibration_dataset_sha256": "2da1a6798b1638a7ff4dd336bdf3b7eebad7a9641ec71c6932f778d309860826",
+    "runtime": "llama.cpp",
+    "runtime_format": "gguf",
+    "runtime_source_revision": "1bc818be929c2545ebf65aa76ed6775c8fdc858c",
+    "conversion_manifest_sha256": "3e07bde8e66308ce80a90e570b7eb04fe1c11f49d6b3ee3486574ee480aadd46",
+    "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+    "export_checkpoint_sha256": "c89a0bd51f50e745684fce64bea6af3922e13b4fc91ee6b0d88e7bb360f53fb2",
+    "gguf_calibration": {
+      "method": "s1.training.fit_temperature; 241 log-spaced temperatures [0.05,20] plus1",
+      "input": "raw legal selected logits after native softcap, before any temperature",
+      "case_count": 256,
+      "temperature": 3.232734824261939,
+      "n": 256,
+      "nll_before": 0.6939718113389175,
+      "nll_after": 0.3334026069754197,
+      "split": "calibration",
+      "runtime": "llama.cpp",
+      "manifest_sha256": "90e9fc465a6e372c81e1596e387fc7c62107730b41c4f3c1d5c7a8087a9bb51e",
+      "dataset_manifest_sha256": "e0ab28e3435a910c19abf3a9a7e58df8b5cff7a806b6c7f4f18021db1d3804dd",
+      "runtime_implementation_sha256": "5c366284bf052af44855177b71db48798df8f9c7e91e34d3eb1a96023c9446cc",
+      "source_temperature": 2.7830344470383452
+    }
+  },
+  "artifact_digest_scope": "Calibrated GGUF digest; original adapter verifies actual bytes before score",
+  "bookend_scope": "Frozen inputs, runtime/source, processor sidecars; no post-run GGUF SHA check",
+  "startup": {
+    "decision_http_identity_ms": 262.07720799993695,
+    "text_model_ready_ms": 4855.200375000095
+  },
+  "commands": {
+    "decision-service": [
+      "<JEV_LAB_ROOT>/.venv/bin/python",
+      "<JEV_LAB_ROOT>/scripts/local_s1_service.py",
+      "--s1-repo",
+      "<S1_PROJECT_ROOT>",
+      "--model",
+      "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M",
+      "--native-runner",
+      "<S1_PROJECT_ROOT>/artifacts/gguf-runtime/bin/s1-gguf",
+      "--port",
+      "50709",
+      "--ctx-size",
+      "4096",
+      "--batch-size",
+      "512",
+      "--threads",
+      "4",
+      "--cache-dir",
+      "<JEV_LAB_ROOT>/benchmark/results/q4-heldout-window-20261013/cache/s1",
+      "--raw-log",
+      "<JEV_LAB_ROOT>/benchmark/results/q4-heldout-window-20261013/native-decision-time.log",
+      "--request-log",
+      "<JEV_LAB_ROOT>/benchmark/results/q4-heldout-window-20261013/native-requests.jsonl"
+    ],
+    "text-service": [
+      "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/build/bin/llama-server",
+      "--model",
+      "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M/s1-boolq-Q4_K_M.gguf",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "50710",
+      "--alias",
+      "system-one-trained-Q4_K_M",
+      "--ctx-size",
+      "4096",
+      "--batch-size",
+      "512",
+      "--ubatch-size",
+      "512",
+      "--threads",
+      "4",
+      "--gpu-layers",
+      "99",
+      "--parallel",
+      "1",
+      "--seed",
+      "42",
+      "--temp",
+      "0",
+      "--reasoning",
+      "off",
+      "--no-cache-prompt",
+      "--no-webui",
+      "--offline"
+    ],
+    "runner": [
+      "<JEV_LAB_ROOT>/.venv/bin/python",
+      "<JEV_LAB_ROOT>/scripts/run_heldout_benchmark.py",
+      "--execute",
+      "--policy",
+      "noul_v1",
+      "--manifest",
+      "<JEV_LAB_ROOT>/benchmark/heldout-plan.json",
+      "--freeze",
+      "<JEV_LAB_ROOT>/benchmark/heldout-freeze.json",
+      "--output",
+      "<JEV_LAB_ROOT>/benchmark/results/q4-heldout-window-20261013/heldout",
+      "--model-metadata",
+      "<JEV_LAB_ROOT>/benchmark/results/q4-heldout-window-20261013/model-metadata.json",
+      "--chrome-path",
+      "<CHROMIUM_CACHE_ROOT>/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell",
+      "--decision-url",
+      "http://127.0.0.1:50709/decide",
+      "--text-base-url",
+      "http://127.0.0.1:50710/v1",
+      "--text-model",
+      "system-one-trained-Q4_K_M",
+      "--fixture-port",
+      "0"
+    ]
+  },
+  "decision_service_identity": {
+    "status": "starting",
+    "calibrated_inference_verified": false,
+    "completed_requests": 0,
+    "first_success_since_launch_ms": null,
+    "adapter_pid": 24239,
+    "adapter_exit_code": null,
+    "backend": "s1.gguf_adapter --predict",
+    "s1_repo": "<S1_PROJECT_ROOT>",
+    "model_package": "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M",
+    "native_runner": "<S1_PROJECT_ROOT>/artifacts/gguf-runtime/bin/s1-gguf",
+    "native_runner_sha256": "d1e81415da71954981ebc44794c90393961a8e150559a18afdf948d60f8506be",
+    "native_runner_scope": "original_s1_repository",
+    "reuse_prefix": false,
+    "bridge_source_sha256": "15da5a3507df5d35db7f7975360cf4f74b2d14967201d12fb0f70be1069fc521",
+    "adapter_source_sha256": "95e9343ead0656f13197c4371ab48b445826d48bd37f8cc9f03b94ae926351c1",
+    "model_file": "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M/s1-boolq-Q4_K_M.gguf",
+    "model_manifest_identity": {
+      "path": "s1-boolq-Q4_K_M.gguf",
+      "size_bytes": 7381383584,
+      "sha256": "daf56f5a5a0496e4e726e504858ef8dda1f6b02cd1bc7a68e9f1beb2bf178365"
+    },
+    "mmproj_manifest_identity": {
+      "path": "mmproj-s1-boolq-f16.gguf",
+      "size_bytes": 122031744,
+      "sha256": "cffbff05efd290fef28d084ebcb653de7594f5e26bae0eabbedf30d6c782c1d1"
+    },
+    "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+    "source_hub_repository": "knowlet/Gemma-4-12B-Unified-System-One",
+    "source_hub_weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+    "quantization": {
+      "language_model": "Q4_K_M",
+      "multimodal_projector": "F16",
+      "direct_conversion": false
+    },
+    "conversion_manifest_sha256": "3e07bde8e66308ce80a90e570b7eb04fe1c11f49d6b3ee3486574ee480aadd46",
+    "calibration_sha256": "fcf22457f36ebf2b1a7675fbb6a83198cdc80b4111977efa5a39b73827bc0fcc",
+    "temperature": 3.232734824261939,
+    "ctx_size": 4096,
+    "batch_size": 512,
+    "threads": 4,
+    "request_timeout_seconds": 90.0,
+    "raw_log": "<JEV_LAB_ROOT>/benchmark/results/q4-heldout-window-20261013/native-decision-time.log",
+    "native_raw_log": "<JEV_LAB_ROOT>/benchmark/results/q4-heldout-window-20261013/native-decision-time.log.native.log",
+    "request_log": "<JEV_LAB_ROOT>/benchmark/results/q4-heldout-window-20261013/native-requests.jsonl",
+    "rss_scope": "Separate /usr/bin/time -l reports for adapter and native model processes; bytes on macOS"
+  },
+  "failure": {
+    "type": "WorkExpired",
+    "message": "Fixed 840-second work window expired"
+  },
+  "work_interrupted": true,
+  "cleanup": {
+    "remaining_owned_groups": [],
+    "group_registry": {
+      "24238": {
+        "name": "decision-service",
+        "proof": "owned Popen(start_new_session=True)"
+      },
+      "24239": {
+        "name": "decision-adapter",
+        "proof": "fresh owned bridge stdout listening matches verified /healthz"
+      },
+      "24241": {
+        "name": "text-service",
+        "proof": "owned Popen(start_new_session=True)"
+      },
+      "24248": {
+        "name": "runner",
+        "proof": "owned Popen(start_new_session=True)"
+      }
+    },
+    "events": [
+      {
+        "event": "spawn",
+        "name": "decision-service",
+        "pid": 24238,
+        "owned_pgid": 24238,
+        "utc": "2026-10-13T17:18:28.373359+00:00",
+        "argv": [
+          "<JEV_LAB_ROOT>/.venv/bin/python",
+          "<JEV_LAB_ROOT>/scripts/local_s1_service.py",
+          "--s1-repo",
+          "<S1_PROJECT_ROOT>",
+          "--model",
+          "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M",
+          "--native-runner",
+          "<S1_PROJECT_ROOT>/artifacts/gguf-runtime/bin/s1-gguf",
+          "--port",
+          "50709",
+          "--ctx-size",
+          "4096",
+          "--batch-size",
+          "512",
+          "--threads",
+          "4",
+          "--cache-dir",
+          "<JEV_LAB_ROOT>/benchmark/results/q4-heldout-window-20261013/cache/s1",
+          "--raw-log",
+          "<JEV_LAB_ROOT>/benchmark/results/q4-heldout-window-20261013/native-decision-time.log",
+          "--request-log",
+          "<JEV_LAB_ROOT>/benchmark/results/q4-heldout-window-20261013/native-requests.jsonl"
+        ]
+      },
+      {
+        "event": "register",
+        "name": "decision-adapter",
+        "owned_pgid": 24239,
+        "proof": "fresh owned bridge stdout listening matches verified /healthz",
+        "utc": "2026-10-13T17:18:28.628026+00:00"
+      },
+      {
+        "event": "spawn",
+        "name": "text-service",
+        "pid": 24241,
+        "owned_pgid": 24241,
+        "utc": "2026-10-13T17:18:28.630425+00:00",
+        "argv": [
+          "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/build/bin/llama-server",
+          "--model",
+          "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M/s1-boolq-Q4_K_M.gguf",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "50710",
+          "--alias",
+          "system-one-trained-Q4_K_M",
+          "--ctx-size",
+          "4096",
+          "--batch-size",
+          "512",
+          "--ubatch-size",
+          "512",
+          "--threads",
+          "4",
+          "--gpu-layers",
+          "99",
+          "--parallel",
+          "1",
+          "--seed",
+          "42",
+          "--temp",
+          "0",
+          "--reasoning",
+          "off",
+          "--no-cache-prompt",
+          "--no-webui",
+          "--offline"
+        ]
+      },
+      {
+        "event": "spawn",
+        "name": "runner",
+        "pid": 24248,
+        "owned_pgid": 24248,
+        "utc": "2026-10-13T17:18:33.517472+00:00",
+        "argv": [
+          "<JEV_LAB_ROOT>/.venv/bin/python",
+          "<JEV_LAB_ROOT>/scripts/run_heldout_benchmark.py",
+          "--execute",
+          "--policy",
+          "noul_v1",
+          "--manifest",
+          "<JEV_LAB_ROOT>/benchmark/heldout-plan.json",
+          "--freeze",
+          "<JEV_LAB_ROOT>/benchmark/heldout-freeze.json",
+          "--output",
+          "<JEV_LAB_ROOT>/benchmark/results/q4-heldout-window-20261013/heldout",
+          "--model-metadata",
+          "<JEV_LAB_ROOT>/benchmark/results/q4-heldout-window-20261013/model-metadata.json",
+          "--chrome-path",
+          "<CHROMIUM_CACHE_ROOT>/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell",
+          "--decision-url",
+          "http://127.0.0.1:50709/decide",
+          "--text-base-url",
+          "http://127.0.0.1:50710/v1",
+          "--text-model",
+          "system-one-trained-Q4_K_M",
+          "--fixture-port",
+          "0"
+        ]
+      },
+      {
+        "event": "signal_pid",
+        "name": "runner",
+        "pid": 24248,
+        "signal": 2,
+        "utc": "2026-10-13T17:32:28.295689+00:00"
+      },
+      {
+        "event": "exit",
+        "name": "runner",
+        "pid": 24248,
+        "exit_code": 1,
+        "peak_rss_bytes": 99319808,
+        "user_seconds": 3.6298719999999998,
+        "system_seconds": 1.99187,
+        "scope": "macOS wait4 direct owned PID; peaks not additive",
+        "utc": "2026-10-13T17:32:28.792044+00:00"
+      },
+      {
+        "event": "signal_pid",
+        "name": "decision-service",
+        "pid": 24238,
+        "signal": 15,
+        "utc": "2026-10-13T17:32:28.792109+00:00"
+      },
+      {
+        "event": "signal_pid",
+        "name": "text-service",
+        "pid": 24241,
+        "signal": 15,
+        "utc": "2026-10-13T17:32:28.792138+00:00"
+      },
+      {
+        "event": "control_denied",
+        "owned_pgid": 24241,
+        "utc": "2026-10-13T17:32:29.017857+00:00"
+      },
+      {
+        "event": "exit",
+        "name": "text-service",
+        "pid": 24241,
+        "exit_code": 0,
+        "peak_rss_bytes": 8537014272,
+        "user_seconds": 5.250697,
+        "system_seconds": 3.853677,
+        "scope": "macOS wait4 direct owned PID; peaks not additive",
+        "utc": "2026-10-13T17:32:29.136055+00:00"
+      },
+      {
+        "event": "control_denied",
+        "owned_pgid": 24239,
+        "utc": "2026-10-13T17:32:39.734041+00:00"
+      },
+      {
+        "event": "control_denied",
+        "owned_pgid": 24238,
+        "utc": "2026-10-13T17:32:39.793827+00:00"
+      }
+    ],
+    "denied_groups": [
+      24238,
+      24239,
+      24241
+    ],
+    "chromium_scope": "Chromium inherits the owned runner session; Chrome PID is not treated as a PGID",
+    "profiles": "Runner owns fresh profiles; forced-stop remnants retained only in this fresh output"
+  },
+  "summary": {
+    "expected_runs": 24,
+    "executed_runs": 6,
+    "successful_runs": 2,
+    "unexecuted_runs": 18,
+    "complete": false
+  },
+  "sources_unchanged_after": true,
+  "owned_events": [
+    {
+      "event": "spawn",
+      "name": "decision-service",
+      "pid": 24238,
+      "owned_pgid": 24238,
+      "utc": "2026-10-13T17:18:28.373359+00:00",
+      "argv": [
+        "<JEV_LAB_ROOT>/.venv/bin/python",
+        "<JEV_LAB_ROOT>/scripts/local_s1_service.py",
+        "--s1-repo",
+        "<S1_PROJECT_ROOT>",
+        "--model",
+        "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M",
+        "--native-runner",
+        "<S1_PROJECT_ROOT>/artifacts/gguf-runtime/bin/s1-gguf",
+        "--port",
+        "50709",
+        "--ctx-size",
+        "4096",
+        "--batch-size",
+        "512",
+        "--threads",
+        "4",
+        "--cache-dir",
+        "<JEV_LAB_ROOT>/benchmark/results/q4-heldout-window-20261013/cache/s1",
+        "--raw-log",
+        "<JEV_LAB_ROOT>/benchmark/results/q4-heldout-window-20261013/native-decision-time.log",
+        "--request-log",
+        "<JEV_LAB_ROOT>/benchmark/results/q4-heldout-window-20261013/native-requests.jsonl"
+      ]
+    },
+    {
+      "event": "register",
+      "name": "decision-adapter",
+      "owned_pgid": 24239,
+      "proof": "fresh owned bridge stdout listening matches verified /healthz",
+      "utc": "2026-10-13T17:18:28.628026+00:00"
+    },
+    {
+      "event": "spawn",
+      "name": "text-service",
+      "pid": 24241,
+      "owned_pgid": 24241,
+      "utc": "2026-10-13T17:18:28.630425+00:00",
+      "argv": [
+        "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/build/bin/llama-server",
+        "--model",
+        "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M/s1-boolq-Q4_K_M.gguf",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "50710",
+        "--alias",
+        "system-one-trained-Q4_K_M",
+        "--ctx-size",
+        "4096",
+        "--batch-size",
+        "512",
+        "--ubatch-size",
+        "512",
+        "--threads",
+        "4",
+        "--gpu-layers",
+        "99",
+        "--parallel",
+        "1",
+        "--seed",
+        "42",
+        "--temp",
+        "0",
+        "--reasoning",
+        "off",
+        "--no-cache-prompt",
+        "--no-webui",
+        "--offline"
+      ]
+    },
+    {
+      "event": "spawn",
+      "name": "runner",
+      "pid": 24248,
+      "owned_pgid": 24248,
+      "utc": "2026-10-13T17:18:33.517472+00:00",
+      "argv": [
+        "<JEV_LAB_ROOT>/.venv/bin/python",
+        "<JEV_LAB_ROOT>/scripts/run_heldout_benchmark.py",
+        "--execute",
+        "--policy",
+        "noul_v1",
+        "--manifest",
+        "<JEV_LAB_ROOT>/benchmark/heldout-plan.json",
+        "--freeze",
+        "<JEV_LAB_ROOT>/benchmark/heldout-freeze.json",
+        "--output",
+        "<JEV_LAB_ROOT>/benchmark/results/q4-heldout-window-20261013/heldout",
+        "--model-metadata",
+        "<JEV_LAB_ROOT>/benchmark/results/q4-heldout-window-20261013/model-metadata.json",
+        "--chrome-path",
+        "<CHROMIUM_CACHE_ROOT>/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell",
+        "--decision-url",
+        "http://127.0.0.1:50709/decide",
+        "--text-base-url",
+        "http://127.0.0.1:50710/v1",
+        "--text-model",
+        "system-one-trained-Q4_K_M",
+        "--fixture-port",
+        "0"
+      ]
+    },
+    {
+      "event": "signal_pid",
+      "name": "runner",
+      "pid": 24248,
+      "signal": 2,
+      "utc": "2026-10-13T17:32:28.295689+00:00"
+    },
+    {
+      "event": "exit",
+      "name": "runner",
+      "pid": 24248,
+      "exit_code": 1,
+      "peak_rss_bytes": 99319808,
+      "user_seconds": 3.6298719999999998,
+      "system_seconds": 1.99187,
+      "scope": "macOS wait4 direct owned PID; peaks not additive",
+      "utc": "2026-10-13T17:32:28.792044+00:00"
+    },
+    {
+      "event": "signal_pid",
+      "name": "decision-service",
+      "pid": 24238,
+      "signal": 15,
+      "utc": "2026-10-13T17:32:28.792109+00:00"
+    },
+    {
+      "event": "signal_pid",
+      "name": "text-service",
+      "pid": 24241,
+      "signal": 15,
+      "utc": "2026-10-13T17:32:28.792138+00:00"
+    },
+    {
+      "event": "control_denied",
+      "owned_pgid": 24241,
+      "utc": "2026-10-13T17:32:29.017857+00:00"
+    },
+    {
+      "event": "exit",
+      "name": "text-service",
+      "pid": 24241,
+      "exit_code": 0,
+      "peak_rss_bytes": 8537014272,
+      "user_seconds": 5.250697,
+      "system_seconds": 3.853677,
+      "scope": "macOS wait4 direct owned PID; peaks not additive",
+      "utc": "2026-10-13T17:32:29.136055+00:00"
+    },
+    {
+      "event": "control_denied",
+      "owned_pgid": 24239,
+      "utc": "2026-10-13T17:32:39.734041+00:00"
+    },
+    {
+      "event": "control_denied",
+      "owned_pgid": 24238,
+      "utc": "2026-10-13T17:32:39.793827+00:00"
+    }
+  ],
+  "elapsed_seconds": 851.5639458750002
+}

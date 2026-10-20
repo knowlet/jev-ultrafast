@@ -1,0 +1,285 @@
+{
+  "created_at_utc": "2026-10-13T09:08:03.998965+00:00",
+  "repo_path": "<JEV_REPO>",
+  "repo_head": "1231850a0bf1a0c0341fe408ef1668dbbfdfac46",
+  "branch": "feat/local-system-one-benchmark",
+  "working_tree_status": "M .gitignore\n M jev_ultrafast/agent.py\n M jev_ultrafast/browser.py\n M jev_ultrafast/model.py\n?? benchmark/\n?? docs/local-s1-service.md\n?? jev_ultrafast/isolated_browser.py\n?? jev_ultrafast/static/local_click_fixture.html\n?? scripts/local_benchmark.py\n?? scripts/local_s1_service.py\n?? scripts/run_local_benchmark.py\n?? tests/test_isolated_browser.py\n?? tests/test_local_benchmark.py\n?? tests/test_local_provider.py",
+  "tracked_diff_sha256": "af3c3d398ca50fabf7b89c15722fe153b509223221cdfdc97300addc87b046f6",
+  "source_sha256": {
+    "jev_ultrafast/__init__.py": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+    "jev_ultrafast/agent.py": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+    "jev_ultrafast/browser.py": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+    "jev_ultrafast/demo.py": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+    "jev_ultrafast/isolated_browser.py": "7480c952c675cfd7e31e7fb5ab7dc36f213f468eae6b12c7be0d845d78b5c22c",
+    "jev_ultrafast/model.py": "87eca07d69ded7ecb86b6808044a54ac6d0813d3b2662ead47538e6e3ea9d0d7",
+    "jev_ultrafast/questions.py": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+    "jev_ultrafast/snapshot.js": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+    "jev_ultrafast/static/fixture.html": "e48e7d7b6225b215060692e0a28c3d0b59e465e4b94c1bc510d5f37ff0b8bfbe",
+    "jev_ultrafast/static/local_click_fixture.html": "4697cdf7554f0579e511ebaf9b5224ff70c662d2f3e051f678bb9a816a6fc6e9",
+    "scripts/local_benchmark.py": "09a2c66413bbf50dd1b2821a6f85cfdcd36720f4f99550a5e36db7d6c68441d0"
+  },
+  "model_metadata_path": "<JEV_REPO>/benchmark/results/q4-travel-smoke-20261013/model-metadata-cold.json",
+  "model_metadata_sha256": "0537226a93f582c7425b58e46b59088edb4f891df7b6ffde881dceae60641861",
+  "model": {
+    "artifact_path": "<S1_REPO>/artifacts/exports/s1-boolq-Q4_K_M/s1-boolq-Q4_K_M.gguf",
+    "version": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+    "quantization": "Q4_K_M",
+    "runtime": "llama.cpp Metal",
+    "s1_repo_head": "eef847f01b63c86f05df81027a959cf3c658d54b",
+    "jev_repo_head": "1231850a0bf1a0c0341fe408ef1668dbbfdfac46",
+    "llama_cpp_head": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+    "manifest": {
+      "schema_version": 1,
+      "format": "gguf",
+      "status": "converted_and_structurally_verified",
+      "recorded_at": "2026-10-06T15:03:53.576747+00:00",
+      "source_model": "google/gemma-4-12B-it",
+      "source_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+      "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+      "source_checkpoint_files": [
+        {
+          "path": "config.json",
+          "size_bytes": 4953,
+          "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+        },
+        {
+          "path": "model.safetensors",
+          "size_bytes": 23919549408,
+          "sha256": "11144621122123135eb79c9cfd0466a2c51f230109124aefe401cdbec8c71a53"
+        }
+      ],
+      "source_s1_config_sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962",
+      "training_recipe_sha256": "2a708e5f4acfea4b688e88ba338aa62991608db875fef039ee6b4f33c3a74d73",
+      "source_hub_repository": "knowlet/Gemma-4-12B-Unified-System-One",
+      "source_hub_weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+      "llama_cpp_revision": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+      "conversion_record_source_revision": "1bc818be929c2545ebf65aa76ed6775c8fdc858c",
+      "recording_program_sha256": "cc71ebf5a27cc473c6e02439815de7c73eac52aef701ea6d446873328345f779",
+      "source_capture_manifest_sha256": "90e9fc465a6e372c81e1596e387fc7c62107730b41c4f3c1d5c7a8087a9bb51e",
+      "model_file": "s1-boolq-Q4_K_M.gguf",
+      "mmproj_file": "mmproj-s1-boolq-f16.gguf",
+      "quantization": {
+        "language_model": "Q4_K_M",
+        "multimodal_projector": "F16",
+        "direct_conversion": false
+      },
+      "source_tensor_count": 677,
+      "source_tensor_groups": {
+        "model.embed_audio": 1,
+        "model.embed_vision": 1,
+        "model.language_model": 666,
+        "model.vision_embedder": 9
+      },
+      "files": [
+        {
+          "path": "base_s1_config.json",
+          "size_bytes": 367,
+          "sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962"
+        },
+        {
+          "path": "chat_template.jinja",
+          "size_bytes": 18683,
+          "sha256": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4"
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 4953,
+          "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+        },
+        {
+          "path": "mmproj-s1-boolq-f16.gguf",
+          "size_bytes": 122031744,
+          "sha256": "cffbff05efd290fef28d084ebcb653de7594f5e26bae0eabbedf30d6c782c1d1"
+        },
+        {
+          "path": "processor_config.json",
+          "size_bytes": 1382,
+          "sha256": "6b938e76555b3e9946890770e1abcd442a4718f34041a58e8139dc8ad34545c9"
+        },
+        {
+          "path": "s1-boolq-Q4_K_M.gguf",
+          "size_bytes": 7381383584,
+          "sha256": "daf56f5a5a0496e4e726e504858ef8dda1f6b02cd1bc7a68e9f1beb2bf178365"
+        },
+        {
+          "path": "tensor-inventory.json",
+          "size_bytes": 113174,
+          "sha256": "c7557a6f7dace16de31cbeb1815b7779063f6ee75102c30ba29dd3beb356fe27"
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 32169626,
+          "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 3736,
+          "sha256": "794a39f8330ce05020774c70c091225bc5f031b9cacf41fc20e52eb54b4b52d8"
+        }
+      ],
+      "versions": {
+        "torch": "2.8.0",
+        "transformers": "5.17.0",
+        "numpy": "2.5.3",
+        "safetensors": "0.8.0"
+      },
+      "commands": [
+        "convert artifacts/release/checkpoint to F16 intermediate, then llama-quantize to Q4_K_M (direct_conversion=False); see quant-sweep plan; prefer F16 source over Q8 requantize",
+        "mmproj F16 -> mmproj-s1-boolq-f16.gguf"
+      ],
+      "scope": "Structural conversion receipt; runtime quality requires the separate full-population evaluation."
+    },
+    "calibration": {
+      "temperature": 3.232734824261939,
+      "source_model": "google/gemma-4-12B-it",
+      "source_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+      "prompt_version": 1,
+      "training_recipe_sha256": "2a708e5f4acfea4b688e88ba338aa62991608db875fef039ee6b4f33c3a74d73",
+      "calibration_dataset_sha256": "2da1a6798b1638a7ff4dd336bdf3b7eebad7a9641ec71c6932f778d309860826",
+      "runtime": "llama.cpp",
+      "runtime_format": "gguf",
+      "runtime_source_revision": "1bc818be929c2545ebf65aa76ed6775c8fdc858c",
+      "conversion_manifest_sha256": "3e07bde8e66308ce80a90e570b7eb04fe1c11f49d6b3ee3486574ee480aadd46",
+      "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+      "export_checkpoint_sha256": "c89a0bd51f50e745684fce64bea6af3922e13b4fc91ee6b0d88e7bb360f53fb2",
+      "gguf_calibration": {
+        "method": "s1.training.fit_temperature; 241 log-spaced temperatures [0.05,20] plus1",
+        "input": "raw legal selected logits after native softcap, before any temperature",
+        "case_count": 256,
+        "temperature": 3.232734824261939,
+        "n": 256,
+        "nll_before": 0.6939718113389175,
+        "nll_after": 0.3334026069754197,
+        "split": "calibration",
+        "runtime": "llama.cpp",
+        "manifest_sha256": "90e9fc465a6e372c81e1596e387fc7c62107730b41c4f3c1d5c7a8087a9bb51e",
+        "dataset_manifest_sha256": "e0ab28e3435a910c19abf3a9a7e58df8b5cff7a806b6c7f4f18021db1d3804dd",
+        "runtime_implementation_sha256": "5c366284bf052af44855177b71db48798df8f9c7e91e34d3eb1a96023c9446cc",
+        "source_temperature": 2.7830344470383452
+      }
+    },
+    "hardware": {
+      "chip": "Apple M1 Max",
+      "unified_memory_bytes": 68719476736,
+      "source": "system_profiler inventory verified for this Mac on 2026-10-13"
+    },
+    "settings": {
+      "context": 4096,
+      "batch": 512,
+      "threads": 4,
+      "gpu_layers": 99,
+      "seed": 17,
+      "text_temperature": 0,
+      "text_max_tokens": 128,
+      "text_prompt_cache": false
+    },
+    "commands": [
+      {
+        "name": "decision-service",
+        "argv": [
+          "<JEV_REPO>/.venv/bin/python",
+          "<JEV_REPO>/scripts/local_s1_service.py",
+          "--s1-repo",
+          "<S1_REPO>",
+          "--model",
+          "<S1_REPO>/artifacts/exports/s1-boolq-Q4_K_M",
+          "--port",
+          "65304",
+          "--native-runner",
+          "<S1_REPO>/artifacts/gguf-runtime/bin/s1-gguf",
+          "--cache-dir",
+          "<JEV_REPO>/.local-cache/s1",
+          "--ctx-size",
+          "4096",
+          "--batch-size",
+          "512",
+          "--threads",
+          "4",
+          "--raw-log",
+          "<JEV_REPO>/benchmark/results/q4-travel-smoke-20261013/native-decision-time.log",
+          "--request-log",
+          "<JEV_REPO>/benchmark/results/q4-travel-smoke-20261013/native-requests.jsonl"
+        ],
+        "pid": 64573
+      }
+    ],
+    "startup": {
+      "decision_http_bind_ms": 230.00154201872647
+    },
+    "resource_usage": {},
+    "vm_stat_before": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                   477180.\nPages active:                                 489998.\nPages inactive:                               613861.\nPages speculative:                              5331.\nPages throttled:                                   0.\nPages wired down:                            1174388.\nPages purgeable:                                3892.\n\"Translation faults\":                     9007150236.\nPages copy-on-write:                       259919577.\nPages zero filled:                       20928633320.\nPages reactivated:                         154729220.\nPages purged:                               77964953.\nFile-backed pages:                            794325.\nAnonymous pages:                              314865.\nPages stored in compressor:                  1562018.\nPages occupied by compressor:                1378857.\nDecompressions:                           1045215213.\nCompressions:                             1910550985.\nPageins:                                  4059926977.\nPageouts:                                     641314.\nSwapins:                                     9836252.\nSwapouts:                                   22309612.\n"
+  },
+  "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "installed_distributions": {
+    "jev-ultrafast": "0.1.0",
+    "browser-harness": "0.1.13",
+    "httpx": "0.28.1",
+    "websockets": "15.0.1",
+    "mlx": null,
+    "mlx-lm": null
+  },
+  "configuration": {
+    "mode": "decision-only",
+    "output": "<JEV_REPO>/benchmark/results/q4-travel-smoke-20261013/cold",
+    "model_metadata": "<JEV_REPO>/benchmark/results/q4-travel-smoke-20261013/model-metadata-cold.json",
+    "fixture_url": "http://127.0.0.1:65306",
+    "fixture": "travel",
+    "chrome_path": "<CHROMIUM_CACHE>/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell",
+    "decision_repeats": 1,
+    "text_repeats": 0,
+    "repeats": 5,
+    "warmup": 0,
+    "task_timeout": 180.0,
+    "max_decisions": 12,
+    "decision_endpoint": "http://127.0.0.1:65304/decide",
+    "text_base_url": null,
+    "text_model": null,
+    "text_temperature": 0,
+    "text_seed": 17,
+    "text_max_tokens": 128,
+    "choice_sampling": "deterministic full offered-choice scoring; native runtime configuration in model metadata",
+    "microbenchmark_input": {
+      "page": {
+        "url": "http://127.0.0.1:8766/local_click_fixture.html",
+        "title": "Local completion fixture",
+        "text": "Local completion fixture\nCompletion not yet confirmed\nMark complete\nReset completion",
+        "actions": [
+          {
+            "id": "e1",
+            "kind": "click",
+            "label": "Mark complete",
+            "role": "button",
+            "value": "",
+            "node": 1
+          },
+          {
+            "id": "e2",
+            "kind": "click",
+            "label": "Reset completion",
+            "role": "button",
+            "value": "",
+            "node": 2
+          },
+          {
+            "id": "wait",
+            "kind": "wait",
+            "label": "Wait for the page to update"
+          }
+        ]
+      },
+      "goal": "Click the Mark complete button. Stop when Completion confirmed is visibly shown.",
+      "history": [],
+      "note": "Fixed synthetic observed state; this does not establish browser task success."
+    },
+    "boundaries": {
+      "setup_ms": "Create fresh owned tab, initial navigation, and first observation",
+      "task_ms": "After initial observation through stopped state or failure; models and browser included",
+      "verification_ms": "Fresh independent DOM evaluation after task",
+      "total_ms": "Per-run setup + task + verification + tab teardown; Chromium launch measured separately",
+      "browser_task_wall_ms": "Exclusive outer fresh/observe/act calls; nested CDP is not added twice",
+      "model_wall_ms": "Real logical model call wall time including validation and failures; retries internal to provider"
+    }
+  }
+}

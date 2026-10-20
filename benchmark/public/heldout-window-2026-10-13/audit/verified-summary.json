@@ -1,0 +1,1897 @@
+{
+  "schema": "jev-q4-heldout-window-independent-audit-v1",
+  "created_at_utc": "2026-10-13T17:50:36.734613+00:00",
+  "audit_type": "Read-only recomputation after parent-confirmed raw closure; derived files only",
+  "raw_files_sha256": {
+    "benchmark/results/q4-heldout-window-20261013/window-receipt.json": "a2f79286437bc77c573ba84b2d40a23cca6a0b9e875e6bafcfce5202b91d655d",
+    "benchmark/results/q4-heldout-window-20261013/model-metadata.json": "0c59d922d2085645fb1bb85b323b5aa2f1bcc44eeebac3322a49fcde6c3b8235",
+    "benchmark/results/q4-heldout-window-20261013/native-requests.jsonl": "c722247ed3ba2f13c18e24c0deb769eabdb295d1334d13043547bb895d8e5d0c",
+    "benchmark/results/q4-heldout-window-20261013/native-decision-time.log": "e16e2580b4114f11b9fdb161c709a28bdcc2bcf713205fe6e6c0bee085dafefa",
+    "benchmark/results/q4-heldout-window-20261013/native-decision-time.log.native.log": "dd6f44bbb845c650f66b396cd488cc43c718fd3540338f120f2e3d5950d06d88",
+    "benchmark/results/q4-heldout-window-20261013/decision-service.log": "6e0cab378bc2b6db3b84f79fe4108959737e649194b92e33a61f6d67b0d884d1",
+    "benchmark/results/q4-heldout-window-20261013/text-service.log": "53104aca6b8c958b15ee1edd7dc1069357201e62c763a455aef980391a24c2f2",
+    "benchmark/results/q4-heldout-window-20261013/runner.log": "45912b479b939f69d2ad0f572ed05b6bbe2f1402b0345480da7ca2ec96bebd3d",
+    "benchmark/results/q4-heldout-window-20261013/heldout/metadata.json": "9fa073a58e7fef61de7ceca549943367508a981ef356d5e29ba2069d1021b390",
+    "benchmark/results/q4-heldout-window-20261013/heldout/runs.jsonl": "557211ba6875004e2e6a32b6216e88a99054135ffb554a87ee960aef39a8b1c8",
+    "benchmark/results/q4-heldout-window-20261013/heldout/summary.json": "9a3229a7879329633ff981edd446db41b76296181b3fd0a6958e0c94bbca5593",
+    "benchmark/diagnostics/heldout-window-20261013/preexecution-receipt.json": "7ea3ca58ad83d81896ead5805e893d1002a1acd28040b4d84c2b8d4bd2496cf2",
+    "benchmark/diagnostics/heldout-window-20261013/memory-before.log": "c7b2b613faab051e50e8fc552cfa2386e596c9d74e858512a4480f6b3bdbb96f",
+    "benchmark/diagnostics/heldout-window-20261013/memory-after.log": "1eab94460e9b8ec84f22afad8abc5585d1d8701d5c6614d7b10fc45dc9fe4a18",
+    "benchmark/diagnostics/heldout-window-20261013/vm-before.log": "a768a01a0ea5c02c955aec874627fc218064c35bbf0aedda91be6b354596a30c",
+    "benchmark/diagnostics/heldout-window-20261013/vm-after.log": "2889ed8fc2152c05de21c39f3fcfed1edd76cbea478ffd6d268a7d8114e72e40",
+    "benchmark/diagnostics/heldout-window-20261013/post-package-integrity.json": "fa1773dad21e91f0abfbb3281ed5b3128c3cdc3da5e2f4c4d64afbe0d91fbb38",
+    "benchmark/source-freezes/heldout-window-2026-10-13/source-sha256.json": "47947c5f87e3bb9f3367344c6ef811585ab15e996a1c52e4b51385c20f305996",
+    "benchmark/source-freezes/heldout-window-2026-10-13/scripts/run_heldout_window.py": "e45fc7745dedb34e8b9137f6797d7f446d331f55e6c99e622c0524d3025dc988",
+    "benchmark/source-freezes/heldout-window-2026-10-13/scripts/run_heldout_benchmark.py": "a990d32f3a0fe71be014b8ed7a7c8e370591d889f6bae8949d203a3ebce6ed84"
+  },
+  "preexecution_receipt_sha256": "7ea3ca58ad83d81896ead5805e893d1002a1acd28040b4d84c2b8d4bd2496cf2",
+  "execution": {
+    "created_at_utc": "2026-10-13T17:18:28.342450+00:00",
+    "elapsed_seconds": 851.5639458750002,
+    "total_cap_seconds": 900,
+    "work_cap_seconds": 840,
+    "cleanup_reserved_seconds": 60,
+    "window_failure_raw": {
+      "type": "WorkExpired",
+      "message": "Fixed 840-second work window expired"
+    },
+    "work_interrupted": true,
+    "policy": "noul_v1",
+    "runtime": "original S1 Q4 GGUF, no prefix candidate",
+    "prefix_candidate_used": false,
+    "retry_count": 0,
+    "fixture_and_checker_thresholds_changed": false,
+    "model_training_or_calibration_fit": false
+  },
+  "counts": {
+    "expected_runs": 24,
+    "executed_runs": 6,
+    "successful_runs": 2,
+    "failed_runs": 4,
+    "unexecuted_runs": 18,
+    "complete": false,
+    "attained_success_per_scheduled_run": 0.08333333333333333,
+    "executed_prefix_conditional_success": 0.3333333333333333,
+    "genuine_done_successes": 1,
+    "genuine_blocked_successes": 1,
+    "logical_decisions_measured": 16,
+    "native_transport_attempts_measured": 93,
+    "native_client_confirmed_measured": 89,
+    "native_server_completed_measured": 93,
+    "native_cancelled_client_server_completed_tails": 4,
+    "native_warmup_requests": 10,
+    "native_warmup_client_confirmed": 10,
+    "native_server_completed_all": 103,
+    "native_client_confirmed_all": 99,
+    "text_helper_measured": 4,
+    "text_helper_warmup": 2,
+    "browser_actions_measured": 10,
+    "raw_budget_exhaustions": 3,
+    "all_native_request_cap": 306,
+    "measured_native_request_cap": 288,
+    "warmup_native_request_cap": 18
+  },
+  "reconciliation": {
+    "wire_order_request_objects_and_compact_sha256_all_match": true,
+    "confirmed_client_payload_and_bridge_99_exact_matches": true,
+    "server_status_ok_all_103": true,
+    "binary_choice_probabilities_finite_and_normalized": true,
+    "model_identity_temperature_runtime_all_103_match": true,
+    "fresh_dom_frozen_checker_6_exact_matches": true,
+    "model_browser_outer_wall_6_recomputed": true,
+    "schedule_prefix_6_exact_matches": true,
+    "raw_summary_distributions_recomputed_matches": true
+  },
+  "schedule": [
+    {
+      "task_id": "repair_route",
+      "repetition": 0,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "unknown_code",
+      "repetition": 0,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "complete_stamp",
+      "repetition": 0,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "form_bundle",
+      "repetition": 0,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "form_card",
+      "repetition": 0,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "repair_preview",
+      "repetition": 0,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "complete_latch",
+      "repetition": 0,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "unsupported_document",
+      "repetition": 0,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "repair_route",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "unknown_code",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "complete_stamp",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "form_bundle",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "form_card",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "repair_preview",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "complete_latch",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "unsupported_document",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "repair_route",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "unknown_code",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "complete_stamp",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "form_bundle",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "form_card",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "repair_preview",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "complete_latch",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "unsupported_document",
+      "repetition": 2,
+      "policy": "noul_v1"
+    }
+  ],
+  "unexecuted_schedule": [
+    {
+      "task_id": "complete_latch",
+      "repetition": 0,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "unsupported_document",
+      "repetition": 0,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "repair_route",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "unknown_code",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "complete_stamp",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "form_bundle",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "form_card",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "repair_preview",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "complete_latch",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "unsupported_document",
+      "repetition": 1,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "repair_route",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "unknown_code",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "complete_stamp",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "form_bundle",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "form_card",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "repair_preview",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "complete_latch",
+      "repetition": 2,
+      "policy": "noul_v1"
+    },
+    {
+      "task_id": "unsupported_document",
+      "repetition": 2,
+      "policy": "noul_v1"
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "repair_route",
+      "family": "repair",
+      "repetition": 0,
+      "successful_task": false,
+      "task_ms": 179412.52224999972,
+      "total_ms": 180152.57012499933,
+      "model_wall_ms": 179262.14137399982,
+      "browser_task_wall_ms": 148.23558399984904,
+      "decision_calls": 4,
+      "native_scoring_requests": 25,
+      "native_model_executions_confirmed": 24,
+      "text_calls": 1,
+      "executed_actions": 3,
+      "terminal_choice": "e6",
+      "error": {
+        "type": "BudgetTimeout",
+        "message": "Wall-clock budget of 180 seconds elapsed"
+      },
+      "budget_exhausted": true,
+      "chromium_resource_usage": {
+        "peak_rss_bytes": 99319808,
+        "user_seconds": 0.492399,
+        "system_seconds": 0.407305,
+        "exit_code": 143,
+        "scope": "macOS wait4 owned main PID; not simultaneous process-tree total"
+      },
+      "python_peak_rss_bytes_cumulative": 53772288,
+      "agent_status": "ready",
+      "classification": "missing_requested_checkbox_and_180_second_task_deadline",
+      "fresh_dom": {
+        "case_id": "repair_route",
+        "status": "Repaired route saved",
+        "field": "Sage",
+        "mode": "Expanded",
+        "checked": false,
+        "file_count": 0,
+        "primary_disabled": false,
+        "applied": {
+          "field": "Sage",
+          "mode": "Expanded",
+          "checked": false
+        },
+        "submissions": 1,
+        "semantic_interactions": 3
+      },
+      "checks": {
+        "correct_fixture": true,
+        "agent_terminal_status": false,
+        "explicit_model_terminal_choice": false,
+        "negative_no_browser_actions": true,
+        "no_execution_error": false,
+        "status": true,
+        "field": true,
+        "mode": true,
+        "checked": false,
+        "minimum_submissions": true,
+        "applied_settings_match": false
+      },
+      "independent_frozen_checker_match": true
+    },
+    {
+      "task_id": "unknown_code",
+      "family": "unknown",
+      "repetition": 0,
+      "successful_task": true,
+      "task_ms": 26612.97758299952,
+      "total_ms": 27139.586082999813,
+      "model_wall_ms": 26609.5963329999,
+      "browser_task_wall_ms": 3.11779099956766,
+      "decision_calls": 1,
+      "native_scoring_requests": 5,
+      "native_model_executions_confirmed": 5,
+      "text_calls": 0,
+      "executed_actions": 0,
+      "terminal_choice": "BLOCKED",
+      "error": null,
+      "budget_exhausted": false,
+      "chromium_resource_usage": {
+        "peak_rss_bytes": 91095040,
+        "user_seconds": 0.279894,
+        "system_seconds": 0.184582,
+        "exit_code": 143,
+        "scope": "macOS wait4 owned main PID; not simultaneous process-tree total"
+      },
+      "python_peak_rss_bytes_cumulative": 53772288,
+      "agent_status": "blocked",
+      "classification": "genuine_blocked_with_zero_actions_and_unchanged_fresh_dom",
+      "fresh_dom": {
+        "case_id": "unknown_code",
+        "status": "Review code required; no code supplied",
+        "field": "",
+        "mode": null,
+        "checked": null,
+        "file_count": 0,
+        "primary_disabled": false,
+        "applied": null,
+        "submissions": 0,
+        "semantic_interactions": 0
+      },
+      "checks": {
+        "correct_fixture": true,
+        "agent_terminal_status": true,
+        "explicit_model_terminal_choice": true,
+        "negative_no_browser_actions": true,
+        "no_execution_error": true,
+        "status": true,
+        "field": true,
+        "submissions": true,
+        "semantic_interactions": true,
+        "applied": true
+      },
+      "independent_frozen_checker_match": true
+    },
+    {
+      "task_id": "complete_stamp",
+      "family": "completion",
+      "repetition": 0,
+      "successful_task": true,
+      "task_ms": 34637.347416999546,
+      "total_ms": 35170.522708000135,
+      "model_wall_ms": 34592.8023739998,
+      "browser_task_wall_ms": 44.02987499906885,
+      "decision_calls": 2,
+      "native_scoring_requests": 9,
+      "native_model_executions_confirmed": 9,
+      "text_calls": 0,
+      "executed_actions": 1,
+      "terminal_choice": "DONE",
+      "error": null,
+      "budget_exhausted": false,
+      "chromium_resource_usage": {
+        "peak_rss_bytes": 94093312,
+        "user_seconds": 0.313785,
+        "system_seconds": 0.200517,
+        "exit_code": 143,
+        "scope": "macOS wait4 owned main PID; not simultaneous process-tree total"
+      },
+      "python_peak_rss_bytes_cumulative": 53772288,
+      "agent_status": "done",
+      "classification": "genuine_done_and_matching_fresh_dom",
+      "fresh_dom": {
+        "case_id": "complete_stamp",
+        "status": "Violet stamp present",
+        "field": null,
+        "mode": null,
+        "checked": null,
+        "file_count": 0,
+        "primary_disabled": true,
+        "applied": null,
+        "submissions": 1,
+        "semantic_interactions": 1
+      },
+      "checks": {
+        "correct_fixture": true,
+        "agent_terminal_status": true,
+        "explicit_model_terminal_choice": true,
+        "negative_no_browser_actions": true,
+        "no_execution_error": true,
+        "status": true,
+        "primary_disabled": true,
+        "minimum_submissions": true
+      },
+      "independent_frozen_checker_match": true
+    },
+    {
+      "task_id": "form_bundle",
+      "family": "form",
+      "repetition": 0,
+      "successful_task": false,
+      "task_ms": 179675.5567500004,
+      "total_ms": 180209.07449999958,
+      "model_wall_ms": 179566.16324999867,
+      "browser_task_wall_ms": 107.90137400090316,
+      "decision_calls": 4,
+      "native_scoring_requests": 24,
+      "native_model_executions_confirmed": 23,
+      "text_calls": 1,
+      "executed_actions": 3,
+      "terminal_choice": "e6",
+      "error": {
+        "type": "BudgetTimeout",
+        "message": "Wall-clock budget of 180 seconds elapsed"
+      },
+      "budget_exhausted": true,
+      "chromium_resource_usage": {
+        "peak_rss_bytes": 98729984,
+        "user_seconds": 0.521737,
+        "system_seconds": 0.269487,
+        "exit_code": 143,
+        "scope": "macOS wait4 owned main PID; not simultaneous process-tree total"
+      },
+      "python_peak_rss_bytes_cumulative": 53772288,
+      "agent_status": "ready",
+      "classification": "fresh_dom_complete_but_no_genuine_done_before_180_second_task_deadline",
+      "fresh_dom": {
+        "case_id": "form_bundle",
+        "status": "Bundle created",
+        "field": "Saffron",
+        "mode": "Reverse",
+        "checked": false,
+        "file_count": 0,
+        "primary_disabled": false,
+        "applied": {
+          "field": "Saffron",
+          "mode": "Reverse",
+          "checked": false
+        },
+        "submissions": 1,
+        "semantic_interactions": 3
+      },
+      "checks": {
+        "correct_fixture": true,
+        "agent_terminal_status": false,
+        "explicit_model_terminal_choice": false,
+        "negative_no_browser_actions": true,
+        "no_execution_error": false,
+        "status": true,
+        "field": true,
+        "mode": true,
+        "checked": true,
+        "minimum_submissions": true,
+        "applied_settings_match": true
+      },
+      "independent_frozen_checker_match": true
+    },
+    {
+      "task_id": "form_card",
+      "family": "form",
+      "repetition": 0,
+      "successful_task": false,
+      "task_ms": 131041.32083300009,
+      "total_ms": 131501.2622080003,
+      "model_wall_ms": 131004.69116600016,
+      "browser_task_wall_ms": 35.215874999266816,
+      "decision_calls": 2,
+      "native_scoring_requests": 13,
+      "native_model_executions_confirmed": 12,
+      "text_calls": 1,
+      "executed_actions": 1,
+      "terminal_choice": "e1",
+      "error": {
+        "type": "NoulPolicyError",
+        "message": ""
+      },
+      "budget_exhausted": false,
+      "chromium_resource_usage": {
+        "peak_rss_bytes": 98041856,
+        "user_seconds": 0.472566,
+        "system_seconds": 0.256002,
+        "exit_code": 143,
+        "scope": "macOS wait4 owned main PID; not simultaneous process-tree total"
+      },
+      "python_peak_rss_bytes_cumulative": 53772288,
+      "agent_status": "ready",
+      "classification": "shared_90_second_logical_policy_deadline_during_select_target",
+      "fresh_dom": {
+        "case_id": "form_card",
+        "status": "Changes not applied",
+        "field": "Juniper",
+        "mode": "Plain",
+        "checked": false,
+        "file_count": 0,
+        "primary_disabled": false,
+        "applied": null,
+        "submissions": 0,
+        "semantic_interactions": 1
+      },
+      "checks": {
+        "correct_fixture": true,
+        "agent_terminal_status": false,
+        "explicit_model_terminal_choice": false,
+        "negative_no_browser_actions": true,
+        "no_execution_error": false,
+        "status": false,
+        "field": true,
+        "mode": false,
+        "checked": false,
+        "minimum_submissions": false,
+        "applied_settings_match": false
+      },
+      "independent_frozen_checker_match": true
+    },
+    {
+      "task_id": "repair_preview",
+      "family": "repair",
+      "repetition": 0,
+      "successful_task": false,
+      "task_ms": 177228.88437500023,
+      "total_ms": 177699.46345800054,
+      "model_wall_ms": 177137.9210819996,
+      "browser_task_wall_ms": 89.88454100108356,
+      "decision_calls": 3,
+      "native_scoring_requests": 17,
+      "native_model_executions_confirmed": 16,
+      "text_calls": 1,
+      "executed_actions": 2,
+      "terminal_choice": "e4",
+      "error": {
+        "type": "BudgetTimeout",
+        "message": "External heldout window requested bounded abort; no further task"
+      },
+      "budget_exhausted": true,
+      "chromium_resource_usage": {
+        "peak_rss_bytes": 98598912,
+        "user_seconds": 0.559387,
+        "system_seconds": 0.311494,
+        "exit_code": 143,
+        "scope": "macOS wait4 owned main PID; not simultaneous process-tree total"
+      },
+      "python_peak_rss_bytes_cumulative": 53772288,
+      "agent_status": "ready",
+      "classification": "incomplete_dom_and_external_840_second_work_window_cutoff",
+      "fresh_dom": {
+        "case_id": "repair_preview",
+        "status": "Changes not applied",
+        "field": "Basil",
+        "mode": "Compact",
+        "checked": true,
+        "file_count": 0,
+        "primary_disabled": false,
+        "applied": {
+          "field": "Alder",
+          "mode": "Tall",
+          "checked": true
+        },
+        "submissions": 0,
+        "semantic_interactions": 2
+      },
+      "checks": {
+        "correct_fixture": true,
+        "agent_terminal_status": false,
+        "explicit_model_terminal_choice": false,
+        "negative_no_browser_actions": true,
+        "no_execution_error": false,
+        "status": false,
+        "field": true,
+        "mode": true,
+        "checked": false,
+        "minimum_submissions": false,
+        "applied_settings_match": false
+      },
+      "independent_frozen_checker_match": true
+    }
+  ],
+  "cancelled_server_completed_tails": [
+    {
+      "task_id": "repair_route",
+      "wire_decision_index_zero_based": 34,
+      "phase": "operation",
+      "operation": "DONE",
+      "head": "candidate",
+      "request_sha256": "cab65f3c6fd9de6e8b903344373b8bf5f669ee12e8b27435c9b0f075bbd69837",
+      "client_error": {
+        "type": "CancelledError",
+        "message": ""
+      },
+      "client_http_status": null,
+      "client_wall_ms": 4736.063874999672,
+      "client_model_execution_confirmed": false,
+      "server_status": "ok",
+      "server_adapter_latency_ms": 6890.092083000127,
+      "server_answer": {
+        "candidate": {
+          "id": "candidate",
+          "type": "noul",
+          "probabilities": {
+            "false": 0.2659140605199709,
+            "true": 0.7340859394800292
+          },
+          "confidence": 0.7340859394800292,
+          "margin": 0.4681718789600583,
+          "noul": 0.7340859394800292
+        }
+      },
+      "scope": "Server completed this physical score after client cancellation; no completed logical decision or browser action inferred"
+    },
+    {
+      "task_id": "form_bundle",
+      "wire_decision_index_zero_based": 72,
+      "phase": "operation",
+      "operation": "WAIT",
+      "head": "candidate",
+      "request_sha256": "5207fc70aa4023de9e26dfac89aa2a2c4bc7fbb099596f23a2c76583eb6cc524",
+      "client_error": {
+        "type": "CancelledError",
+        "message": ""
+      },
+      "client_http_status": null,
+      "client_wall_ms": 2103.4654170007343,
+      "client_model_execution_confirmed": false,
+      "server_status": "ok",
+      "server_adapter_latency_ms": 6743.431834000148,
+      "server_answer": {
+        "candidate": {
+          "id": "candidate",
+          "type": "noul",
+          "probabilities": {
+            "false": 0.8471440698736122,
+            "true": 0.15285593012638765
+          },
+          "confidence": 0.8471440698736122,
+          "margin": 0.6942881397472246,
+          "noul": 0.15285593012638765
+        }
+      },
+      "scope": "Server completed this physical score after client cancellation; no completed logical decision or browser action inferred"
+    },
+    {
+      "task_id": "form_card",
+      "wire_decision_index_zero_based": 85,
+      "phase": "target",
+      "operation": "SELECT",
+      "head": "select_target",
+      "request_sha256": "59cd971c0220a693de0fd7cb3cb89c89c5eb563e8d983510f4d65938e986d5e8",
+      "client_error": {
+        "type": "CancelledError",
+        "message": ""
+      },
+      "client_http_status": null,
+      "client_wall_ms": 9133.073291999608,
+      "client_model_execution_confirmed": false,
+      "server_status": "ok",
+      "server_adapter_latency_ms": 12922.250417000214,
+      "server_answer": {
+        "select_target": {
+          "id": "select_target",
+          "type": "choice",
+          "probabilities": {
+            "2:1": 0.9252875798768346,
+            "2:2": 0.07471242012316551
+          },
+          "confidence": 0.9252875798768346,
+          "margin": 0.8505751597536692,
+          "choice": "2:1"
+        }
+      },
+      "scope": "Server completed this physical score after client cancellation; no completed logical decision or browser action inferred"
+    },
+    {
+      "task_id": "repair_preview",
+      "wire_decision_index_zero_based": 102,
+      "phase": "operation",
+      "operation": "WAIT",
+      "head": "candidate",
+      "request_sha256": "a01a34ad00d054cd3a02e9791f4e2634bbfddaea1790548f2b7125de66c24668",
+      "client_error": {
+        "type": "CancelledError",
+        "message": ""
+      },
+      "client_http_status": null,
+      "client_wall_ms": 5497.987749999993,
+      "client_model_execution_confirmed": false,
+      "server_status": "ok",
+      "server_adapter_latency_ms": 15870.718084000146,
+      "server_answer": {
+        "candidate": {
+          "id": "candidate",
+          "type": "noul",
+          "probabilities": {
+            "false": 0.8721673522282617,
+            "true": 0.1278326477717384
+          },
+          "confidence": 0.8721673522282617,
+          "margin": 0.7443347044565233,
+          "noul": 0.1278326477717384
+        }
+      },
+      "scope": "Server completed this physical score after client cancellation; no completed logical decision or browser action inferred"
+    }
+  ],
+  "form_card_deadline_evidence": {
+    "raw_task_error": {
+      "type": "NoulPolicyError",
+      "message": ""
+    },
+    "raw_budget_exhausted": false,
+    "second_logical_wall_ms": 90003.71150000047,
+    "six_operation_client_wall_sum_ms": 80855.3958750017,
+    "target_client_wall_ms": 9133.073291999608,
+    "deadline_seconds": 90,
+    "task_cap_seconds": 180,
+    "scope": "Derived from shared deadline code and timings, not from the empty NoulPolicyError message; raw unchanged"
+  },
+  "warmups": [
+    {
+      "index": 0,
+      "phase": "development_warmup",
+      "ok": true,
+      "calls": [
+        {
+          "kind": "decision",
+          "wall_ms": 53065.87516599939,
+          "native_requests": 5
+        },
+        {
+          "kind": "text_helper",
+          "wall_ms": 4638.68199999979,
+          "native_requests": 0
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "phase": "development_warmup",
+      "ok": true,
+      "calls": [
+        {
+          "kind": "decision",
+          "wall_ms": 40844.09012499964,
+          "native_requests": 5
+        },
+        {
+          "kind": "text_helper",
+          "wall_ms": 4073.5347079998974,
+          "native_requests": 0
+        }
+      ]
+    }
+  ],
+  "model_identity": {
+    "backend": "s1.gguf_adapter --predict",
+    "native_runner_scope": "original_s1_repository",
+    "reuse_prefix": false,
+    "native_runner_sha256": "d1e81415da71954981ebc44794c90393961a8e150559a18afdf948d60f8506be",
+    "bridge_source_sha256": "15da5a3507df5d35db7f7975360cf4f74b2d14967201d12fb0f70be1069fc521",
+    "adapter_source_sha256": "95e9343ead0656f13197c4371ab48b445826d48bd37f8cc9f03b94ae926351c1",
+    "model_manifest_identity": {
+      "path": "s1-boolq-Q4_K_M.gguf",
+      "size_bytes": 7381383584,
+      "sha256": "daf56f5a5a0496e4e726e504858ef8dda1f6b02cd1bc7a68e9f1beb2bf178365"
+    },
+    "mmproj_manifest_identity": {
+      "path": "mmproj-s1-boolq-f16.gguf",
+      "size_bytes": 122031744,
+      "sha256": "cffbff05efd290fef28d084ebcb653de7594f5e26bae0eabbedf30d6c782c1d1"
+    },
+    "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+    "source_hub_repository": "knowlet/Gemma-4-12B-Unified-System-One",
+    "source_hub_weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+    "quantization": {
+      "language_model": "Q4_K_M",
+      "multimodal_projector": "F16",
+      "direct_conversion": false
+    },
+    "conversion_manifest_sha256": "3e07bde8e66308ce80a90e570b7eb04fe1c11f49d6b3ee3486574ee480aadd46",
+    "calibration_sha256": "fcf22457f36ebf2b1a7675fbb6a83198cdc80b4111977efa5a39b73827bc0fcc",
+    "temperature": 3.232734824261939,
+    "ctx_size": 4096,
+    "batch_size": 512,
+    "threads": 4,
+    "request_timeout_seconds": 90.0,
+    "llama_cpp_revision": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+    "controller_post_run_full_model_sha_performed": false,
+    "separate_post_window_full_package_sha_performed": true,
+    "child_rehashed_full_model": false
+  },
+  "post_window_package_integrity": {
+    "created_at_utc": "2026-10-13T17:38:12.142319+00:00",
+    "scope": "CPU-only post-window read-only package hashes; no new inference",
+    "all_match": true,
+    "files": [
+      {
+        "path": "base_s1_config.json",
+        "bytes": 367,
+        "sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962",
+        "matches_manifest": true
+      },
+      {
+        "path": "chat_template.jinja",
+        "bytes": 18683,
+        "sha256": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4",
+        "matches_manifest": true
+      },
+      {
+        "path": "config.json",
+        "bytes": 4953,
+        "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0",
+        "matches_manifest": true
+      },
+      {
+        "path": "mmproj-s1-boolq-f16.gguf",
+        "bytes": 122031744,
+        "sha256": "cffbff05efd290fef28d084ebcb653de7594f5e26bae0eabbedf30d6c782c1d1",
+        "matches_manifest": true
+      },
+      {
+        "path": "processor_config.json",
+        "bytes": 1382,
+        "sha256": "6b938e76555b3e9946890770e1abcd442a4718f34041a58e8139dc8ad34545c9",
+        "matches_manifest": true
+      },
+      {
+        "path": "s1-boolq-Q4_K_M.gguf",
+        "bytes": 7381383584,
+        "sha256": "daf56f5a5a0496e4e726e504858ef8dda1f6b02cd1bc7a68e9f1beb2bf178365",
+        "matches_manifest": true
+      },
+      {
+        "path": "tensor-inventory.json",
+        "bytes": 113174,
+        "sha256": "c7557a6f7dace16de31cbeb1815b7779063f6ee75102c30ba29dd3beb356fe27",
+        "matches_manifest": true
+      },
+      {
+        "path": "tokenizer.json",
+        "bytes": 32169626,
+        "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f",
+        "matches_manifest": true
+      },
+      {
+        "path": "tokenizer_config.json",
+        "bytes": 3736,
+        "sha256": "794a39f8330ce05020774c70c091225bc5f031b9cacf41fc20e52eb54b4b52d8",
+        "matches_manifest": true
+      }
+    ],
+    "elapsed_seconds": 5.613611124999807,
+    "receipt_sha256": "fa1773dad21e91f0abfbb3281ed5b3128c3cdc3da5e2f4c4d64afbe0d91fbb38",
+    "independent_child_manifest_comparison_all_9_match": true,
+    "scope_note": "Separate root CPU-only post-window streamed hashes; original controller did not perform this full weight hash, child did not stream model again"
+  },
+  "sources": {
+    "preserved_executed_source": {
+      "schema": "jev-executed-source-freeze-v1",
+      "preserved_at_utc": "2026-10-13T17:39:49.920864+00:00",
+      "source_files": {
+        "scripts/run_heldout_window.py": "e45fc7745dedb34e8b9137f6797d7f446d331f55e6c99e622c0524d3025dc988",
+        "scripts/run_heldout_benchmark.py": "a990d32f3a0fe71be014b8ed7a7c8e370591d889f6bae8949d203a3ebce6ed84"
+      },
+      "byte_identity_verified": true,
+      "execution_result_directory": "benchmark/results/q4-heldout-window-20261013",
+      "purpose": "Preserve exact executed source before future cleanup-reporting changes; raw results unchanged"
+    },
+    "preserved_executed_source_relative_root": "benchmark/source-freezes/heldout-window-2026-10-13",
+    "preserved_executed_source_sha_verified": true,
+    "jev_repo_head_recorded": "a59ac048c322b0fbe6734c5cd893e735825f1906",
+    "jev_branch_recorded": "feat/local-system-one-benchmark",
+    "tracked_diff_sha256": "17e56e956c1338144e3f427d2a27c571a8a65c469cd39f15884bfcef8daa7e75",
+    "manifest_sha256": "e94986f9429889379b368c5adcbf4ab3fcfc00487879ee54be5133fb37f91196",
+    "freeze_sha256": "ccbc97f8ecf5b29a3eac75bc5702695f72dcfbb2dc7ec33f217a1d34070c9041",
+    "frozen_input_file_checks": {
+      "benchmark/heldout-plan.json": {
+        "expected": "e94986f9429889379b368c5adcbf4ab3fcfc00487879ee54be5133fb37f91196",
+        "actual": "e94986f9429889379b368c5adcbf4ab3fcfc00487879ee54be5133fb37f91196"
+      },
+      "benchmark/heldout_fixture.py": {
+        "expected": "6bdc92284b44b47ffb702e8f098275bdd9de4e15e1091e442b06e29b422fbf18",
+        "actual": "6bdc92284b44b47ffb702e8f098275bdd9de4e15e1091e442b06e29b422fbf18"
+      },
+      "tests/test_heldout_fixture.py": {
+        "expected": "f858c92ad08c0d1122cb2e9e4b218cd86621fe511dd4cc37880e82e90a0b1732",
+        "actual": "f858c92ad08c0d1122cb2e9e4b218cd86621fe511dd4cc37880e82e90a0b1732"
+      },
+      "docs/heldout-preregistration.md": {
+        "expected": "736575afa55414a741d814184a1c5e396b785a30ff26b9c05c8caf82be5164f6",
+        "actual": "736575afa55414a741d814184a1c5e396b785a30ff26b9c05c8caf82be5164f6"
+      },
+      "benchmark/heldout-fixtures/complete_latch.html": {
+        "expected": "1e8e2988dc2d327b9c317565b54db06e924bf6c38ed1162577e396b15de229a6",
+        "actual": "1e8e2988dc2d327b9c317565b54db06e924bf6c38ed1162577e396b15de229a6"
+      },
+      "benchmark/heldout-fixtures/complete_stamp.html": {
+        "expected": "408dc8a09892dee5d718923d02410f8076619939981dfde0ecba2166bc4ac3df",
+        "actual": "408dc8a09892dee5d718923d02410f8076619939981dfde0ecba2166bc4ac3df"
+      },
+      "benchmark/heldout-fixtures/form_bundle.html": {
+        "expected": "dd35420b7e8006b927932528c0900517cf721a15809fc6e4c2f6eea4e15eec09",
+        "actual": "dd35420b7e8006b927932528c0900517cf721a15809fc6e4c2f6eea4e15eec09"
+      },
+      "benchmark/heldout-fixtures/form_card.html": {
+        "expected": "4a48c901e16b63787251d3db75d94154f868a7c92c6be527dfde9fb7d88c2324",
+        "actual": "4a48c901e16b63787251d3db75d94154f868a7c92c6be527dfde9fb7d88c2324"
+      },
+      "benchmark/heldout-fixtures/repair_preview.html": {
+        "expected": "2972b195aaa111b7d63addd8eb95fb5f7c397318577731c4fe56810f98f3b5fd",
+        "actual": "2972b195aaa111b7d63addd8eb95fb5f7c397318577731c4fe56810f98f3b5fd"
+      },
+      "benchmark/heldout-fixtures/repair_route.html": {
+        "expected": "17afb918bff50d1c38dbf54065b14164954e536de44c0f27afd544a2a6cc003a",
+        "actual": "17afb918bff50d1c38dbf54065b14164954e536de44c0f27afd544a2a6cc003a"
+      },
+      "benchmark/heldout-fixtures/unknown_code.html": {
+        "expected": "a8342e07ed3dff163edbd94b19155d174b01611c869a2f819dc94978f8db7c89",
+        "actual": "a8342e07ed3dff163edbd94b19155d174b01611c869a2f819dc94978f8db7c89"
+      },
+      "benchmark/heldout-fixtures/unsupported_document.html": {
+        "expected": "59df4f9980a198effd326bd271f909758930a3c17823ba2d65709fb9eaad2ba7",
+        "actual": "59df4f9980a198effd326bd271f909758930a3c17823ba2d65709fb9eaad2ba7"
+      }
+    },
+    "root_pre_post_bookend_file_count": 97,
+    "root_sources_unchanged_after": true,
+    "bookend_scope": "Frozen inputs, runtime/source, processor sidecars; no post-run GGUF SHA check",
+    "independent_small_source_rechecks": [
+      {
+        "path": "$LAB/benchmark/heldout-fixtures/complete_latch.html",
+        "expected": "1e8e2988dc2d327b9c317565b54db06e924bf6c38ed1162577e396b15de229a6",
+        "actual": "1e8e2988dc2d327b9c317565b54db06e924bf6c38ed1162577e396b15de229a6",
+        "matches": true
+      },
+      {
+        "path": "$LAB/benchmark/heldout-fixtures/complete_stamp.html",
+        "expected": "408dc8a09892dee5d718923d02410f8076619939981dfde0ecba2166bc4ac3df",
+        "actual": "408dc8a09892dee5d718923d02410f8076619939981dfde0ecba2166bc4ac3df",
+        "matches": true
+      },
+      {
+        "path": "$LAB/benchmark/heldout-fixtures/form_bundle.html",
+        "expected": "dd35420b7e8006b927932528c0900517cf721a15809fc6e4c2f6eea4e15eec09",
+        "actual": "dd35420b7e8006b927932528c0900517cf721a15809fc6e4c2f6eea4e15eec09",
+        "matches": true
+      },
+      {
+        "path": "$LAB/benchmark/heldout-fixtures/form_card.html",
+        "expected": "4a48c901e16b63787251d3db75d94154f868a7c92c6be527dfde9fb7d88c2324",
+        "actual": "4a48c901e16b63787251d3db75d94154f868a7c92c6be527dfde9fb7d88c2324",
+        "matches": true
+      },
+      {
+        "path": "$LAB/benchmark/heldout-fixtures/repair_preview.html",
+        "expected": "2972b195aaa111b7d63addd8eb95fb5f7c397318577731c4fe56810f98f3b5fd",
+        "actual": "2972b195aaa111b7d63addd8eb95fb5f7c397318577731c4fe56810f98f3b5fd",
+        "matches": true
+      },
+      {
+        "path": "$LAB/benchmark/heldout-fixtures/repair_route.html",
+        "expected": "17afb918bff50d1c38dbf54065b14164954e536de44c0f27afd544a2a6cc003a",
+        "actual": "17afb918bff50d1c38dbf54065b14164954e536de44c0f27afd544a2a6cc003a",
+        "matches": true
+      },
+      {
+        "path": "$LAB/benchmark/heldout-fixtures/unknown_code.html",
+        "expected": "a8342e07ed3dff163edbd94b19155d174b01611c869a2f819dc94978f8db7c89",
+        "actual": "a8342e07ed3dff163edbd94b19155d174b01611c869a2f819dc94978f8db7c89",
+        "matches": true
+      },
+      {
+        "path": "$LAB/benchmark/heldout-fixtures/unsupported_document.html",
+        "expected": "59df4f9980a198effd326bd271f909758930a3c17823ba2d65709fb9eaad2ba7",
+        "actual": "59df4f9980a198effd326bd271f909758930a3c17823ba2d65709fb9eaad2ba7",
+        "matches": true
+      },
+      {
+        "path": "$LAB/benchmark/heldout-freeze.json",
+        "expected": "ccbc97f8ecf5b29a3eac75bc5702695f72dcfbb2dc7ec33f217a1d34070c9041",
+        "actual": "ccbc97f8ecf5b29a3eac75bc5702695f72dcfbb2dc7ec33f217a1d34070c9041",
+        "matches": true
+      },
+      {
+        "path": "$LAB/benchmark/heldout-plan.json",
+        "expected": "e94986f9429889379b368c5adcbf4ab3fcfc00487879ee54be5133fb37f91196",
+        "actual": "e94986f9429889379b368c5adcbf4ab3fcfc00487879ee54be5133fb37f91196",
+        "matches": true
+      },
+      {
+        "path": "$LAB/benchmark/heldout_fixture.py",
+        "expected": "6bdc92284b44b47ffb702e8f098275bdd9de4e15e1091e442b06e29b422fbf18",
+        "actual": "6bdc92284b44b47ffb702e8f098275bdd9de4e15e1091e442b06e29b422fbf18",
+        "matches": true
+      },
+      {
+        "path": "$LAB/docs/heldout-preregistration.md",
+        "expected": "736575afa55414a741d814184a1c5e396b785a30ff26b9c05c8caf82be5164f6",
+        "actual": "736575afa55414a741d814184a1c5e396b785a30ff26b9c05c8caf82be5164f6",
+        "matches": true
+      },
+      {
+        "path": "$LAB/jev_ultrafast/__init__.py",
+        "expected": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+        "actual": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+        "matches": true
+      },
+      {
+        "path": "$LAB/jev_ultrafast/agent.py",
+        "expected": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+        "actual": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+        "matches": true
+      },
+      {
+        "path": "$LAB/jev_ultrafast/browser.py",
+        "expected": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+        "actual": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+        "matches": true
+      },
+      {
+        "path": "$LAB/jev_ultrafast/demo.py",
+        "expected": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+        "actual": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+        "matches": true
+      },
+      {
+        "path": "$LAB/jev_ultrafast/isolated_browser.py",
+        "expected": "c75c9bd09f09e8ff33b15d59522ea86c6deb5ca97be554d188d90525cae4973d",
+        "actual": "c75c9bd09f09e8ff33b15d59522ea86c6deb5ca97be554d188d90525cae4973d",
+        "matches": true
+      },
+      {
+        "path": "$LAB/jev_ultrafast/model.py",
+        "expected": "c9c6c92cb14f353ee6f7f5747d10eb69f32b74c7f7928257fd1cbb7c37c1dc85",
+        "actual": "c9c6c92cb14f353ee6f7f5747d10eb69f32b74c7f7928257fd1cbb7c37c1dc85",
+        "matches": true
+      },
+      {
+        "path": "$LAB/jev_ultrafast/noul_policy.py",
+        "expected": "22b75a550892445e8c423e1cc68b4842b96232fa8d8aeaf57faa0a9568589583",
+        "actual": "22b75a550892445e8c423e1cc68b4842b96232fa8d8aeaf57faa0a9568589583",
+        "matches": true
+      },
+      {
+        "path": "$LAB/jev_ultrafast/questions.py",
+        "expected": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+        "actual": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+        "matches": true
+      },
+      {
+        "path": "$LAB/jev_ultrafast/snapshot.js",
+        "expected": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+        "actual": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+        "matches": true
+      },
+      {
+        "path": "$LAB/scripts/local_benchmark.py",
+        "expected": "1793a4c3fed4d07932b35f13596bd259eba07636cac658b972e2c682c24e916a",
+        "actual": "1793a4c3fed4d07932b35f13596bd259eba07636cac658b972e2c682c24e916a",
+        "matches": true
+      },
+      {
+        "path": "$LAB/scripts/local_s1_service.py",
+        "expected": "15da5a3507df5d35db7f7975360cf4f74b2d14967201d12fb0f70be1069fc521",
+        "actual": "15da5a3507df5d35db7f7975360cf4f74b2d14967201d12fb0f70be1069fc521",
+        "matches": true
+      },
+      {
+        "path": "$LAB/scripts/run_heldout_benchmark.py",
+        "expected": "a990d32f3a0fe71be014b8ed7a7c8e370591d889f6bae8949d203a3ebce6ed84",
+        "actual": "a990d32f3a0fe71be014b8ed7a7c8e370591d889f6bae8949d203a3ebce6ed84",
+        "matches": true
+      },
+      {
+        "path": "$LAB/scripts/run_heldout_window.py",
+        "expected": "e45fc7745dedb34e8b9137f6797d7f446d331f55e6c99e622c0524d3025dc988",
+        "actual": "2622637a8dce6283183db92da910587550d0faa96266cccde0b9d069edf40655",
+        "matches": false
+      },
+      {
+        "path": "$LAB/tests/test_heldout_fixture.py",
+        "expected": "f858c92ad08c0d1122cb2e9e4b218cd86621fe511dd4cc37880e82e90a0b1732",
+        "actual": "f858c92ad08c0d1122cb2e9e4b218cd86621fe511dd4cc37880e82e90a0b1732",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/artifacts/export-tools/llama.cpp/build/bin/llama-server",
+        "expected": "9d64a6ca0f720e06384d2f2db6a627b464b60beb1a96b99899cf9cedc272c14e",
+        "actual": "9d64a6ca0f720e06384d2f2db6a627b464b60beb1a96b99899cf9cedc272c14e",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/artifacts/exports/s1-boolq-Q4_K_M/base_s1_config.json",
+        "expected": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962",
+        "actual": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/artifacts/exports/s1-boolq-Q4_K_M/chat_template.jinja",
+        "expected": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4",
+        "actual": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/artifacts/exports/s1-boolq-Q4_K_M/config.json",
+        "expected": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0",
+        "actual": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/artifacts/exports/s1-boolq-Q4_K_M/conversion-manifest.json",
+        "expected": "3e07bde8e66308ce80a90e570b7eb04fe1c11f49d6b3ee3486574ee480aadd46",
+        "actual": "3e07bde8e66308ce80a90e570b7eb04fe1c11f49d6b3ee3486574ee480aadd46",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/artifacts/exports/s1-boolq-Q4_K_M/processor_config.json",
+        "expected": "6b938e76555b3e9946890770e1abcd442a4718f34041a58e8139dc8ad34545c9",
+        "actual": "6b938e76555b3e9946890770e1abcd442a4718f34041a58e8139dc8ad34545c9",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/artifacts/exports/s1-boolq-Q4_K_M/s1_config.json",
+        "expected": "fcf22457f36ebf2b1a7675fbb6a83198cdc80b4111977efa5a39b73827bc0fcc",
+        "actual": "fcf22457f36ebf2b1a7675fbb6a83198cdc80b4111977efa5a39b73827bc0fcc",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/artifacts/exports/s1-boolq-Q4_K_M/tensor-inventory.json",
+        "expected": "c7557a6f7dace16de31cbeb1815b7779063f6ee75102c30ba29dd3beb356fe27",
+        "actual": "c7557a6f7dace16de31cbeb1815b7779063f6ee75102c30ba29dd3beb356fe27",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/artifacts/exports/s1-boolq-Q4_K_M/tokenizer_config.json",
+        "expected": "794a39f8330ce05020774c70c091225bc5f031b9cacf41fc20e52eb54b4b52d8",
+        "actual": "794a39f8330ce05020774c70c091225bc5f031b9cacf41fc20e52eb54b4b52d8",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/scripts/gguf_adapter.py",
+        "expected": "95e9343ead0656f13197c4371ab48b445826d48bd37f8cc9f03b94ae926351c1",
+        "actual": "95e9343ead0656f13197c4371ab48b445826d48bd37f8cc9f03b94ae926351c1",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/__init__.py",
+        "expected": "c9c7ba0ea4cc81609fcf1f0ff2a853243a173a994257e0b9dd19be1a2e6dd52e",
+        "actual": "c9c7ba0ea4cc81609fcf1f0ff2a853243a173a994257e0b9dd19be1a2e6dd52e",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/api.py",
+        "expected": "d9c5a043c05aa9cc3080303d28ee25aa2477f437b035612d25ff8c5adee286f5",
+        "actual": "d9c5a043c05aa9cc3080303d28ee25aa2477f437b035612d25ff8c5adee286f5",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/backends.py",
+        "expected": "90c084fa5523dea71b49cf140ecfda1fd2165a9468368624bde6161e2dbf67bf",
+        "actual": "90c084fa5523dea71b49cf140ecfda1fd2165a9468368624bde6161e2dbf67bf",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/benchmark.py",
+        "expected": "4aef45f3d1607821d5041de5c972d6c586c61c4047373376bee028631739ed18",
+        "actual": "4aef45f3d1607821d5041de5c972d6c586c61c4047373376bee028631739ed18",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/checkpoint.py",
+        "expected": "d26007c4e1cf691d041549fac4440dbdc2d77ee6b2376a62fc06bde632fa3ef6",
+        "actual": "d26007c4e1cf691d041549fac4440dbdc2d77ee6b2376a62fc06bde632fa3ef6",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/cli.py",
+        "expected": "94615f41e71026c03d5ea3499fa20ac461ab805b12117597a4432c73cd54c53a",
+        "actual": "94615f41e71026c03d5ea3499fa20ac461ab805b12117597a4432c73cd54c53a",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/contracts.py",
+        "expected": "24c24c3ded9c35bfd263a4488bf88916a8960fa0b79283ccedbac232983f8a0a",
+        "actual": "24c24c3ded9c35bfd263a4488bf88916a8960fa0b79283ccedbac232983f8a0a",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/data_real.py",
+        "expected": "33e4c09f7c4519edef2661c1332cbf0cf1c91df7bbebc313227157690533bb49",
+        "actual": "33e4c09f7c4519edef2661c1332cbf0cf1c91df7bbebc313227157690533bb49",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/data_synth.py",
+        "expected": "d364c7a24e42c687d1c388868939d201bddfc9bcf81ccefbb336eba3b9ff7afa",
+        "actual": "d364c7a24e42c687d1c388868939d201bddfc9bcf81ccefbb336eba3b9ff7afa",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/demo_page.py",
+        "expected": "228d842a83d28917d735c04122b8b81f8269ee60227ab470bb54752d1720fd56",
+        "actual": "228d842a83d28917d735c04122b8b81f8269ee60227ab470bb54752d1720fd56",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/demo_pages2.py",
+        "expected": "b4c7433c4c5c96217e6555ad6db74e2a3b6a7ce8ab62b0be0fa0c39a13f8d605",
+        "actual": "b4c7433c4c5c96217e6555ad6db74e2a3b6a7ce8ab62b0be0fa0c39a13f8d605",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/demo_pages3.py",
+        "expected": "87f3ae5e1b6f5510a0f579fe339eeab906db5688ee044a3c25d1ed745c15a095",
+        "actual": "87f3ae5e1b6f5510a0f579fe339eeab906db5688ee044a3c25d1ed745c15a095",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/demo_presets.py",
+        "expected": "578c782c595fa49443440e42c2555ad09ec8dbea2151951f8b9314696250d151",
+        "actual": "578c782c595fa49443440e42c2555ad09ec8dbea2151951f8b9314696250d151",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/demo_race.py",
+        "expected": "beed0f607adbf787ff9ace4d3305e36a42144273d4881591b5bcc85375b58368",
+        "actual": "beed0f607adbf787ff9ace4d3305e36a42144273d4881591b5bcc85375b58368",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/doom_sim.py",
+        "expected": "b189a2e1501286c9143f795cd06cd8023c45f512ebd8f9c9bd1a152142546de2",
+        "actual": "b189a2e1501286c9143f795cd06cd8023c45f512ebd8f9c9bd1a152142546de2",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/engine.py",
+        "expected": "38c236e53c31cd9e2299967f0d61874760a2fa0fe752ff4dd1b11d4b18e42ec5",
+        "actual": "38c236e53c31cd9e2299967f0d61874760a2fa0fe752ff4dd1b11d4b18e42ec5",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/errors.py",
+        "expected": "e5ad1d9b7e700f07a704d74d3e4ade7156c7a9eaad304d3fe4296bad0dc8c997",
+        "actual": "e5ad1d9b7e700f07a704d74d3e4ade7156c7a9eaad304d3fe4296bad0dc8c997",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/__init__.py",
+        "expected": "127cf68d534aa63995896f51d47ff5015c1d8fcb3563914752aa130f5ff25f51",
+        "actual": "127cf68d534aa63995896f51d47ff5015c1d8fcb3563914752aa130f5ff25f51",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/adapters.py",
+        "expected": "ee768ba0d226a8cbbc4623459f004b5fd9046b2d36ebf644bf074ef3d346c94d",
+        "actual": "ee768ba0d226a8cbbc4623459f004b5fd9046b2d36ebf644bf074ef3d346c94d",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/artifacts.py",
+        "expected": "dd72c4aeb68de32cf5a58db81eac259422c30d46a09dbbda081d109418df6ec5",
+        "actual": "dd72c4aeb68de32cf5a58db81eac259422c30d46a09dbbda081d109418df6ec5",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/baselines.py",
+        "expected": "837a9ff84630ce90d1673459cb0f957535533ef3ce44ef8aab0abf8614e9b02d",
+        "actual": "837a9ff84630ce90d1673459cb0f957535533ef3ce44ef8aab0abf8614e9b02d",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/calibration.py",
+        "expected": "73937b8f82479c8c919c1568e9174498e83f5413ec2b260e2abbb832b758aca1",
+        "actual": "73937b8f82479c8c919c1568e9174498e83f5413ec2b260e2abbb832b758aca1",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/checkpoints.py",
+        "expected": "54e0a9cb08689bd1e3b5c822baef62ef102acce1c6547c75850ecd7c7f55aaf0",
+        "actual": "54e0a9cb08689bd1e3b5c822baef62ef102acce1c6547c75850ecd7c7f55aaf0",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/clef.py",
+        "expected": "7b55cb4d93e6e8119cc150676b599c775856d76e6eef394183675511053bba3d",
+        "actual": "7b55cb4d93e6e8119cc150676b599c775856d76e6eef394183675511053bba3d",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/comparison.py",
+        "expected": "e16cd72c552b1aa2573b4da3d414dc2aa37863f537e6cbd3f9d05dc1652e850a",
+        "actual": "e16cd72c552b1aa2573b4da3d414dc2aa37863f537e6cbd3f9d05dc1652e850a",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/contracts.py",
+        "expected": "afab553f4e1be747c16ee5997ba2cc9d88a2cff52b3acee8fc5643468a3b3d84",
+        "actual": "afab553f4e1be747c16ee5997ba2cc9d88a2cff52b3acee8fc5643468a3b3d84",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/datasets.py",
+        "expected": "4ad11baf145443441b4c726efc32c484681edcbe8621a657c9756ca98d3ecbf8",
+        "actual": "4ad11baf145443441b4c726efc32c484681edcbe8621a657c9756ca98d3ecbf8",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/experiments.py",
+        "expected": "b1d8932fb3a5273ca68da93ab2b5a336d56c230852af7e90051eb8aa320e9ddf",
+        "actual": "b1d8932fb3a5273ca68da93ab2b5a336d56c230852af7e90051eb8aa320e9ddf",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/gates.py",
+        "expected": "c6a70fa18c916c7871f51d5f1610239c43c86ec492437ad6b5be922a8c7d2087",
+        "actual": "c6a70fa18c916c7871f51d5f1610239c43c86ec492437ad6b5be922a8c7d2087",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/gemma.py",
+        "expected": "02cf34e6be837ee3858e3e10ae0fd22d308fd66696d203e788b6d5fd334b9b96",
+        "actual": "02cf34e6be837ee3858e3e10ae0fd22d308fd66696d203e788b6d5fd334b9b96",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/importing.py",
+        "expected": "8363a6c57093a5c428b2603bd6f322ead992fd6d00daebe73403503f597724ad",
+        "actual": "8363a6c57093a5c428b2603bd6f322ead992fd6d00daebe73403503f597724ad",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/integrity.py",
+        "expected": "63e88ed20bced5fad86ca328c9f975f71cdcfea2de1db5f96cb9d9d58466b0d0",
+        "actual": "63e88ed20bced5fad86ca328c9f975f71cdcfea2de1db5f96cb9d9d58466b0d0",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/jev_omni.py",
+        "expected": "b546b8431a70bd1d6206ba721ce2ec8cd7e18a43e70595dd5836d9a8b6d19d7b",
+        "actual": "b546b8431a70bd1d6206ba721ce2ec8cd7e18a43e70595dd5836d9a8b6d19d7b",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/loadgen.py",
+        "expected": "1cd4ff55c5bfbc52191158668ba7e22c62028c5b8c82ff2294bb27283769b525",
+        "actual": "1cd4ff55c5bfbc52191158668ba7e22c62028c5b8c82ff2294bb27283769b525",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/local_competitors.py",
+        "expected": "2c0e81ac596c4de56fa53539b0a243d4a62f29260e7eb88778b76a14270379a0",
+        "actual": "2c0e81ac596c4de56fa53539b0a243d4a62f29260e7eb88778b76a14270379a0",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/metrics.py",
+        "expected": "f15a8aed6c5b47ecd2b3d872a23df381f2ccd44b730df79870052d3e72065a5f",
+        "actual": "f15a8aed6c5b47ecd2b3d872a23df381f2ccd44b730df79870052d3e72065a5f",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/multimodal.py",
+        "expected": "5528319227dda4d4b2652d0abbfc27634b4f97dc172affe228d5aac62fa6dd40",
+        "actual": "5528319227dda4d4b2652d0abbfc27634b4f97dc172affe228d5aac62fa6dd40",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/planning.py",
+        "expected": "c285279055a0084a9f21de3b4efdc079be6dce130b5b02bb9154fe6c9abf4779",
+        "actual": "c285279055a0084a9f21de3b4efdc079be6dce130b5b02bb9154fe6c9abf4779",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/providers.py",
+        "expected": "94890151fe3e9b02a4677af5cfc5aad3959ba6c31675c2dda689fb0c5a3fd025",
+        "actual": "94890151fe3e9b02a4677af5cfc5aad3959ba6c31675c2dda689fb0c5a3fd025",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/registry.py",
+        "expected": "1e996388fbd57f312b90446f429f0a104d6609be6d059085c640f4699c8130bc",
+        "actual": "1e996388fbd57f312b90446f429f0a104d6609be6d059085c640f4699c8130bc",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/reporting.py",
+        "expected": "f523fe7ceb3d69621de1ac084ab7015756e5e10a1a7dec0126507e5362ded95a",
+        "actual": "f523fe7ceb3d69621de1ac084ab7015756e5e10a1a7dec0126507e5362ded95a",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/reports.py",
+        "expected": "1f910ca0296852e73c330db900621f34eccb73de708a1aa67ff19574ed546e09",
+        "actual": "1f910ca0296852e73c330db900621f34eccb73de708a1aa67ff19574ed546e09",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/responses.py",
+        "expected": "e758340749f32e90d816fb8c7d35c845f6773a64de156eff0a5b86e9abcee3e9",
+        "actual": "e758340749f32e90d816fb8c7d35c845f6773a64de156eff0a5b86e9abcee3e9",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/runner.py",
+        "expected": "0a340ed4465f5cf5ba38d6ea68c139bf0e0edb2bfc7658dbf32e5cc98a35cf0f",
+        "actual": "0a340ed4465f5cf5ba38d6ea68c139bf0e0edb2bfc7658dbf32e5cc98a35cf0f",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/statistics.py",
+        "expected": "0b9372e103f94d5c37d119e57e2f821c3e2c006ff97c222cacb8d372665b2e45",
+        "actual": "0b9372e103f94d5c37d119e57e2f821c3e2c006ff97c222cacb8d372665b2e45",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/supervision.py",
+        "expected": "588f088c911ac5c17712fa25bba44766ca28b3aba1e77221c5d51373e6fe6928",
+        "actual": "588f088c911ac5c17712fa25bba44766ca28b3aba1e77221c5d51373e6fe6928",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/training_curve.py",
+        "expected": "58cd81d637ca3cf6a8197678b605cd3167d95fef7675208764df05834df77609",
+        "actual": "58cd81d637ca3cf6a8197678b605cd3167d95fef7675208764df05834df77609",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/evaluation/workflow.py",
+        "expected": "7fa074dad866657ac803930715715703f7ba4a849faa5307f146eb4ab60468c7",
+        "actual": "7fa074dad866657ac803930715715703f7ba4a849faa5307f146eb4ab60468c7",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/metrics.py",
+        "expected": "a75b865f707218ce8c2a18f89770397bf026e488e7f40b1dc528aa0b138143c8",
+        "actual": "a75b865f707218ce8c2a18f89770397bf026e488e7f40b1dc528aa0b138143c8",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/modal_common.py",
+        "expected": "1eb852d6f6da87a22f659710b3bc93c26c46be41608426df076214368eff573c",
+        "actual": "1eb852d6f6da87a22f659710b3bc93c26c46be41608426df076214368eff573c",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/nvfp4.py",
+        "expected": "e9dbd3076665234cd9e2699c628dbc42c0f5e77571e1af35443cd13e0a44f09f",
+        "actual": "e9dbd3076665234cd9e2699c628dbc42c0f5e77571e1af35443cd13e0a44f09f",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/profiling.py",
+        "expected": "4bfbcf641f81ee2ff3746ed89c136ba05b9ee87ebbec51ff70913feb0161f1c0",
+        "actual": "4bfbcf641f81ee2ff3746ed89c136ba05b9ee87ebbec51ff70913feb0161f1c0",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/quantization.py",
+        "expected": "b6d39372fbe195cfe9fd2776138dd6e1fe6f1cd860b8be05783b7c984a61ace5",
+        "actual": "b6d39372fbe195cfe9fd2776138dd6e1fe6f1cd860b8be05783b7c984a61ace5",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/resources.py",
+        "expected": "47e05dfa91980ae1e7a0b3f725db5847fc81a1296c4f75d39477696b0ee2c33f",
+        "actual": "47e05dfa91980ae1e7a0b3f725db5847fc81a1296c4f75d39477696b0ee2c33f",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/runtime.py",
+        "expected": "8f6103c600f73b64adc8186cf0c081475e69e891eb1d3d7e89c36c2e5417abda",
+        "actual": "8f6103c600f73b64adc8186cf0c081475e69e891eb1d3d7e89c36c2e5417abda",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/schema.py",
+        "expected": "995cac528f3b5579dd7d9a12146fc69c335853e62e5063b1a5471645c12242d2",
+        "actual": "995cac528f3b5579dd7d9a12146fc69c335853e62e5063b1a5471645c12242d2",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/training.py",
+        "expected": "bcfe70c0c775af4f46bd61149858cebcfc642b8f9fd9e4349f9997c66fa42c65",
+        "actual": "bcfe70c0c775af4f46bd61149858cebcfc642b8f9fd9e4349f9997c66fa42c65",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/src/s1/unified.py",
+        "expected": "42ba5f076af164e0e54690a735e25a272bdd678279901946c2e5accefa385a6c",
+        "actual": "42ba5f076af164e0e54690a735e25a272bdd678279901946c2e5accefa385a6c",
+        "matches": true
+      },
+      {
+        "path": "$S1_REPO/tools/gguf/s1_gguf.cpp",
+        "expected": "8dd7f74a3ba38fda24d305c2bcbb7793d23eb38011ccb58f4f0230f677caa70e",
+        "actual": "8dd7f74a3ba38fda24d305c2bcbb7793d23eb38011ccb58f4f0230f677caa70e",
+        "matches": true
+      }
+    ],
+    "post_closure_current_worktree_mismatches": [
+      {
+        "path": "$LAB/scripts/run_heldout_window.py",
+        "expected": "e45fc7745dedb34e8b9137f6797d7f446d331f55e6c99e622c0524d3025dc988",
+        "actual": "2622637a8dce6283183db92da910587550d0faa96266cccde0b9d069edf40655",
+        "matches": false
+      }
+    ],
+    "independent_large_source_rehash_skipped": [
+      {
+        "path": "$S1_REPO/artifacts/exports/s1-boolq-Q4_K_M/tokenizer.json",
+        "recorded_sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f",
+        "size_bytes": 32169626,
+        "reason": "No independent large binary/tokenizer rehash in this lightweight audit; root recorded pre/post source digest bookends"
+      },
+      {
+        "path": "$S1_REPO/artifacts/gguf-runtime/bin/s1-gguf",
+        "recorded_sha256": "d1e81415da71954981ebc44794c90393961a8e150559a18afdf948d60f8506be",
+        "size_bytes": 1245928,
+        "reason": "No independent large binary/tokenizer rehash in this lightweight audit; root recorded pre/post source digest bookends"
+      }
+    ],
+    "preexecution_source_sha256": {
+      "scripts/run_heldout_window.py": "e45fc7745dedb34e8b9137f6797d7f446d331f55e6c99e622c0524d3025dc988",
+      "scripts/run_heldout_benchmark.py": "a990d32f3a0fe71be014b8ed7a7c8e370591d889f6bae8949d203a3ebce6ed84",
+      "jev_ultrafast/noul_policy.py": "22b75a550892445e8c423e1cc68b4842b96232fa8d8aeaf57faa0a9568589583",
+      "scripts/local_benchmark.py": "1793a4c3fed4d07932b35f13596bd259eba07636cac658b972e2c682c24e916a"
+    }
+  },
+  "environment": {
+    "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "installed_distributions": {
+      "httpx": "0.28.1",
+      "websockets": "15.0.1",
+      "mlx": null,
+      "mlx-lm": null
+    },
+    "gpu_name": "Apple M1 Max",
+    "gpu_source": "native-decision-time.log.native.log ggml_metal_device_init",
+    "total_memory_bytes": 68719476736,
+    "chromium_versions": [
+      {
+        "jsVersion": "15.3.76.4",
+        "product": "HeadlessChrome/153.0.8010.12",
+        "protocolVersion": "1.3",
+        "revision": "@971a7443b0c9b0a9b2860529b33331b76077ec62",
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36"
+      }
+    ],
+    "settings": {
+      "context": 4096,
+      "batch": 512,
+      "threads": 4,
+      "gpu_layers": 99,
+      "seed": 42,
+      "text_temperature": 0,
+      "text_max_tokens": 128
+    },
+    "fresh_owned_profiles_each_run": true,
+    "exact_loopback_fixture_origin": "http://127.0.0.1:50760"
+  },
+  "startup": {
+    "decision_http_identity_ms": 262.07720799993695,
+    "text_model_ready_ms": 4855.200375000095,
+    "decision_http_identity_scope": "HTTP identity only; starting and not proof calibrated model inference ready",
+    "first_native_request_client_wall_ms": 22236.80683299972,
+    "first_native_request_adapter_latency_ms": 11918.847500000084,
+    "scope": "Process-local first request includes startup/preparation; no controlled OS file cache cold start"
+  },
+  "measured_distributions": {
+    "task_ms_all_runs": {
+      "n": 6,
+      "p50": 154135.10260400016,
+      "p95": 179609.79812500023,
+      "min": 26612.97758299952,
+      "max": 179675.5567500004,
+      "mean": 121434.76820133325
+    },
+    "task_ms_successful": {
+      "n": 2,
+      "p50": 30625.162499999533,
+      "p95": 34236.12892529955,
+      "min": 26612.97758299952,
+      "max": 34637.347416999546,
+      "mean": 30625.162499999533
+    },
+    "total_ms_all_runs": {
+      "n": 6,
+      "p50": 154600.36283300043,
+      "p95": 180194.94840624952,
+      "min": 27139.586082999813,
+      "max": 180209.07449999958,
+      "mean": 121978.74651366663
+    },
+    "decision_wall_ms_all_attempts": {
+      "n": 16,
+      "p50": 43745.44529149989,
+      "p95": 76569.49965575017,
+      "min": 14459.814332999485,
+      "max": 90003.71150000047,
+      "mean": 44251.31348412492
+    },
+    "native_scoring_client_wall_ms_all_attempts": {
+      "n": 93,
+      "p50": 6292.9792919994725,
+      "p95": 14941.008124800099,
+      "min": 2103.4654170007343,
+      "max": 18424.750457999835,
+      "mean": 7609.331029548415
+    },
+    "helper_wall_ms_all_attempts": {
+      "n": 4,
+      "p50": 4338.693499999863,
+      "p95": 8400.691781299654,
+      "min": 2651.0712079998484,
+      "max": 8823.841624999659,
+      "mean": 5038.074958249808
+    },
+    "helper_first_content_delta_ms": {
+      "n": 4,
+      "p50": 3457.6349999999998,
+      "p95": 5756.733249999999,
+      "min": 2054.056,
+      "max": 5923.456,
+      "mean": 3723.1955
+    },
+    "helper_reported_completion_tokens_per_full_request_second": {
+      "n": 4,
+      "p50": 3.242899243143407,
+      "p95": 4.841138280348143,
+      "min": 1.473281202505774,
+      "max": 4.903678166309271,
+      "mean": 3.215689463775465
+    },
+    "decision_input_tokens_per_adapter_scoring_second": {
+      "n": 89,
+      "p50": 140.00275571480975,
+      "p95": 165.67642570019106,
+      "min": 57.12465694445435,
+      "max": 182.37920556953364,
+      "mean": 125.65960762703519
+    },
+    "model_wall_ms_per_task": {
+      "n": 6,
+      "p50": 154071.30612399988,
+      "p95": 179490.15778099897,
+      "min": 26609.5963329999,
+      "max": 179566.16324999867,
+      "mean": 121362.21926316632
+    },
+    "browser_wall_ms_per_task": {
+      "n": 6,
+      "p50": 66.9572080000762,
+      "p95": 138.15203150011257,
+      "min": 3.11779099956766,
+      "max": 148.23558399984904,
+      "mean": 71.39750666662319
+    },
+    "chromium_startup_ms": {
+      "n": 6,
+      "p50": 225.96935399997164,
+      "p95": 398.75433324959886,
+      "min": 211.56491700003244,
+      "max": 445.56687499971304,
+      "mean": 263.1995346664553
+    },
+    "setup_ms": {
+      "n": 6,
+      "p50": 101.43372900029135,
+      "p95": 137.9094270000678,
+      "min": 63.71358300020802,
+      "max": 142.05137499993725,
+      "mean": 103.54408316682868
+    },
+    "verification_ms": {
+      "n": 6,
+      "p50": 1.4152710000416846,
+      "p95": 1.5113022498098871,
+      "min": 0.6439159997171373,
+      "max": 1.525374999800988,
+      "mean": 1.2319861666583165
+    },
+    "chromium_owned_main_peak_rss_bytes": {
+      "n": 6,
+      "p50": 98320384.0,
+      "p95": 99172352.0,
+      "min": 91095040,
+      "max": 99319808,
+      "mean": 96646485.33333333
+    }
+  },
+  "metric_scope": {
+    "percentile_method": "linear interpolation at (n - 1) * q; descriptive small-sample p95",
+    "decision_ttft_ms": null,
+    "decision_ttft_reason": "Nonstreaming native scoring has no emitted first-token event",
+    "token_throughput_scope": "Helper rates require actual provider completion-token counts. Native choice rates are input scoring tokens/adapter latency, including preparation and transport; not generated tokens/s or pure GPU compute.",
+    "native_latency_ms_available": false,
+    "model_wall_ms": "Each whole logical policy/helper call once; nested native times not added twice",
+    "browser_wall_ms": "Outer task fresh/observe/act once; excludes setup/verification/teardown; nested CDP not added"
+  },
+  "resources": {
+    "native_process_time_l": {
+      "real_seconds": 833.97,
+      "user_seconds": 4.68,
+      "system_seconds": 3.62,
+      "maximum_resident_set_size_bytes": 9297510400
+    },
+    "outer_adapter_time_l": {
+      "real_seconds": 851.27,
+      "user_seconds": 13.61,
+      "system_seconds": 6.19,
+      "maximum_resident_set_size_bytes": 9297510400
+    },
+    "owned_direct_pid_exit_events": [
+      {
+        "name": "runner",
+        "pid": 24248,
+        "exit_code": 1,
+        "peak_rss_bytes": 99319808,
+        "user_seconds": 3.6298719999999998,
+        "system_seconds": 1.99187,
+        "scope": "macOS wait4 direct owned PID; peaks not additive"
+      },
+      {
+        "name": "text-service",
+        "pid": 24241,
+        "exit_code": 0,
+        "peak_rss_bytes": 8537014272,
+        "user_seconds": 5.250697,
+        "system_seconds": 3.853677,
+        "scope": "macOS wait4 direct owned PID; peaks not additive"
+      }
+    ],
+    "python_own_process_cumulative_peak_rss_bytes": 53772288,
+    "chromium_main_exit_codes": [
+      143,
+      143,
+      143,
+      143,
+      143,
+      143
+    ],
+    "rss_scope": "Native and outer peaks are equal and must not be added. Outer adapter/runner wait4 may include descendants rusage; do not describe as pure Python RSS. Chrome main PID peaks are not simultaneous process-tree totals. Process lifetimes include setup/idle/load/shutdown, not pure per-decision compute.",
+    "system_bookends": {
+      "total_memory_bytes": 68719476736,
+      "before_free_percentage": 59,
+      "after_free_percentage": 75,
+      "vm_selected_before": {
+        "Translation faults": 87959474,
+        "Pageins": 38911151,
+        "Pageouts": 22386,
+        "Swapins": 56,
+        "Swapouts": 25700,
+        "Compressions": 33038447,
+        "Decompressions": 17647335
+      },
+      "vm_selected_after": {
+        "Translation faults": 104319516,
+        "Pageins": 46924180,
+        "Pageouts": 33981,
+        "Swapins": 112,
+        "Swapouts": 25700,
+        "Compressions": 38218859,
+        "Decompressions": 20829941
+      },
+      "selected_counters_monotonic": true,
+      "scope": "System-wide snapshots, concurrent work uncontrolled; no task-attributable memory or swap delta. This window does not show the counter reset seen in an earlier development smoke; no reboot/cold-whole-machine conclusion."
+    }
+  },
+  "cleanup": {
+    "last_native_event": {
+      "event": "shutdown",
+      "method": "orderly_eof",
+      "exit_code": 0
+    },
+    "owned_direct_pid_exit_evidence": [
+      {
+        "name": "runner",
+        "pid": 24248,
+        "exit_code": 1,
+        "peak_rss_bytes": 99319808,
+        "user_seconds": 3.6298719999999998,
+        "system_seconds": 1.99187,
+        "scope": "macOS wait4 direct owned PID; peaks not additive"
+      },
+      {
+        "name": "text-service",
+        "pid": 24241,
+        "exit_code": 0,
+        "peak_rss_bytes": 8537014272,
+        "user_seconds": 5.250697,
+        "system_seconds": 3.853677,
+        "scope": "macOS wait4 direct owned PID; peaks not additive"
+      }
+    ],
+    "chromium_main_exit_codes": [
+      143,
+      143,
+      143,
+      143,
+      143,
+      143
+    ],
+    "chromium_exit_scope": "All six owned main PIDs exit143 after owned SIGTERM, not natural exit0",
+    "raw_remaining_owned_groups": [],
+    "denied_group_ids": [
+      24238,
+      24239,
+      24241
+    ],
+    "denied_group_names": [
+      "decision-service",
+      "decision-adapter",
+      "text-service"
+    ],
+    "full_group_liveness_verified": false,
+    "probe_retried": false,
+    "scope": "Source alive_groups skips denied groups. Text helper direct PID exit0 and native orderly EOF exit0 support respective process closure, but do not prove whole groups absent."
+  },
+  "limitations": [
+    "Incomplete schedule: 6 of 24 executed, only repetition 0; 18 unexecuted, no baseline arm. 2/24 is attained scheduled success, not a full generalization estimate; 2/6 is conditional on this executed prefix.",
+    "All measured real inference and browser evidence remain distinct from earlier legacy timings, static/cache audits, one-case development smoke, and future plans.",
+    "Further tuning on these revealed six tasks turns them into development data. Future generalization needs a separately frozen untouched set; no training or calibration fit happened here.",
+    "Independent Noul p_true scores are not categorical operation probabilities or navigation calibration. Offered-choice scoring emits zero autoregressive tokens and no first-token event.",
+    "Original frozen adapter reports no native_latency_ms; input-token/adapter-latency ratios are not pure GPU throughput. Helper completion-token/full-request ratios include prompt/transport, not pure decode speed.",
+    "Small heterogeneous/censored descriptive p95 cannot establish stable performance, a speedup over failed baselines, or complete browser/general-web reliability.",
+    "Original controller had no full post-run GGUF hash; a separate CPU-only post-window receipt streamed all 9 package files and matches manifest hashes/sizes. This child audit validates that receipt against the manifest and does not stream the full model again.",
+    "Three process-group liveness probes were denied. An empty remaining_owned_groups list excludes denied groups and is not proof all groups exited. No denied probe was retried."
+  ]
+}

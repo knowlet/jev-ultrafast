@@ -1,0 +1,143 @@
+{
+  "scope": "paired4actual and development1actual only; no original denied attempt or unrelated baseline copied",
+  "files": [
+    {
+      "public_selected_path": "paired/manifest.json",
+      "original_source": "benchmark/diagnostics/q4-cause/noul-approved-20261013/actual/manifest.json",
+      "original_sha256": "85253f44edda763501231f833bb5ac4a5770318bee2633883b74cc5092770e4c",
+      "original_bytes": 46864
+    },
+    {
+      "public_selected_path": "paired/plans.jsonl",
+      "original_source": "benchmark/diagnostics/q4-cause/noul-approved-20261013/actual/plans.jsonl",
+      "original_sha256": "ac553427fdbbf806a201a17adb300641234a52f0db51f2a7e1fa404b3ae2fcf6",
+      "original_bytes": 12404
+    },
+    {
+      "public_selected_path": "paired/results.jsonl",
+      "original_source": "benchmark/diagnostics/q4-cause/noul-approved-20261013/actual/results.jsonl",
+      "original_sha256": "b7490e49cb720bdc937b48d9a0e61391ce7cb55555ae99fb3291d10173571d9e",
+      "original_bytes": 19270
+    },
+    {
+      "public_selected_path": "paired/summary.json",
+      "original_source": "benchmark/diagnostics/q4-cause/noul-approved-20261013/actual/summary.json",
+      "original_sha256": "730a5e046c59c038fba9cf1f7e1db25e49a74b99a34e06e6012a40f4a45d251e",
+      "original_bytes": 1174
+    },
+    {
+      "public_selected_path": "smoke/metadata.json",
+      "original_source": "benchmark/results/noul-click-development-20261013/metadata.json",
+      "original_sha256": "87fac1dd55ba1ddf0f3344d29cc34955f87d1d4fc33204dff309f0fbc7f0e1c5",
+      "original_bytes": 26553
+    },
+    {
+      "public_selected_path": "smoke/runs.jsonl",
+      "original_source": "benchmark/results/noul-click-development-20261013/runs.jsonl",
+      "original_sha256": "2b7143c2f47dd42939ce26313d1b4938af87579cef780795e3dcab01cd8f200b",
+      "original_bytes": 227770
+    },
+    {
+      "public_selected_path": "smoke/summary.json",
+      "original_source": "benchmark/results/noul-click-development-20261013/summary.json",
+      "original_sha256": "be00f28d940685ff5dbb497061d3e36572570397e7b97ad2fc05bfa332542fb3",
+      "original_bytes": 4304
+    },
+    {
+      "public_selected_path": "paired-service/adapter.log",
+      "original_source": "benchmark/diagnostics/q4-cause/noul-approved-20261013/adapter.log",
+      "original_sha256": "d503d8697881b71b8c27fba326de4f10dd4eff690694b221362fd36363817ce1",
+      "original_bytes": 777
+    },
+    {
+      "public_selected_path": "paired-service/adapter.log.native.log",
+      "original_source": "benchmark/diagnostics/q4-cause/noul-approved-20261013/adapter.log.native.log",
+      "original_sha256": "a055b92806656bed98f9d3b0f15c1f586cd8302aff49ca702ee7d2ad452ce968",
+      "original_bytes": 354926
+    },
+    {
+      "public_selected_path": "paired-service/decisions.jsonl",
+      "original_source": "benchmark/diagnostics/q4-cause/noul-approved-20261013/decisions.jsonl",
+      "original_sha256": "a2cce94a0f415c8a214c7c446a3f5c646b6d8585e41d85e08d461f9c116d34fc",
+      "original_bytes": 18552
+    },
+    {
+      "public_selected_path": "paired-service/development-smoke-freeze.json",
+      "original_source": "benchmark/diagnostics/q4-cause/noul-approved-20261013/development-smoke-freeze.json",
+      "original_sha256": "09df3e376ca716b0b38fd1731474688c47c71604b5ed944ce8bc6cc91aec7be8",
+      "original_bytes": 1718
+    },
+    {
+      "public_selected_path": "paired-service/memory-after.log",
+      "original_source": "benchmark/diagnostics/q4-cause/noul-approved-20261013/memory-after.txt",
+      "original_sha256": "95373c7668226999c5f4c9c136044224bb6f9e94754d9a250eb7d82883527c23",
+      "original_bytes": 110
+    },
+    {
+      "public_selected_path": "paired-service/memory-before.log",
+      "original_source": "benchmark/diagnostics/q4-cause/noul-approved-20261013/memory-before.txt",
+      "original_sha256": "73401dc5dea8015297406d32c2a69ff8b3c8686d1b059f08b4cafc8ae349329e",
+      "original_bytes": 110
+    },
+    {
+      "public_selected_path": "paired-service/preflight-integrity.json",
+      "original_source": "benchmark/diagnostics/q4-cause/noul-approved-20261013/preflight-integrity.json",
+      "original_sha256": "8326cd73afae318d8a6d3966a0bb419476adbdf377d863aea9b86105d99879a7",
+      "original_bytes": 1930
+    },
+    {
+      "public_selected_path": "paired-service/vm-after.log",
+      "original_source": "benchmark/diagnostics/q4-cause/noul-approved-20261013/vm-after.txt",
+      "original_sha256": "1dbaa0086b96e8bb022f2f354471b65e3769835e1b54f7fa37bd3e6b782019de",
+      "original_bytes": 1247
+    },
+    {
+      "public_selected_path": "paired-service/vm-before.log",
+      "original_source": "benchmark/diagnostics/q4-cause/noul-approved-20261013/vm-before.txt",
+      "original_sha256": "4685c44b3d87476cc608136f891affd03b5731e5eefb268cfc02269ae2f02b22",
+      "original_bytes": 1247
+    },
+    {
+      "public_selected_path": "smoke-service/adapter.log",
+      "original_source": "benchmark/diagnostics/q4-cause/noul-development-smoke-20261013/adapter.log",
+      "original_sha256": "83787662a2faae2eaf93fd1b16e78f774cf14a03bab85cbc4fc0b77d2e9cf546",
+      "original_bytes": 777
+    },
+    {
+      "public_selected_path": "smoke-service/adapter.log.native.log",
+      "original_source": "benchmark/diagnostics/q4-cause/noul-development-smoke-20261013/adapter.log.native.log",
+      "original_sha256": "7e7fb05407766902057d495be7bb8772105965a68fe41a1c10956d0a4628a006",
+      "original_bytes": 355061
+    },
+    {
+      "public_selected_path": "smoke-service/decisions.jsonl",
+      "original_source": "benchmark/diagnostics/q4-cause/noul-development-smoke-20261013/decisions.jsonl",
+      "original_sha256": "dc535419c2bc626862ed54beabba607071669a78ff4a7242aaed1955d2b9c541",
+      "original_bytes": 37913
+    },
+    {
+      "public_selected_path": "smoke-service/memory-after.log",
+      "original_source": "benchmark/diagnostics/q4-cause/noul-development-smoke-20261013/memory-after.txt",
+      "original_sha256": "0be99c4fe3602467283d48c032297f1bf8cd8e5461a3e82fdde40fc5e1f26946",
+      "original_bytes": 110
+    },
+    {
+      "public_selected_path": "smoke-service/memory-before.log",
+      "original_source": "benchmark/diagnostics/q4-cause/noul-development-smoke-20261013/memory-before.txt",
+      "original_sha256": "73401dc5dea8015297406d32c2a69ff8b3c8686d1b059f08b4cafc8ae349329e",
+      "original_bytes": 110
+    },
+    {
+      "public_selected_path": "smoke-service/vm-after.log",
+      "original_source": "benchmark/diagnostics/q4-cause/noul-development-smoke-20261013/vm-after.txt",
+      "original_sha256": "b9c1242764deb837ec2f3ecb3ef0aaf348d3a1b98ddcac9e2c49d7d9a5d066b3",
+      "original_bytes": 1247
+    },
+    {
+      "public_selected_path": "smoke-service/vm-before.log",
+      "original_source": "benchmark/diagnostics/q4-cause/noul-development-smoke-20261013/vm-before.txt",
+      "original_sha256": "67e3992ebf05b447aa853ad890aaf389681029f37701da385c5ac6feb3520eae",
+      "original_bytes": 1247
+    }
+  ]
+}

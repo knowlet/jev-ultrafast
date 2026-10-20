@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Card compositor</title>
+<style>body{max-width:700px;margin:40px auto;font:20px system-ui}label{display:block;margin:18px 0}
+input,select,button{font:inherit}button{padding:12px;margin:12px 12px 0 0}#summary{white-space:pre-line}</style>
+<h1>Card compositor</h1>
+<p id="status" role="status">No card rendered</p>
+<form id="form"><label>Card title <input id="field" type="text" required value=""></label><label>Display style <select id="mode"><option value="Plain" selected>Plain</option><option value="Framed">Framed</option><option value="Stacked">Stacked</option></select></label><label><input id="checkbox" type="checkbox">Show reference</label><button id="primary" type="submit">Render card</button>
+<button id="reset" type="button">Clear card</button></form>
+<p id="summary" data-applied="null" data-submissions="0" data-interactions="0"></p>
+<script>
+const config={"kind": "form", "heading": "Card compositor", "field_label": "Card title", "mode_label": "Display style", "options": ["Plain", "Framed", "Stacked"], "checkbox_label": "Show reference", "initial": {"field": "", "mode": "Plain", "checked": false}, "primary": "Render card", "reset": "Clear card", "before": "No card rendered", "after": "Card rendered"}, caseId="form_card";
+document.body.dataset.caseId=caseId;
+const summary=document.getElementById('summary'), status=document.getElementById('status');
+const field=document.getElementById('field'), mode=document.getElementById('mode');
+const checkbox=document.getElementById('checkbox'), file=document.getElementById('file');
+const primary=document.getElementById('primary');
+const current=()=>({field:field?.value??null,mode:mode?.value??null,checked:checkbox?.checked??null});
+const interaction=()=>summary.dataset.interactions=String(Number(summary.dataset.interactions)+1);
+const show=(values)=>{
+  summary.dataset.applied=JSON.stringify(values);
+  summary.textContent=values ? [config.field_label+': '+values.field,config.mode_label+': '+values.mode,
+    config.checkbox_label+': '+(values.checked?'enabled':'disabled')].join('\n') : '';
+};
+if(config.kind==='repair')show(current());
+for(const control of [field,mode,checkbox,file].filter(Boolean)){
+  control.addEventListener('input',()=>{interaction();status.textContent='Changes not applied';});
+  if(control===file)control.addEventListener('change',()=>primary.disabled=!file.files.length);
+}
+document.getElementById('form').onsubmit=event=>{
+  event.preventDefault();interaction();summary.dataset.submissions=String(Number(summary.dataset.submissions)+1);
+  status.textContent=config.after;
+  if(config.kind==='completion')primary.disabled=true;
+  else if(config.kind==='form'||config.kind==='repair')show(current());
+  else summary.dataset.applied=JSON.stringify({field:field?.value??null,file_count:file?.files.length??0});
+};
+document.getElementById('reset').onclick=()=>{
+  interaction();status.textContent=config.before;primary.disabled=config.kind==='unsupported';
+  if(field)field.value=config.initial?.field??'';
+  if(mode)mode.value=config.initial.mode;
+  if(checkbox)checkbox.checked=config.initial.checked;
+  if(file)file.value='';
+  if(config.kind==='repair')show(current());else show(null);
+};
+</script></html>

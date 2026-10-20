@@ -1,0 +1,170 @@
+{
+  "groups": {
+    "browser_task": {
+      "runs": 5,
+      "successful_runs": 0,
+      "failed_runs": 5,
+      "decision_wall_ms_all_attempts": {
+        "n": 60,
+        "p50": 7657.816312508658,
+        "p95": 12401.8405911047,
+        "min": 2558.1591670634225,
+        "max": 13219.664874952286,
+        "mean": 8093.49487219976
+      },
+      "helper_wall_ms_all_attempts": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null,
+        "mean": null
+      }
+    },
+    "decision_microbenchmark": {
+      "runs": 3,
+      "successful_runs": 3,
+      "failed_runs": 0,
+      "decision_wall_ms_all_attempts": {
+        "n": 3,
+        "p50": 7954.160458990373,
+        "p95": 7993.632770644035,
+        "min": 7273.587250034325,
+        "max": 7998.018583049998,
+        "mean": 7741.922097358231
+      },
+      "helper_wall_ms_all_attempts": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null,
+        "mean": null
+      },
+      "intended_choice_runs": 3
+    }
+  },
+  "warmup_runs": 2,
+  "warmup_failed_runs": 1,
+  "decision_wall_ms_all_attempts": {
+    "n": 63,
+    "p50": 7809.194499976002,
+    "p95": 12379.236478556413,
+    "min": 2558.1591670634225,
+    "max": 13219.664874952286,
+    "mean": 8076.75331149302
+  },
+  "decision_wall_ms_successful": {
+    "n": 63,
+    "p50": 7809.194499976002,
+    "p95": 12379.236478556413,
+    "min": 2558.1591670634225,
+    "max": 13219.664874952286,
+    "mean": 8076.75331149302
+  },
+  "decision_adapter_scoring_ms_successful": {
+    "n": 63,
+    "p50": 7807.335834018886,
+    "p95": 12377.13596605463,
+    "min": 2556.719208951108,
+    "max": 13217.705458053388,
+    "mean": 8074.915808854655
+  },
+  "decision_input_tokens_per_scoring_second": {
+    "n": 63,
+    "p50": 93.18538151930454,
+    "p95": 169.87866867580522,
+    "min": 76.98450257791562,
+    "max": 200.0247135256064,
+    "mean": 101.42322791843539
+  },
+  "decision_failed_calls": 0,
+  "decision_ttft_ms": null,
+  "decision_ttft_reason": "Native choices are nonstreaming forward/scoring requests, without a first token event.",
+  "helper_wall_ms_all_attempts": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "helper_failed_calls": 0,
+  "helper_first_content_delta_ms": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "helper_provider_completion_tokens_per_full_request_second": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "task_ms_all_runs": {
+    "n": 5,
+    "p50": 102273.69379193988,
+    "p95": 106642.01323301531,
+    "min": 83643.57987500262,
+    "max": 107692.59020802565,
+    "mean": 97488.18784980103
+  },
+  "task_ms_successful": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "setup_ms": {
+    "n": 5,
+    "p50": 69.06620808877051,
+    "p95": 105.74240002315491,
+    "min": 51.57362495083362,
+    "max": 106.22900002636015,
+    "mean": 77.09534980822355
+  },
+  "verification_ms": {
+    "n": 5,
+    "p50": 0.398874981328845,
+    "p95": 0.4161753226071596,
+    "min": 0.3153750440105796,
+    "max": 0.4193339264020324,
+    "mean": 0.38149156607687473
+  },
+  "end_to_end_ms": {
+    "n": 5,
+    "p50": 102329.13912495133,
+    "p95": 106697.8430834366,
+    "min": 83748.10666695703,
+    "max": 107744.93875005282,
+    "mean": 97565.96280860249
+  },
+  "browser_task_wall_ms": {
+    "n": 5,
+    "p50": 360.96166574861854,
+    "p95": 395.5043675377965,
+    "min": 323.4338309848681,
+    "max": 397.1545840613544,
+    "mean": 365.5722746392712
+  },
+  "model_wall_ms_per_task": {
+    "n": 5,
+    "p50": 101915.6009569997,
+    "p95": 106251.3993591303,
+    "min": 83254.00208332576,
+    "max": 107294.73520896863,
+    "mean": 97121.93846639711
+  },
+  "python_peak_rss_bytes_cumulative": 45826048,
+  "percentile_method": "linear interpolation at (n - 1) * q; p95 is descriptive for these small samples",
+  "memory_scope": "Current Python process cumulative peak only; service/Chromium RSS and cold load are external.",
+  "token_throughput_scope": "Text uses provider-reported completion_tokens/full request time. Choices use native_token_count divided by the typed adapter's reported latency_ms, including HF preparation and native pipe request/response. This is input scoring throughput, not native-only compute or generated tokens/s.",
+  "batch_error": null
+}

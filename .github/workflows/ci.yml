@@ -1,0 +1,29 @@
+name: Offline CI
+
+on:
+  push:
+    branches: ['feat/local-system-one-benchmark-*']
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: offline-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.12.19'
+          python-version: '3.12'
+      - run: uv sync --frozen
+      - run: uv run --no-sync ruff check .
+      - run: uv run --no-sync pytest -q
+      - run: node --check jev_ultrafast/static/app.js
+      - run: uv build

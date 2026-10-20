@@ -1,0 +1,21 @@
+{
+  "schema": "jev-heldout-freeze-v1",
+  "frozen_at_utc": "2026-10-13T10:15:06.466020+00:00",
+  "model_runs_performed": 0,
+  "hash_algorithm": "sha256",
+  "task_seed": 20261013,
+  "files": {
+    "benchmark/heldout-plan.json": "e94986f9429889379b368c5adcbf4ab3fcfc00487879ee54be5133fb37f91196",
+    "benchmark/heldout_fixture.py": "6bdc92284b44b47ffb702e8f098275bdd9de4e15e1091e442b06e29b422fbf18",
+    "tests/test_heldout_fixture.py": "f858c92ad08c0d1122cb2e9e4b218cd86621fe511dd4cc37880e82e90a0b1732",
+    "docs/heldout-preregistration.md": "736575afa55414a741d814184a1c5e396b785a30ff26b9c05c8caf82be5164f6",
+    "benchmark/heldout-fixtures/complete_latch.html": "1e8e2988dc2d327b9c317565b54db06e924bf6c38ed1162577e396b15de229a6",
+    "benchmark/heldout-fixtures/complete_stamp.html": "408dc8a09892dee5d718923d02410f8076619939981dfde0ecba2166bc4ac3df",
+    "benchmark/heldout-fixtures/form_bundle.html": "dd35420b7e8006b927932528c0900517cf721a15809fc6e4c2f6eea4e15eec09",
+    "benchmark/heldout-fixtures/form_card.html": "4a48c901e16b63787251d3db75d94154f868a7c92c6be527dfde9fb7d88c2324",
+    "benchmark/heldout-fixtures/repair_preview.html": "2972b195aaa111b7d63addd8eb95fb5f7c397318577731c4fe56810f98f3b5fd",
+    "benchmark/heldout-fixtures/repair_route.html": "17afb918bff50d1c38dbf54065b14164954e536de44c0f27afd544a2a6cc003a",
+    "benchmark/heldout-fixtures/unknown_code.html": "a8342e07ed3dff163edbd94b19155d174b01611c869a2f819dc94978f8db7c89",
+    "benchmark/heldout-fixtures/unsupported_document.html": "59df4f9980a198effd326bd271f909758930a3c17823ba2d65709fb9eaad2ba7"
+  }
+}

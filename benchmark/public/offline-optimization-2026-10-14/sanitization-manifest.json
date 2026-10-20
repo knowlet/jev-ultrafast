@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "transformation": "infrastructure-path-redaction-v1",
+  "notes": [
+    "Only known infrastructure path strings were replaced; original files remain untouched.",
+    "Numeric probabilities, timings, token counts and all model requests are unchanged.",
+    "Executed source hashes identify pre-publication local code; portable paths and CI were added later.",
+    "Original hashes intentionally differ from redacted public copy hashes."
+  ],
+  "files": [
+    {
+      "path": "analysis.json",
+      "original_sha256": "375f6bfbf9036add4bb8d90c80af78e03239181e52d5567ac8ec440c3506120e",
+      "public_sha256": "375f6bfbf9036add4bb8d90c80af78e03239181e52d5567ac8ec440c3506120e",
+      "original_bytes": 44009,
+      "public_bytes": 44009,
+      "path_replacements": 0,
+      "model_requests_unchanged": true,
+      "request_sha256": []
+    },
+    {
+      "path": "comparison-plan.json",
+      "original_sha256": "2aedff37106e1176fd19ea232e9c4cc42b6b6fe890434c45233ae39e2a0b4a9f",
+      "public_sha256": "2aedff37106e1176fd19ea232e9c4cc42b6b6fe890434c45233ae39e2a0b4a9f",
+      "original_bytes": 5173,
+      "public_bytes": 5173,
+      "path_replacements": 0,
+      "model_requests_unchanged": true,
+      "request_sha256": []
+    }
+  ]
+}

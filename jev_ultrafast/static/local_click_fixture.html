@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Local completion fixture</title>
+  <style>
+    body { max-width: 640px; margin: 50px auto; font: 20px system-ui; }
+    button { margin: 12px 12px 0 0; padding: 15px; font: inherit; }
+  </style>
+  <h1>Local completion fixture</h1>
+  <p id="completion" role="status">Completion not yet confirmed</p>
+  <button type="button" id="complete">Mark complete</button>
+  <button type="button" id="reset">Reset completion</button>
+  <script>
+    const completion = document.getElementById("completion");
+    document.getElementById("complete").onclick = () => {
+      completion.textContent = "Completion confirmed";
+      document.getElementById("complete").disabled = true;
+    };
+    document.getElementById("reset").onclick = () => {
+      completion.textContent = "Completion not yet confirmed";
+      document.getElementById("complete").disabled = false;
+    };
+  </script>
+</html>

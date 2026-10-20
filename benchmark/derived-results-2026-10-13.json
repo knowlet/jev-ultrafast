@@ -1,0 +1,3873 @@
+{
+  "schema_version": 1,
+  "analysis_source_sha256": "e5a852a8a34fc91e10bfbef9d0613a6fff18270861e700379d690dd5d66d58a4",
+  "summary_source_sha256": "933d44b94cd5673ae07194a1908804d16674bcbc2cb4b639edfeee63f09e93d6",
+  "primary": {
+    "q4_decisions": {
+      "dataset": "q4-decisions-20261013",
+      "identity": {
+        "artifact_file": "s1-boolq-Q4_K_M.gguf",
+        "weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+        "quantization": "Q4_K_M",
+        "runtime": "llama.cpp Metal",
+        "system_one_repo_head": "eef847f01b63c86f05df81027a959cf3c658d54b",
+        "llama_cpp_head": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+        "native_runner_sha256": "d1e81415da71954981ebc44794c90393961a8e150559a18afdf948d60f8506be",
+        "adapter_source_sha256": "95e9343ead0656f13197c4371ab48b445826d48bd37f8cc9f03b94ae926351c1",
+        "conversion_manifest_sha256": "3e07bde8e66308ce80a90e570b7eb04fe1c11f49d6b3ee3486574ee480aadd46",
+        "calibration_sha256": "fcf22457f36ebf2b1a7675fbb6a83198cdc80b4111977efa5a39b73827bc0fcc",
+        "calibrated_temperature": 3.232734824261939,
+        "model_manifest": {
+          "schema_version": 1,
+          "format": "gguf",
+          "status": "converted_and_structurally_verified",
+          "recorded_at": "2026-10-06T15:03:53.576747+00:00",
+          "source_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+          "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+          "source_checkpoint_files": [
+            {
+              "path": "config.json",
+              "size_bytes": 4953,
+              "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+            },
+            {
+              "path": "model.safetensors",
+              "size_bytes": 23919549408,
+              "sha256": "11144621122123135eb79c9cfd0466a2c51f230109124aefe401cdbec8c71a53"
+            }
+          ],
+          "source_s1_config_sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962",
+          "training_recipe_sha256": "2a708e5f4acfea4b688e88ba338aa62991608db875fef039ee6b4f33c3a74d73",
+          "source_hub_weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+          "llama_cpp_revision": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+          "conversion_record_source_revision": "1bc818be929c2545ebf65aa76ed6775c8fdc858c",
+          "recording_program_sha256": "cc71ebf5a27cc473c6e02439815de7c73eac52aef701ea6d446873328345f779",
+          "source_capture_manifest_sha256": "90e9fc465a6e372c81e1596e387fc7c62107730b41c4f3c1d5c7a8087a9bb51e",
+          "model_file": "s1-boolq-Q4_K_M.gguf",
+          "mmproj_file": "mmproj-s1-boolq-f16.gguf",
+          "quantization": {
+            "language_model": "Q4_K_M",
+            "multimodal_projector": "F16",
+            "direct_conversion": false
+          },
+          "source_tensor_count": 677,
+          "source_tensor_groups": {
+            "model.embed_audio": 1,
+            "model.embed_vision": 1,
+            "model.language_model": 666,
+            "model.vision_embedder": 9
+          },
+          "files": [
+            {
+              "path": "base_s1_config.json",
+              "size_bytes": 367,
+              "sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962"
+            },
+            {
+              "path": "chat_template.jinja",
+              "size_bytes": 18683,
+              "sha256": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4"
+            },
+            {
+              "path": "config.json",
+              "size_bytes": 4953,
+              "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+            },
+            {
+              "path": "mmproj-s1-boolq-f16.gguf",
+              "size_bytes": 122031744,
+              "sha256": "cffbff05efd290fef28d084ebcb653de7594f5e26bae0eabbedf30d6c782c1d1"
+            },
+            {
+              "path": "processor_config.json",
+              "size_bytes": 1382,
+              "sha256": "6b938e76555b3e9946890770e1abcd442a4718f34041a58e8139dc8ad34545c9"
+            },
+            {
+              "path": "s1-boolq-Q4_K_M.gguf",
+              "size_bytes": 7381383584,
+              "sha256": "daf56f5a5a0496e4e726e504858ef8dda1f6b02cd1bc7a68e9f1beb2bf178365"
+            },
+            {
+              "path": "tensor-inventory.json",
+              "size_bytes": 113174,
+              "sha256": "c7557a6f7dace16de31cbeb1815b7779063f6ee75102c30ba29dd3beb356fe27"
+            },
+            {
+              "path": "tokenizer.json",
+              "size_bytes": 32169626,
+              "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+            },
+            {
+              "path": "tokenizer_config.json",
+              "size_bytes": 3736,
+              "sha256": "794a39f8330ce05020774c70c091225bc5f031b9cacf41fc20e52eb54b4b52d8"
+            }
+          ],
+          "versions": {
+            "torch": "2.8.0",
+            "transformers": "5.17.0",
+            "numpy": "2.5.3",
+            "safetensors": "0.8.0"
+          },
+          "scope": "Structural conversion receipt; runtime quality requires the separate full-population evaluation.",
+          "trained_project_name": "Gemma-4-12B-Unified-System-One",
+          "base_model_name": "gemma-4-12B-it"
+        },
+        "hardware": {
+          "chip": "Apple M1 Max",
+          "unified_memory_bytes": 68719476736,
+          "source": "system_profiler inventory verified for this Mac on 2026-10-13"
+        },
+        "runtime_settings": {
+          "context": 4096,
+          "batch": 512,
+          "threads": 4,
+          "gpu_layers": 99,
+          "seed": 17,
+          "text_temperature": 0,
+          "text_max_tokens": 128,
+          "text_prompt_cache": false
+        },
+        "executed_sources": {
+          "cold": {
+            "repo_head": "3a06fc29ee3e7a7e7542d936fa9f7aa9fb9bbdb8",
+            "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "source_sha256": {
+              "jev_ultrafast/__init__.py": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+              "jev_ultrafast/agent.py": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+              "jev_ultrafast/browser.py": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+              "jev_ultrafast/demo.py": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+              "jev_ultrafast/isolated_browser.py": "c75c9bd09f09e8ff33b15d59522ea86c6deb5ca97be554d188d90525cae4973d",
+              "jev_ultrafast/model.py": "87eca07d69ded7ecb86b6808044a54ac6d0813d3b2662ead47538e6e3ea9d0d7",
+              "jev_ultrafast/questions.py": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+              "jev_ultrafast/snapshot.js": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+              "jev_ultrafast/static/fixture.html": "e48e7d7b6225b215060692e0a28c3d0b59e465e4b94c1bc510d5f37ff0b8bfbe",
+              "jev_ultrafast/static/local_click_fixture.html": "4697cdf7554f0579e511ebaf9b5224ff70c662d2f3e051f678bb9a816a6fc6e9",
+              "scripts/local_benchmark.py": "5bb0c3f917d20ce8732541707bcd8c822f4eb25441bf3e284bc1f6eddc10aa83"
+            },
+            "installed_distributions": {
+              "jev-ultrafast": "0.1.0",
+              "browser-harness": "0.1.13",
+              "httpx": "0.28.1",
+              "websockets": "15.0.1",
+              "mlx": null,
+              "mlx-lm": null
+            },
+            "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+            "machine": "arm64"
+          },
+          "warm": {
+            "repo_head": "3a06fc29ee3e7a7e7542d936fa9f7aa9fb9bbdb8",
+            "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "source_sha256": {
+              "jev_ultrafast/__init__.py": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+              "jev_ultrafast/agent.py": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+              "jev_ultrafast/browser.py": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+              "jev_ultrafast/demo.py": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+              "jev_ultrafast/isolated_browser.py": "c75c9bd09f09e8ff33b15d59522ea86c6deb5ca97be554d188d90525cae4973d",
+              "jev_ultrafast/model.py": "87eca07d69ded7ecb86b6808044a54ac6d0813d3b2662ead47538e6e3ea9d0d7",
+              "jev_ultrafast/questions.py": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+              "jev_ultrafast/snapshot.js": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+              "jev_ultrafast/static/fixture.html": "e48e7d7b6225b215060692e0a28c3d0b59e465e4b94c1bc510d5f37ff0b8bfbe",
+              "jev_ultrafast/static/local_click_fixture.html": "4697cdf7554f0579e511ebaf9b5224ff70c662d2f3e051f678bb9a816a6fc6e9",
+              "scripts/local_benchmark.py": "5bb0c3f917d20ce8732541707bcd8c822f4eb25441bf3e284bc1f6eddc10aa83"
+            },
+            "installed_distributions": {
+              "jev-ultrafast": "0.1.0",
+              "browser-harness": "0.1.13",
+              "httpx": "0.28.1",
+              "websockets": "15.0.1",
+              "mlx": null,
+              "mlx-lm": null
+            },
+            "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+            "machine": "arm64"
+          }
+        },
+        "private_original_file_sha256": {
+          "cold/metadata.json": "918cc43ea63432664e69a58839f9d25d3c1622452e2d8a899ba88c8e3c2f4979",
+          "model-metadata-cold.json": "ecd4db34d929c53c179852d5785f4de7f4d5af97068b4e157340bfe95eb0bb61",
+          "model-metadata-warm.json": "55c22547405d2b37d557d41aaf685b517574bfaf6a2dec1b154d0b97e40400c5",
+          "model-metadata.json": "df2d2fd9049174d2cef4afacf2f599a9494504013b01eb3fb4c7d94655da12e7",
+          "warm/metadata.json": "aa04deb2782c439d05bfdd8bb16d0d8fc5f4d80b4c037d0900d8aa7c1fb990c2"
+        },
+        "redaction": "Personal filesystem paths, repository owner identifiers, and launcher commands omitted."
+      },
+      "cold_process_first_request_client_ms": {
+        "n": 1,
+        "p50": 16850.35404097289,
+        "p95": 16850.35404097289,
+        "min": 16850.35404097289,
+        "max": 16850.35404097289,
+        "mean": 16850.35404097289
+      },
+      "startup": {
+        "decision_http_bind_ms": 226.26362508162856,
+        "decision_service_to_first_complete_ms": 17392.063625040464
+      },
+      "startup_scope": "Cold process/start-to-first-request completion; filesystem/OS caches were not cleared.",
+      "actual_counts": {
+        "native_http_decision_requests": 13,
+        "native_transport_failures": 0,
+        "logical_decision_calls": 13,
+        "logical_helper_calls": 0,
+        "measured_runs": {
+          "decision_microbenchmark": 10
+        },
+        "warmup_runs": {
+          "decision_microbenchmark": 2
+        }
+      },
+      "measured_by_workload": {
+        "decision_microbenchmark": {
+          "groups": {
+            "decision_microbenchmark": {
+              "runs": 10,
+              "successful_runs": 10,
+              "failed_runs": 0,
+              "decision_wall_ms_all_attempts": {
+                "n": 10,
+                "p50": 6293.537833495066,
+                "p95": 8288.823500060242,
+                "min": 5050.8624580688775,
+                "max": 8691.143750096671,
+                "mean": 6440.461625112221
+              },
+              "helper_wall_ms_all_attempts": {
+                "n": 0,
+                "p50": null,
+                "p95": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "intended_choice_runs": 10
+            }
+          },
+          "warmup_runs": 2,
+          "warmup_failed_runs": 0,
+          "decision_wall_ms_all_attempts": {
+            "n": 10,
+            "p50": 6293.537833495066,
+            "p95": 8288.823500060242,
+            "min": 5050.8624580688775,
+            "max": 8691.143750096671,
+            "mean": 6440.461625112221
+          },
+          "decision_wall_ms_successful": {
+            "n": 10,
+            "p50": 6293.537833495066,
+            "p95": 8288.823500060242,
+            "min": 5050.8624580688775,
+            "max": 8691.143750096671,
+            "mean": 6440.461625112221
+          },
+          "decision_adapter_scoring_ms_successful": {
+            "n": 10,
+            "p50": 6291.893166489899,
+            "p95": 8287.224999966564,
+            "min": 5049.099665950052,
+            "max": 8689.535124925897,
+            "mean": 6438.787933287676
+          },
+          "decision_input_tokens_per_scoring_second": {
+            "n": 10,
+            "p50": 134.93716640138894,
+            "p95": 167.39385632082553,
+            "min": 97.70373072831559,
+            "max": 168.14879011508873,
+            "mean": 136.39564943192372
+          },
+          "decision_failed_calls": 0,
+          "decision_ttft_ms": null,
+          "decision_ttft_reason": "Native choices are nonstreaming forward/scoring requests, without a first token event.",
+          "helper_wall_ms_all_attempts": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "helper_failed_calls": 0,
+          "helper_first_content_delta_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "helper_provider_completion_tokens_per_full_request_second": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "task_ms_all_runs": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "task_ms_successful": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "setup_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "verification_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "end_to_end_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "browser_task_wall_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "model_wall_ms_per_task": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "python_peak_rss_bytes_cumulative": 40173568,
+          "percentile_method": "linear interpolation at (n - 1) * q; p95 is descriptive for these small samples",
+          "memory_scope": "Current Python process cumulative peak only; service/Chromium RSS and cold load are external.",
+          "token_throughput_scope": "Text uses provider-reported completion_tokens/full request time. Choices use native_token_count divided by the typed adapter's reported latency_ms, including HF preparation and native pipe request/response. This is input scoring throughput, not native-only compute or generated tokens/s."
+        }
+      },
+      "browser_runs": [],
+      "browser_strict_success_count": 0,
+      "browser_measured_count": 0,
+      "browser_helper_metrics": {
+        "calls": 0,
+        "failed_calls": 0,
+        "first_content_delta_ms": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "full_request_ms": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "provider_decode_tokens_per_second": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "provider_decode_rate_scope": "Actual llama-server timings.predicted_per_second, using its convention excluding the first prefill-produced token from the decode interval; not completion_tokens/full request time.",
+        "provider_token_usage": [],
+        "provider_timings": []
+      },
+      "helper_probe_metrics": {
+        "calls": 0,
+        "failed_calls": 0,
+        "first_content_delta_ms": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "full_request_ms": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "provider_decode_tokens_per_second": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "provider_decode_rate_scope": "Actual llama-server timings.predicted_per_second, using its convention excluding the first prefill-produced token from the decode interval; not completion_tokens/full request time.",
+        "provider_token_usage": [],
+        "provider_timings": []
+      },
+      "chromium": {
+        "chromium_version": null,
+        "chromium_startup_ms": null,
+        "chromium_resource_usage": null,
+        "chromium_resource_usage_scope": null,
+        "chromium_cdp_blocked_requests": null,
+        "chromium_proxy_blocked_requests": null
+      },
+      "native_model_peak_rss": {
+        "peak_rss_bytes": 9298345984,
+        "n_reports": 1,
+        "scope": "macOS /usr/bin/time -l for the owned native model process; bytes, not total system memory"
+      },
+      "separate_process_resource_usage": {
+        "decision-service": {
+          "peak_rss_bytes": 9298345984,
+          "user_seconds": 9.656836,
+          "system_seconds": 2.403601,
+          "exit_code": 0,
+          "source": "macOS wait4 owned PID; descendant aggregation may apply; peaks are not additive"
+        },
+        "launcher_peak_rss_bytes": 27705344
+      },
+      "resource_scope": "Per-process lifetime peaks; not simultaneous physical memory and must not be summed.",
+      "native_wire_request_sha256_counts": {
+        "6bd913b50a9133510fdd9199683665eb09dc6cb314e31b12a15c5e8a12427df2": 13
+      },
+      "native_input_token_count_counts": {
+        "849": 13
+      },
+      "raw_evidence_sha256": {
+        "cold/runs.jsonl": "334448801e85309f5b3df08a60dc37348bfa3410fa91b62eed7106f28b99c035",
+        "native-decision-time.log": "0aab49485f1395faeb9491b38a03d0bcb0e1603094e78e320d29d5c238d72e28",
+        "native-decision-time.log.native.log": "f45ab09651f74b682c7045d39f1206d37a9a4f8a66e495b62265392044e1dcd4",
+        "native-requests.jsonl": "47d5e690e55f817c2d6858c832dd67355d31bd7c2cf93312ee3219ed21f19a32",
+        "warm/runs.jsonl": "9d61706b9206a23b8bd79ab257ec62dfc9d59f5184457863107fcb400d1b87e3"
+      }
+    },
+    "q8_decisions": {
+      "dataset": "q8-decisions-20261013",
+      "identity": {
+        "artifact_file": "s1-boolq-Q8_0.gguf",
+        "weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+        "quantization": "Q8_0",
+        "runtime": "llama.cpp Metal",
+        "system_one_repo_head": "eef847f01b63c86f05df81027a959cf3c658d54b",
+        "llama_cpp_head": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+        "native_runner_sha256": "d1e81415da71954981ebc44794c90393961a8e150559a18afdf948d60f8506be",
+        "adapter_source_sha256": "95e9343ead0656f13197c4371ab48b445826d48bd37f8cc9f03b94ae926351c1",
+        "conversion_manifest_sha256": "464874bc51e8ee21ab56f34a4bf7d22b1fb83299a277cbcf966b42c5fc7802b7",
+        "calibration_sha256": "24882a49f5440412a63aecb7e446274d4ba6a4f8bb28930ddc4eaf1922d2863c",
+        "calibrated_temperature": 2.7830344470383452,
+        "model_manifest": {
+          "schema_version": 1,
+          "format": "gguf",
+          "status": "converted_and_structurally_verified",
+          "recorded_at": "2026-10-04T10:56:33.636227+00:00",
+          "source_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+          "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+          "source_checkpoint_files": [
+            {
+              "path": "config.json",
+              "size_bytes": 4953,
+              "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+            },
+            {
+              "path": "model.safetensors",
+              "size_bytes": 23919549408,
+              "sha256": "11144621122123135eb79c9cfd0466a2c51f230109124aefe401cdbec8c71a53"
+            }
+          ],
+          "source_s1_config_sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962",
+          "training_recipe_sha256": "2a708e5f4acfea4b688e88ba338aa62991608db875fef039ee6b4f33c3a74d73",
+          "source_hub_weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+          "llama_cpp_revision": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+          "conversion_record_source_revision": "bcf829acc111fd8054987b1519b8181835f1dfed",
+          "recording_program_sha256": "e9deca948a69bdd9e49bc5915c43b4e80743ab4fc6a24ec562735470beb5f263",
+          "source_capture_manifest_sha256": "90e9fc465a6e372c81e1596e387fc7c62107730b41c4f3c1d5c7a8087a9bb51e",
+          "model_file": "s1-boolq-Q8_0.gguf",
+          "mmproj_file": "mmproj-s1-boolq-f16.gguf",
+          "quantization": {
+            "language_model": "Q8_0",
+            "multimodal_projector": "F16",
+            "direct_conversion": true
+          },
+          "source_tensor_count": 677,
+          "source_tensor_groups": {
+            "model.embed_audio": 1,
+            "model.embed_vision": 1,
+            "model.language_model": 666,
+            "model.vision_embedder": 9
+          },
+          "files": [
+            {
+              "path": "base_s1_config.json",
+              "size_bytes": 367,
+              "sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962"
+            },
+            {
+              "path": "chat_template.jinja",
+              "size_bytes": 18683,
+              "sha256": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4"
+            },
+            {
+              "path": "config.json",
+              "size_bytes": 4953,
+              "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+            },
+            {
+              "path": "mmproj-s1-boolq-f16.gguf",
+              "size_bytes": 122031744,
+              "sha256": "cffbff05efd290fef28d084ebcb653de7594f5e26bae0eabbedf30d6c782c1d1"
+            },
+            {
+              "path": "processor_config.json",
+              "size_bytes": 1382,
+              "sha256": "6b938e76555b3e9946890770e1abcd442a4718f34041a58e8139dc8ad34545c9"
+            },
+            {
+              "path": "s1-boolq-Q8_0.gguf",
+              "size_bytes": 12669647264,
+              "sha256": "9d3bc61851e5b7ed8e595b84327b85271830778d0e62fa9c1349c61843f369ed"
+            },
+            {
+              "path": "tensor-inventory.json",
+              "size_bytes": 112923,
+              "sha256": "aea1828d797f22d15d54a681297a0efbfd87bdf8f6ba3698017751bdbf1d8b54"
+            },
+            {
+              "path": "tokenizer.json",
+              "size_bytes": 32169626,
+              "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+            },
+            {
+              "path": "tokenizer_config.json",
+              "size_bytes": 3736,
+              "sha256": "794a39f8330ce05020774c70c091225bc5f031b9cacf41fc20e52eb54b4b52d8"
+            }
+          ],
+          "versions": {
+            "torch": "2.8.0",
+            "transformers": "5.17.0",
+            "numpy": "2.5.3",
+            "safetensors": "0.8.0"
+          },
+          "scope": "Structural conversion receipt; runtime quality requires the separate full-population evaluation.",
+          "trained_project_name": "Gemma-4-12B-Unified-System-One",
+          "base_model_name": "gemma-4-12B-it"
+        },
+        "hardware": {
+          "chip": "Apple M1 Max",
+          "unified_memory_bytes": 68719476736,
+          "source": "system_profiler inventory verified for this Mac on 2026-10-13"
+        },
+        "runtime_settings": {
+          "context": 4096,
+          "batch": 512,
+          "threads": 4,
+          "gpu_layers": 99,
+          "seed": 17,
+          "text_temperature": 0,
+          "text_max_tokens": 128,
+          "text_prompt_cache": false
+        },
+        "executed_sources": {
+          "cold": {
+            "repo_head": "8f54b32e0d9c1509e5a2d7cb812dae507a245c26",
+            "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "source_sha256": {
+              "jev_ultrafast/__init__.py": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+              "jev_ultrafast/agent.py": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+              "jev_ultrafast/browser.py": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+              "jev_ultrafast/demo.py": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+              "jev_ultrafast/isolated_browser.py": "c75c9bd09f09e8ff33b15d59522ea86c6deb5ca97be554d188d90525cae4973d",
+              "jev_ultrafast/model.py": "87eca07d69ded7ecb86b6808044a54ac6d0813d3b2662ead47538e6e3ea9d0d7",
+              "jev_ultrafast/questions.py": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+              "jev_ultrafast/snapshot.js": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+              "jev_ultrafast/static/fixture.html": "e48e7d7b6225b215060692e0a28c3d0b59e465e4b94c1bc510d5f37ff0b8bfbe",
+              "jev_ultrafast/static/local_click_fixture.html": "4697cdf7554f0579e511ebaf9b5224ff70c662d2f3e051f678bb9a816a6fc6e9",
+              "scripts/local_benchmark.py": "933d44b94cd5673ae07194a1908804d16674bcbc2cb4b639edfeee63f09e93d6"
+            },
+            "installed_distributions": {
+              "jev-ultrafast": "0.1.0",
+              "browser-harness": "0.1.13",
+              "httpx": "0.28.1",
+              "websockets": "15.0.1",
+              "mlx": null,
+              "mlx-lm": null
+            },
+            "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+            "machine": "arm64"
+          },
+          "warm": {
+            "repo_head": "8f54b32e0d9c1509e5a2d7cb812dae507a245c26",
+            "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "source_sha256": {
+              "jev_ultrafast/__init__.py": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+              "jev_ultrafast/agent.py": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+              "jev_ultrafast/browser.py": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+              "jev_ultrafast/demo.py": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+              "jev_ultrafast/isolated_browser.py": "c75c9bd09f09e8ff33b15d59522ea86c6deb5ca97be554d188d90525cae4973d",
+              "jev_ultrafast/model.py": "87eca07d69ded7ecb86b6808044a54ac6d0813d3b2662ead47538e6e3ea9d0d7",
+              "jev_ultrafast/questions.py": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+              "jev_ultrafast/snapshot.js": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+              "jev_ultrafast/static/fixture.html": "e48e7d7b6225b215060692e0a28c3d0b59e465e4b94c1bc510d5f37ff0b8bfbe",
+              "jev_ultrafast/static/local_click_fixture.html": "4697cdf7554f0579e511ebaf9b5224ff70c662d2f3e051f678bb9a816a6fc6e9",
+              "scripts/local_benchmark.py": "933d44b94cd5673ae07194a1908804d16674bcbc2cb4b639edfeee63f09e93d6"
+            },
+            "installed_distributions": {
+              "jev-ultrafast": "0.1.0",
+              "browser-harness": "0.1.13",
+              "httpx": "0.28.1",
+              "websockets": "15.0.1",
+              "mlx": null,
+              "mlx-lm": null
+            },
+            "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+            "machine": "arm64"
+          }
+        },
+        "private_original_file_sha256": {
+          "cold/metadata.json": "0f8d84885537636bc805911fc19182e7664b474c13db37abe2989bdb49bc9181",
+          "model-metadata-cold.json": "edfa5de5a6d76fb926e3e0d056f253fdfff6ff9dd358b6ff7d5c83d98482084d",
+          "model-metadata-warm.json": "78df297e14e59353aa6f0e1da3042c52cdbafa205fbe9825ea62a4e535b19e8b",
+          "model-metadata.json": "4498453759ba6b8dca104c36ecd03302eb446615148697f6c6684fe708a256b4",
+          "warm/metadata.json": "97b0958b65d368cf7b07041b7f0abb9db0e15d72adffb224cfbf63a1a82ae49e"
+        },
+        "redaction": "Personal filesystem paths, repository owner identifiers, and launcher commands omitted."
+      },
+      "cold_process_first_request_client_ms": {
+        "n": 1,
+        "p50": 19131.64274999872,
+        "p95": 19131.64274999872,
+        "min": 19131.64274999872,
+        "max": 19131.64274999872,
+        "mean": 19131.64274999872
+      },
+      "startup": {
+        "decision_http_bind_ms": 230.26275006122887,
+        "decision_service_to_first_complete_ms": 19568.083749967627
+      },
+      "startup_scope": "Cold process/start-to-first-request completion; filesystem/OS caches were not cleared.",
+      "actual_counts": {
+        "native_http_decision_requests": 13,
+        "native_transport_failures": 0,
+        "logical_decision_calls": 13,
+        "logical_helper_calls": 0,
+        "measured_runs": {
+          "decision_microbenchmark": 10
+        },
+        "warmup_runs": {
+          "decision_microbenchmark": 2
+        }
+      },
+      "measured_by_workload": {
+        "decision_microbenchmark": {
+          "groups": {
+            "decision_microbenchmark": {
+              "runs": 10,
+              "successful_runs": 10,
+              "failed_runs": 0,
+              "decision_wall_ms_all_attempts": {
+                "n": 10,
+                "p50": 9588.477541517932,
+                "p95": 10588.393362431088,
+                "min": 5145.376125001349,
+                "max": 10643.356249900535,
+                "mean": 8895.108908205293
+              },
+              "helper_wall_ms_all_attempts": {
+                "n": 0,
+                "p50": null,
+                "p95": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "intended_choice_runs": 10
+            }
+          },
+          "warmup_runs": 2,
+          "warmup_failed_runs": 0,
+          "decision_wall_ms_all_attempts": {
+            "n": 10,
+            "p50": 9588.477541517932,
+            "p95": 10588.393362431088,
+            "min": 5145.376125001349,
+            "max": 10643.356249900535,
+            "mean": 8895.108908205293
+          },
+          "decision_wall_ms_successful": {
+            "n": 10,
+            "p50": 9588.477541517932,
+            "p95": 10588.393362431088,
+            "min": 5145.376125001349,
+            "max": 10643.356249900535,
+            "mean": 8895.108908205293
+          },
+          "decision_adapter_scoring_ms_successful": {
+            "n": 10,
+            "p50": 9586.855000059586,
+            "p95": 10586.739565245807,
+            "min": 5143.772832932882,
+            "max": 10641.687209019437,
+            "mean": 8893.479962623678
+          },
+          "decision_input_tokens_per_scoring_second": {
+            "n": 10,
+            "p50": 88.58655006559906,
+            "p95": 164.3007096877065,
+            "min": 79.78058209420252,
+            "max": 165.05394533839012,
+            "mean": 102.23375981220076
+          },
+          "decision_failed_calls": 0,
+          "decision_ttft_ms": null,
+          "decision_ttft_reason": "Native choices are nonstreaming forward/scoring requests, without a first token event.",
+          "helper_wall_ms_all_attempts": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "helper_failed_calls": 0,
+          "helper_first_content_delta_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "helper_provider_completion_tokens_per_full_request_second": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "task_ms_all_runs": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "task_ms_successful": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "setup_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "verification_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "end_to_end_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "browser_task_wall_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "model_wall_ms_per_task": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "python_peak_rss_bytes_cumulative": 39829504,
+          "percentile_method": "linear interpolation at (n - 1) * q; p95 is descriptive for these small samples",
+          "memory_scope": "Current Python process cumulative peak only; service/Chromium RSS and cold load are external.",
+          "token_throughput_scope": "Text uses provider-reported completion_tokens/full request time. Choices use native_token_count divided by the typed adapter's reported latency_ms, including HF preparation and native pipe request/response. This is input scoring throughput, not native-only compute or generated tokens/s."
+        }
+      },
+      "browser_runs": [],
+      "browser_strict_success_count": 0,
+      "browser_measured_count": 0,
+      "browser_helper_metrics": {
+        "calls": 0,
+        "failed_calls": 0,
+        "first_content_delta_ms": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "full_request_ms": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "provider_decode_tokens_per_second": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "provider_decode_rate_scope": "Actual llama-server timings.predicted_per_second, using its convention excluding the first prefill-produced token from the decode interval; not completion_tokens/full request time.",
+        "provider_token_usage": [],
+        "provider_timings": []
+      },
+      "helper_probe_metrics": {
+        "calls": 0,
+        "failed_calls": 0,
+        "first_content_delta_ms": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "full_request_ms": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "provider_decode_tokens_per_second": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "provider_decode_rate_scope": "Actual llama-server timings.predicted_per_second, using its convention excluding the first prefill-produced token from the decode interval; not completion_tokens/full request time.",
+        "provider_token_usage": [],
+        "provider_timings": []
+      },
+      "chromium": {
+        "chromium_version": null,
+        "chromium_startup_ms": null,
+        "chromium_resource_usage": null,
+        "chromium_resource_usage_scope": null,
+        "chromium_cdp_blocked_requests": null,
+        "chromium_proxy_blocked_requests": null
+      },
+      "native_model_peak_rss": {
+        "peak_rss_bytes": 14583250944,
+        "n_reports": 1,
+        "scope": "macOS /usr/bin/time -l for the owned native model process; bytes, not total system memory"
+      },
+      "separate_process_resource_usage": {
+        "decision-service": {
+          "peak_rss_bytes": 14583250944,
+          "user_seconds": 10.343441,
+          "system_seconds": 3.791797,
+          "exit_code": 0,
+          "source": "macOS wait4 owned PID; descendant aggregation may apply; peaks are not additive"
+        },
+        "launcher_peak_rss_bytes": 27623424
+      },
+      "resource_scope": "Per-process lifetime peaks; not simultaneous physical memory and must not be summed.",
+      "native_wire_request_sha256_counts": {
+        "6bd913b50a9133510fdd9199683665eb09dc6cb314e31b12a15c5e8a12427df2": 13
+      },
+      "native_input_token_count_counts": {
+        "849": 13
+      },
+      "raw_evidence_sha256": {
+        "cold/runs.jsonl": "ebb944bd294a267543daddc4b68531c9e861bd5d2189927798f9d722b5bd2c18",
+        "native-decision-time.log": "f72d8bf86d75566fa17bc6f07c1ac05b95f9a6deed86265819cb294f859f3f34",
+        "native-decision-time.log.native.log": "76aadaef501d8ebc2562a1785273ce967292b6a21b669ff97c15fdee7da402e5",
+        "native-requests.jsonl": "330424e359ddb8d159604d9e2340b45e81e85e11ce202f889fcde30fcbf12440",
+        "warm/runs.jsonl": "80014af3c1364ad734526d3558315e8f27517225a83da9e3a0c7ae921e541cdd"
+      }
+    },
+    "travel": {
+      "dataset": "q4-travel-20261013",
+      "identity": {
+        "artifact_file": "s1-boolq-Q4_K_M.gguf",
+        "weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+        "quantization": "Q4_K_M",
+        "runtime": "llama.cpp Metal",
+        "system_one_repo_head": "eef847f01b63c86f05df81027a959cf3c658d54b",
+        "llama_cpp_head": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+        "native_runner_sha256": "d1e81415da71954981ebc44794c90393961a8e150559a18afdf948d60f8506be",
+        "adapter_source_sha256": "95e9343ead0656f13197c4371ab48b445826d48bd37f8cc9f03b94ae926351c1",
+        "conversion_manifest_sha256": "3e07bde8e66308ce80a90e570b7eb04fe1c11f49d6b3ee3486574ee480aadd46",
+        "calibration_sha256": "fcf22457f36ebf2b1a7675fbb6a83198cdc80b4111977efa5a39b73827bc0fcc",
+        "calibrated_temperature": 3.232734824261939,
+        "model_manifest": {
+          "schema_version": 1,
+          "format": "gguf",
+          "status": "converted_and_structurally_verified",
+          "recorded_at": "2026-10-06T15:03:53.576747+00:00",
+          "source_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+          "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+          "source_checkpoint_files": [
+            {
+              "path": "config.json",
+              "size_bytes": 4953,
+              "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+            },
+            {
+              "path": "model.safetensors",
+              "size_bytes": 23919549408,
+              "sha256": "11144621122123135eb79c9cfd0466a2c51f230109124aefe401cdbec8c71a53"
+            }
+          ],
+          "source_s1_config_sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962",
+          "training_recipe_sha256": "2a708e5f4acfea4b688e88ba338aa62991608db875fef039ee6b4f33c3a74d73",
+          "source_hub_weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+          "llama_cpp_revision": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+          "conversion_record_source_revision": "1bc818be929c2545ebf65aa76ed6775c8fdc858c",
+          "recording_program_sha256": "cc71ebf5a27cc473c6e02439815de7c73eac52aef701ea6d446873328345f779",
+          "source_capture_manifest_sha256": "90e9fc465a6e372c81e1596e387fc7c62107730b41c4f3c1d5c7a8087a9bb51e",
+          "model_file": "s1-boolq-Q4_K_M.gguf",
+          "mmproj_file": "mmproj-s1-boolq-f16.gguf",
+          "quantization": {
+            "language_model": "Q4_K_M",
+            "multimodal_projector": "F16",
+            "direct_conversion": false
+          },
+          "source_tensor_count": 677,
+          "source_tensor_groups": {
+            "model.embed_audio": 1,
+            "model.embed_vision": 1,
+            "model.language_model": 666,
+            "model.vision_embedder": 9
+          },
+          "files": [
+            {
+              "path": "base_s1_config.json",
+              "size_bytes": 367,
+              "sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962"
+            },
+            {
+              "path": "chat_template.jinja",
+              "size_bytes": 18683,
+              "sha256": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4"
+            },
+            {
+              "path": "config.json",
+              "size_bytes": 4953,
+              "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+            },
+            {
+              "path": "mmproj-s1-boolq-f16.gguf",
+              "size_bytes": 122031744,
+              "sha256": "cffbff05efd290fef28d084ebcb653de7594f5e26bae0eabbedf30d6c782c1d1"
+            },
+            {
+              "path": "processor_config.json",
+              "size_bytes": 1382,
+              "sha256": "6b938e76555b3e9946890770e1abcd442a4718f34041a58e8139dc8ad34545c9"
+            },
+            {
+              "path": "s1-boolq-Q4_K_M.gguf",
+              "size_bytes": 7381383584,
+              "sha256": "daf56f5a5a0496e4e726e504858ef8dda1f6b02cd1bc7a68e9f1beb2bf178365"
+            },
+            {
+              "path": "tensor-inventory.json",
+              "size_bytes": 113174,
+              "sha256": "c7557a6f7dace16de31cbeb1815b7779063f6ee75102c30ba29dd3beb356fe27"
+            },
+            {
+              "path": "tokenizer.json",
+              "size_bytes": 32169626,
+              "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+            },
+            {
+              "path": "tokenizer_config.json",
+              "size_bytes": 3736,
+              "sha256": "794a39f8330ce05020774c70c091225bc5f031b9cacf41fc20e52eb54b4b52d8"
+            }
+          ],
+          "versions": {
+            "torch": "2.8.0",
+            "transformers": "5.17.0",
+            "numpy": "2.5.3",
+            "safetensors": "0.8.0"
+          },
+          "scope": "Structural conversion receipt; runtime quality requires the separate full-population evaluation.",
+          "trained_project_name": "Gemma-4-12B-Unified-System-One",
+          "base_model_name": "gemma-4-12B-it"
+        },
+        "hardware": {
+          "chip": "Apple M1 Max",
+          "unified_memory_bytes": 68719476736,
+          "source": "system_profiler inventory verified for this Mac on 2026-10-13"
+        },
+        "runtime_settings": {
+          "context": 4096,
+          "batch": 512,
+          "threads": 4,
+          "gpu_layers": 99,
+          "seed": 17,
+          "text_temperature": 0,
+          "text_max_tokens": 128,
+          "text_prompt_cache": false
+        },
+        "executed_sources": {
+          "cold": {
+            "repo_head": "8f54b32e0d9c1509e5a2d7cb812dae507a245c26",
+            "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "source_sha256": {
+              "jev_ultrafast/__init__.py": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+              "jev_ultrafast/agent.py": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+              "jev_ultrafast/browser.py": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+              "jev_ultrafast/demo.py": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+              "jev_ultrafast/isolated_browser.py": "c75c9bd09f09e8ff33b15d59522ea86c6deb5ca97be554d188d90525cae4973d",
+              "jev_ultrafast/model.py": "87eca07d69ded7ecb86b6808044a54ac6d0813d3b2662ead47538e6e3ea9d0d7",
+              "jev_ultrafast/questions.py": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+              "jev_ultrafast/snapshot.js": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+              "jev_ultrafast/static/fixture.html": "e48e7d7b6225b215060692e0a28c3d0b59e465e4b94c1bc510d5f37ff0b8bfbe",
+              "jev_ultrafast/static/local_click_fixture.html": "4697cdf7554f0579e511ebaf9b5224ff70c662d2f3e051f678bb9a816a6fc6e9",
+              "scripts/local_benchmark.py": "933d44b94cd5673ae07194a1908804d16674bcbc2cb4b639edfeee63f09e93d6"
+            },
+            "installed_distributions": {
+              "jev-ultrafast": "0.1.0",
+              "browser-harness": "0.1.13",
+              "httpx": "0.28.1",
+              "websockets": "15.0.1",
+              "mlx": null,
+              "mlx-lm": null
+            },
+            "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+            "machine": "arm64"
+          },
+          "warm": {
+            "repo_head": "8f54b32e0d9c1509e5a2d7cb812dae507a245c26",
+            "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "source_sha256": {
+              "jev_ultrafast/__init__.py": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+              "jev_ultrafast/agent.py": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+              "jev_ultrafast/browser.py": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+              "jev_ultrafast/demo.py": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+              "jev_ultrafast/isolated_browser.py": "c75c9bd09f09e8ff33b15d59522ea86c6deb5ca97be554d188d90525cae4973d",
+              "jev_ultrafast/model.py": "87eca07d69ded7ecb86b6808044a54ac6d0813d3b2662ead47538e6e3ea9d0d7",
+              "jev_ultrafast/questions.py": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+              "jev_ultrafast/snapshot.js": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+              "jev_ultrafast/static/fixture.html": "e48e7d7b6225b215060692e0a28c3d0b59e465e4b94c1bc510d5f37ff0b8bfbe",
+              "jev_ultrafast/static/local_click_fixture.html": "4697cdf7554f0579e511ebaf9b5224ff70c662d2f3e051f678bb9a816a6fc6e9",
+              "scripts/local_benchmark.py": "933d44b94cd5673ae07194a1908804d16674bcbc2cb4b639edfeee63f09e93d6"
+            },
+            "installed_distributions": {
+              "jev-ultrafast": "0.1.0",
+              "browser-harness": "0.1.13",
+              "httpx": "0.28.1",
+              "websockets": "15.0.1",
+              "mlx": null,
+              "mlx-lm": null
+            },
+            "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+            "machine": "arm64"
+          },
+          "helper-probe": {
+            "repo_head": "8f54b32e0d9c1509e5a2d7cb812dae507a245c26",
+            "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "source_sha256": {
+              "jev_ultrafast/__init__.py": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+              "jev_ultrafast/agent.py": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+              "jev_ultrafast/browser.py": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+              "jev_ultrafast/demo.py": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+              "jev_ultrafast/isolated_browser.py": "c75c9bd09f09e8ff33b15d59522ea86c6deb5ca97be554d188d90525cae4973d",
+              "jev_ultrafast/model.py": "87eca07d69ded7ecb86b6808044a54ac6d0813d3b2662ead47538e6e3ea9d0d7",
+              "jev_ultrafast/questions.py": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+              "jev_ultrafast/snapshot.js": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+              "jev_ultrafast/static/fixture.html": "e48e7d7b6225b215060692e0a28c3d0b59e465e4b94c1bc510d5f37ff0b8bfbe",
+              "jev_ultrafast/static/local_click_fixture.html": "4697cdf7554f0579e511ebaf9b5224ff70c662d2f3e051f678bb9a816a6fc6e9",
+              "scripts/local_benchmark.py": "933d44b94cd5673ae07194a1908804d16674bcbc2cb4b639edfeee63f09e93d6"
+            },
+            "installed_distributions": {
+              "jev-ultrafast": "0.1.0",
+              "browser-harness": "0.1.13",
+              "httpx": "0.28.1",
+              "websockets": "15.0.1",
+              "mlx": null,
+              "mlx-lm": null
+            },
+            "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+            "machine": "arm64"
+          }
+        },
+        "private_original_file_sha256": {
+          "cold/metadata.json": "c2b0f61e14796e805f3b8ad15d767c318e500d69bab7f5c0f185b9344115c6b9",
+          "helper-probe/metadata.json": "4760081cfc2cd231a2b2a537f36f2cc919d85d89932421bb7719a20f938cc2e1",
+          "model-metadata-cold.json": "85120822d35beddafd5326cf8e3b55016959f074da5b7c569d1ec6402e87f743",
+          "model-metadata-helper-probe.json": "28ba64147a31ea2b2093cb6e984b8d98d93530db5da57145efa3ccb5c845f05f",
+          "model-metadata-warm.json": "b17d1d2118a14555510fd554d3cae3da21b5fb3af9191e8cacb62195b2da544b",
+          "model-metadata.json": "ac1bc683f23e0470a5f3ccef6ced9a3823a702db98cbb570f26ee4472db07503",
+          "warm/metadata.json": "8bc339b20294a3faebc1443d53dfa3ec6936b379fbcdc111c474c1966a188081"
+        },
+        "redaction": "Personal filesystem paths, repository owner identifiers, and launcher commands omitted."
+      },
+      "cold_process_first_request_client_ms": {
+        "n": 1,
+        "p50": 20465.57474997826,
+        "p95": 20465.57474997826,
+        "min": 20465.57474997826,
+        "max": 20465.57474997826,
+        "mean": 20465.57474997826
+      },
+      "startup": {
+        "decision_http_bind_ms": 229.54241698607802,
+        "decision_service_to_first_complete_ms": 20899.94229201693,
+        "text_model_ready_ms": 2122.131041949615
+      },
+      "startup_scope": "Cold process/start-to-first-request completion; filesystem/OS caches were not cleared.",
+      "actual_counts": {
+        "native_http_decision_requests": 21,
+        "native_transport_failures": 0,
+        "logical_decision_calls": 21,
+        "logical_helper_calls": 5,
+        "measured_runs": {
+          "decision_microbenchmark": 3,
+          "browser_task": 3
+        },
+        "warmup_runs": {
+          "decision_microbenchmark": 1,
+          "browser_task": 1
+        }
+      },
+      "measured_by_workload": {
+        "browser_task": {
+          "groups": {
+            "browser_task": {
+              "runs": 3,
+              "successful_runs": 0,
+              "failed_runs": 3,
+              "decision_wall_ms_all_attempts": {
+                "n": 12,
+                "p50": 10905.665166501421,
+                "p95": 17617.79671251424,
+                "min": 5769.619207945652,
+                "max": 23923.06862503756,
+                "mean": 11312.15567708326
+              },
+              "helper_wall_ms_all_attempts": {
+                "n": 3,
+                "p50": 2905.3350419271737,
+                "p95": 3386.859567090869,
+                "min": 2710.3361249901354,
+                "max": 3440.3622921090573,
+                "mean": 3018.6778196754553
+              }
+            }
+          },
+          "warmup_runs": 1,
+          "warmup_failed_runs": 1,
+          "decision_wall_ms_all_attempts": {
+            "n": 12,
+            "p50": 10905.665166501421,
+            "p95": 17617.79671251424,
+            "min": 5769.619207945652,
+            "max": 23923.06862503756,
+            "mean": 11312.15567708326
+          },
+          "decision_wall_ms_successful": {
+            "n": 12,
+            "p50": 10905.665166501421,
+            "p95": 17617.79671251424,
+            "min": 5769.619207945652,
+            "max": 23923.06862503756,
+            "mean": 11312.15567708326
+          },
+          "decision_adapter_scoring_ms_successful": {
+            "n": 12,
+            "p50": 10903.538124985062,
+            "p95": 17615.54662297712,
+            "min": 5767.952875001356,
+            "max": 23920.6689579878,
+            "mean": 11310.127934004413
+          },
+          "decision_input_tokens_per_scoring_second": {
+            "n": 12,
+            "p50": 188.2348141123125,
+            "p95": 196.0003142695804,
+            "min": 86.66145598356127,
+            "max": 196.25680454258807,
+            "mean": 172.08670623345157
+          },
+          "decision_failed_calls": 0,
+          "decision_ttft_ms": null,
+          "decision_ttft_reason": "Native choices are nonstreaming forward/scoring requests, without a first token event.",
+          "helper_wall_ms_all_attempts": {
+            "n": 3,
+            "p50": 2905.3350419271737,
+            "p95": 3386.859567090869,
+            "min": 2710.3361249901354,
+            "max": 3440.3622921090573,
+            "mean": 3018.6778196754553
+          },
+          "helper_failed_calls": 0,
+          "helper_first_content_delta_ms": {
+            "n": 3,
+            "p50": 2419.324,
+            "p95": 2799.2644,
+            "min": 2244.57,
+            "max": 2841.48,
+            "mean": 2501.791333333333
+          },
+          "helper_provider_completion_tokens_per_full_request_second": {
+            "n": 3,
+            "p50": 4.474526969315321,
+            "p95": 4.764260450819468,
+            "min": 3.7786718072736942,
+            "max": 4.796453059875485,
+            "mean": 4.349883945488167
+          },
+          "task_ms_all_runs": {
+            "n": 3,
+            "p50": 46889.916042098776,
+            "p95": 55879.39309166977,
+            "min": 41327.228249982,
+            "max": 56878.22387495544,
+            "mean": 48365.122722345404
+          },
+          "task_ms_successful": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "setup_ms": {
+            "n": 3,
+            "p50": 99.74391607102007,
+            "p95": 104.52239129226655,
+            "min": 87.78087492100894,
+            "max": 105.05333298351616,
+            "mean": 97.52604132518172
+          },
+          "verification_ms": {
+            "n": 3,
+            "p50": 0.40254206396639347,
+            "p95": 0.529516686219722,
+            "min": 0.37404103204607964,
+            "max": 0.543624977581203,
+            "mean": 0.4400693578645587
+          },
+          "end_to_end_ms": {
+            "n": 3,
+            "p50": 46978.3821250312,
+            "p95": 55983.617949683685,
+            "min": 41427.685584058054,
+            "max": 56984.199707978405,
+            "mean": 48463.42247235589
+          },
+          "browser_task_wall_ms": {
+            "n": 3,
+            "p50": 102.07683616317809,
+            "p95": 107.46618343982846,
+            "min": 82.49704004265368,
+            "max": 108.06499980390072,
+            "mean": 97.54629200324416
+          },
+          "model_wall_ms_per_task": {
+            "n": 3,
+            "p50": 46807.13554285467,
+            "p95": 55778.99025445804,
+            "min": 41218.90304097906,
+            "max": 56775.86300019175,
+            "mean": 48267.30052800849
+          },
+          "python_peak_rss_bytes_cumulative": 45056000,
+          "percentile_method": "linear interpolation at (n - 1) * q; p95 is descriptive for these small samples",
+          "memory_scope": "Current Python process cumulative peak only; service/Chromium RSS and cold load are external.",
+          "token_throughput_scope": "Text uses provider-reported completion_tokens/full request time. Choices use native_token_count divided by the typed adapter's reported latency_ms, including HF preparation and native pipe request/response. This is input scoring throughput, not native-only compute or generated tokens/s."
+        },
+        "decision_microbenchmark": {
+          "groups": {
+            "decision_microbenchmark": {
+              "runs": 3,
+              "successful_runs": 3,
+              "failed_runs": 0,
+              "decision_wall_ms_all_attempts": {
+                "n": 3,
+                "p50": 6114.522624993697,
+                "p95": 7589.154249767307,
+                "min": 4827.918750001118,
+                "max": 7753.002208075486,
+                "mean": 6231.8145276901005
+              },
+              "helper_wall_ms_all_attempts": {
+                "n": 0,
+                "p50": null,
+                "p95": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "intended_choice_runs": 3
+            }
+          },
+          "warmup_runs": 1,
+          "warmup_failed_runs": 0,
+          "decision_wall_ms_all_attempts": {
+            "n": 3,
+            "p50": 6114.522624993697,
+            "p95": 7589.154249767307,
+            "min": 4827.918750001118,
+            "max": 7753.002208075486,
+            "mean": 6231.8145276901005
+          },
+          "decision_wall_ms_successful": {
+            "n": 3,
+            "p50": 6114.522624993697,
+            "p95": 7589.154249767307,
+            "min": 4827.918750001118,
+            "max": 7753.002208075486,
+            "mean": 6231.8145276901005
+          },
+          "decision_adapter_scoring_ms_successful": {
+            "n": 3,
+            "p50": 6112.901832908392,
+            "p95": 7587.457108916715,
+            "min": 4825.78062498942,
+            "max": 7751.296584028751,
+            "mean": 6229.993013975521
+          },
+          "decision_input_tokens_per_scoring_second": {
+            "n": 3,
+            "p50": 138.88657518258614,
+            "p95": 172.22573484897032,
+            "min": 109.5300625897004,
+            "max": 175.930085923013,
+            "mean": 141.4489078984332
+          },
+          "decision_failed_calls": 0,
+          "decision_ttft_ms": null,
+          "decision_ttft_reason": "Native choices are nonstreaming forward/scoring requests, without a first token event.",
+          "helper_wall_ms_all_attempts": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "helper_failed_calls": 0,
+          "helper_first_content_delta_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "helper_provider_completion_tokens_per_full_request_second": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "task_ms_all_runs": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "task_ms_successful": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "setup_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "verification_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "end_to_end_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "browser_task_wall_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "model_wall_ms_per_task": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "python_peak_rss_bytes_cumulative": 40140800,
+          "percentile_method": "linear interpolation at (n - 1) * q; p95 is descriptive for these small samples",
+          "memory_scope": "Current Python process cumulative peak only; service/Chromium RSS and cold load are external.",
+          "token_throughput_scope": "Text uses provider-reported completion_tokens/full request time. Choices use native_token_count divided by the typed adapter's reported latency_ms, including HF preparation and native pipe request/response. This is input scoring throughput, not native-only compute or generated tokens/s."
+        }
+      },
+      "browser_runs": [
+        {
+          "phase": "measured",
+          "index": 0,
+          "strict_success": false,
+          "agent_status": "done",
+          "verification_checks": {
+            "opened_casa_flora": true,
+            "requested_filters_visible": false,
+            "casa_flora_visible": true
+          },
+          "failure_reasons": [
+            "independent_check_failed:requested_filters_visible"
+          ],
+          "operations": [
+            "TYPE_TEXT",
+            "SELECT",
+            "CLICK",
+            "DONE"
+          ],
+          "executed_operations": [
+            "TYPE_TEXT",
+            "SELECT",
+            "CLICK"
+          ],
+          "fixture_filter_statement": "Your filters: Design · Free cancellation off · Destination anywhere",
+          "decision_calls": 4,
+          "text_calls": 1,
+          "setup_ms": 105.05333298351616,
+          "task_ms": 56878.22387495544,
+          "verification_ms": 0.543624977581203,
+          "total_ms": 56984.199707978405,
+          "model_wall_ms": 56775.86300019175,
+          "browser_task_wall_ms": 102.07683616317809
+        },
+        {
+          "phase": "measured",
+          "index": 1,
+          "strict_success": false,
+          "agent_status": "done",
+          "verification_checks": {
+            "opened_casa_flora": true,
+            "requested_filters_visible": false,
+            "casa_flora_visible": true
+          },
+          "failure_reasons": [
+            "independent_check_failed:requested_filters_visible"
+          ],
+          "operations": [
+            "TYPE_TEXT",
+            "SELECT",
+            "CLICK",
+            "DONE"
+          ],
+          "executed_operations": [
+            "TYPE_TEXT",
+            "SELECT",
+            "CLICK"
+          ],
+          "fixture_filter_statement": "Your filters: Design · Free cancellation off · Destination anywhere",
+          "decision_calls": 4,
+          "text_calls": 1,
+          "setup_ms": 99.74391607102007,
+          "task_ms": 41327.228249982,
+          "verification_ms": 0.37404103204607964,
+          "total_ms": 41427.685584058054,
+          "model_wall_ms": 41218.90304097906,
+          "browser_task_wall_ms": 108.06499980390072
+        },
+        {
+          "phase": "measured",
+          "index": 2,
+          "strict_success": false,
+          "agent_status": "done",
+          "verification_checks": {
+            "opened_casa_flora": true,
+            "requested_filters_visible": false,
+            "casa_flora_visible": true
+          },
+          "failure_reasons": [
+            "independent_check_failed:requested_filters_visible"
+          ],
+          "operations": [
+            "TYPE_TEXT",
+            "SELECT",
+            "CLICK",
+            "DONE"
+          ],
+          "executed_operations": [
+            "TYPE_TEXT",
+            "SELECT",
+            "CLICK"
+          ],
+          "fixture_filter_statement": "Your filters: Design · Free cancellation off · Destination anywhere",
+          "decision_calls": 4,
+          "text_calls": 1,
+          "setup_ms": 87.78087492100894,
+          "task_ms": 46889.916042098776,
+          "verification_ms": 0.40254206396639347,
+          "total_ms": 46978.3821250312,
+          "model_wall_ms": 46807.13554285467,
+          "browser_task_wall_ms": 82.49704004265368
+        }
+      ],
+      "browser_strict_success_count": 0,
+      "browser_measured_count": 3,
+      "browser_helper_metrics": {
+        "calls": 3,
+        "failed_calls": 0,
+        "first_content_delta_ms": {
+          "n": 3,
+          "p50": 2419.324,
+          "p95": 2799.2644,
+          "min": 2244.57,
+          "max": 2841.48,
+          "mean": 2501.791333333333
+        },
+        "full_request_ms": {
+          "n": 3,
+          "p50": 2905.3350419271737,
+          "p95": 3386.859567090869,
+          "min": 2710.3361249901354,
+          "max": 3440.3622921090573,
+          "mean": 3018.6778196754553
+        },
+        "provider_decode_tokens_per_second": {
+          "n": 3,
+          "p50": 18.314962408539657,
+          "p95": 19.087668917621883,
+          "min": 14.986961343631041,
+          "max": 19.173525196408796,
+          "mean": 17.491816316193166
+        },
+        "provider_decode_rate_scope": "Actual llama-server timings.predicted_per_second, using its convention excluding the first prefill-produced token from the decode interval; not completion_tokens/full request time.",
+        "provider_token_usage": [
+          {
+            "completion_tokens": 13,
+            "prompt_tokens": 412,
+            "total_tokens": 425,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          {
+            "completion_tokens": 13,
+            "prompt_tokens": 412,
+            "total_tokens": 425,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          {
+            "completion_tokens": 13,
+            "prompt_tokens": 412,
+            "total_tokens": 425,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          }
+        ],
+        "provider_timings": [
+          {
+            "cache_n": 0,
+            "prompt_n": 412,
+            "prompt_ms": 2636.352,
+            "prompt_per_token_ms": 6.398912621359223,
+            "prompt_per_second": 156.27655184133226,
+            "predicted_n": 13,
+            "predicted_ms": 800.696,
+            "predicted_per_token_ms": 66.72466666666666,
+            "predicted_per_second": 14.986961343631041
+          },
+          {
+            "cache_n": 0,
+            "prompt_n": 412,
+            "prompt_ms": 2246.03,
+            "prompt_per_token_ms": 5.451529126213592,
+            "prompt_per_second": 183.43477157473407,
+            "predicted_n": 13,
+            "predicted_ms": 655.202,
+            "predicted_per_token_ms": 54.60016666666667,
+            "predicted_per_second": 18.314962408539657
+          },
+          {
+            "cache_n": 0,
+            "prompt_n": 412,
+            "prompt_ms": 2080.742,
+            "prompt_per_token_ms": 5.050344660194175,
+            "prompt_per_second": 198.00628814144181,
+            "predicted_n": 13,
+            "predicted_ms": 625.863,
+            "predicted_per_token_ms": 52.15525,
+            "predicted_per_second": 19.173525196408796
+          }
+        ]
+      },
+      "helper_probe_metrics": {
+        "calls": 1,
+        "failed_calls": 0,
+        "first_content_delta_ms": {
+          "n": 1,
+          "p50": 2465.635,
+          "p95": 2465.635,
+          "min": 2465.635,
+          "max": 2465.635,
+          "mean": 2465.635
+        },
+        "full_request_ms": {
+          "n": 1,
+          "p50": 3588.4818750200793,
+          "p95": 3588.4818750200793,
+          "min": 3588.4818750200793,
+          "max": 3588.4818750200793,
+          "mean": 3588.4818750200793
+        },
+        "provider_decode_tokens_per_second": {
+          "n": 1,
+          "p50": 7.600165430267532,
+          "p95": 7.600165430267532,
+          "min": 7.600165430267532,
+          "max": 7.600165430267532,
+          "mean": 7.600165430267532
+        },
+        "provider_decode_rate_scope": "Actual llama-server timings.predicted_per_second, using its convention excluding the first prefill-produced token from the decode interval; not completion_tokens/full request time.",
+        "provider_token_usage": [
+          {
+            "completion_tokens": 13,
+            "prompt_tokens": 190,
+            "total_tokens": 203,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          }
+        ],
+        "provider_timings": [
+          {
+            "cache_n": 0,
+            "prompt_n": 190,
+            "prompt_ms": 2003.889,
+            "prompt_per_token_ms": 10.546784210526315,
+            "prompt_per_second": 94.8156310055098,
+            "predicted_n": 13,
+            "predicted_ms": 1578.913,
+            "predicted_per_token_ms": 131.57608333333334,
+            "predicted_per_second": 7.600165430267532
+          }
+        ]
+      },
+      "chromium": {
+        "chromium_version": {
+          "protocolVersion": "1.3",
+          "product": "HeadlessChrome/153.0.8010.12",
+          "revision": "@971a7443b0c9b0a9b2860529b33331b76077ec62",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+          "jsVersion": "15.3.76.4"
+        },
+        "chromium_startup_ms": 280.44858400244266,
+        "chromium_resource_usage": {
+          "peak_rss_bytes": 114212864,
+          "user_seconds": 0.764007,
+          "system_seconds": 0.469228,
+          "exit_code": 143,
+          "scope": "macOS wait4 owned main PID; not simultaneous process-tree total"
+        },
+        "chromium_resource_usage_scope": "macOS wait4 for the owned Chromium main PID; this is not the sum of its process tree.",
+        "chromium_cdp_blocked_requests": 0,
+        "chromium_proxy_blocked_requests": 0
+      },
+      "native_model_peak_rss": {
+        "peak_rss_bytes": 9305620480,
+        "n_reports": 1,
+        "scope": "macOS /usr/bin/time -l for the owned native model process; bytes, not total system memory"
+      },
+      "separate_process_resource_usage": {
+        "text-service": {
+          "peak_rss_bytes": 8399208448,
+          "user_seconds": 3.565801,
+          "system_seconds": 1.167343,
+          "exit_code": 0,
+          "source": "macOS wait4 owned PID; descendant aggregation may apply; peaks are not additive"
+        },
+        "fixture": {
+          "peak_rss_bytes": 23429120,
+          "user_seconds": 0.039497,
+          "system_seconds": 0.021113999999999997,
+          "exit_code": -15,
+          "source": "macOS wait4 owned PID; descendant aggregation may apply; peaks are not additive"
+        },
+        "decision-service": {
+          "peak_rss_bytes": 9305620480,
+          "user_seconds": 9.052954,
+          "system_seconds": 2.75223,
+          "exit_code": 0,
+          "source": "macOS wait4 owned PID; descendant aggregation may apply; peaks are not additive"
+        },
+        "launcher_peak_rss_bytes": 29786112
+      },
+      "resource_scope": "Per-process lifetime peaks; not simultaneous physical memory and must not be summed.",
+      "native_wire_request_sha256_counts": {
+        "6bd913b50a9133510fdd9199683665eb09dc6cb314e31b12a15c5e8a12427df2": 5,
+        "3acfc2168c87f97eac32e5369f795ef004f460e0443444bf51579e26ebe01eae": 4,
+        "ff2464c89fa42e5cdded3bd53e709885b6df918cb179f0f1b3d166d3a701558f": 4,
+        "cabd4e02ca2caf8b12e307c2f5bdd6ce06d10eb0539e55944fe46b9934ff8d1a": 4,
+        "0cd112692af417e4d53ef01b3468b56aae5849ab0423d3d5b4030147d7c73d49": 4
+      },
+      "native_input_token_count_counts": {
+        "849": 5,
+        "2073": 4,
+        "2103": 4,
+        "2030": 4,
+        "1132": 4
+      },
+      "raw_evidence_sha256": {
+        "cold/runs.jsonl": "588724986bf05bbf855f56c2caffaf9a56442099b45cc3b0d582d4bac7d42a40",
+        "helper-probe/runs.jsonl": "c22f16e43cfeb46e78149fc2a785d36d0691def551c0c732db25c4f11db2b6c7",
+        "native-decision-time.log": "558227e8a7f099fe9465c17fecdc14da4b7f166865cf0baaaf84655510b70b52",
+        "native-decision-time.log.native.log": "dbd476e4b4fbac8e879711b5f3fe8d5af16fbfcd19a858240536425f12e32cd9",
+        "native-requests.jsonl": "6e3ef8e368fa2b391809cb22dea7fb8f27c43a5bac114638f24d2b7461c6ee69",
+        "warm/runs.jsonl": "e7980daaf3f9a1d9aa888ad90198cae1087ff35da6783c5cec45af7c9cc7623b"
+      }
+    },
+    "click": {
+      "dataset": "q4-click-20261013",
+      "identity": {
+        "artifact_file": "s1-boolq-Q4_K_M.gguf",
+        "weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+        "quantization": "Q4_K_M",
+        "runtime": "llama.cpp Metal",
+        "system_one_repo_head": "eef847f01b63c86f05df81027a959cf3c658d54b",
+        "llama_cpp_head": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+        "native_runner_sha256": "d1e81415da71954981ebc44794c90393961a8e150559a18afdf948d60f8506be",
+        "adapter_source_sha256": "95e9343ead0656f13197c4371ab48b445826d48bd37f8cc9f03b94ae926351c1",
+        "conversion_manifest_sha256": "3e07bde8e66308ce80a90e570b7eb04fe1c11f49d6b3ee3486574ee480aadd46",
+        "calibration_sha256": "fcf22457f36ebf2b1a7675fbb6a83198cdc80b4111977efa5a39b73827bc0fcc",
+        "calibrated_temperature": 3.232734824261939,
+        "model_manifest": {
+          "schema_version": 1,
+          "format": "gguf",
+          "status": "converted_and_structurally_verified",
+          "recorded_at": "2026-10-06T15:03:53.576747+00:00",
+          "source_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+          "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+          "source_checkpoint_files": [
+            {
+              "path": "config.json",
+              "size_bytes": 4953,
+              "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+            },
+            {
+              "path": "model.safetensors",
+              "size_bytes": 23919549408,
+              "sha256": "11144621122123135eb79c9cfd0466a2c51f230109124aefe401cdbec8c71a53"
+            }
+          ],
+          "source_s1_config_sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962",
+          "training_recipe_sha256": "2a708e5f4acfea4b688e88ba338aa62991608db875fef039ee6b4f33c3a74d73",
+          "source_hub_weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+          "llama_cpp_revision": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+          "conversion_record_source_revision": "1bc818be929c2545ebf65aa76ed6775c8fdc858c",
+          "recording_program_sha256": "cc71ebf5a27cc473c6e02439815de7c73eac52aef701ea6d446873328345f779",
+          "source_capture_manifest_sha256": "90e9fc465a6e372c81e1596e387fc7c62107730b41c4f3c1d5c7a8087a9bb51e",
+          "model_file": "s1-boolq-Q4_K_M.gguf",
+          "mmproj_file": "mmproj-s1-boolq-f16.gguf",
+          "quantization": {
+            "language_model": "Q4_K_M",
+            "multimodal_projector": "F16",
+            "direct_conversion": false
+          },
+          "source_tensor_count": 677,
+          "source_tensor_groups": {
+            "model.embed_audio": 1,
+            "model.embed_vision": 1,
+            "model.language_model": 666,
+            "model.vision_embedder": 9
+          },
+          "files": [
+            {
+              "path": "base_s1_config.json",
+              "size_bytes": 367,
+              "sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962"
+            },
+            {
+              "path": "chat_template.jinja",
+              "size_bytes": 18683,
+              "sha256": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4"
+            },
+            {
+              "path": "config.json",
+              "size_bytes": 4953,
+              "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+            },
+            {
+              "path": "mmproj-s1-boolq-f16.gguf",
+              "size_bytes": 122031744,
+              "sha256": "cffbff05efd290fef28d084ebcb653de7594f5e26bae0eabbedf30d6c782c1d1"
+            },
+            {
+              "path": "processor_config.json",
+              "size_bytes": 1382,
+              "sha256": "6b938e76555b3e9946890770e1abcd442a4718f34041a58e8139dc8ad34545c9"
+            },
+            {
+              "path": "s1-boolq-Q4_K_M.gguf",
+              "size_bytes": 7381383584,
+              "sha256": "daf56f5a5a0496e4e726e504858ef8dda1f6b02cd1bc7a68e9f1beb2bf178365"
+            },
+            {
+              "path": "tensor-inventory.json",
+              "size_bytes": 113174,
+              "sha256": "c7557a6f7dace16de31cbeb1815b7779063f6ee75102c30ba29dd3beb356fe27"
+            },
+            {
+              "path": "tokenizer.json",
+              "size_bytes": 32169626,
+              "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+            },
+            {
+              "path": "tokenizer_config.json",
+              "size_bytes": 3736,
+              "sha256": "794a39f8330ce05020774c70c091225bc5f031b9cacf41fc20e52eb54b4b52d8"
+            }
+          ],
+          "versions": {
+            "torch": "2.8.0",
+            "transformers": "5.17.0",
+            "numpy": "2.5.3",
+            "safetensors": "0.8.0"
+          },
+          "scope": "Structural conversion receipt; runtime quality requires the separate full-population evaluation.",
+          "trained_project_name": "Gemma-4-12B-Unified-System-One",
+          "base_model_name": "gemma-4-12B-it"
+        },
+        "hardware": {
+          "chip": "Apple M1 Max",
+          "unified_memory_bytes": 68719476736,
+          "source": "system_profiler inventory verified for this Mac on 2026-10-13"
+        },
+        "runtime_settings": {
+          "context": 4096,
+          "batch": 512,
+          "threads": 4,
+          "gpu_layers": 99,
+          "seed": 17,
+          "text_temperature": 0,
+          "text_max_tokens": 128,
+          "text_prompt_cache": false
+        },
+        "executed_sources": {
+          "cold": {
+            "repo_head": "8f54b32e0d9c1509e5a2d7cb812dae507a245c26",
+            "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "source_sha256": {
+              "jev_ultrafast/__init__.py": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+              "jev_ultrafast/agent.py": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+              "jev_ultrafast/browser.py": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+              "jev_ultrafast/demo.py": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+              "jev_ultrafast/isolated_browser.py": "c75c9bd09f09e8ff33b15d59522ea86c6deb5ca97be554d188d90525cae4973d",
+              "jev_ultrafast/model.py": "87eca07d69ded7ecb86b6808044a54ac6d0813d3b2662ead47538e6e3ea9d0d7",
+              "jev_ultrafast/questions.py": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+              "jev_ultrafast/snapshot.js": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+              "jev_ultrafast/static/fixture.html": "e48e7d7b6225b215060692e0a28c3d0b59e465e4b94c1bc510d5f37ff0b8bfbe",
+              "jev_ultrafast/static/local_click_fixture.html": "4697cdf7554f0579e511ebaf9b5224ff70c662d2f3e051f678bb9a816a6fc6e9",
+              "scripts/local_benchmark.py": "933d44b94cd5673ae07194a1908804d16674bcbc2cb4b639edfeee63f09e93d6"
+            },
+            "installed_distributions": {
+              "jev-ultrafast": "0.1.0",
+              "browser-harness": "0.1.13",
+              "httpx": "0.28.1",
+              "websockets": "15.0.1",
+              "mlx": null,
+              "mlx-lm": null
+            },
+            "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+            "machine": "arm64"
+          },
+          "warm": {
+            "repo_head": "8f54b32e0d9c1509e5a2d7cb812dae507a245c26",
+            "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "source_sha256": {
+              "jev_ultrafast/__init__.py": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+              "jev_ultrafast/agent.py": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+              "jev_ultrafast/browser.py": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+              "jev_ultrafast/demo.py": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+              "jev_ultrafast/isolated_browser.py": "c75c9bd09f09e8ff33b15d59522ea86c6deb5ca97be554d188d90525cae4973d",
+              "jev_ultrafast/model.py": "87eca07d69ded7ecb86b6808044a54ac6d0813d3b2662ead47538e6e3ea9d0d7",
+              "jev_ultrafast/questions.py": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+              "jev_ultrafast/snapshot.js": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+              "jev_ultrafast/static/fixture.html": "e48e7d7b6225b215060692e0a28c3d0b59e465e4b94c1bc510d5f37ff0b8bfbe",
+              "jev_ultrafast/static/local_click_fixture.html": "4697cdf7554f0579e511ebaf9b5224ff70c662d2f3e051f678bb9a816a6fc6e9",
+              "scripts/local_benchmark.py": "933d44b94cd5673ae07194a1908804d16674bcbc2cb4b639edfeee63f09e93d6"
+            },
+            "installed_distributions": {
+              "jev-ultrafast": "0.1.0",
+              "browser-harness": "0.1.13",
+              "httpx": "0.28.1",
+              "websockets": "15.0.1",
+              "mlx": null,
+              "mlx-lm": null
+            },
+            "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+            "machine": "arm64"
+          },
+          "helper-probe": {
+            "repo_head": "8f54b32e0d9c1509e5a2d7cb812dae507a245c26",
+            "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "source_sha256": {
+              "jev_ultrafast/__init__.py": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+              "jev_ultrafast/agent.py": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+              "jev_ultrafast/browser.py": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+              "jev_ultrafast/demo.py": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+              "jev_ultrafast/isolated_browser.py": "c75c9bd09f09e8ff33b15d59522ea86c6deb5ca97be554d188d90525cae4973d",
+              "jev_ultrafast/model.py": "87eca07d69ded7ecb86b6808044a54ac6d0813d3b2662ead47538e6e3ea9d0d7",
+              "jev_ultrafast/questions.py": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+              "jev_ultrafast/snapshot.js": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+              "jev_ultrafast/static/fixture.html": "e48e7d7b6225b215060692e0a28c3d0b59e465e4b94c1bc510d5f37ff0b8bfbe",
+              "jev_ultrafast/static/local_click_fixture.html": "4697cdf7554f0579e511ebaf9b5224ff70c662d2f3e051f678bb9a816a6fc6e9",
+              "scripts/local_benchmark.py": "933d44b94cd5673ae07194a1908804d16674bcbc2cb4b639edfeee63f09e93d6"
+            },
+            "installed_distributions": {
+              "jev-ultrafast": "0.1.0",
+              "browser-harness": "0.1.13",
+              "httpx": "0.28.1",
+              "websockets": "15.0.1",
+              "mlx": null,
+              "mlx-lm": null
+            },
+            "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+            "machine": "arm64"
+          }
+        },
+        "private_original_file_sha256": {
+          "cold/metadata.json": "0790db45ca3014b9f022373117ba6270c5c603282015115eda193580d5e49f2f",
+          "helper-probe/metadata.json": "8f668481eca6b7f0a71af3924028a2c1ed4327624ce42efed0f5aee7fd06cd5a",
+          "model-metadata-cold.json": "f531fee25a35bd48070397efa77f5c03b7e71ff83a453306e96fba9e0443ede3",
+          "model-metadata-helper-probe.json": "70e2497842ff2e8dd3d629db1d933a12beb82b218c615b5f97b29673e8b2b977",
+          "model-metadata-warm.json": "15cca0c86c491a3faab51a348cd42dc8eb53034c1548e8c585c1dd1ee76fe8d1",
+          "model-metadata.json": "b3b78964e88619ca0bfa657eefb22362b7edcdb6ac62e515cc800d54def89b10",
+          "warm/metadata.json": "c15908045d3d0b6269ae830629197b273bf589ccd22ccfcc01f4b3e9bd626646"
+        },
+        "redaction": "Personal filesystem paths, repository owner identifiers, and launcher commands omitted."
+      },
+      "cold_process_first_request_client_ms": {
+        "n": 1,
+        "p50": 14751.215790980496,
+        "p95": 14751.215790980496,
+        "min": 14751.215790980496,
+        "max": 14751.215790980496,
+        "mean": 14751.215790980496
+      },
+      "startup": {
+        "decision_http_bind_ms": 228.9557500043884,
+        "decision_service_to_first_complete_ms": 15188.048665993847,
+        "text_model_ready_ms": 2306.180875049904
+      },
+      "startup_scope": "Cold process/start-to-first-request completion; filesystem/OS caches were not cleared.",
+      "actual_counts": {
+        "native_http_decision_requests": 77,
+        "native_transport_failures": 0,
+        "logical_decision_calls": 77,
+        "logical_helper_calls": 1,
+        "measured_runs": {
+          "decision_microbenchmark": 3,
+          "browser_task": 5
+        },
+        "warmup_runs": {
+          "decision_microbenchmark": 1,
+          "browser_task": 1
+        }
+      },
+      "measured_by_workload": {
+        "browser_task": {
+          "groups": {
+            "browser_task": {
+              "runs": 5,
+              "successful_runs": 0,
+              "failed_runs": 5,
+              "decision_wall_ms_all_attempts": {
+                "n": 60,
+                "p50": 7657.816312508658,
+                "p95": 12401.8405911047,
+                "min": 2558.1591670634225,
+                "max": 13219.664874952286,
+                "mean": 8093.49487219976
+              },
+              "helper_wall_ms_all_attempts": {
+                "n": 0,
+                "p50": null,
+                "p95": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              }
+            }
+          },
+          "warmup_runs": 1,
+          "warmup_failed_runs": 1,
+          "decision_wall_ms_all_attempts": {
+            "n": 60,
+            "p50": 7657.816312508658,
+            "p95": 12401.8405911047,
+            "min": 2558.1591670634225,
+            "max": 13219.664874952286,
+            "mean": 8093.49487219976
+          },
+          "decision_wall_ms_successful": {
+            "n": 60,
+            "p50": 7657.816312508658,
+            "p95": 12401.8405911047,
+            "min": 2558.1591670634225,
+            "max": 13219.664874952286,
+            "mean": 8093.49487219976
+          },
+          "decision_adapter_scoring_ms_successful": {
+            "n": 60,
+            "p50": 7655.941271048505,
+            "p95": 12399.745503498705,
+            "min": 2556.719208951108,
+            "max": 13217.705458053388,
+            "mean": 8091.654466647499
+          },
+          "decision_input_tokens_per_scoring_second": {
+            "n": 60,
+            "p50": 91.08018816213195,
+            "p95": 170.25188013717312,
+            "min": 76.98450257791562,
+            "max": 200.0247135256064,
+            "mean": 100.99959906670685
+          },
+          "decision_failed_calls": 0,
+          "decision_ttft_ms": null,
+          "decision_ttft_reason": "Native choices are nonstreaming forward/scoring requests, without a first token event.",
+          "helper_wall_ms_all_attempts": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "helper_failed_calls": 0,
+          "helper_first_content_delta_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "helper_provider_completion_tokens_per_full_request_second": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "task_ms_all_runs": {
+            "n": 5,
+            "p50": 102273.69379193988,
+            "p95": 106642.01323301531,
+            "min": 83643.57987500262,
+            "max": 107692.59020802565,
+            "mean": 97488.18784980103
+          },
+          "task_ms_successful": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "setup_ms": {
+            "n": 5,
+            "p50": 69.06620808877051,
+            "p95": 105.74240002315491,
+            "min": 51.57362495083362,
+            "max": 106.22900002636015,
+            "mean": 77.09534980822355
+          },
+          "verification_ms": {
+            "n": 5,
+            "p50": 0.398874981328845,
+            "p95": 0.4161753226071596,
+            "min": 0.3153750440105796,
+            "max": 0.4193339264020324,
+            "mean": 0.38149156607687473
+          },
+          "end_to_end_ms": {
+            "n": 5,
+            "p50": 102329.13912495133,
+            "p95": 106697.8430834366,
+            "min": 83748.10666695703,
+            "max": 107744.93875005282,
+            "mean": 97565.96280860249
+          },
+          "browser_task_wall_ms": {
+            "n": 5,
+            "p50": 360.96166574861854,
+            "p95": 395.5043675377965,
+            "min": 323.4338309848681,
+            "max": 397.1545840613544,
+            "mean": 365.5722746392712
+          },
+          "model_wall_ms_per_task": {
+            "n": 5,
+            "p50": 101915.6009569997,
+            "p95": 106251.3993591303,
+            "min": 83254.00208332576,
+            "max": 107294.73520896863,
+            "mean": 97121.93846639711
+          },
+          "python_peak_rss_bytes_cumulative": 45826048,
+          "percentile_method": "linear interpolation at (n - 1) * q; p95 is descriptive for these small samples",
+          "memory_scope": "Current Python process cumulative peak only; service/Chromium RSS and cold load are external.",
+          "token_throughput_scope": "Text uses provider-reported completion_tokens/full request time. Choices use native_token_count divided by the typed adapter's reported latency_ms, including HF preparation and native pipe request/response. This is input scoring throughput, not native-only compute or generated tokens/s."
+        },
+        "decision_microbenchmark": {
+          "groups": {
+            "decision_microbenchmark": {
+              "runs": 3,
+              "successful_runs": 3,
+              "failed_runs": 0,
+              "decision_wall_ms_all_attempts": {
+                "n": 3,
+                "p50": 7954.160458990373,
+                "p95": 7993.632770644035,
+                "min": 7273.587250034325,
+                "max": 7998.018583049998,
+                "mean": 7741.922097358231
+              },
+              "helper_wall_ms_all_attempts": {
+                "n": 0,
+                "p50": null,
+                "p95": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "intended_choice_runs": 3
+            }
+          },
+          "warmup_runs": 1,
+          "warmup_failed_runs": 0,
+          "decision_wall_ms_all_attempts": {
+            "n": 3,
+            "p50": 7954.160458990373,
+            "p95": 7993.632770644035,
+            "min": 7273.587250034325,
+            "max": 7998.018583049998,
+            "mean": 7741.922097358231
+          },
+          "decision_wall_ms_successful": {
+            "n": 3,
+            "p50": 7954.160458990373,
+            "p95": 7993.632770644035,
+            "min": 7273.587250034325,
+            "max": 7998.018583049998,
+            "mean": 7741.922097358231
+          },
+          "decision_adapter_scoring_ms_successful": {
+            "n": 3,
+            "p50": 7952.376834000461,
+            "p95": 7991.779471188784,
+            "min": 7271.893583005294,
+            "max": 7996.157541987486,
+            "mean": 7740.142652997747
+          },
+          "decision_input_tokens_per_scoring_second": {
+            "n": 3,
+            "p50": 106.76053433108108,
+            "p95": 115.75184851703676,
+            "min": 106.17599710134984,
+            "max": 116.7508834265874,
+            "mean": 109.8958049530061
+          },
+          "decision_failed_calls": 0,
+          "decision_ttft_ms": null,
+          "decision_ttft_reason": "Native choices are nonstreaming forward/scoring requests, without a first token event.",
+          "helper_wall_ms_all_attempts": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "helper_failed_calls": 0,
+          "helper_first_content_delta_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "helper_provider_completion_tokens_per_full_request_second": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "task_ms_all_runs": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "task_ms_successful": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "setup_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "verification_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "end_to_end_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "browser_task_wall_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "model_wall_ms_per_task": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "python_peak_rss_bytes_cumulative": 40386560,
+          "percentile_method": "linear interpolation at (n - 1) * q; p95 is descriptive for these small samples",
+          "memory_scope": "Current Python process cumulative peak only; service/Chromium RSS and cold load are external.",
+          "token_throughput_scope": "Text uses provider-reported completion_tokens/full request time. Choices use native_token_count divided by the typed adapter's reported latency_ms, including HF preparation and native pipe request/response. This is input scoring throughput, not native-only compute or generated tokens/s."
+        }
+      },
+      "browser_runs": [
+        {
+          "phase": "measured",
+          "index": 0,
+          "strict_success": false,
+          "agent_status": "ready",
+          "verification_checks": {
+            "completion_confirmed": false
+          },
+          "failure_reasons": [
+            "independent_check_failed:completion_confirmed",
+            "error:RuntimeError"
+          ],
+          "operations": [
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK"
+          ],
+          "executed_operations": [
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK"
+          ],
+          "fixture_filter_statement": null,
+          "decision_calls": 12,
+          "text_calls": 0,
+          "setup_ms": 103.79600001033396,
+          "task_ms": 83643.57987500262,
+          "verification_ms": 0.40354090742766857,
+          "total_ms": 83748.10666695703,
+          "model_wall_ms": 83254.00208332576,
+          "browser_task_wall_ms": 388.9035014435649
+        },
+        {
+          "phase": "measured",
+          "index": 1,
+          "strict_success": false,
+          "agent_status": "ready",
+          "verification_checks": {
+            "completion_confirmed": false
+          },
+          "failure_reasons": [
+            "independent_check_failed:completion_confirmed",
+            "error:RuntimeError"
+          ],
+          "operations": [
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK"
+          ],
+          "executed_operations": [
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK"
+          ],
+          "fixture_filter_statement": null,
+          "decision_calls": 12,
+          "text_calls": 0,
+          "setup_ms": 106.22900002636015,
+          "task_ms": 91391.37004106306,
+          "verification_ms": 0.3153750440105796,
+          "total_ms": 91498.16908407956,
+          "model_wall_ms": 91067.29812291451,
+          "browser_task_wall_ms": 323.4338309848681
+        },
+        {
+          "phase": "measured",
+          "index": 2,
+          "strict_success": false,
+          "agent_status": "ready",
+          "verification_checks": {
+            "completion_confirmed": false
+          },
+          "failure_reasons": [
+            "independent_check_failed:completion_confirmed",
+            "error:RuntimeError"
+          ],
+          "operations": [
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK"
+          ],
+          "executed_operations": [
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK"
+          ],
+          "fixture_filter_statement": null,
+          "decision_calls": 12,
+          "text_calls": 0,
+          "setup_ms": 51.57362495083362,
+          "task_ms": 107692.59020802565,
+          "verification_ms": 0.4193339264020324,
+          "total_ms": 107744.93875005282,
+          "model_wall_ms": 107294.73520896863,
+          "browser_task_wall_ms": 397.1545840613544
+        },
+        {
+          "phase": "measured",
+          "index": 3,
+          "strict_success": false,
+          "agent_status": "ready",
+          "verification_checks": {
+            "completion_confirmed": false
+          },
+          "failure_reasons": [
+            "independent_check_failed:completion_confirmed",
+            "error:RuntimeError"
+          ],
+          "operations": [
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK"
+          ],
+          "executed_operations": [
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK"
+          ],
+          "fixture_filter_statement": null,
+          "decision_calls": 12,
+          "text_calls": 0,
+          "setup_ms": 69.06620808877051,
+          "task_ms": 102439.70533297397,
+          "verification_ms": 0.398874981328845,
+          "total_ms": 102509.4604169717,
+          "model_wall_ms": 102078.05595977698,
+          "browser_task_wall_ms": 360.96166574861854
+        },
+        {
+          "phase": "measured",
+          "index": 4,
+          "strict_success": false,
+          "agent_status": "ready",
+          "verification_checks": {
+            "completion_confirmed": false
+          },
+          "failure_reasons": [
+            "independent_check_failed:completion_confirmed",
+            "error:RuntimeError"
+          ],
+          "operations": [
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK"
+          ],
+          "executed_operations": [
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK",
+            "CLICK"
+          ],
+          "fixture_filter_statement": null,
+          "decision_calls": 12,
+          "text_calls": 0,
+          "setup_ms": 54.81191596481949,
+          "task_ms": 102273.69379193988,
+          "verification_ms": 0.3703329712152481,
+          "total_ms": 102329.13912495133,
+          "model_wall_ms": 101915.6009569997,
+          "browser_task_wall_ms": 357.40779095795006
+        }
+      ],
+      "browser_strict_success_count": 0,
+      "browser_measured_count": 5,
+      "browser_helper_metrics": {
+        "calls": 0,
+        "failed_calls": 0,
+        "first_content_delta_ms": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "full_request_ms": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "provider_decode_tokens_per_second": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "provider_decode_rate_scope": "Actual llama-server timings.predicted_per_second, using its convention excluding the first prefill-produced token from the decode interval; not completion_tokens/full request time.",
+        "provider_token_usage": [],
+        "provider_timings": []
+      },
+      "helper_probe_metrics": {
+        "calls": 1,
+        "failed_calls": 0,
+        "first_content_delta_ms": {
+          "n": 1,
+          "p50": 2217.549,
+          "p95": 2217.549,
+          "min": 2217.549,
+          "max": 2217.549,
+          "mean": 2217.549
+        },
+        "full_request_ms": {
+          "n": 1,
+          "p50": 2859.4308340689167,
+          "p95": 2859.4308340689167,
+          "min": 2859.4308340689167,
+          "max": 2859.4308340689167,
+          "mean": 2859.4308340689167
+        },
+        "provider_decode_tokens_per_second": {
+          "n": 1,
+          "p50": 13.350793204001235,
+          "p95": 13.350793204001235,
+          "min": 13.350793204001235,
+          "max": 13.350793204001235,
+          "mean": 13.350793204001235
+        },
+        "provider_decode_rate_scope": "Actual llama-server timings.predicted_per_second, using its convention excluding the first prefill-produced token from the decode interval; not completion_tokens/full request time.",
+        "provider_token_usage": [
+          {
+            "completion_tokens": 13,
+            "prompt_tokens": 190,
+            "total_tokens": 203,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          }
+        ],
+        "provider_timings": [
+          {
+            "cache_n": 0,
+            "prompt_n": 190,
+            "prompt_ms": 1956.542,
+            "prompt_per_token_ms": 10.29758947368421,
+            "prompt_per_second": 97.11010548201878,
+            "predicted_n": 13,
+            "predicted_ms": 898.823,
+            "predicted_per_token_ms": 74.90191666666666,
+            "predicted_per_second": 13.350793204001235
+          }
+        ]
+      },
+      "chromium": {
+        "chromium_version": {
+          "protocolVersion": "1.3",
+          "product": "HeadlessChrome/153.0.8010.12",
+          "revision": "@971a7443b0c9b0a9b2860529b33331b76077ec62",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+          "jsVersion": "15.3.76.4"
+        },
+        "chromium_startup_ms": 169.90604205057025,
+        "chromium_resource_usage": {
+          "peak_rss_bytes": 94437376,
+          "user_seconds": 0.975355,
+          "system_seconds": 0.5103719999999999,
+          "exit_code": 143,
+          "scope": "macOS wait4 owned main PID; not simultaneous process-tree total"
+        },
+        "chromium_resource_usage_scope": "macOS wait4 for the owned Chromium main PID; this is not the sum of its process tree.",
+        "chromium_cdp_blocked_requests": 0,
+        "chromium_proxy_blocked_requests": 0
+      },
+      "native_model_peak_rss": {
+        "peak_rss_bytes": 9300377600,
+        "n_reports": 1,
+        "scope": "macOS /usr/bin/time -l for the owned native model process; bytes, not total system memory"
+      },
+      "separate_process_resource_usage": {
+        "text-service": {
+          "peak_rss_bytes": 8255291392,
+          "user_seconds": 1.831229,
+          "system_seconds": 1.431622,
+          "exit_code": 0,
+          "source": "macOS wait4 owned PID; descendant aggregation may apply; peaks are not additive"
+        },
+        "fixture": {
+          "peak_rss_bytes": 23330816,
+          "user_seconds": 0.050355,
+          "system_seconds": 0.031859,
+          "exit_code": -15,
+          "source": "macOS wait4 owned PID; descendant aggregation may apply; peaks are not additive"
+        },
+        "decision-service": {
+          "peak_rss_bytes": 9300377600,
+          "user_seconds": 10.863593,
+          "system_seconds": 3.12065,
+          "exit_code": 0,
+          "source": "macOS wait4 owned PID; descendant aggregation may apply; peaks are not additive"
+        },
+        "launcher_peak_rss_bytes": 30048256
+      },
+      "resource_scope": "Per-process lifetime peaks; not simultaneous physical memory and must not be summed.",
+      "native_wire_request_sha256_counts": {
+        "6bd913b50a9133510fdd9199683665eb09dc6cb314e31b12a15c5e8a12427df2": 5,
+        "f23178b1193285647c72f47870e1952a472ec16dda29e05542ab854b310504f9": 6,
+        "c8e719e8b21b902df9d85de046b8c69a39eebaa9e9029951f54a2663f1d18491": 6,
+        "62206fe74c79619cbfeaece4d7920cd8b6d6169fa824836cad4d586e6be52225": 6,
+        "843f5e28d11045fe8276b7c291ad64d8147bd83a73bbc73471d9efe373ed9445": 6,
+        "41f2e6b4c5ec8d0c628c0a338463ce77794573cc4576de55795c300155f38114": 6,
+        "237b68124275fcaab24d6d12c80551eae04e77426ebe01a40c9e2c9449c4ca23": 6,
+        "b93cf14a42a7a15c86af5f8561d208bec87c10140554c3360f8131c26472dfa9": 6,
+        "c4d861551a3814df48796b55171febb52945138014d61007d65560907e56b847": 6,
+        "775d669c257490eb37285977906ac629f2128457ea06a70d78c792562888b17a": 6,
+        "4096ca3717fbfc385d4be83141d6729c0b6fad0940d2c36501bf913944520169": 6,
+        "2f96fbe902ed5ad59ca161ab57b8a0629aa806bf9122bc6f992fa3f6e7b3579b": 6,
+        "24cc0ce8b1a83ec114f877c9d0d63f1fc9a16bcdadcd1776a965de85b9093cf0": 6
+      },
+      "native_input_token_count_counts": {
+        "849": 5,
+        "850": 6,
+        "450": 6,
+        "898": 6,
+        "500": 6,
+        "948": 6,
+        "550": 6,
+        "998": 6,
+        "600": 6,
+        "1048": 6,
+        "650": 6,
+        "1098": 6,
+        "675": 6
+      },
+      "raw_evidence_sha256": {
+        "cold/runs.jsonl": "1381d024929865778364e839d5b21ae3d3a6aa55fab02f9728db4314c63ed734",
+        "helper-probe/runs.jsonl": "cfad443c95622567b591b9f60818c47ab53b256f410bc3f5d8cdf31b0240ca6a",
+        "native-decision-time.log": "3245de9d704fb608808ef70d9ea87693b369cca1fce60614802739162f573da4",
+        "native-decision-time.log.native.log": "05956088fcb32d2614957538cc3838506ed5cb94f6b383c85de106f35ce54938",
+        "native-requests.jsonl": "72a12c0a56a7365cb897beec52fbaaa651bc334083b8de2b31beb7a83e9f26ba",
+        "warm/runs.jsonl": "c4821a738359ae24d5b6dea03e4177f09f40410dd18b46b1eaeea42be2196500"
+      }
+    }
+  },
+  "fixed_input_q4_q8_comparison": {
+    "exact_input_match": true,
+    "wire_request_sha256": "6bd913b50a9133510fdd9199683665eb09dc6cb314e31b12a15c5e8a12427df2",
+    "wire_hash_method": "SHA256 compact JSON UTF-8, ensure_ascii=False, original insertion order, no key sorting",
+    "native_requests_per_arm": 13,
+    "measured_requests_per_arm": 10,
+    "native_input_token_count_counts": {
+      "849": 13
+    },
+    "matched_conditions": [
+      "weights_revision",
+      "system_one_repo_head",
+      "llama_cpp_head",
+      "native_runner_sha256",
+      "adapter_source_sha256",
+      "hardware",
+      "runtime_settings",
+      "source_checkpoint_sha256",
+      "source_s1_config_sha256"
+    ],
+    "q4_relative_median_client_time_reduction": 0.34363533665859236,
+    "q8_over_q4_median_client_time_ratio": 1.5235433225628277,
+    "comparison_scope": "One sequential Q4 batch and one sequential Q8 batch of the same trained checkpoint; identical wire inputs, no alternating pairs. Model-specific calibrated temperatures are retained in each identity."
+  },
+  "developmental": {
+    "q4-preflight-20261013": {
+      "dataset": "q4-preflight-20261013",
+      "identity": {
+        "artifact_file": "s1-boolq-Q4_K_M.gguf",
+        "weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+        "quantization": "Q4_K_M",
+        "runtime": "llama.cpp Metal",
+        "system_one_repo_head": "eef847f01b63c86f05df81027a959cf3c658d54b",
+        "llama_cpp_head": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+        "native_runner_sha256": null,
+        "adapter_source_sha256": null,
+        "conversion_manifest_sha256": null,
+        "calibration_sha256": null,
+        "calibrated_temperature": null,
+        "model_manifest": {
+          "schema_version": 1,
+          "format": "gguf",
+          "status": "converted_and_structurally_verified",
+          "recorded_at": "2026-10-06T15:03:53.576747+00:00",
+          "source_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+          "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+          "source_checkpoint_files": [
+            {
+              "path": "config.json",
+              "size_bytes": 4953,
+              "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+            },
+            {
+              "path": "model.safetensors",
+              "size_bytes": 23919549408,
+              "sha256": "11144621122123135eb79c9cfd0466a2c51f230109124aefe401cdbec8c71a53"
+            }
+          ],
+          "source_s1_config_sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962",
+          "training_recipe_sha256": "2a708e5f4acfea4b688e88ba338aa62991608db875fef039ee6b4f33c3a74d73",
+          "source_hub_weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+          "llama_cpp_revision": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+          "conversion_record_source_revision": "1bc818be929c2545ebf65aa76ed6775c8fdc858c",
+          "recording_program_sha256": "cc71ebf5a27cc473c6e02439815de7c73eac52aef701ea6d446873328345f779",
+          "source_capture_manifest_sha256": "90e9fc465a6e372c81e1596e387fc7c62107730b41c4f3c1d5c7a8087a9bb51e",
+          "model_file": "s1-boolq-Q4_K_M.gguf",
+          "mmproj_file": "mmproj-s1-boolq-f16.gguf",
+          "quantization": {
+            "language_model": "Q4_K_M",
+            "multimodal_projector": "F16",
+            "direct_conversion": false
+          },
+          "source_tensor_count": 677,
+          "source_tensor_groups": {
+            "model.embed_audio": 1,
+            "model.embed_vision": 1,
+            "model.language_model": 666,
+            "model.vision_embedder": 9
+          },
+          "files": [
+            {
+              "path": "base_s1_config.json",
+              "size_bytes": 367,
+              "sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962"
+            },
+            {
+              "path": "chat_template.jinja",
+              "size_bytes": 18683,
+              "sha256": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4"
+            },
+            {
+              "path": "config.json",
+              "size_bytes": 4953,
+              "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+            },
+            {
+              "path": "mmproj-s1-boolq-f16.gguf",
+              "size_bytes": 122031744,
+              "sha256": "cffbff05efd290fef28d084ebcb653de7594f5e26bae0eabbedf30d6c782c1d1"
+            },
+            {
+              "path": "processor_config.json",
+              "size_bytes": 1382,
+              "sha256": "6b938e76555b3e9946890770e1abcd442a4718f34041a58e8139dc8ad34545c9"
+            },
+            {
+              "path": "s1-boolq-Q4_K_M.gguf",
+              "size_bytes": 7381383584,
+              "sha256": "daf56f5a5a0496e4e726e504858ef8dda1f6b02cd1bc7a68e9f1beb2bf178365"
+            },
+            {
+              "path": "tensor-inventory.json",
+              "size_bytes": 113174,
+              "sha256": "c7557a6f7dace16de31cbeb1815b7779063f6ee75102c30ba29dd3beb356fe27"
+            },
+            {
+              "path": "tokenizer.json",
+              "size_bytes": 32169626,
+              "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+            },
+            {
+              "path": "tokenizer_config.json",
+              "size_bytes": 3736,
+              "sha256": "794a39f8330ce05020774c70c091225bc5f031b9cacf41fc20e52eb54b4b52d8"
+            }
+          ],
+          "versions": {
+            "torch": "2.8.0",
+            "transformers": "5.17.0",
+            "numpy": "2.5.3",
+            "safetensors": "0.8.0"
+          },
+          "scope": "Structural conversion receipt; runtime quality requires the separate full-population evaluation.",
+          "trained_project_name": "Gemma-4-12B-Unified-System-One",
+          "base_model_name": "gemma-4-12B-it"
+        },
+        "hardware": {
+          "chip": "Apple M1 Max",
+          "unified_memory_bytes": 68719476736
+        },
+        "runtime_settings": {
+          "context": 4096,
+          "batch": 512,
+          "threads": 4,
+          "gpu_layers": 99,
+          "seed": 17,
+          "text_temperature": 0,
+          "text_max_tokens": 128,
+          "text_prompt_cache": false
+        },
+        "executed_sources": {
+          "cold": {
+            "repo_head": "1231850a0bf1a0c0341fe408ef1668dbbfdfac46",
+            "tracked_diff_sha256": "af3c3d398ca50fabf7b89c15722fe153b509223221cdfdc97300addc87b046f6",
+            "source_sha256": {
+              "jev_ultrafast/__init__.py": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+              "jev_ultrafast/agent.py": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+              "jev_ultrafast/browser.py": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+              "jev_ultrafast/demo.py": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+              "jev_ultrafast/isolated_browser.py": "7480c952c675cfd7e31e7fb5ab7dc36f213f468eae6b12c7be0d845d78b5c22c",
+              "jev_ultrafast/model.py": "87eca07d69ded7ecb86b6808044a54ac6d0813d3b2662ead47538e6e3ea9d0d7",
+              "jev_ultrafast/questions.py": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+              "jev_ultrafast/snapshot.js": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+              "jev_ultrafast/static/fixture.html": "e48e7d7b6225b215060692e0a28c3d0b59e465e4b94c1bc510d5f37ff0b8bfbe",
+              "jev_ultrafast/static/local_click_fixture.html": "4697cdf7554f0579e511ebaf9b5224ff70c662d2f3e051f678bb9a816a6fc6e9",
+              "scripts/local_benchmark.py": "c4e0918a9bc269c80a7c8c0cc8966c0df904626621d260eafad0e5e36599b4b6"
+            },
+            "installed_distributions": {
+              "jev-ultrafast": "0.1.0",
+              "browser-harness": "0.1.13",
+              "httpx": "0.28.1",
+              "websockets": "15.0.1",
+              "mlx": null,
+              "mlx-lm": null
+            },
+            "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+            "machine": "arm64"
+          },
+          "warm": {
+            "repo_head": "1231850a0bf1a0c0341fe408ef1668dbbfdfac46",
+            "tracked_diff_sha256": "af3c3d398ca50fabf7b89c15722fe153b509223221cdfdc97300addc87b046f6",
+            "source_sha256": {
+              "jev_ultrafast/__init__.py": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+              "jev_ultrafast/agent.py": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+              "jev_ultrafast/browser.py": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+              "jev_ultrafast/demo.py": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+              "jev_ultrafast/isolated_browser.py": "7480c952c675cfd7e31e7fb5ab7dc36f213f468eae6b12c7be0d845d78b5c22c",
+              "jev_ultrafast/model.py": "87eca07d69ded7ecb86b6808044a54ac6d0813d3b2662ead47538e6e3ea9d0d7",
+              "jev_ultrafast/questions.py": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+              "jev_ultrafast/snapshot.js": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+              "jev_ultrafast/static/fixture.html": "e48e7d7b6225b215060692e0a28c3d0b59e465e4b94c1bc510d5f37ff0b8bfbe",
+              "jev_ultrafast/static/local_click_fixture.html": "4697cdf7554f0579e511ebaf9b5224ff70c662d2f3e051f678bb9a816a6fc6e9",
+              "scripts/local_benchmark.py": "8689d1adbac521bc9ccbf80f3fd477e068fa422ef674555e8089ff2ab68b4f3c"
+            },
+            "installed_distributions": {
+              "jev-ultrafast": "0.1.0",
+              "browser-harness": "0.1.13",
+              "httpx": "0.28.1",
+              "websockets": "15.0.1",
+              "mlx": null,
+              "mlx-lm": null
+            },
+            "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+            "machine": "arm64"
+          }
+        },
+        "private_original_file_sha256": {
+          "cold/metadata.json": "1cd9a9387a54f5a549da67566fb289ec0fc9334b6c6f527ee627a6a467a2d6f6",
+          "model-metadata.json": "bcd49606d7200e257a213aeb57f87c7d6b8dc4743fa3bd7dfff37959ef1f2ac1",
+          "warm/metadata.json": "21b6cafe0c017042468490eb56d14bbc618ee8f4e11db24ed36dd8b2bc19c1a0"
+        },
+        "redaction": "Personal filesystem paths, repository owner identifiers, and launcher commands omitted."
+      },
+      "cold_process_first_request_client_ms": {
+        "n": 1,
+        "p50": 23902.63795806095,
+        "p95": 23902.63795806095,
+        "min": 23902.63795806095,
+        "max": 23902.63795806095,
+        "mean": 23902.63795806095
+      },
+      "startup": {
+        "decision_http_bind_ms": 228.74220903031528,
+        "decision_service_to_first_complete_ms": 24423.401250038296
+      },
+      "startup_scope": "Cold process/start-to-first-request completion; filesystem/OS caches were not cleared.",
+      "actual_counts": {
+        "native_http_decision_requests": 4,
+        "native_transport_failures": 0,
+        "logical_decision_calls": 4,
+        "logical_helper_calls": 0,
+        "measured_runs": {
+          "decision_microbenchmark": 1
+        },
+        "warmup_runs": {
+          "decision_microbenchmark": 2
+        }
+      },
+      "measured_by_workload": {
+        "decision_microbenchmark": {
+          "groups": {
+            "decision_microbenchmark": {
+              "runs": 1,
+              "successful_runs": 1,
+              "failed_runs": 0,
+              "decision_wall_ms_all_attempts": {
+                "n": 1,
+                "p50": 4887.79291708488,
+                "p95": 4887.79291708488,
+                "min": 4887.79291708488,
+                "max": 4887.79291708488,
+                "mean": 4887.79291708488
+              },
+              "helper_wall_ms_all_attempts": {
+                "n": 0,
+                "p50": null,
+                "p95": null,
+                "min": null,
+                "max": null,
+                "mean": null
+              },
+              "intended_choice_runs": 1
+            }
+          },
+          "warmup_runs": 2,
+          "warmup_failed_runs": 0,
+          "decision_wall_ms_all_attempts": {
+            "n": 1,
+            "p50": 4887.79291708488,
+            "p95": 4887.79291708488,
+            "min": 4887.79291708488,
+            "max": 4887.79291708488,
+            "mean": 4887.79291708488
+          },
+          "decision_wall_ms_successful": {
+            "n": 1,
+            "p50": 4887.79291708488,
+            "p95": 4887.79291708488,
+            "min": 4887.79291708488,
+            "max": 4887.79291708488,
+            "mean": 4887.79291708488
+          },
+          "decision_adapter_scoring_ms_successful": {
+            "n": 1,
+            "p50": 4886.042249971069,
+            "p95": 4886.042249971069,
+            "min": 4886.042249971069,
+            "max": 4886.042249971069,
+            "mean": 4886.042249971069
+          },
+          "decision_input_tokens_per_scoring_second": {
+            "n": 1,
+            "p50": 173.96493041070877,
+            "p95": 173.96493041070877,
+            "min": 173.96493041070877,
+            "max": 173.96493041070877,
+            "mean": 173.96493041070877
+          },
+          "decision_failed_calls": 0,
+          "decision_ttft_ms": null,
+          "decision_ttft_reason": "Native choices are nonstreaming forward/scoring requests, without a first token event.",
+          "helper_wall_ms_all_attempts": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "helper_failed_calls": 0,
+          "helper_first_content_delta_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "helper_provider_completion_tokens_per_full_request_second": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "task_ms_all_runs": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "task_ms_successful": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "setup_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "verification_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "end_to_end_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "browser_task_wall_ms": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "model_wall_ms_per_task": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "python_peak_rss_bytes_cumulative": 39747584,
+          "percentile_method": "linear interpolation at (n - 1) * q; p95 is descriptive for these small samples",
+          "memory_scope": "Current Python process cumulative peak only; service/Chromium RSS and cold load are external.",
+          "token_throughput_scope": "Text uses provider-reported completion_tokens/full request time. Choices use native_token_count divided by the typed adapter's reported latency_ms, including HF preparation and native pipe request/response. This is input scoring throughput, not native-only compute or generated tokens/s."
+        }
+      },
+      "browser_runs": [],
+      "browser_strict_success_count": 0,
+      "browser_measured_count": 0,
+      "browser_helper_metrics": {
+        "calls": 0,
+        "failed_calls": 0,
+        "first_content_delta_ms": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "full_request_ms": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "provider_decode_tokens_per_second": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "provider_decode_rate_scope": "Actual llama-server timings.predicted_per_second, using its convention excluding the first prefill-produced token from the decode interval; not completion_tokens/full request time.",
+        "provider_token_usage": [],
+        "provider_timings": []
+      },
+      "helper_probe_metrics": {
+        "calls": 0,
+        "failed_calls": 0,
+        "first_content_delta_ms": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "full_request_ms": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "provider_decode_tokens_per_second": {
+          "n": 0,
+          "p50": null,
+          "p95": null,
+          "min": null,
+          "max": null,
+          "mean": null
+        },
+        "provider_decode_rate_scope": "Actual llama-server timings.predicted_per_second, using its convention excluding the first prefill-produced token from the decode interval; not completion_tokens/full request time.",
+        "provider_token_usage": [],
+        "provider_timings": []
+      },
+      "chromium": {
+        "chromium_version": null,
+        "chromium_startup_ms": null,
+        "chromium_resource_usage": null,
+        "chromium_resource_usage_scope": null,
+        "chromium_cdp_blocked_requests": null,
+        "chromium_proxy_blocked_requests": null
+      },
+      "native_model_peak_rss": {
+        "peak_rss_bytes": 9247604736,
+        "n_reports": 1,
+        "scope": "macOS /usr/bin/time -l for the owned native model process; bytes, not total system memory"
+      },
+      "separate_process_resource_usage": {
+        "decision-service": {
+          "peak_rss_bytes": 9247604736,
+          "user_seconds": 8.379446,
+          "system_seconds": 3.10327,
+          "exit_code": 0,
+          "source": "macOS wait4 for this owned PID; descendant aggregation may apply"
+        },
+        "launcher_peak_rss_bytes": 27541504
+      },
+      "resource_scope": "Per-process lifetime peaks; not simultaneous physical memory and must not be summed.",
+      "native_wire_request_sha256_counts": {
+        "31dde2955b43ccc173afae7234e338e84803f369f2ab30cbde07fac865e2a7e1": 4
+      },
+      "native_input_token_count_counts": {
+        "850": 4
+      },
+      "raw_evidence_sha256": {
+        "cold/runs.jsonl": "22fd3752281614b72d00645bfd62e27f2c22102656ebc58ea13f0b7c5af0e6e3",
+        "native-decision-time.log": "9af123f70975acfa4df8a5f15eec687d9916af27a6290e456dca20b1d3bc4717",
+        "native-decision-time.log.native.log": "5383268f990c25d60c5ed036ef6966196bb187cf005574ea9eb347b63771afb9",
+        "native-requests.jsonl": "7c03d80825298e21f02e27cef4993b6de3a5c9405b21b2ec80d0bc6e67243dd8",
+        "warm/runs.jsonl": "97478adb9a35435060ddd8c9326df5931f5bdb7057dde8106e2d7bf576133cbd"
+      }
+    },
+    "q4-travel-smoke-20261013": {
+      "dataset": "q4-travel-smoke-20261013",
+      "identity": {
+        "artifact_file": "s1-boolq-Q4_K_M.gguf",
+        "weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+        "quantization": "Q4_K_M",
+        "runtime": "llama.cpp Metal",
+        "system_one_repo_head": "eef847f01b63c86f05df81027a959cf3c658d54b",
+        "llama_cpp_head": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+        "native_runner_sha256": null,
+        "adapter_source_sha256": null,
+        "conversion_manifest_sha256": null,
+        "calibration_sha256": null,
+        "calibrated_temperature": null,
+        "model_manifest": {
+          "schema_version": 1,
+          "format": "gguf",
+          "status": "converted_and_structurally_verified",
+          "recorded_at": "2026-10-06T15:03:53.576747+00:00",
+          "source_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+          "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+          "source_checkpoint_files": [
+            {
+              "path": "config.json",
+              "size_bytes": 4953,
+              "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+            },
+            {
+              "path": "model.safetensors",
+              "size_bytes": 23919549408,
+              "sha256": "11144621122123135eb79c9cfd0466a2c51f230109124aefe401cdbec8c71a53"
+            }
+          ],
+          "source_s1_config_sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962",
+          "training_recipe_sha256": "2a708e5f4acfea4b688e88ba338aa62991608db875fef039ee6b4f33c3a74d73",
+          "source_hub_weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+          "llama_cpp_revision": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+          "conversion_record_source_revision": "1bc818be929c2545ebf65aa76ed6775c8fdc858c",
+          "recording_program_sha256": "cc71ebf5a27cc473c6e02439815de7c73eac52aef701ea6d446873328345f779",
+          "source_capture_manifest_sha256": "90e9fc465a6e372c81e1596e387fc7c62107730b41c4f3c1d5c7a8087a9bb51e",
+          "model_file": "s1-boolq-Q4_K_M.gguf",
+          "mmproj_file": "mmproj-s1-boolq-f16.gguf",
+          "quantization": {
+            "language_model": "Q4_K_M",
+            "multimodal_projector": "F16",
+            "direct_conversion": false
+          },
+          "source_tensor_count": 677,
+          "source_tensor_groups": {
+            "model.embed_audio": 1,
+            "model.embed_vision": 1,
+            "model.language_model": 666,
+            "model.vision_embedder": 9
+          },
+          "files": [
+            {
+              "path": "base_s1_config.json",
+              "size_bytes": 367,
+              "sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962"
+            },
+            {
+              "path": "chat_template.jinja",
+              "size_bytes": 18683,
+              "sha256": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4"
+            },
+            {
+              "path": "config.json",
+              "size_bytes": 4953,
+              "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+            },
+            {
+              "path": "mmproj-s1-boolq-f16.gguf",
+              "size_bytes": 122031744,
+              "sha256": "cffbff05efd290fef28d084ebcb653de7594f5e26bae0eabbedf30d6c782c1d1"
+            },
+            {
+              "path": "processor_config.json",
+              "size_bytes": 1382,
+              "sha256": "6b938e76555b3e9946890770e1abcd442a4718f34041a58e8139dc8ad34545c9"
+            },
+            {
+              "path": "s1-boolq-Q4_K_M.gguf",
+              "size_bytes": 7381383584,
+              "sha256": "daf56f5a5a0496e4e726e504858ef8dda1f6b02cd1bc7a68e9f1beb2bf178365"
+            },
+            {
+              "path": "tensor-inventory.json",
+              "size_bytes": 113174,
+              "sha256": "c7557a6f7dace16de31cbeb1815b7779063f6ee75102c30ba29dd3beb356fe27"
+            },
+            {
+              "path": "tokenizer.json",
+              "size_bytes": 32169626,
+              "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+            },
+            {
+              "path": "tokenizer_config.json",
+              "size_bytes": 3736,
+              "sha256": "794a39f8330ce05020774c70c091225bc5f031b9cacf41fc20e52eb54b4b52d8"
+            }
+          ],
+          "versions": {
+            "torch": "2.8.0",
+            "transformers": "5.17.0",
+            "numpy": "2.5.3",
+            "safetensors": "0.8.0"
+          },
+          "scope": "Structural conversion receipt; runtime quality requires the separate full-population evaluation.",
+          "trained_project_name": "Gemma-4-12B-Unified-System-One",
+          "base_model_name": "gemma-4-12B-it"
+        },
+        "hardware": {
+          "chip": "Apple M1 Max",
+          "unified_memory_bytes": 68719476736,
+          "source": "system_profiler inventory verified for this Mac on 2026-10-13"
+        },
+        "runtime_settings": {
+          "context": 4096,
+          "batch": 512,
+          "threads": 4,
+          "gpu_layers": 99,
+          "seed": 17,
+          "text_temperature": 0,
+          "text_max_tokens": 128,
+          "text_prompt_cache": false
+        },
+        "executed_sources": {
+          "cold": {
+            "repo_head": "1231850a0bf1a0c0341fe408ef1668dbbfdfac46",
+            "tracked_diff_sha256": "af3c3d398ca50fabf7b89c15722fe153b509223221cdfdc97300addc87b046f6",
+            "source_sha256": {
+              "jev_ultrafast/__init__.py": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+              "jev_ultrafast/agent.py": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+              "jev_ultrafast/browser.py": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+              "jev_ultrafast/demo.py": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+              "jev_ultrafast/isolated_browser.py": "7480c952c675cfd7e31e7fb5ab7dc36f213f468eae6b12c7be0d845d78b5c22c",
+              "jev_ultrafast/model.py": "87eca07d69ded7ecb86b6808044a54ac6d0813d3b2662ead47538e6e3ea9d0d7",
+              "jev_ultrafast/questions.py": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+              "jev_ultrafast/snapshot.js": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+              "jev_ultrafast/static/fixture.html": "e48e7d7b6225b215060692e0a28c3d0b59e465e4b94c1bc510d5f37ff0b8bfbe",
+              "jev_ultrafast/static/local_click_fixture.html": "4697cdf7554f0579e511ebaf9b5224ff70c662d2f3e051f678bb9a816a6fc6e9",
+              "scripts/local_benchmark.py": "09a2c66413bbf50dd1b2821a6f85cfdcd36720f4f99550a5e36db7d6c68441d0"
+            },
+            "installed_distributions": {
+              "jev-ultrafast": "0.1.0",
+              "browser-harness": "0.1.13",
+              "httpx": "0.28.1",
+              "websockets": "15.0.1",
+              "mlx": null,
+              "mlx-lm": null
+            },
+            "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+            "machine": "arm64"
+          },
+          "warm": {
+            "repo_head": "1231850a0bf1a0c0341fe408ef1668dbbfdfac46",
+            "tracked_diff_sha256": "af3c3d398ca50fabf7b89c15722fe153b509223221cdfdc97300addc87b046f6",
+            "source_sha256": {
+              "jev_ultrafast/__init__.py": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+              "jev_ultrafast/agent.py": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+              "jev_ultrafast/browser.py": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+              "jev_ultrafast/demo.py": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+              "jev_ultrafast/isolated_browser.py": "7480c952c675cfd7e31e7fb5ab7dc36f213f468eae6b12c7be0d845d78b5c22c",
+              "jev_ultrafast/model.py": "87eca07d69ded7ecb86b6808044a54ac6d0813d3b2662ead47538e6e3ea9d0d7",
+              "jev_ultrafast/questions.py": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+              "jev_ultrafast/snapshot.js": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+              "jev_ultrafast/static/fixture.html": "e48e7d7b6225b215060692e0a28c3d0b59e465e4b94c1bc510d5f37ff0b8bfbe",
+              "jev_ultrafast/static/local_click_fixture.html": "4697cdf7554f0579e511ebaf9b5224ff70c662d2f3e051f678bb9a816a6fc6e9",
+              "scripts/local_benchmark.py": "09a2c66413bbf50dd1b2821a6f85cfdcd36720f4f99550a5e36db7d6c68441d0"
+            },
+            "installed_distributions": {
+              "jev-ultrafast": "0.1.0",
+              "browser-harness": "0.1.13",
+              "httpx": "0.28.1",
+              "websockets": "15.0.1",
+              "mlx": null,
+              "mlx-lm": null
+            },
+            "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+            "machine": "arm64"
+          },
+          "helper-probe": {
+            "repo_head": "1231850a0bf1a0c0341fe408ef1668dbbfdfac46",
+            "tracked_diff_sha256": "af3c3d398ca50fabf7b89c15722fe153b509223221cdfdc97300addc87b046f6",
+            "source_sha256": {
+              "jev_ultrafast/__init__.py": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+              "jev_ultrafast/agent.py": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+              "jev_ultrafast/browser.py": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+              "jev_ultrafast/demo.py": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+              "jev_ultrafast/isolated_browser.py": "7480c952c675cfd7e31e7fb5ab7dc36f213f468eae6b12c7be0d845d78b5c22c",
+              "jev_ultrafast/model.py": "87eca07d69ded7ecb86b6808044a54ac6d0813d3b2662ead47538e6e3ea9d0d7",
+              "jev_ultrafast/questions.py": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+              "jev_ultrafast/snapshot.js": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+              "jev_ultrafast/static/fixture.html": "e48e7d7b6225b215060692e0a28c3d0b59e465e4b94c1bc510d5f37ff0b8bfbe",
+              "jev_ultrafast/static/local_click_fixture.html": "4697cdf7554f0579e511ebaf9b5224ff70c662d2f3e051f678bb9a816a6fc6e9",
+              "scripts/local_benchmark.py": "09a2c66413bbf50dd1b2821a6f85cfdcd36720f4f99550a5e36db7d6c68441d0"
+            },
+            "installed_distributions": {
+              "jev-ultrafast": "0.1.0",
+              "browser-harness": "0.1.13",
+              "httpx": "0.28.1",
+              "websockets": "15.0.1",
+              "mlx": null,
+              "mlx-lm": null
+            },
+            "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+            "machine": "arm64"
+          }
+        },
+        "private_original_file_sha256": {
+          "cold/metadata.json": "faea54c5178445c56f48672b5ab18d94fb143c084b45a3a4506ba67212978387",
+          "helper-probe/metadata.json": "cec3e5bd867a932397b88c86e4369d02dc6a2d21a08a867168ba5b8946b6e1f6",
+          "model-metadata-cold.json": "0537226a93f582c7425b58e46b59088edb4f891df7b6ffde881dceae60641861",
+          "model-metadata-helper-probe.json": "dfa4fc6dd5bbfcc5b742045c8814490fb34c73e51b35a60656ce6a68f511eb74",
+          "model-metadata-warm.json": "ec2f503394314f5e447d700defa1b09c73d8bc63b623cb51fa7c88de3d878509",
+          "model-metadata.json": "e1594ffea9166cd0f78469c4234066b29e680d4bd4d9b1a4ce5f81e3698d7910",
+          "warm/metadata.json": "5712eb60582f1937b2913c62bc68de4ef48f46743ae94aec226d97a05c91ef9e"
+        },
+        "redaction": "Personal filesystem paths, repository owner identifiers, and launcher commands omitted."
+      },
+      "cold_process_first_request_client_ms": {
+        "n": 1,
+        "p50": 18968.16008305177,
+        "p95": 18968.16008305177,
+        "min": 18968.16008305177,
+        "max": 18968.16008305177,
+        "mean": 18968.16008305177
+      },
+      "startup": {
+        "decision_http_bind_ms": 230.00154201872647,
+        "decision_service_to_first_complete_ms": 19405.921082943678,
+        "text_model_ready_ms": 10708.651666995138
+      },
+      "startup_scope": "Cold process/start-to-first-request completion; filesystem/OS caches were not cleared.",
+      "actual_counts": {
+        "native_http_decision_requests": 5,
+        "native_transport_failures": 0,
+        "logical_decision_calls": 5,
+        "logical_helper_calls": 2,
+        "measured_runs": {
+          "browser_task": 1
+        },
+        "warmup_runs": {}
+      },
+      "measured_by_workload": {
+        "browser_task": {
+          "groups": {
+            "browser_task": {
+              "runs": 1,
+              "successful_runs": 0,
+              "failed_runs": 1,
+              "decision_wall_ms_all_attempts": {
+                "n": 4,
+                "p50": 22844.463479006663,
+                "p95": 24509.192381199682,
+                "min": 11982.884375029244,
+                "max": 24628.406125004403,
+                "mean": 20575.054364511743
+              },
+              "helper_wall_ms_all_attempts": {
+                "n": 1,
+                "p50": 5052.078708074987,
+                "p95": 5052.078708074987,
+                "min": 5052.078708074987,
+                "max": 5052.078708074987,
+                "mean": 5052.078708074987
+              }
+            }
+          },
+          "warmup_runs": 0,
+          "warmup_failed_runs": 0,
+          "decision_wall_ms_all_attempts": {
+            "n": 4,
+            "p50": 22844.463479006663,
+            "p95": 24509.192381199682,
+            "min": 11982.884375029244,
+            "max": 24628.406125004403,
+            "mean": 20575.054364511743
+          },
+          "decision_wall_ms_successful": {
+            "n": 4,
+            "p50": 22844.463479006663,
+            "p95": 24509.192381199682,
+            "min": 11982.884375029244,
+            "max": 24628.406125004403,
+            "mean": 20575.054364511743
+          },
+          "decision_adapter_scoring_ms_successful": {
+            "n": 4,
+            "p50": 22841.919687576592,
+            "p95": 24505.865453591105,
+            "min": 11980.953291989863,
+            "max": 24624.865915975533,
+            "mean": 20572.414645779645
+          },
+          "decision_input_tokens_per_scoring_second": {
+            "n": 4,
+            "p50": 89.83228589881047,
+            "p95": 95.97391595171797,
+            "min": 84.18319949734746,
+            "max": 96.23696588701672,
+            "mean": 90.02118429549628
+          },
+          "decision_failed_calls": 0,
+          "decision_ttft_ms": null,
+          "decision_ttft_reason": "Native choices are nonstreaming forward/scoring requests, without a first token event.",
+          "helper_wall_ms_all_attempts": {
+            "n": 1,
+            "p50": 5052.078708074987,
+            "p95": 5052.078708074987,
+            "min": 5052.078708074987,
+            "max": 5052.078708074987,
+            "mean": 5052.078708074987
+          },
+          "helper_failed_calls": 0,
+          "helper_first_content_delta_ms": {
+            "n": 1,
+            "p50": 4183.001,
+            "p95": 4183.001,
+            "min": 4183.001,
+            "max": 4183.001,
+            "mean": 4183.001
+          },
+          "helper_provider_completion_tokens_per_full_request_second": {
+            "n": 1,
+            "p50": 2.5731982320903786,
+            "p95": 2.5731982320903786,
+            "min": 2.5731982320903786,
+            "max": 2.5731982320903786,
+            "mean": 2.5731982320903786
+          },
+          "task_ms_all_runs": {
+            "n": 1,
+            "p50": 87492.93437507004,
+            "p95": 87492.93437507004,
+            "min": 87492.93437507004,
+            "max": 87492.93437507004,
+            "mean": 87492.93437507004
+          },
+          "task_ms_successful": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "min": null,
+            "max": null,
+            "mean": null
+          },
+          "setup_ms": {
+            "n": 1,
+            "p50": 130.72320900391787,
+            "p95": 130.72320900391787,
+            "min": 130.72320900391787,
+            "max": 130.72320900391787,
+            "mean": 130.72320900391787
+          },
+          "verification_ms": {
+            "n": 1,
+            "p50": 0.40383299347013235,
+            "p95": 0.40383299347013235,
+            "min": 0.40383299347013235,
+            "max": 0.40383299347013235,
+            "mean": 0.40383299347013235
+          },
+          "end_to_end_ms": {
+            "n": 1,
+            "p50": 87624.37829200644,
+            "p95": 87624.37829200644,
+            "min": 87624.37829200644,
+            "max": 87624.37829200644,
+            "mean": 87624.37829200644
+          },
+          "browser_task_wall_ms": {
+            "n": 1,
+            "p50": 140.28654340654612,
+            "p95": 140.28654340654612,
+            "min": 140.28654340654612,
+            "max": 140.28654340654612,
+            "mean": 140.28654340654612
+          },
+          "model_wall_ms_per_task": {
+            "n": 1,
+            "p50": 87352.29616612196,
+            "p95": 87352.29616612196,
+            "min": 87352.29616612196,
+            "max": 87352.29616612196,
+            "mean": 87352.29616612196
+          },
+          "python_peak_rss_bytes_cumulative": 41435136,
+          "percentile_method": "linear interpolation at (n - 1) * q; p95 is descriptive for these small samples",
+          "memory_scope": "Current Python process cumulative peak only; service/Chromium RSS and cold load are external.",
+          "token_throughput_scope": "Text uses provider-reported completion_tokens/full request time. Choices use native_token_count divided by the typed adapter's reported latency_ms, including HF preparation and native pipe request/response. This is input scoring throughput, not native-only compute or generated tokens/s."
+        }
+      },
+      "browser_runs": [
+        {
+          "phase": "measured",
+          "index": 0,
+          "strict_success": false,
+          "agent_status": "done",
+          "verification_checks": {
+            "opened_casa_flora": true,
+            "requested_filters_visible": false,
+            "casa_flora_visible": true
+          },
+          "failure_reasons": [
+            "independent_check_failed:requested_filters_visible"
+          ],
+          "operations": [
+            "TYPE_TEXT",
+            "SELECT",
+            "CLICK",
+            "DONE"
+          ],
+          "executed_operations": [
+            "TYPE_TEXT",
+            "SELECT",
+            "CLICK"
+          ],
+          "fixture_filter_statement": "Your filters: Design · Free cancellation off · Destination anywhere",
+          "decision_calls": 4,
+          "text_calls": 1,
+          "setup_ms": 130.72320900391787,
+          "task_ms": 87492.93437507004,
+          "verification_ms": 0.40383299347013235,
+          "total_ms": 87624.37829200644,
+          "model_wall_ms": 87352.29616612196,
+          "browser_task_wall_ms": 140.28654340654612
+        }
+      ],
+      "browser_strict_success_count": 0,
+      "browser_measured_count": 1,
+      "browser_helper_metrics": {
+        "calls": 1,
+        "failed_calls": 0,
+        "first_content_delta_ms": {
+          "n": 1,
+          "p50": 4183.001,
+          "p95": 4183.001,
+          "min": 4183.001,
+          "max": 4183.001,
+          "mean": 4183.001
+        },
+        "full_request_ms": {
+          "n": 1,
+          "p50": 5052.078708074987,
+          "p95": 5052.078708074987,
+          "min": 5052.078708074987,
+          "max": 5052.078708074987,
+          "mean": 5052.078708074987
+        },
+        "provider_decode_tokens_per_second": {
+          "n": 1,
+          "p50": 10.166958401889698,
+          "p95": 10.166958401889698,
+          "min": 10.166958401889698,
+          "max": 10.166958401889698,
+          "mean": 10.166958401889698
+        },
+        "provider_decode_rate_scope": "Actual llama-server timings.predicted_per_second, using its convention excluding the first prefill-produced token from the decode interval; not completion_tokens/full request time.",
+        "provider_token_usage": [
+          {
+            "completion_tokens": 13,
+            "prompt_tokens": 412,
+            "total_tokens": 425,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          }
+        ],
+        "provider_timings": [
+          {
+            "cache_n": 0,
+            "prompt_n": 412,
+            "prompt_ms": 3867.352,
+            "prompt_per_token_ms": 9.386776699029125,
+            "prompt_per_second": 106.5328421100536,
+            "predicted_n": 13,
+            "predicted_ms": 1180.294,
+            "predicted_per_token_ms": 98.35783333333335,
+            "predicted_per_second": 10.166958401889698
+          }
+        ]
+      },
+      "helper_probe_metrics": {
+        "calls": 1,
+        "failed_calls": 0,
+        "first_content_delta_ms": {
+          "n": 1,
+          "p50": 1321.605,
+          "p95": 1321.605,
+          "min": 1321.605,
+          "max": 1321.605,
+          "mean": 1321.605
+        },
+        "full_request_ms": {
+          "n": 1,
+          "p50": 1775.9585418971255,
+          "p95": 1775.9585418971255,
+          "min": 1775.9585418971255,
+          "max": 1775.9585418971255,
+          "mean": 1775.9585418971255
+        },
+        "provider_decode_tokens_per_second": {
+          "n": 1,
+          "p50": 19.78934244962376,
+          "p95": 19.78934244962376,
+          "min": 19.78934244962376,
+          "max": 19.78934244962376,
+          "mean": 19.78934244962376
+        },
+        "provider_decode_rate_scope": "Actual llama-server timings.predicted_per_second, using its convention excluding the first prefill-produced token from the decode interval; not completion_tokens/full request time.",
+        "provider_token_usage": [
+          {
+            "completion_tokens": 13,
+            "prompt_tokens": 190,
+            "total_tokens": 203,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          }
+        ],
+        "provider_timings": [
+          {
+            "cache_n": 0,
+            "prompt_n": 190,
+            "prompt_ms": 1161.96,
+            "prompt_per_token_ms": 6.115578947368421,
+            "prompt_per_second": 163.5168164136459,
+            "predicted_n": 13,
+            "predicted_ms": 606.387,
+            "predicted_per_token_ms": 50.53225,
+            "predicted_per_second": 19.78934244962376
+          }
+        ]
+      },
+      "chromium": {
+        "chromium_version": null,
+        "chromium_startup_ms": 2586.4677919307724,
+        "chromium_resource_usage": null,
+        "chromium_resource_usage_scope": null,
+        "chromium_cdp_blocked_requests": 0,
+        "chromium_proxy_blocked_requests": 0
+      },
+      "native_model_peak_rss": {
+        "peak_rss_bytes": 9296494592,
+        "n_reports": 1,
+        "scope": "macOS /usr/bin/time -l for the owned native model process; bytes, not total system memory"
+      },
+      "separate_process_resource_usage": {
+        "text-service": {
+          "peak_rss_bytes": 8290353152,
+          "user_seconds": 2.321895,
+          "system_seconds": 0.7673989999999999,
+          "exit_code": 0,
+          "source": "macOS wait4 for this owned PID; descendant aggregation may apply"
+        },
+        "fixture": {
+          "peak_rss_bytes": 23461888,
+          "user_seconds": 0.034790999999999996,
+          "system_seconds": 0.013767999999999999,
+          "exit_code": -15,
+          "source": "macOS wait4 for this owned PID; descendant aggregation may apply"
+        },
+        "decision-service": {
+          "peak_rss_bytes": 9296494592,
+          "user_seconds": 8.15853,
+          "system_seconds": 2.328249,
+          "exit_code": 0,
+          "source": "macOS wait4 for this owned PID; descendant aggregation may apply"
+        },
+        "launcher_peak_rss_bytes": 28426240
+      },
+      "resource_scope": "Per-process lifetime peaks; not simultaneous physical memory and must not be summed.",
+      "native_wire_request_sha256_counts": {
+        "6bd913b50a9133510fdd9199683665eb09dc6cb314e31b12a15c5e8a12427df2": 1,
+        "a4426523c74cad80a93e9cfab2ee5fd274d096cba428a7ec2793767a54d9b14d": 1,
+        "eef9da38e6465f1dfcda57eaa6e92ce446afa8e778adcee03e62aac104ca8016": 1,
+        "5efd770fcc98e362fb8e403d24a067d687d99070f807c0b41f8fb50ec30bc39d": 1,
+        "6a6277ac6d07cc9022e5630d2613d250a7e8c35d5aab6516235327cef71a7bc4": 1
+      },
+      "native_input_token_count_counts": {
+        "849": 1,
+        "2073": 1,
+        "2103": 1,
+        "2030": 1,
+        "1132": 1
+      },
+      "raw_evidence_sha256": {
+        "cold/runs.jsonl": "68844aa5b5e83567ff9a96680e824840bac3be4374118f65f6b2568ea424b5eb",
+        "helper-probe/runs.jsonl": "367243a77c88b98cfea36a9f47869fd2b377a53abc8f69e64068970602793012",
+        "native-decision-time.log": "56b1216c8f7a774a2f378e27aff7233bb8e3ade487c0d52db65f9a0ff4cdba04",
+        "native-decision-time.log.native.log": "da8e350dc76799b2e3922875e765b2246e6e23851d7e155b44292bb17e583f9c",
+        "native-requests.jsonl": "2544346045100edd65146e98bff73f27895dfc7220a51319cd9ed10f5b7a91e9",
+        "warm/runs.jsonl": "8c4f205ae4996b0c63e0b0c98e99a3e7a9377294b597b532c4a80bc3ab4e1b9a"
+      }
+    }
+  },
+  "analysis_scope": "Offline recomputation from original runs; failures retained; no model/browser execution.",
+  "historical_metric_notice": "Developmental summaries used native_forward/prefill labels for adapter latency. All metrics here are recomputed with adapter-scoring scope; original raw records and historical summaries remain unchanged.",
+  "percentile_scope": "Linear interpolation at (n-1)*q; p95 is descriptive with n=10 or smaller."
+}
