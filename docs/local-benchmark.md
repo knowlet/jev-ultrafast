@@ -193,3 +193,11 @@ compiler checks. Candidate-off matches the original; four cached repeats exceed
 the fixed numerical tolerances. The browser comparison therefore remains
 unexecuted. A batch-boundary source correction is prepared but uncompiled; no
 accepted speedup or completion improvement is established.
+
+The [October 28 continuation](local-system-one-prefix-alignment-2026-10-28.md)
+commits a reconstructed batch-aligned native candidate, a reproducible historical
+parity auditor and compiled offline regressions. Its pinned CPU build passes;
+the original trained package/Metal environment is unavailable here, so fresh
+native parity, paired browser results and both JevBench reruns remain unexecuted.
+See the [paired validation plan](native-prefix-validation-plan.md) for the exact
+benchmark identities, independent answer caches and unchanged numerical gates.

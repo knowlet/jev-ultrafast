@@ -63,6 +63,10 @@ verification; broader quality and latency improvements remain unverified.
 The subsequent [frozen task window](docs/local-system-one-heldout-progress-2026-10-13.md)
 executed 6 of 24 scheduled runs: 2 passed, 4 failed and 18 were unexecuted when
 the bounded window expired. This partial candidate arm has no paired baseline.
+The [October 28 batch-aligned native candidate](docs/local-system-one-prefix-alignment-2026-10-28.md)
+now has a pinned CPU build and offline regressions. Historical numerical failure
+is reproducible at unchanged tolerances; new native parity and task/latency gains
+remain unverified, and prefix reuse stays disabled by default.
 
 ```bash
 git clone https://github.com/browser-use/jev-ultrafast.git
