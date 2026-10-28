@@ -1,0 +1,62 @@
+{
+  "created_at_utc": "2026-10-13T17:38:12.142319+00:00",
+  "scope": "CPU-only post-window read-only package hashes; no new inference",
+  "all_match": true,
+  "files": [
+    {
+      "path": "base_s1_config.json",
+      "bytes": 367,
+      "sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962",
+      "matches_manifest": true
+    },
+    {
+      "path": "chat_template.jinja",
+      "bytes": 18683,
+      "sha256": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4",
+      "matches_manifest": true
+    },
+    {
+      "path": "config.json",
+      "bytes": 4953,
+      "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0",
+      "matches_manifest": true
+    },
+    {
+      "path": "mmproj-s1-boolq-f16.gguf",
+      "bytes": 122031744,
+      "sha256": "cffbff05efd290fef28d084ebcb653de7594f5e26bae0eabbedf30d6c782c1d1",
+      "matches_manifest": true
+    },
+    {
+      "path": "processor_config.json",
+      "bytes": 1382,
+      "sha256": "6b938e76555b3e9946890770e1abcd442a4718f34041a58e8139dc8ad34545c9",
+      "matches_manifest": true
+    },
+    {
+      "path": "s1-boolq-Q4_K_M.gguf",
+      "bytes": 7381383584,
+      "sha256": "daf56f5a5a0496e4e726e504858ef8dda1f6b02cd1bc7a68e9f1beb2bf178365",
+      "matches_manifest": true
+    },
+    {
+      "path": "tensor-inventory.json",
+      "bytes": 113174,
+      "sha256": "c7557a6f7dace16de31cbeb1815b7779063f6ee75102c30ba29dd3beb356fe27",
+      "matches_manifest": true
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 32169626,
+      "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f",
+      "matches_manifest": true
+    },
+    {
+      "path": "tokenizer_config.json",
+      "bytes": 3736,
+      "sha256": "794a39f8330ce05020774c70c091225bc5f031b9cacf41fc20e52eb54b4b52d8",
+      "matches_manifest": true
+    }
+  ],
+  "elapsed_seconds": 5.613611124999807
+}

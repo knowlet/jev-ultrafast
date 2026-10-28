@@ -1,0 +1,18 @@
+{
+  "build_receipt_sha256": "48e916bcbc89ab03ecedd6e4038c011058cf753f12441d0bc18a88271057f80d",
+  "candidate_binary_sha256": "38f2a1700f7809a6e971cacbeeaa470e32a85d3339233e8cb2891b4a5dad9f1e",
+  "source_sync": {
+    "jev_ultrafast/noul_policy.py": {
+      "prior_sha256": "22b75a550892445e8c423e1cc68b4842b96232fa8d8aeaf57faa0a9568589583",
+      "reviewed_candidate_sha256": "3eb1a5e31495107e871558d5a8c9ce30be1b3714c4817ff519df78d4dbe3b2d6"
+    },
+    "scripts/local_benchmark.py": {
+      "prior_sha256": "1793a4c3fed4d07932b35f13596bd259eba07636cac658b972e2c682c24e916a",
+      "reviewed_candidate_sha256": "62b5abfdb188641089e53714dac90ff054d945175e21f3c2596067a55adcff37"
+    },
+    "scripts/local_s1_service.py": {
+      "prior_sha256": "15da5a3507df5d35db7f7975360cf4f74b2d14967201d12fb0f70be1069fc521",
+      "reviewed_candidate_sha256": "9917a9c68c14fa30b299f9b6a7f1cc8766e82f8f0165e660554b8fd74f87b5a5"
+    }
+  }
+}

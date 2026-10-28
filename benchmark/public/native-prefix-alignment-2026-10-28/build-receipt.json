@@ -1,0 +1,77 @@
+{
+  "scope": "CPU compilation and offline tests only; no model execution",
+  "source_sha256": {
+    "tools/native-prefix/prefix_plan.h": "13f2d1377e5b19f7932fe94176d1970a8f3ce59c9723c1e3b2b9a49dae9420b7",
+    "tools/native-prefix/test_native_runtime.cpp": "e371808561aa3b995cc5fe4c060a0fd154b645e9404bb7d8c7cf6b68316cc0e6",
+    "tools/native-prefix/README.md": "22ab2ccbd5f428d09a860c3762be2af50a96bab4a233b0bfc0ac1b1b939a52af",
+    "tools/native-prefix/origin.json": "61151ab62367555560f1dbd3f7c8d987f9a1735ddc022c5ecbff567ca8b71d57",
+    "tools/native-prefix/test_prefix_plan.cpp": "65973fd5f2b83c27041585141bffe5bb0debd9781bf2d0f7c8c4377b33fcbe17",
+    "tools/native-prefix/LICENSE": "8000ce673ca8f988c7022f9c7d958deef8f40fe62a3300413ed0e4454fd50e05",
+    "tools/native-prefix/s1_prefix.cpp": "13f39fd60e39f1b9e9ff68380f9cc12033ef7af6ccb3356f9523743e11e2ad08",
+    "tools/native-prefix/CMakeLists.txt": "37d5174c4bdadcc9cb2994829b8ee3f2cc00c38176d2295a7bb22ddb4917981c"
+  },
+  "commands": [
+    {
+      "command": [
+        "<BUILD_TOOLCHAIN>/bin/cmake",
+        "--build",
+        "<BUILD_ROOT>",
+        "--parallel",
+        "2"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 7.192800555999838
+    },
+    {
+      "command": [
+        "<BUILD_TOOLCHAIN>/bin/ctest",
+        "--test-dir",
+        "<BUILD_ROOT>",
+        "--output-on-failure"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.11418478199993842
+    },
+    {
+      "command": [
+        "<BUILD_ROOT>/s1-gguf-prefix",
+        "--help"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.003640991999873222
+    }
+  ],
+  "binary_sha256": "31008524dd13f6f41f9b84dd05fee7835d37ae7187b22835b50e9cb4a33f92e2",
+  "native_model_calls": 0,
+  "browser_tasks": 0,
+  "jevbench_runs": 0,
+  "initial_dependency_build": {
+    "exit_code": 0,
+    "wall_seconds": 138.66695222500016,
+    "parallel_jobs": 2,
+    "note": "Final source-bound incremental verification is recorded in commands."
+  },
+  "platform": "Linux x86_64; CPU-only compilation, original experiment was macOS Metal",
+  "compiler": "GNU C/C++ 13.3.0",
+  "cmake": "3.31.6",
+  "llama_cpp_revision": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+  "configure_options": [
+    "CMAKE_BUILD_TYPE=Release",
+    "LLAMA_BUILD_IS_DEV=OFF",
+    "GGML_CUDA=OFF",
+    "GGML_METAL=OFF",
+    "GGML_OPENMP=OFF",
+    "GGML_NATIVE=OFF",
+    "MTMD_VIDEO=OFF"
+  ],
+  "source_hashes_unchanged_during_final_build": true,
+  "native_numerical_parity": "unexecuted",
+  "performance_improvement_established": false,
+  "linked_libraries_sha256": {
+    "libggml-base.so.0.25.3": "ec74ce5526d41aba0e0f47646eb17f76a0bb70600fa2069ac22cb8790d9e3d45",
+    "libggml-cpu.so.0.25.3": "2493f725e59cd8bbd989e510e0cf637a3d819892be5d9341847ebf402973e1de",
+    "libggml.so.0.25.3": "8ecb5936c79d6fdf8e8f9fa59ceb9ea367d55488c071aa08172476ed6290fc7e",
+    "libllama.so.0.5.0": "eaac7ca262b337d3debc275be7c59705bab01e44f674bc9fe4a218bcbd9c5fe8",
+    "libmtmd.so.0.5.0": "08644c2b8a9931f1345ea1b563de20d02ad8b0a4ca55435efa9ff2e699a5d8e0"
+  }
+}

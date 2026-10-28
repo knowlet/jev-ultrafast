@@ -1,0 +1,377 @@
+{
+  "created_at_utc": "2026-10-13T09:17:59.844493+00:00",
+  "repo_path": "<JEV_REPO>",
+  "repo_head": "8f54b32e0d9c1509e5a2d7cb812dae507a245c26",
+  "branch": "feat/local-system-one-benchmark",
+  "working_tree_status": "?? benchmark/",
+  "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "source_sha256": {
+    "jev_ultrafast/__init__.py": "60f025b8d24465e2c0f7a3547d43b8020fd8843de7b6cb3f892ef63f5548cf63",
+    "jev_ultrafast/agent.py": "ae526fdf3b07e5193243788112ed7906ea6705f227d3a0792d236766d0dd6ed4",
+    "jev_ultrafast/browser.py": "f0059bbe3d043b344f02eaa1dbc64718e32d191c803e00b0429fc166659b8fa7",
+    "jev_ultrafast/demo.py": "a0cfb10909b370efb284cbbe16bdb4b7e7e06ba6385827404169027645a1d8a4",
+    "jev_ultrafast/isolated_browser.py": "c75c9bd09f09e8ff33b15d59522ea86c6deb5ca97be554d188d90525cae4973d",
+    "jev_ultrafast/model.py": "87eca07d69ded7ecb86b6808044a54ac6d0813d3b2662ead47538e6e3ea9d0d7",
+    "jev_ultrafast/questions.py": "66a7054b85040b949e1757311257ea0c5a843c635f9a40c99f6d15ad660fb422",
+    "jev_ultrafast/snapshot.js": "e50473501c8fb8e70f3b21866d987393e3f2315c639d638bd477d170e81ed78d",
+    "jev_ultrafast/static/fixture.html": "e48e7d7b6225b215060692e0a28c3d0b59e465e4b94c1bc510d5f37ff0b8bfbe",
+    "jev_ultrafast/static/local_click_fixture.html": "4697cdf7554f0579e511ebaf9b5224ff70c662d2f3e051f678bb9a816a6fc6e9",
+    "scripts/local_benchmark.py": "933d44b94cd5673ae07194a1908804d16674bcbc2cb4b639edfeee63f09e93d6"
+  },
+  "model_metadata_path": "<JEV_REPO>/benchmark/results/q8-decisions-20261013/model-metadata-warm.json",
+  "model_metadata_sha256": "78df297e14e59353aa6f0e1da3042c52cdbafa205fbe9825ea62a4e535b19e8b",
+  "model": {
+    "artifact_path": "<S1_REPO>/artifacts/exports/s1-boolq-gguf/s1-boolq-Q8_0.gguf",
+    "version": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+    "quantization": "Q8_0",
+    "runtime": "llama.cpp Metal",
+    "s1_repo_head": "eef847f01b63c86f05df81027a959cf3c658d54b",
+    "jev_repo_head": "8f54b32e0d9c1509e5a2d7cb812dae507a245c26",
+    "llama_cpp_head": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+    "manifest": {
+      "schema_version": 1,
+      "format": "gguf",
+      "status": "converted_and_structurally_verified",
+      "recorded_at": "2026-10-04T10:56:33.636227+00:00",
+      "source_model": "google/gemma-4-12B-it",
+      "source_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+      "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+      "source_checkpoint_files": [
+        {
+          "path": "config.json",
+          "size_bytes": 4953,
+          "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+        },
+        {
+          "path": "model.safetensors",
+          "size_bytes": 23919549408,
+          "sha256": "11144621122123135eb79c9cfd0466a2c51f230109124aefe401cdbec8c71a53"
+        }
+      ],
+      "source_s1_config_sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962",
+      "training_recipe_sha256": "2a708e5f4acfea4b688e88ba338aa62991608db875fef039ee6b4f33c3a74d73",
+      "source_hub_repository": "knowlet/Gemma-4-12B-Unified-System-One",
+      "source_hub_weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+      "llama_cpp_revision": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+      "conversion_record_source_revision": "bcf829acc111fd8054987b1519b8181835f1dfed",
+      "recording_program_sha256": "e9deca948a69bdd9e49bc5915c43b4e80743ab4fc6a24ec562735470beb5f263",
+      "source_capture_manifest_sha256": "90e9fc465a6e372c81e1596e387fc7c62107730b41c4f3c1d5c7a8087a9bb51e",
+      "model_file": "s1-boolq-Q8_0.gguf",
+      "mmproj_file": "mmproj-s1-boolq-f16.gguf",
+      "quantization": {
+        "language_model": "Q8_0",
+        "multimodal_projector": "F16",
+        "direct_conversion": true
+      },
+      "source_tensor_count": 677,
+      "source_tensor_groups": {
+        "model.embed_audio": 1,
+        "model.embed_vision": 1,
+        "model.language_model": 666,
+        "model.vision_embedder": 9
+      },
+      "files": [
+        {
+          "path": "base_s1_config.json",
+          "size_bytes": 367,
+          "sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962"
+        },
+        {
+          "path": "chat_template.jinja",
+          "size_bytes": 18683,
+          "sha256": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4"
+        },
+        {
+          "path": "config.json",
+          "size_bytes": 4953,
+          "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+        },
+        {
+          "path": "mmproj-s1-boolq-f16.gguf",
+          "size_bytes": 122031744,
+          "sha256": "cffbff05efd290fef28d084ebcb653de7594f5e26bae0eabbedf30d6c782c1d1"
+        },
+        {
+          "path": "processor_config.json",
+          "size_bytes": 1382,
+          "sha256": "6b938e76555b3e9946890770e1abcd442a4718f34041a58e8139dc8ad34545c9"
+        },
+        {
+          "path": "s1-boolq-Q8_0.gguf",
+          "size_bytes": 12669647264,
+          "sha256": "9d3bc61851e5b7ed8e595b84327b85271830778d0e62fa9c1349c61843f369ed"
+        },
+        {
+          "path": "tensor-inventory.json",
+          "size_bytes": 112923,
+          "sha256": "aea1828d797f22d15d54a681297a0efbfd87bdf8f6ba3698017751bdbf1d8b54"
+        },
+        {
+          "path": "tokenizer.json",
+          "size_bytes": 32169626,
+          "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size_bytes": 3736,
+          "sha256": "794a39f8330ce05020774c70c091225bc5f031b9cacf41fc20e52eb54b4b52d8"
+        }
+      ],
+      "versions": {
+        "torch": "2.8.0",
+        "transformers": "5.17.0",
+        "numpy": "2.5.3",
+        "safetensors": "0.8.0"
+      },
+      "commands": [
+        [
+          ".venv/bin/python",
+          "artifacts/export-tools/llama.cpp/convert_hf_to_gguf.py",
+          "artifacts/release/checkpoint",
+          "--outtype",
+          "q8_0",
+          "--outfile",
+          "artifacts/exports/s1-boolq-gguf/s1-boolq-Q8_0.gguf",
+          "--model-name",
+          "Gemma-4-12B-Unified-System-One"
+        ],
+        [
+          ".venv/bin/python",
+          "artifacts/export-tools/llama.cpp/convert_hf_to_gguf.py",
+          "artifacts/release/checkpoint",
+          "--mmproj",
+          "--outtype",
+          "f16",
+          "--outfile",
+          "artifacts/exports/s1-boolq-gguf/mmproj-s1-boolq-f16.gguf"
+        ]
+      ],
+      "scope": "Structural conversion receipt; runtime quality requires the separate full-population evaluation."
+    },
+    "calibration": {
+      "temperature": 2.7830344470383452,
+      "source_model": "google/gemma-4-12B-it",
+      "source_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+      "prompt_version": 1,
+      "training_recipe_sha256": "2a708e5f4acfea4b688e88ba338aa62991608db875fef039ee6b4f33c3a74d73",
+      "calibration_dataset_sha256": "2da1a6798b1638a7ff4dd336bdf3b7eebad7a9641ec71c6932f778d309860826",
+      "runtime": "llama.cpp",
+      "runtime_format": "gguf",
+      "runtime_source_revision": "bcf829acc111fd8054987b1519b8181835f1dfed",
+      "conversion_manifest_sha256": "464874bc51e8ee21ab56f34a4bf7d22b1fb83299a277cbcf966b42c5fc7802b7",
+      "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+      "export_checkpoint_sha256": "3609c57ec4985fe65062bd490631aedb9bbe5039c622ac8e98e774b2053f93f4",
+      "gguf_calibration": {
+        "method": "s1.training.fit_temperature; 241 log-spaced temperatures [0.05,20] plus1",
+        "input": "raw legal selected logits after native softcap, before any temperature",
+        "case_count": 256,
+        "temperature": 2.7830344470383452,
+        "n": 256,
+        "nll_before": 0.538595354508613,
+        "nll_after": 0.2904123939299567,
+        "split": "calibration",
+        "runtime": "llama.cpp",
+        "manifest_sha256": "90e9fc465a6e372c81e1596e387fc7c62107730b41c4f3c1d5c7a8087a9bb51e",
+        "dataset_manifest_sha256": "e0ab28e3435a910c19abf3a9a7e58df8b5cff7a806b6c7f4f18021db1d3804dd",
+        "runtime_implementation_sha256": "4934e364ac1bb8faaf0815c92cda76c015f2289b9d67441633df62672103c816",
+        "source_temperature": 2.7830344470383452
+      }
+    },
+    "hardware": {
+      "chip": "Apple M1 Max",
+      "unified_memory_bytes": 68719476736,
+      "source": "system_profiler inventory verified for this Mac on 2026-10-13"
+    },
+    "settings": {
+      "context": 4096,
+      "batch": 512,
+      "threads": 4,
+      "gpu_layers": 99,
+      "seed": 17,
+      "text_temperature": 0,
+      "text_max_tokens": 128,
+      "text_prompt_cache": false
+    },
+    "commands": [
+      {
+        "name": "decision-service",
+        "argv": [
+          "<JEV_REPO>/.venv/bin/python",
+          "<JEV_REPO>/scripts/local_s1_service.py",
+          "--s1-repo",
+          "<S1_REPO>",
+          "--model",
+          "<S1_REPO>/artifacts/exports/s1-boolq-gguf",
+          "--port",
+          "65418",
+          "--native-runner",
+          "<S1_REPO>/artifacts/gguf-runtime/bin/s1-gguf",
+          "--cache-dir",
+          "<JEV_REPO>/.local-cache/s1",
+          "--ctx-size",
+          "4096",
+          "--batch-size",
+          "512",
+          "--threads",
+          "4",
+          "--raw-log",
+          "<JEV_REPO>/benchmark/results/q8-decisions-20261013/native-decision-time.log",
+          "--request-log",
+          "<JEV_REPO>/benchmark/results/q8-decisions-20261013/native-requests.jsonl"
+        ],
+        "pid": 66580
+      },
+      {
+        "name": "benchmark",
+        "argv": [
+          "<JEV_REPO>/.venv/bin/python",
+          "<JEV_REPO>/scripts/local_benchmark.py",
+          "--mode",
+          "decision-only",
+          "--output",
+          "<JEV_REPO>/benchmark/results/q8-decisions-20261013/cold",
+          "--model-metadata",
+          "<JEV_REPO>/benchmark/results/q8-decisions-20261013/model-metadata-cold.json",
+          "--warmup",
+          "0",
+          "--decision-repeats",
+          "1",
+          "--repeats",
+          "5",
+          "--task-timeout",
+          "180",
+          "--fixture",
+          "travel",
+          "--fixture-url",
+          "http://127.0.0.1:65420",
+          "--chrome-path",
+          "<CHROMIUM_CACHE>/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell"
+        ],
+        "exit_code": 0
+      }
+    ],
+    "startup": {
+      "decision_http_bind_ms": 230.26275006122887,
+      "decision_service_to_first_complete_ms": 19568.083749967627
+    },
+    "resource_usage": {},
+    "decision_service_identity": {
+      "status": "starting",
+      "calibrated_inference_verified": false,
+      "completed_requests": 0,
+      "first_success_since_launch_ms": null,
+      "adapter_pid": 66581,
+      "adapter_exit_code": null,
+      "backend": "s1.gguf_adapter --predict",
+      "s1_repo": "<S1_REPO>",
+      "model_package": "<S1_REPO>/artifacts/exports/s1-boolq-gguf",
+      "native_runner": "<S1_REPO>/artifacts/gguf-runtime/bin/s1-gguf",
+      "native_runner_sha256": "d1e81415da71954981ebc44794c90393961a8e150559a18afdf948d60f8506be",
+      "adapter_source_sha256": "95e9343ead0656f13197c4371ab48b445826d48bd37f8cc9f03b94ae926351c1",
+      "model_file": "<S1_REPO>/artifacts/exports/s1-boolq-gguf/s1-boolq-Q8_0.gguf",
+      "model_manifest_identity": {
+        "path": "s1-boolq-Q8_0.gguf",
+        "size_bytes": 12669647264,
+        "sha256": "9d3bc61851e5b7ed8e595b84327b85271830778d0e62fa9c1349c61843f369ed"
+      },
+      "mmproj_manifest_identity": {
+        "path": "mmproj-s1-boolq-f16.gguf",
+        "size_bytes": 122031744,
+        "sha256": "cffbff05efd290fef28d084ebcb653de7594f5e26bae0eabbedf30d6c782c1d1"
+      },
+      "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+      "source_hub_repository": "knowlet/Gemma-4-12B-Unified-System-One",
+      "source_hub_weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+      "quantization": {
+        "language_model": "Q8_0",
+        "multimodal_projector": "F16",
+        "direct_conversion": true
+      },
+      "conversion_manifest_sha256": "464874bc51e8ee21ab56f34a4bf7d22b1fb83299a277cbcf966b42c5fc7802b7",
+      "calibration_sha256": "24882a49f5440412a63aecb7e446274d4ba6a4f8bb28930ddc4eaf1922d2863c",
+      "temperature": 2.7830344470383452,
+      "ctx_size": 4096,
+      "batch_size": 512,
+      "threads": 4,
+      "request_timeout_seconds": 90.0,
+      "raw_log": "<JEV_REPO>/benchmark/results/q8-decisions-20261013/native-decision-time.log",
+      "native_raw_log": "<JEV_REPO>/benchmark/results/q8-decisions-20261013/native-decision-time.log.native.log",
+      "request_log": "<JEV_REPO>/benchmark/results/q8-decisions-20261013/native-requests.jsonl",
+      "rss_scope": "Separate /usr/bin/time -l reports for adapter and native model processes; bytes on macOS"
+    },
+    "vm_stat_before": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                   695893.\nPages active:                                1074871.\nPages inactive:                              1035156.\nPages speculative:                             43503.\nPages throttled:                                   0.\nPages wired down:                            1216425.\nPages purgeable:                                3386.\n\"Translation faults\":                     9011476963.\nPages copy-on-write:                       260106153.\nPages zero filled:                       20935772049.\nPages reactivated:                         154838305.\nPages purged:                               77991609.\nFile-backed pages:                           1298468.\nAnonymous pages:                              855062.\nPages stored in compressor:                   138159.\nPages occupied by compressor:                  73767.\nDecompressions:                           1045852337.\nCompressions:                             1911233596.\nPageins:                                  4060391807.\nPageouts:                                     641315.\nSwapins:                                     9846612.\nSwapouts:                                   22469604.\n"
+  },
+  "python": "3.12.11 (main, Aug 18 2025, 19:02:39) [Clang 20.1.4 ]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "installed_distributions": {
+    "jev-ultrafast": "0.1.0",
+    "browser-harness": "0.1.13",
+    "httpx": "0.28.1",
+    "websockets": "15.0.1",
+    "mlx": null,
+    "mlx-lm": null
+  },
+  "configuration": {
+    "mode": "decision-only",
+    "output": "<JEV_REPO>/benchmark/results/q8-decisions-20261013/warm",
+    "model_metadata": "<JEV_REPO>/benchmark/results/q8-decisions-20261013/model-metadata-warm.json",
+    "fixture_url": "http://127.0.0.1:65420",
+    "fixture": "travel",
+    "chrome_path": "<CHROMIUM_CACHE>/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell",
+    "decision_repeats": 10,
+    "text_repeats": 0,
+    "repeats": 5,
+    "warmup": 2,
+    "task_timeout": 180.0,
+    "max_decisions": 12,
+    "decision_endpoint": "http://127.0.0.1:65418/decide",
+    "text_base_url": null,
+    "text_model": null,
+    "text_temperature": 0,
+    "text_seed": 17,
+    "text_max_tokens": 128,
+    "choice_sampling": "deterministic full offered-choice scoring; native runtime configuration in model metadata",
+    "microbenchmark_input": {
+      "page": {
+        "url": "http://127.0.0.1:8766/local_click_fixture.html",
+        "title": "Local completion fixture",
+        "text": "Local completion fixture\nCompletion not yet confirmed\nMark complete\nReset completion",
+        "actions": [
+          {
+            "id": "e1",
+            "kind": "click",
+            "label": "Mark complete",
+            "role": "button",
+            "value": "",
+            "node": 1
+          },
+          {
+            "id": "e2",
+            "kind": "click",
+            "label": "Reset completion",
+            "role": "button",
+            "value": "",
+            "node": 2
+          },
+          {
+            "id": "wait",
+            "kind": "wait",
+            "label": "Wait for the page to update"
+          }
+        ]
+      },
+      "goal": "Click the Mark complete button. Stop when Completion confirmed is visibly shown.",
+      "history": [],
+      "note": "Fixed synthetic observed state; this does not establish browser task success."
+    },
+    "boundaries": {
+      "setup_ms": "Create fresh owned tab, initial navigation, and first observation",
+      "task_ms": "After initial observation through stopped state or failure; models and browser included",
+      "verification_ms": "Fresh independent DOM evaluation after task",
+      "total_ms": "Per-run setup + task + verification + tab teardown; Chromium launch measured separately",
+      "browser_task_wall_ms": "Exclusive outer fresh/observe/act calls; nested CDP is not added twice",
+      "model_wall_ms": "Real logical model call wall time including validation and failures; retries internal to provider"
+    }
+  }
+}

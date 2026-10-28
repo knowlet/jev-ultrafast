@@ -1,0 +1,56 @@
+{
+  "phase": "pre-service CPU-only package integrity",
+  "elapsed_seconds": 4.351544916979037,
+  "manifest_sha256": "3e07bde8e66308ce80a90e570b7eb04fe1c11f49d6b3ee3486574ee480aadd46",
+  "calibration_sha256": "fcf22457f36ebf2b1a7675fbb6a83198cdc80b4111977efa5a39b73827bc0fcc",
+  "temperature": 3.232734824261939,
+  "native_runner_sha256": "d1e81415da71954981ebc44794c90393961a8e150559a18afdf948d60f8506be",
+  "adapter_source_sha256": "95e9343ead0656f13197c4371ab48b445826d48bd37f8cc9f03b94ae926351c1",
+  "verified_files": [
+    {
+      "file": "base_s1_config.json",
+      "sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962",
+      "bytes": 367
+    },
+    {
+      "file": "chat_template.jinja",
+      "sha256": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4",
+      "bytes": 18683
+    },
+    {
+      "file": "config.json",
+      "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0",
+      "bytes": 4953
+    },
+    {
+      "file": "mmproj-s1-boolq-f16.gguf",
+      "sha256": "cffbff05efd290fef28d084ebcb653de7594f5e26bae0eabbedf30d6c782c1d1",
+      "bytes": 122031744
+    },
+    {
+      "file": "processor_config.json",
+      "sha256": "6b938e76555b3e9946890770e1abcd442a4718f34041a58e8139dc8ad34545c9",
+      "bytes": 1382
+    },
+    {
+      "file": "s1-boolq-Q4_K_M.gguf",
+      "sha256": "daf56f5a5a0496e4e726e504858ef8dda1f6b02cd1bc7a68e9f1beb2bf178365",
+      "bytes": 7381383584
+    },
+    {
+      "file": "tensor-inventory.json",
+      "sha256": "c7557a6f7dace16de31cbeb1815b7779063f6ee75102c30ba29dd3beb356fe27",
+      "bytes": 113174
+    },
+    {
+      "file": "tokenizer.json",
+      "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f",
+      "bytes": 32169626
+    },
+    {
+      "file": "tokenizer_config.json",
+      "sha256": "794a39f8330ce05020774c70c091225bc5f031b9cacf41fc20e52eb54b4b52d8",
+      "bytes": 3736
+    }
+  ]
+}

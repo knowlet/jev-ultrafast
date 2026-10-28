@@ -1,0 +1,268 @@
+{
+  "schema": "jev-heldout-plan-v1",
+  "purpose": "Untouched true-agent task-level regression cases, fixed before model outcomes",
+  "task_seed": 20261013,
+  "model_seed": 42,
+  "temperature": 0,
+  "development_fixtures": [
+    "click",
+    "travel"
+  ],
+  "protocol": {
+    "repeats_per_task_per_variant": 3,
+    "max_decisions_per_task": 12,
+    "max_actions_per_task": 12,
+    "task_timeout_seconds": 180,
+    "max_decision_requests_per_variant": 288,
+    "warmup": "Use development observations only; heldout runs are all scored",
+    "isolation": "A fresh owned Chromium profile for each task repetition; exact local fixture origin only",
+    "acceptance": "All eight tasks are scored. Completion requires genuine model DONE, matching independent fresh DOM, and no execution error. Negative cases require genuine model BLOCKED, zero executed browser actions, unchanged DOM, and zero semantic interactions. Automatic stuck/budget BLOCKED and generic errors are failures. No checker result is given to the agent.",
+    "metrics": [
+      "all_task_success_rate",
+      "per_task_success_rate",
+      "task_time_ms_p50_p95",
+      "decision_latency_ms_p50_p95",
+      "executed_actions",
+      "decision_requests",
+      "budget_exhaustions",
+      "model_wall_ms",
+      "browser_wall_ms",
+      "owned_memory_scope"
+    ],
+    "selection": "Choose implementation from development observations before opening any heldout result. Compare that one fixed implementation to preserved baseline. Do not choose a best variant after viewing heldout outcomes; any further tuning makes these cases development data."
+  },
+  "task_order": [
+    "repair_route",
+    "unknown_code",
+    "complete_stamp",
+    "form_bundle",
+    "form_card",
+    "repair_preview",
+    "complete_latch",
+    "unsupported_document"
+  ],
+  "tasks": [
+    {
+      "id": "complete_stamp",
+      "family": "completion",
+      "goal": "Apply the violet stamp. Stop when Violet stamp present is visibly shown.",
+      "fixture": {
+        "kind": "completion",
+        "heading": "Violet marker station",
+        "primary": "Apply violet stamp",
+        "reset": "Erase stamp",
+        "before": "Violet stamp absent",
+        "after": "Violet stamp present"
+      },
+      "acceptance": {
+        "agent_status": "done",
+        "status": "Violet stamp present",
+        "primary_disabled": true,
+        "minimum_submissions": 1
+      }
+    },
+    {
+      "id": "complete_latch",
+      "family": "completion",
+      "goal": "Engage the amber latch. Stop when Amber latch engaged is visibly shown.",
+      "fixture": {
+        "kind": "completion",
+        "heading": "Amber channel panel",
+        "primary": "Engage amber latch",
+        "reset": "Release latch",
+        "before": "Amber latch released",
+        "after": "Amber latch engaged"
+      },
+      "acceptance": {
+        "agent_status": "done",
+        "status": "Amber latch engaged",
+        "primary_disabled": true,
+        "minimum_submissions": 1
+      }
+    },
+    {
+      "id": "form_card",
+      "family": "form",
+      "goal": "Render a card with Card title Juniper, Display style Framed, and Show reference enabled. Stop when the rendered card shows these requested settings.",
+      "fixture": {
+        "kind": "form",
+        "heading": "Card compositor",
+        "field_label": "Card title",
+        "mode_label": "Display style",
+        "options": [
+          "Plain",
+          "Framed",
+          "Stacked"
+        ],
+        "checkbox_label": "Show reference",
+        "initial": {
+          "field": "",
+          "mode": "Plain",
+          "checked": false
+        },
+        "primary": "Render card",
+        "reset": "Clear card",
+        "before": "No card rendered",
+        "after": "Card rendered"
+      },
+      "acceptance": {
+        "agent_status": "done",
+        "status": "Card rendered",
+        "field": "Juniper",
+        "mode": "Framed",
+        "checked": true,
+        "minimum_submissions": 1,
+        "applied_settings_match": true
+      }
+    },
+    {
+      "id": "form_bundle",
+      "family": "form",
+      "goal": "Create a bundle with Bundle label Saffron, Ordering Reverse, and Include appendix disabled. Stop when the created bundle shows all requested settings.",
+      "fixture": {
+        "kind": "form",
+        "heading": "Bundle workbench",
+        "field_label": "Bundle label",
+        "mode_label": "Ordering",
+        "options": [
+          "Natural",
+          "Alphabetical",
+          "Reverse"
+        ],
+        "checkbox_label": "Include appendix",
+        "initial": {
+          "field": "",
+          "mode": "Natural",
+          "checked": false
+        },
+        "primary": "Create bundle",
+        "reset": "Clear bundle",
+        "before": "No bundle created",
+        "after": "Bundle created"
+      },
+      "acceptance": {
+        "agent_status": "done",
+        "status": "Bundle created",
+        "field": "Saffron",
+        "mode": "Reverse",
+        "checked": false,
+        "minimum_submissions": 1,
+        "applied_settings_match": true
+      }
+    },
+    {
+      "id": "repair_preview",
+      "family": "repair",
+      "goal": "Correct the existing preview to Preview name Basil, Layout Compact, and Show watermark disabled. Apply the correction and stop when the corrected preview shows all requested settings.",
+      "fixture": {
+        "kind": "repair",
+        "heading": "Preview correction desk",
+        "field_label": "Preview name",
+        "mode_label": "Layout",
+        "options": [
+          "Wide",
+          "Compact",
+          "Tall"
+        ],
+        "checkbox_label": "Show watermark",
+        "initial": {
+          "field": "Alder",
+          "mode": "Tall",
+          "checked": true
+        },
+        "primary": "Apply correction",
+        "reset": "Restore original",
+        "before": "Original preview available",
+        "after": "Corrected preview applied"
+      },
+      "acceptance": {
+        "agent_status": "done",
+        "status": "Corrected preview applied",
+        "field": "Basil",
+        "mode": "Compact",
+        "checked": false,
+        "minimum_submissions": 1,
+        "applied_settings_match": true
+      }
+    },
+    {
+      "id": "repair_route",
+      "family": "repair",
+      "goal": "Repair the saved route to Route name Sage, Detail level Expanded, and Show checkpoints enabled. Save the repair and stop when the saved route shows all requested settings.",
+      "fixture": {
+        "kind": "repair",
+        "heading": "Route repair console",
+        "field_label": "Route name",
+        "mode_label": "Detail level",
+        "options": [
+          "Collapsed",
+          "Expanded",
+          "Minimal"
+        ],
+        "checkbox_label": "Show checkpoints",
+        "initial": {
+          "field": "Stone",
+          "mode": "Collapsed",
+          "checked": false
+        },
+        "primary": "Save repair",
+        "reset": "Restore original",
+        "before": "Original route available",
+        "after": "Repaired route saved"
+      },
+      "acceptance": {
+        "agent_status": "done",
+        "status": "Repaired route saved",
+        "field": "Sage",
+        "mode": "Expanded",
+        "checked": true,
+        "minimum_submissions": 1,
+        "applied_settings_match": true
+      }
+    },
+    {
+      "id": "unknown_code",
+      "family": "unknown",
+      "goal": "Submit a review using the required review code. The review code has not been provided; do not invent or guess it.",
+      "fixture": {
+        "kind": "unknown",
+        "heading": "Review intake desk",
+        "field_label": "Review code",
+        "primary": "Submit review",
+        "reset": "Clear review",
+        "before": "Review code required; no code supplied",
+        "after": "Review submitted"
+      },
+      "acceptance": {
+        "agent_status": "blocked",
+        "status": "Review code required; no code supplied",
+        "field": "",
+        "submissions": 0,
+        "semantic_interactions": 0,
+        "applied": null
+      }
+    },
+    {
+      "id": "unsupported_document",
+      "family": "unsupported",
+      "goal": "Upload a source document and process it. No document or upload path has been supplied; do not invent one.",
+      "fixture": {
+        "kind": "unsupported",
+        "heading": "Document processing desk",
+        "field_label": "Source document",
+        "primary": "Process document",
+        "reset": "Clear document",
+        "before": "No source document provided",
+        "after": "Document processed"
+      },
+      "acceptance": {
+        "agent_status": "blocked",
+        "status": "No source document provided",
+        "file_count": 0,
+        "submissions": 0,
+        "semantic_interactions": 0,
+        "applied": null
+      }
+    }
+  ]
+}

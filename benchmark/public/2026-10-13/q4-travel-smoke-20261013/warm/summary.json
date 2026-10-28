@@ -1,0 +1,148 @@
+{
+  "groups": {
+    "browser_task": {
+      "runs": 1,
+      "successful_runs": 0,
+      "failed_runs": 1,
+      "decision_wall_ms_all_attempts": {
+        "n": 4,
+        "p50": 22844.463479006663,
+        "p95": 24509.192381199682,
+        "min": 11982.884375029244,
+        "max": 24628.406125004403,
+        "mean": 20575.054364511743
+      },
+      "helper_wall_ms_all_attempts": {
+        "n": 1,
+        "p50": 5052.078708074987,
+        "p95": 5052.078708074987,
+        "min": 5052.078708074987,
+        "max": 5052.078708074987,
+        "mean": 5052.078708074987
+      }
+    }
+  },
+  "warmup_runs": 0,
+  "warmup_failed_runs": 0,
+  "decision_wall_ms_all_attempts": {
+    "n": 4,
+    "p50": 22844.463479006663,
+    "p95": 24509.192381199682,
+    "min": 11982.884375029244,
+    "max": 24628.406125004403,
+    "mean": 20575.054364511743
+  },
+  "decision_wall_ms_successful": {
+    "n": 4,
+    "p50": 22844.463479006663,
+    "p95": 24509.192381199682,
+    "min": 11982.884375029244,
+    "max": 24628.406125004403,
+    "mean": 20575.054364511743
+  },
+  "decision_native_forward_ms_successful": {
+    "n": 4,
+    "p50": 22841.919687576592,
+    "p95": 24505.865453591105,
+    "min": 11980.953291989863,
+    "max": 24624.865915975533,
+    "mean": 20572.414645779645
+  },
+  "decision_native_input_tokens_per_forward_second": {
+    "n": 4,
+    "p50": 89.83228589881047,
+    "p95": 95.97391595171797,
+    "min": 84.18319949734746,
+    "max": 96.23696588701672,
+    "mean": 90.02118429549628
+  },
+  "decision_failed_calls": 0,
+  "decision_ttft_ms": null,
+  "decision_ttft_reason": "Native choices are nonstreaming forward/scoring requests, without a first token event.",
+  "helper_wall_ms_all_attempts": {
+    "n": 1,
+    "p50": 5052.078708074987,
+    "p95": 5052.078708074987,
+    "min": 5052.078708074987,
+    "max": 5052.078708074987,
+    "mean": 5052.078708074987
+  },
+  "helper_failed_calls": 0,
+  "helper_first_content_delta_ms": {
+    "n": 1,
+    "p50": 4183.001,
+    "p95": 4183.001,
+    "min": 4183.001,
+    "max": 4183.001,
+    "mean": 4183.001
+  },
+  "helper_provider_completion_tokens_per_full_request_second": {
+    "n": 1,
+    "p50": 2.5731982320903786,
+    "p95": 2.5731982320903786,
+    "min": 2.5731982320903786,
+    "max": 2.5731982320903786,
+    "mean": 2.5731982320903786
+  },
+  "task_ms_all_runs": {
+    "n": 1,
+    "p50": 87492.93437507004,
+    "p95": 87492.93437507004,
+    "min": 87492.93437507004,
+    "max": 87492.93437507004,
+    "mean": 87492.93437507004
+  },
+  "task_ms_successful": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "setup_ms": {
+    "n": 1,
+    "p50": 130.72320900391787,
+    "p95": 130.72320900391787,
+    "min": 130.72320900391787,
+    "max": 130.72320900391787,
+    "mean": 130.72320900391787
+  },
+  "verification_ms": {
+    "n": 1,
+    "p50": 0.40383299347013235,
+    "p95": 0.40383299347013235,
+    "min": 0.40383299347013235,
+    "max": 0.40383299347013235,
+    "mean": 0.40383299347013235
+  },
+  "end_to_end_ms": {
+    "n": 1,
+    "p50": 87624.37829200644,
+    "p95": 87624.37829200644,
+    "min": 87624.37829200644,
+    "max": 87624.37829200644,
+    "mean": 87624.37829200644
+  },
+  "browser_task_wall_ms": {
+    "n": 1,
+    "p50": 140.28654340654612,
+    "p95": 140.28654340654612,
+    "min": 140.28654340654612,
+    "max": 140.28654340654612,
+    "mean": 140.28654340654612
+  },
+  "model_wall_ms_per_task": {
+    "n": 1,
+    "p50": 87352.29616612196,
+    "p95": 87352.29616612196,
+    "min": 87352.29616612196,
+    "max": 87352.29616612196,
+    "mean": 87352.29616612196
+  },
+  "python_peak_rss_bytes_cumulative": 41435136,
+  "percentile_method": "linear interpolation at (n - 1) * q; p95 is descriptive for these small samples",
+  "memory_scope": "Current Python process cumulative peak only; service/Chromium RSS and cold load are external.",
+  "token_throughput_scope": "Text uses provider-reported completion_tokens/full request time. Native choices use reported input token count/native forward time, a prefill metric; no generation throughput is inferred.",
+  "batch_error": null
+}

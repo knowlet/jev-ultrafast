@@ -1,0 +1,139 @@
+{
+  "schema": "jev-exact-input-prefix-comparison-plan-v1",
+  "prepared_at_utc": "2026-10-14T08:32:47.393504+00:00",
+  "executed": false,
+  "actual_model_calls": 0,
+  "purpose": "Reduce repeated native prefill without changing operation/target requests or acceptance semantics",
+  "basis": {
+    "prior_jev_head": "db122e8960655404c1062e9108f8e033275bb228",
+    "prior_gemma_head": "8c3c26b53d57e4dc1ebb5ee2a881e6156b7517cc",
+    "measured_distinct_requests": 93,
+    "measured_operation_requests": 86,
+    "hf_prepare_fraction_of_adapter_wall": 0.0004903546100297873,
+    "repeated_passage_json_bytes_fraction_of_operation_body": 0.7284260609513876,
+    "byte_fraction_is_not_token_cache_or_speedup": true
+  },
+  "candidate": {
+    "mechanism": "Reuse only exact matching token-prefix KV; recompute changed suffix and every requested output slot",
+    "source_sha256": "fd9291f18b33c669d8c9157090893a2371a178689d3a4690fb90ad6f0e7089d1",
+    "compiled": false,
+    "answer_cache": false,
+    "prompt_changes": false,
+    "operation_reordering": false,
+    "temperature_changes": false,
+    "model_or_checkpoint_changes": false
+  },
+  "gates": [
+    {
+      "id": "owned_group_confirmation",
+      "state": "pending new explicit human authorization",
+      "minimal_action": "One elevated read-only invocation os.killpg(pgid,0) for only 24238,24239,24241",
+      "retry_limit": 1,
+      "permits_termination": false,
+      "permits_unrelated_inventory": false,
+      "reuse_warning": "Old PGIDs may be reused; alive alone does not confirm current ownership. Stop if ambiguous."
+    },
+    {
+      "id": "cpu_compile",
+      "state": "pending new explicit human authorization",
+      "compiler": "/usr/bin/clang++",
+      "timeout_seconds": 120,
+      "builder": "tools/native-prefix/build.py",
+      "pinned_llama_cpp_revision": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+      "output": "tools/native-prefix/build-20261014-v2",
+      "standard_compiler_temporary_directory": true,
+      "temp_reroute": false,
+      "preserve_failed_v1": true,
+      "downloads": false,
+      "model_execution": false
+    },
+    {
+      "id": "runtime_window",
+      "state": "not available while cleanup unconfirmed; coordinate exclusive bounded window before model work",
+      "paid_api": false,
+      "current_turn_runtime_attempts": 0
+    }
+  ],
+  "stage1": {
+    "purpose": "Numerical equivalence before any speed claim",
+    "inputs": "Four previously recorded development pre/post CLICK/DONE Noul requests; no frozen-suite gold",
+    "variants": [
+      "original pinned GGUF",
+      "candidate prefix disabled",
+      "candidate prefix enabled"
+    ],
+    "order": [
+      "preCLICK",
+      "preCLICK",
+      "preDONE",
+      "preDONE",
+      "postCLICK",
+      "postCLICK",
+      "postDONE",
+      "postDONE"
+    ],
+    "calls_per_variant": 8,
+    "max_total_calls": 24,
+    "whole_window_seconds": 900,
+    "first_response_seconds": 60,
+    "subsequent_response_seconds": 30,
+    "raw_logit_abs_atol": 0.0001,
+    "probability_abs_atol": 1e-05,
+    "rtol": 0,
+    "must_match": [
+      "exact prepared token IDs",
+      "output slots",
+      "model identity",
+      "saved temperature",
+      "full distributions within tolerances",
+      "ranking and selected IDs"
+    ],
+    "cache_acceptance": [
+      "retained KV is genuine exact-prefix reuse",
+      "requested logits are newly recomputed",
+      "no stored responses"
+    ],
+    "failure_action": "Stop; no performance or browser run"
+  },
+  "stage2": {
+    "purpose": "One practical paired development completion test after parity and cache-effectiveness pass",
+    "variant_pair": [
+      "candidate prefix disabled",
+      "candidate prefix enabled"
+    ],
+    "scheduled_task_runs": 2,
+    "fixture": "Existing original development completion fixture, fresh isolated profile for each run and same loopback fixture origin",
+    "policy": "noul_v1 unchanged",
+    "whole_window_seconds": 600,
+    "work_seconds": 540,
+    "cleanup_seconds": 60,
+    "task_seconds": 180,
+    "logical_decisions_per_task": 12,
+    "physical_calls_per_decision_max": 9,
+    "fixed_process_cold_probe_calls_per_variant": 1,
+    "probe_timeout_seconds": 60,
+    "max_total_physical_calls": 218,
+    "model_concurrency": 1,
+    "measure": [
+      "genuine model DONE plus fresh DOM success",
+      "task/model/browser wall separately",
+      "per-decision and physical latency with sample counts",
+      "actual retained/recomputed token counts",
+      "native peak RSS with process scope",
+      "cancelled tails and full unexecuted denominator"
+    ],
+    "limitations": [
+      "One development pair cannot establish generalization or stable percentiles",
+      "No frozen task answers used to tune",
+      "No comparison to old timings across uncontrolled OS cache/thermal epochs"
+    ],
+    "stop_conditions": [
+      "denied operation",
+      "unavailable service",
+      "identity mismatch",
+      "memory pressure",
+      "hard window limit"
+    ]
+  },
+  "execution_workspace": "Existing LAB prototype workspace; before any runtime, bind the reviewed Python source revision by SHA after preserving current edits. No new repository."
+}

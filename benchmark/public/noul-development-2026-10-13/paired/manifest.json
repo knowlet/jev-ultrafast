@@ -1,0 +1,973 @@
+{
+  "created_at_utc": "2026-10-13T15:03:33.454355+00:00",
+  "script_sha256": "e08844f0a664f2ad1d3480bf3f5608cfeae813ec653b255e587282a2d55a95a5",
+  "execute": true,
+  "decision_url": "http://127.0.0.1:18775/decide",
+  "planned_calls": 4,
+  "maximum_calls": 4,
+  "retry_count": 0,
+  "per_call_timeout_seconds": 90.0,
+  "provenance": {
+    "click-pre-complete": {
+      "case": "click-pre-complete",
+      "measured_run_index": 0,
+      "model_call_index": 0,
+      "source_runs_sha256": "c4821a738359ae24d5b6dea03e4177f09f40410dd18b46b1eaeea42be2196500",
+      "original_native_request_sha256": "f23178b1193285647c72f47870e1952a472ec16dda29e05542ab854b310504f9",
+      "original_operation": "CLICK",
+      "original_target": "1",
+      "original_answers": {
+        "operation": {
+          "id": "operation",
+          "type": "choice",
+          "probabilities": {
+            "CLICK": 0.8627718117770012,
+            "WAIT": 0.07074044921165361,
+            "DONE": 0.03921568881986661,
+            "BLOCKED": 0.027272050191478506
+          },
+          "confidence": 0.8627718117770012,
+          "margin": 0.7920313625653477,
+          "choice": "CLICK"
+        },
+        "click_target": {
+          "id": "click_target",
+          "type": "choice",
+          "probabilities": {
+            "1": 0.9150714231541468,
+            "2": 0.08492857684585316
+          },
+          "confidence": 0.9150714231541468,
+          "margin": 0.8301428463082936,
+          "choice": "1"
+        }
+      },
+      "original_model_metadata_sha256": "b3b78964e88619ca0bfa657eefb22362b7edcdb6ac62e515cc800d54def89b10",
+      "source_model_metadata": {
+        "artifact_path": "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M/s1-boolq-Q4_K_M.gguf",
+        "version": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+        "quantization": "Q4_K_M",
+        "runtime": "llama.cpp Metal",
+        "s1_repo_head": "eef847f01b63c86f05df81027a959cf3c658d54b",
+        "jev_repo_head": "8f54b32e0d9c1509e5a2d7cb812dae507a245c26",
+        "llama_cpp_head": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+        "manifest": {
+          "schema_version": 1,
+          "format": "gguf",
+          "status": "converted_and_structurally_verified",
+          "recorded_at": "2026-10-06T15:03:53.576747+00:00",
+          "source_model": "google/gemma-4-12B-it",
+          "source_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+          "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+          "source_checkpoint_files": [
+            {
+              "path": "config.json",
+              "size_bytes": 4953,
+              "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+            },
+            {
+              "path": "model.safetensors",
+              "size_bytes": 23919549408,
+              "sha256": "11144621122123135eb79c9cfd0466a2c51f230109124aefe401cdbec8c71a53"
+            }
+          ],
+          "source_s1_config_sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962",
+          "training_recipe_sha256": "2a708e5f4acfea4b688e88ba338aa62991608db875fef039ee6b4f33c3a74d73",
+          "source_hub_repository": "knowlet/Gemma-4-12B-Unified-System-One",
+          "source_hub_weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+          "llama_cpp_revision": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+          "conversion_record_source_revision": "1bc818be929c2545ebf65aa76ed6775c8fdc858c",
+          "recording_program_sha256": "cc71ebf5a27cc473c6e02439815de7c73eac52aef701ea6d446873328345f779",
+          "source_capture_manifest_sha256": "90e9fc465a6e372c81e1596e387fc7c62107730b41c4f3c1d5c7a8087a9bb51e",
+          "model_file": "s1-boolq-Q4_K_M.gguf",
+          "mmproj_file": "mmproj-s1-boolq-f16.gguf",
+          "quantization": {
+            "language_model": "Q4_K_M",
+            "multimodal_projector": "F16",
+            "direct_conversion": false
+          },
+          "source_tensor_count": 677,
+          "source_tensor_groups": {
+            "model.embed_audio": 1,
+            "model.embed_vision": 1,
+            "model.language_model": 666,
+            "model.vision_embedder": 9
+          },
+          "files": [
+            {
+              "path": "base_s1_config.json",
+              "size_bytes": 367,
+              "sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962"
+            },
+            {
+              "path": "chat_template.jinja",
+              "size_bytes": 18683,
+              "sha256": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4"
+            },
+            {
+              "path": "config.json",
+              "size_bytes": 4953,
+              "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+            },
+            {
+              "path": "mmproj-s1-boolq-f16.gguf",
+              "size_bytes": 122031744,
+              "sha256": "cffbff05efd290fef28d084ebcb653de7594f5e26bae0eabbedf30d6c782c1d1"
+            },
+            {
+              "path": "processor_config.json",
+              "size_bytes": 1382,
+              "sha256": "6b938e76555b3e9946890770e1abcd442a4718f34041a58e8139dc8ad34545c9"
+            },
+            {
+              "path": "s1-boolq-Q4_K_M.gguf",
+              "size_bytes": 7381383584,
+              "sha256": "daf56f5a5a0496e4e726e504858ef8dda1f6b02cd1bc7a68e9f1beb2bf178365"
+            },
+            {
+              "path": "tensor-inventory.json",
+              "size_bytes": 113174,
+              "sha256": "c7557a6f7dace16de31cbeb1815b7779063f6ee75102c30ba29dd3beb356fe27"
+            },
+            {
+              "path": "tokenizer.json",
+              "size_bytes": 32169626,
+              "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+            },
+            {
+              "path": "tokenizer_config.json",
+              "size_bytes": 3736,
+              "sha256": "794a39f8330ce05020774c70c091225bc5f031b9cacf41fc20e52eb54b4b52d8"
+            }
+          ],
+          "versions": {
+            "torch": "2.8.0",
+            "transformers": "5.17.0",
+            "numpy": "2.5.3",
+            "safetensors": "0.8.0"
+          },
+          "commands": [
+            "convert artifacts/release/checkpoint to F16 intermediate, then llama-quantize to Q4_K_M (direct_conversion=False); see quant-sweep plan; prefer F16 source over Q8 requantize",
+            "mmproj F16 -> mmproj-s1-boolq-f16.gguf"
+          ],
+          "scope": "Structural conversion receipt; runtime quality requires the separate full-population evaluation."
+        },
+        "calibration": {
+          "temperature": 3.232734824261939,
+          "source_model": "google/gemma-4-12B-it",
+          "source_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+          "prompt_version": 1,
+          "training_recipe_sha256": "2a708e5f4acfea4b688e88ba338aa62991608db875fef039ee6b4f33c3a74d73",
+          "calibration_dataset_sha256": "2da1a6798b1638a7ff4dd336bdf3b7eebad7a9641ec71c6932f778d309860826",
+          "runtime": "llama.cpp",
+          "runtime_format": "gguf",
+          "runtime_source_revision": "1bc818be929c2545ebf65aa76ed6775c8fdc858c",
+          "conversion_manifest_sha256": "3e07bde8e66308ce80a90e570b7eb04fe1c11f49d6b3ee3486574ee480aadd46",
+          "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+          "export_checkpoint_sha256": "c89a0bd51f50e745684fce64bea6af3922e13b4fc91ee6b0d88e7bb360f53fb2",
+          "gguf_calibration": {
+            "method": "s1.training.fit_temperature; 241 log-spaced temperatures [0.05,20] plus1",
+            "input": "raw legal selected logits after native softcap, before any temperature",
+            "case_count": 256,
+            "temperature": 3.232734824261939,
+            "n": 256,
+            "nll_before": 0.6939718113389175,
+            "nll_after": 0.3334026069754197,
+            "split": "calibration",
+            "runtime": "llama.cpp",
+            "manifest_sha256": "90e9fc465a6e372c81e1596e387fc7c62107730b41c4f3c1d5c7a8087a9bb51e",
+            "dataset_manifest_sha256": "e0ab28e3435a910c19abf3a9a7e58df8b5cff7a806b6c7f4f18021db1d3804dd",
+            "runtime_implementation_sha256": "5c366284bf052af44855177b71db48798df8f9c7e91e34d3eb1a96023c9446cc",
+            "source_temperature": 2.7830344470383452
+          }
+        },
+        "hardware": {
+          "chip": "Apple M1 Max",
+          "unified_memory_bytes": 68719476736,
+          "source": "system_profiler inventory verified for this Mac on 2026-10-13"
+        },
+        "settings": {
+          "context": 4096,
+          "batch": 512,
+          "threads": 4,
+          "gpu_layers": 99,
+          "seed": 17,
+          "text_temperature": 0,
+          "text_max_tokens": 128,
+          "text_prompt_cache": false
+        },
+        "commands": [
+          {
+            "name": "decision-service",
+            "argv": [
+              "<JEV_LAB_ROOT>/.venv/bin/python",
+              "<JEV_LAB_ROOT>/scripts/local_s1_service.py",
+              "--s1-repo",
+              "<S1_PROJECT_ROOT>",
+              "--model",
+              "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M",
+              "--port",
+              "65525",
+              "--native-runner",
+              "<S1_PROJECT_ROOT>/artifacts/gguf-runtime/bin/s1-gguf",
+              "--cache-dir",
+              "<JEV_LAB_ROOT>/.local-cache/s1",
+              "--ctx-size",
+              "4096",
+              "--batch-size",
+              "512",
+              "--threads",
+              "4",
+              "--raw-log",
+              "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/native-decision-time.log",
+              "--request-log",
+              "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/native-requests.jsonl"
+            ],
+            "pid": 69005
+          },
+          {
+            "name": "benchmark",
+            "argv": [
+              "<JEV_LAB_ROOT>/.venv/bin/python",
+              "<JEV_LAB_ROOT>/scripts/local_benchmark.py",
+              "--mode",
+              "decision-only",
+              "--output",
+              "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/cold",
+              "--model-metadata",
+              "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/model-metadata-cold.json",
+              "--warmup",
+              "0",
+              "--decision-repeats",
+              "1",
+              "--repeats",
+              "5",
+              "--task-timeout",
+              "180",
+              "--fixture",
+              "click",
+              "--fixture-url",
+              "http://127.0.0.1:65527",
+              "--chrome-path",
+              "<CHROMIUM_CACHE_ROOT>/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell"
+            ],
+            "exit_code": 0
+          },
+          {
+            "name": "fixture",
+            "argv": [
+              "<JEV_LAB_ROOT>/.venv/bin/python",
+              "-m",
+              "http.server",
+              "65527",
+              "--bind",
+              "127.0.0.1",
+              "--directory",
+              "<JEV_LAB_ROOT>/jev_ultrafast/static"
+            ],
+            "pid": 69064
+          },
+          {
+            "name": "text-service",
+            "argv": [
+              "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/build/bin/llama-server",
+              "--model",
+              "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M/s1-boolq-Q4_K_M.gguf",
+              "--host",
+              "127.0.0.1",
+              "--port",
+              "65526",
+              "--alias",
+              "system-one-trained-Q4_K_M",
+              "--ctx-size",
+              "4096",
+              "--batch-size",
+              "512",
+              "--ubatch-size",
+              "512",
+              "--threads",
+              "4",
+              "--gpu-layers",
+              "99",
+              "--parallel",
+              "1",
+              "--seed",
+              "17",
+              "--temp",
+              "0",
+              "--reasoning",
+              "off",
+              "--no-cache-prompt",
+              "--no-webui",
+              "--offline"
+            ],
+            "pid": 69065
+          },
+          {
+            "name": "benchmark",
+            "argv": [
+              "<JEV_LAB_ROOT>/.venv/bin/python",
+              "<JEV_LAB_ROOT>/scripts/local_benchmark.py",
+              "--mode",
+              "helper-only",
+              "--output",
+              "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/helper-probe",
+              "--model-metadata",
+              "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/model-metadata-helper-probe.json",
+              "--warmup",
+              "0",
+              "--decision-repeats",
+              "1",
+              "--repeats",
+              "5",
+              "--task-timeout",
+              "180",
+              "--fixture",
+              "click",
+              "--fixture-url",
+              "http://127.0.0.1:65527",
+              "--chrome-path",
+              "<CHROMIUM_CACHE_ROOT>/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell",
+              "--text-repeats",
+              "1"
+            ],
+            "exit_code": 0
+          },
+          {
+            "name": "benchmark",
+            "argv": [
+              "<JEV_LAB_ROOT>/.venv/bin/python",
+              "<JEV_LAB_ROOT>/scripts/local_benchmark.py",
+              "--mode",
+              "all",
+              "--output",
+              "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/warm",
+              "--model-metadata",
+              "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/model-metadata-warm.json",
+              "--warmup",
+              "1",
+              "--decision-repeats",
+              "3",
+              "--repeats",
+              "5",
+              "--task-timeout",
+              "180",
+              "--fixture",
+              "click",
+              "--fixture-url",
+              "http://127.0.0.1:65527",
+              "--chrome-path",
+              "<CHROMIUM_CACHE_ROOT>/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell"
+            ],
+            "exit_code": 1
+          }
+        ],
+        "startup": {
+          "decision_http_bind_ms": 228.9557500043884,
+          "decision_service_to_first_complete_ms": 15188.048665993847,
+          "text_model_ready_ms": 2306.180875049904
+        },
+        "resource_usage": {
+          "text-service": {
+            "peak_rss_bytes": 8255291392,
+            "user_seconds": 1.831229,
+            "system_seconds": 1.431622,
+            "exit_code": 0,
+            "source": "macOS wait4 owned PID; descendant aggregation may apply; peaks are not additive"
+          },
+          "fixture": {
+            "peak_rss_bytes": 23330816,
+            "user_seconds": 0.050355,
+            "system_seconds": 0.031859,
+            "exit_code": -15,
+            "source": "macOS wait4 owned PID; descendant aggregation may apply; peaks are not additive"
+          },
+          "decision-service": {
+            "peak_rss_bytes": 9300377600,
+            "user_seconds": 10.863593,
+            "system_seconds": 3.12065,
+            "exit_code": 0,
+            "source": "macOS wait4 owned PID; descendant aggregation may apply; peaks are not additive"
+          },
+          "launcher_peak_rss_bytes": 30048256
+        },
+        "decision_service_identity": {
+          "status": "starting",
+          "calibrated_inference_verified": false,
+          "completed_requests": 0,
+          "first_success_since_launch_ms": null,
+          "adapter_pid": 69006,
+          "adapter_exit_code": null,
+          "backend": "s1.gguf_adapter --predict",
+          "s1_repo": "<S1_PROJECT_ROOT>",
+          "model_package": "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M",
+          "native_runner": "<S1_PROJECT_ROOT>/artifacts/gguf-runtime/bin/s1-gguf",
+          "native_runner_sha256": "d1e81415da71954981ebc44794c90393961a8e150559a18afdf948d60f8506be",
+          "adapter_source_sha256": "95e9343ead0656f13197c4371ab48b445826d48bd37f8cc9f03b94ae926351c1",
+          "model_file": "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M/s1-boolq-Q4_K_M.gguf",
+          "model_manifest_identity": {
+            "path": "s1-boolq-Q4_K_M.gguf",
+            "size_bytes": 7381383584,
+            "sha256": "daf56f5a5a0496e4e726e504858ef8dda1f6b02cd1bc7a68e9f1beb2bf178365"
+          },
+          "mmproj_manifest_identity": {
+            "path": "mmproj-s1-boolq-f16.gguf",
+            "size_bytes": 122031744,
+            "sha256": "cffbff05efd290fef28d084ebcb653de7594f5e26bae0eabbedf30d6c782c1d1"
+          },
+          "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+          "source_hub_repository": "knowlet/Gemma-4-12B-Unified-System-One",
+          "source_hub_weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+          "quantization": {
+            "language_model": "Q4_K_M",
+            "multimodal_projector": "F16",
+            "direct_conversion": false
+          },
+          "conversion_manifest_sha256": "3e07bde8e66308ce80a90e570b7eb04fe1c11f49d6b3ee3486574ee480aadd46",
+          "calibration_sha256": "fcf22457f36ebf2b1a7675fbb6a83198cdc80b4111977efa5a39b73827bc0fcc",
+          "temperature": 3.232734824261939,
+          "ctx_size": 4096,
+          "batch_size": 512,
+          "threads": 4,
+          "request_timeout_seconds": 90.0,
+          "raw_log": "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/native-decision-time.log",
+          "native_raw_log": "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/native-decision-time.log.native.log",
+          "request_log": "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/native-requests.jsonl",
+          "rss_scope": "Separate /usr/bin/time -l reports for adapter and native model processes; bytes on macOS"
+        },
+        "vm_stat_before": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                   193280.\nPages active:                                1890042.\nPages inactive:                              1647399.\nPages speculative:                               233.\nPages throttled:                                   0.\nPages wired down:                             340925.\nPages purgeable:                                4903.\n\"Translation faults\":                     9018770882.\nPages copy-on-write:                       260332043.\nPages zero filled:                       20945973371.\nPages reactivated:                         154845142.\nPages purged:                               78003241.\nFile-backed pages:                           1929834.\nAnonymous pages:                             1607840.\nPages stored in compressor:                   132976.\nPages occupied by compressor:                  67736.\nDecompressions:                           1045868342.\nCompressions:                             1911236150.\nPageins:                                  4063597169.\nPageouts:                                     641319.\nSwapins:                                     9851837.\nSwapouts:                                   22469604.\n",
+        "text_runtime_models": {
+          "models": [
+            {
+              "name": "system-one-trained-Q4_K_M",
+              "model": "system-one-trained-Q4_K_M",
+              "modified_at": "",
+              "size": "",
+              "digest": "",
+              "type": "model",
+              "description": "",
+              "tags": [
+                ""
+              ],
+              "capabilities": [
+                "completion"
+              ],
+              "parameters": "",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "",
+                "families": [
+                  ""
+                ],
+                "parameter_size": "",
+                "quantization_level": ""
+              }
+            }
+          ],
+          "object": "list",
+          "data": [
+            {
+              "id": "system-one-trained-Q4_K_M",
+              "aliases": [
+                "system-one-trained-Q4_K_M"
+              ],
+              "tags": [],
+              "object": "model",
+              "created": 1791883671,
+              "owned_by": "llamacpp",
+              "meta": {
+                "vocab_type": 2,
+                "n_vocab": 262144,
+                "n_ctx": 4096,
+                "n_ctx_train": 262144,
+                "n_embd": 3840,
+                "n_params": 11907350576,
+                "size": 7365558464,
+                "ftype": "Q4_K - Medium"
+              }
+            }
+          ]
+        },
+        "vm_stat_after": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                   415869.\nPages active:                                1360202.\nPages inactive:                              1072106.\nPages speculative:                               219.\nPages throttled:                                   0.\nPages wired down:                            1218162.\nPages purgeable:                                1034.\n\"Translation faults\":                     9022102362.\nPages copy-on-write:                       260463128.\nPages zero filled:                       20953403866.\nPages reactivated:                         155037454.\nPages purged:                               78019515.\nFile-backed pages:                           1331055.\nAnonymous pages:                             1101472.\nPages stored in compressor:                   151146.\nPages occupied by compressor:                  73057.\nDecompressions:                           1047019369.\nCompressions:                             1913188464.\nPageins:                                  4064558118.\nPageouts:                                     641891.\nSwapins:                                     9862999.\nSwapouts:                                   22469604.\n"
+      }
+    },
+    "click-post-complete": {
+      "case": "click-post-complete",
+      "measured_run_index": 0,
+      "model_call_index": 1,
+      "source_runs_sha256": "c4821a738359ae24d5b6dea03e4177f09f40410dd18b46b1eaeea42be2196500",
+      "original_native_request_sha256": "c8e719e8b21b902df9d85de046b8c69a39eebaa9e9029951f54a2663f1d18491",
+      "original_operation": "CLICK",
+      "original_target": "1",
+      "original_answers": {
+        "operation": {
+          "id": "operation",
+          "type": "choice",
+          "probabilities": {
+            "CLICK": 0.7784879031994514,
+            "WAIT": 0.10831860945256738,
+            "DONE": 0.06299372892647331,
+            "BLOCKED": 0.05019975842150792
+          },
+          "confidence": 0.7784879031994514,
+          "margin": 0.6701692937468839,
+          "choice": "CLICK"
+        }
+      },
+      "original_model_metadata_sha256": "b3b78964e88619ca0bfa657eefb22362b7edcdb6ac62e515cc800d54def89b10",
+      "source_model_metadata": {
+        "artifact_path": "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M/s1-boolq-Q4_K_M.gguf",
+        "version": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+        "quantization": "Q4_K_M",
+        "runtime": "llama.cpp Metal",
+        "s1_repo_head": "eef847f01b63c86f05df81027a959cf3c658d54b",
+        "jev_repo_head": "8f54b32e0d9c1509e5a2d7cb812dae507a245c26",
+        "llama_cpp_head": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+        "manifest": {
+          "schema_version": 1,
+          "format": "gguf",
+          "status": "converted_and_structurally_verified",
+          "recorded_at": "2026-10-06T15:03:53.576747+00:00",
+          "source_model": "google/gemma-4-12B-it",
+          "source_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+          "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+          "source_checkpoint_files": [
+            {
+              "path": "config.json",
+              "size_bytes": 4953,
+              "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+            },
+            {
+              "path": "model.safetensors",
+              "size_bytes": 23919549408,
+              "sha256": "11144621122123135eb79c9cfd0466a2c51f230109124aefe401cdbec8c71a53"
+            }
+          ],
+          "source_s1_config_sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962",
+          "training_recipe_sha256": "2a708e5f4acfea4b688e88ba338aa62991608db875fef039ee6b4f33c3a74d73",
+          "source_hub_repository": "knowlet/Gemma-4-12B-Unified-System-One",
+          "source_hub_weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+          "llama_cpp_revision": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+          "conversion_record_source_revision": "1bc818be929c2545ebf65aa76ed6775c8fdc858c",
+          "recording_program_sha256": "cc71ebf5a27cc473c6e02439815de7c73eac52aef701ea6d446873328345f779",
+          "source_capture_manifest_sha256": "90e9fc465a6e372c81e1596e387fc7c62107730b41c4f3c1d5c7a8087a9bb51e",
+          "model_file": "s1-boolq-Q4_K_M.gguf",
+          "mmproj_file": "mmproj-s1-boolq-f16.gguf",
+          "quantization": {
+            "language_model": "Q4_K_M",
+            "multimodal_projector": "F16",
+            "direct_conversion": false
+          },
+          "source_tensor_count": 677,
+          "source_tensor_groups": {
+            "model.embed_audio": 1,
+            "model.embed_vision": 1,
+            "model.language_model": 666,
+            "model.vision_embedder": 9
+          },
+          "files": [
+            {
+              "path": "base_s1_config.json",
+              "size_bytes": 367,
+              "sha256": "322ffa1c6bfa7c4069da43265be1e79071eee6fbcff07cd4a74f9ed04774b962"
+            },
+            {
+              "path": "chat_template.jinja",
+              "size_bytes": 18683,
+              "sha256": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4"
+            },
+            {
+              "path": "config.json",
+              "size_bytes": 4953,
+              "sha256": "b50e760a9107b629e1a140ab7a4392e875c37baefee022f27c98b90b9d947cf0"
+            },
+            {
+              "path": "mmproj-s1-boolq-f16.gguf",
+              "size_bytes": 122031744,
+              "sha256": "cffbff05efd290fef28d084ebcb653de7594f5e26bae0eabbedf30d6c782c1d1"
+            },
+            {
+              "path": "processor_config.json",
+              "size_bytes": 1382,
+              "sha256": "6b938e76555b3e9946890770e1abcd442a4718f34041a58e8139dc8ad34545c9"
+            },
+            {
+              "path": "s1-boolq-Q4_K_M.gguf",
+              "size_bytes": 7381383584,
+              "sha256": "daf56f5a5a0496e4e726e504858ef8dda1f6b02cd1bc7a68e9f1beb2bf178365"
+            },
+            {
+              "path": "tensor-inventory.json",
+              "size_bytes": 113174,
+              "sha256": "c7557a6f7dace16de31cbeb1815b7779063f6ee75102c30ba29dd3beb356fe27"
+            },
+            {
+              "path": "tokenizer.json",
+              "size_bytes": 32169626,
+              "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+            },
+            {
+              "path": "tokenizer_config.json",
+              "size_bytes": 3736,
+              "sha256": "794a39f8330ce05020774c70c091225bc5f031b9cacf41fc20e52eb54b4b52d8"
+            }
+          ],
+          "versions": {
+            "torch": "2.8.0",
+            "transformers": "5.17.0",
+            "numpy": "2.5.3",
+            "safetensors": "0.8.0"
+          },
+          "commands": [
+            "convert artifacts/release/checkpoint to F16 intermediate, then llama-quantize to Q4_K_M (direct_conversion=False); see quant-sweep plan; prefer F16 source over Q8 requantize",
+            "mmproj F16 -> mmproj-s1-boolq-f16.gguf"
+          ],
+          "scope": "Structural conversion receipt; runtime quality requires the separate full-population evaluation."
+        },
+        "calibration": {
+          "temperature": 3.232734824261939,
+          "source_model": "google/gemma-4-12B-it",
+          "source_revision": "707f0a3b8a3c7ad586ed01e27eafbad8a27dd0f7",
+          "prompt_version": 1,
+          "training_recipe_sha256": "2a708e5f4acfea4b688e88ba338aa62991608db875fef039ee6b4f33c3a74d73",
+          "calibration_dataset_sha256": "2da1a6798b1638a7ff4dd336bdf3b7eebad7a9641ec71c6932f778d309860826",
+          "runtime": "llama.cpp",
+          "runtime_format": "gguf",
+          "runtime_source_revision": "1bc818be929c2545ebf65aa76ed6775c8fdc858c",
+          "conversion_manifest_sha256": "3e07bde8e66308ce80a90e570b7eb04fe1c11f49d6b3ee3486574ee480aadd46",
+          "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+          "export_checkpoint_sha256": "c89a0bd51f50e745684fce64bea6af3922e13b4fc91ee6b0d88e7bb360f53fb2",
+          "gguf_calibration": {
+            "method": "s1.training.fit_temperature; 241 log-spaced temperatures [0.05,20] plus1",
+            "input": "raw legal selected logits after native softcap, before any temperature",
+            "case_count": 256,
+            "temperature": 3.232734824261939,
+            "n": 256,
+            "nll_before": 0.6939718113389175,
+            "nll_after": 0.3334026069754197,
+            "split": "calibration",
+            "runtime": "llama.cpp",
+            "manifest_sha256": "90e9fc465a6e372c81e1596e387fc7c62107730b41c4f3c1d5c7a8087a9bb51e",
+            "dataset_manifest_sha256": "e0ab28e3435a910c19abf3a9a7e58df8b5cff7a806b6c7f4f18021db1d3804dd",
+            "runtime_implementation_sha256": "5c366284bf052af44855177b71db48798df8f9c7e91e34d3eb1a96023c9446cc",
+            "source_temperature": 2.7830344470383452
+          }
+        },
+        "hardware": {
+          "chip": "Apple M1 Max",
+          "unified_memory_bytes": 68719476736,
+          "source": "system_profiler inventory verified for this Mac on 2026-10-13"
+        },
+        "settings": {
+          "context": 4096,
+          "batch": 512,
+          "threads": 4,
+          "gpu_layers": 99,
+          "seed": 17,
+          "text_temperature": 0,
+          "text_max_tokens": 128,
+          "text_prompt_cache": false
+        },
+        "commands": [
+          {
+            "name": "decision-service",
+            "argv": [
+              "<JEV_LAB_ROOT>/.venv/bin/python",
+              "<JEV_LAB_ROOT>/scripts/local_s1_service.py",
+              "--s1-repo",
+              "<S1_PROJECT_ROOT>",
+              "--model",
+              "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M",
+              "--port",
+              "65525",
+              "--native-runner",
+              "<S1_PROJECT_ROOT>/artifacts/gguf-runtime/bin/s1-gguf",
+              "--cache-dir",
+              "<JEV_LAB_ROOT>/.local-cache/s1",
+              "--ctx-size",
+              "4096",
+              "--batch-size",
+              "512",
+              "--threads",
+              "4",
+              "--raw-log",
+              "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/native-decision-time.log",
+              "--request-log",
+              "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/native-requests.jsonl"
+            ],
+            "pid": 69005
+          },
+          {
+            "name": "benchmark",
+            "argv": [
+              "<JEV_LAB_ROOT>/.venv/bin/python",
+              "<JEV_LAB_ROOT>/scripts/local_benchmark.py",
+              "--mode",
+              "decision-only",
+              "--output",
+              "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/cold",
+              "--model-metadata",
+              "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/model-metadata-cold.json",
+              "--warmup",
+              "0",
+              "--decision-repeats",
+              "1",
+              "--repeats",
+              "5",
+              "--task-timeout",
+              "180",
+              "--fixture",
+              "click",
+              "--fixture-url",
+              "http://127.0.0.1:65527",
+              "--chrome-path",
+              "<CHROMIUM_CACHE_ROOT>/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell"
+            ],
+            "exit_code": 0
+          },
+          {
+            "name": "fixture",
+            "argv": [
+              "<JEV_LAB_ROOT>/.venv/bin/python",
+              "-m",
+              "http.server",
+              "65527",
+              "--bind",
+              "127.0.0.1",
+              "--directory",
+              "<JEV_LAB_ROOT>/jev_ultrafast/static"
+            ],
+            "pid": 69064
+          },
+          {
+            "name": "text-service",
+            "argv": [
+              "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/build/bin/llama-server",
+              "--model",
+              "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M/s1-boolq-Q4_K_M.gguf",
+              "--host",
+              "127.0.0.1",
+              "--port",
+              "65526",
+              "--alias",
+              "system-one-trained-Q4_K_M",
+              "--ctx-size",
+              "4096",
+              "--batch-size",
+              "512",
+              "--ubatch-size",
+              "512",
+              "--threads",
+              "4",
+              "--gpu-layers",
+              "99",
+              "--parallel",
+              "1",
+              "--seed",
+              "17",
+              "--temp",
+              "0",
+              "--reasoning",
+              "off",
+              "--no-cache-prompt",
+              "--no-webui",
+              "--offline"
+            ],
+            "pid": 69065
+          },
+          {
+            "name": "benchmark",
+            "argv": [
+              "<JEV_LAB_ROOT>/.venv/bin/python",
+              "<JEV_LAB_ROOT>/scripts/local_benchmark.py",
+              "--mode",
+              "helper-only",
+              "--output",
+              "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/helper-probe",
+              "--model-metadata",
+              "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/model-metadata-helper-probe.json",
+              "--warmup",
+              "0",
+              "--decision-repeats",
+              "1",
+              "--repeats",
+              "5",
+              "--task-timeout",
+              "180",
+              "--fixture",
+              "click",
+              "--fixture-url",
+              "http://127.0.0.1:65527",
+              "--chrome-path",
+              "<CHROMIUM_CACHE_ROOT>/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell",
+              "--text-repeats",
+              "1"
+            ],
+            "exit_code": 0
+          },
+          {
+            "name": "benchmark",
+            "argv": [
+              "<JEV_LAB_ROOT>/.venv/bin/python",
+              "<JEV_LAB_ROOT>/scripts/local_benchmark.py",
+              "--mode",
+              "all",
+              "--output",
+              "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/warm",
+              "--model-metadata",
+              "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/model-metadata-warm.json",
+              "--warmup",
+              "1",
+              "--decision-repeats",
+              "3",
+              "--repeats",
+              "5",
+              "--task-timeout",
+              "180",
+              "--fixture",
+              "click",
+              "--fixture-url",
+              "http://127.0.0.1:65527",
+              "--chrome-path",
+              "<CHROMIUM_CACHE_ROOT>/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell"
+            ],
+            "exit_code": 1
+          }
+        ],
+        "startup": {
+          "decision_http_bind_ms": 228.9557500043884,
+          "decision_service_to_first_complete_ms": 15188.048665993847,
+          "text_model_ready_ms": 2306.180875049904
+        },
+        "resource_usage": {
+          "text-service": {
+            "peak_rss_bytes": 8255291392,
+            "user_seconds": 1.831229,
+            "system_seconds": 1.431622,
+            "exit_code": 0,
+            "source": "macOS wait4 owned PID; descendant aggregation may apply; peaks are not additive"
+          },
+          "fixture": {
+            "peak_rss_bytes": 23330816,
+            "user_seconds": 0.050355,
+            "system_seconds": 0.031859,
+            "exit_code": -15,
+            "source": "macOS wait4 owned PID; descendant aggregation may apply; peaks are not additive"
+          },
+          "decision-service": {
+            "peak_rss_bytes": 9300377600,
+            "user_seconds": 10.863593,
+            "system_seconds": 3.12065,
+            "exit_code": 0,
+            "source": "macOS wait4 owned PID; descendant aggregation may apply; peaks are not additive"
+          },
+          "launcher_peak_rss_bytes": 30048256
+        },
+        "decision_service_identity": {
+          "status": "starting",
+          "calibrated_inference_verified": false,
+          "completed_requests": 0,
+          "first_success_since_launch_ms": null,
+          "adapter_pid": 69006,
+          "adapter_exit_code": null,
+          "backend": "s1.gguf_adapter --predict",
+          "s1_repo": "<S1_PROJECT_ROOT>",
+          "model_package": "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M",
+          "native_runner": "<S1_PROJECT_ROOT>/artifacts/gguf-runtime/bin/s1-gguf",
+          "native_runner_sha256": "d1e81415da71954981ebc44794c90393961a8e150559a18afdf948d60f8506be",
+          "adapter_source_sha256": "95e9343ead0656f13197c4371ab48b445826d48bd37f8cc9f03b94ae926351c1",
+          "model_file": "<S1_PROJECT_ROOT>/artifacts/exports/s1-boolq-Q4_K_M/s1-boolq-Q4_K_M.gguf",
+          "model_manifest_identity": {
+            "path": "s1-boolq-Q4_K_M.gguf",
+            "size_bytes": 7381383584,
+            "sha256": "daf56f5a5a0496e4e726e504858ef8dda1f6b02cd1bc7a68e9f1beb2bf178365"
+          },
+          "mmproj_manifest_identity": {
+            "path": "mmproj-s1-boolq-f16.gguf",
+            "size_bytes": 122031744,
+            "sha256": "cffbff05efd290fef28d084ebcb653de7594f5e26bae0eabbedf30d6c782c1d1"
+          },
+          "source_checkpoint_sha256": "fa96debc68209c193338d8edee4ec4258a9f603e4f2156d4688c16364703d15d",
+          "source_hub_repository": "knowlet/Gemma-4-12B-Unified-System-One",
+          "source_hub_weights_revision": "66626de5cbcf8c5fecb8e9b58710805a02a42f67",
+          "quantization": {
+            "language_model": "Q4_K_M",
+            "multimodal_projector": "F16",
+            "direct_conversion": false
+          },
+          "conversion_manifest_sha256": "3e07bde8e66308ce80a90e570b7eb04fe1c11f49d6b3ee3486574ee480aadd46",
+          "calibration_sha256": "fcf22457f36ebf2b1a7675fbb6a83198cdc80b4111977efa5a39b73827bc0fcc",
+          "temperature": 3.232734824261939,
+          "ctx_size": 4096,
+          "batch_size": 512,
+          "threads": 4,
+          "request_timeout_seconds": 90.0,
+          "raw_log": "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/native-decision-time.log",
+          "native_raw_log": "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/native-decision-time.log.native.log",
+          "request_log": "<JEV_LAB_ROOT>/benchmark/results/q4-click-20261013/native-requests.jsonl",
+          "rss_scope": "Separate /usr/bin/time -l reports for adapter and native model processes; bytes on macOS"
+        },
+        "vm_stat_before": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                   193280.\nPages active:                                1890042.\nPages inactive:                              1647399.\nPages speculative:                               233.\nPages throttled:                                   0.\nPages wired down:                             340925.\nPages purgeable:                                4903.\n\"Translation faults\":                     9018770882.\nPages copy-on-write:                       260332043.\nPages zero filled:                       20945973371.\nPages reactivated:                         154845142.\nPages purged:                               78003241.\nFile-backed pages:                           1929834.\nAnonymous pages:                             1607840.\nPages stored in compressor:                   132976.\nPages occupied by compressor:                  67736.\nDecompressions:                           1045868342.\nCompressions:                             1911236150.\nPageins:                                  4063597169.\nPageouts:                                     641319.\nSwapins:                                     9851837.\nSwapouts:                                   22469604.\n",
+        "text_runtime_models": {
+          "models": [
+            {
+              "name": "system-one-trained-Q4_K_M",
+              "model": "system-one-trained-Q4_K_M",
+              "modified_at": "",
+              "size": "",
+              "digest": "",
+              "type": "model",
+              "description": "",
+              "tags": [
+                ""
+              ],
+              "capabilities": [
+                "completion"
+              ],
+              "parameters": "",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "",
+                "families": [
+                  ""
+                ],
+                "parameter_size": "",
+                "quantization_level": ""
+              }
+            }
+          ],
+          "object": "list",
+          "data": [
+            {
+              "id": "system-one-trained-Q4_K_M",
+              "aliases": [
+                "system-one-trained-Q4_K_M"
+              ],
+              "tags": [],
+              "object": "model",
+              "created": 1791883671,
+              "owned_by": "llamacpp",
+              "meta": {
+                "vocab_type": 2,
+                "n_vocab": 262144,
+                "n_ctx": 4096,
+                "n_ctx_train": 262144,
+                "n_embd": 3840,
+                "n_params": 11907350576,
+                "size": 7365558464,
+                "ftype": "Q4_K - Medium"
+              }
+            }
+          ]
+        },
+        "vm_stat_after": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                   415869.\nPages active:                                1360202.\nPages inactive:                              1072106.\nPages speculative:                               219.\nPages throttled:                                   0.\nPages wired down:                            1218162.\nPages purgeable:                                1034.\n\"Translation faults\":                     9022102362.\nPages copy-on-write:                       260463128.\nPages zero filled:                       20953403866.\nPages reactivated:                         155037454.\nPages purged:                               78019515.\nFile-backed pages:                           1331055.\nAnonymous pages:                             1101472.\nPages stored in compressor:                   151146.\nPages occupied by compressor:                  73057.\nDecompressions:                           1047019369.\nCompressions:                             1913188464.\nPageins:                                  4064558118.\nPageouts:                                     641891.\nSwapins:                                     9862999.\nSwapouts:                                   22469604.\n"
+      }
+    }
+  },
+  "experiment": "Model-use/protocol candidate: native trained Noul primitive at frozen observations",
+  "input_boundary": "Exact goal/full state/original operation rules/legal descriptions retained; no gold or checker",
+  "timing_scope": "Client wall and adapter preparation/native scoring, not native-only compute",
+  "calibration_scope": "Existing BoolQ Noul calibration; no navigation calibration claim"
+}

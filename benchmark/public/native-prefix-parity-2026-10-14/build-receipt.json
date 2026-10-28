@@ -1,0 +1,72 @@
+{
+  "created_at_utc": "2026-10-14T08:40:12.701602+00:00",
+  "command": [
+    "/usr/bin/clang++",
+    "-std=c++17",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-DS1_LLAMA_CPP_REVISION=\"5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd\"",
+    "-fmodules-cache-path=<JEV_LAB_ROOT>/tools/native-prefix/build-20261014-v2/modules",
+    "-I",
+    "<JEV_LAB_ROOT>/tools/native-prefix",
+    "-I",
+    "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/include",
+    "-I",
+    "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/ggml/include",
+    "-I",
+    "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/tools/mtmd",
+    "-I",
+    "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/vendor",
+    "<JEV_LAB_ROOT>/tools/native-prefix/s1_prefix.cpp",
+    "-o",
+    "<JEV_LAB_ROOT>/tools/native-prefix/build-20261014-v2/s1-gguf-prefix",
+    "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/build/bin/libllama.dylib",
+    "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/build/bin/libmtmd.dylib",
+    "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/build/bin/libggml.dylib",
+    "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/build/bin/libggml-base.dylib",
+    "-Wl,-rpath,<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/build/bin"
+  ],
+  "llama_cpp_path": "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp",
+  "llama_cpp_revision": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+  "source_sha256": "fd9291f18b33c669d8c9157090893a2371a178689d3a4690fb90ad6f0e7089d1",
+  "prefix_plan_sha256": "52aa0ee9a04d5c59513717934bb3a9ca413facc443648eaacea019c84a84d1bb",
+  "builder_sha256": "2976502794bb1006fb89e36dda51b01d4dee477b7a48a1c02aa27384ae99a863",
+  "original": {
+    "original_source": "<S1_PROJECT_ROOT>/tools/gguf/s1_gguf.cpp",
+    "original_source_sha256": "8dd7f74a3ba38fda24d305c2bcbb7793d23eb38011ccb58f4f0230f677caa70e",
+    "s1_repo_revision": "eef847f01b63c86f05df81027a959cf3c658d54b",
+    "pinned_llama_cpp_revision": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+    "native_execution_performed": false
+  },
+  "original_source_sha256_verified": true,
+  "linked_existing_libraries": [
+    "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/build/bin/libllama.0.5.0.dylib",
+    "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/build/bin/libmtmd.0.5.0.dylib",
+    "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/build/bin/libggml.0.25.3.dylib",
+    "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/build/bin/libggml-base.0.25.3.dylib"
+  ],
+  "linked_library_sha256": {
+    "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/build/bin/libllama.0.5.0.dylib": "a2d72bc3dc06d54955da162269af940e459623f99b3d91bfa84ec0c632a60365",
+    "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/build/bin/libmtmd.0.5.0.dylib": "48b118b4d73e3e144d913b34ba00793ee0f58fde7f3cf2d4d7558244c476bb98",
+    "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/build/bin/libggml.0.25.3.dylib": "1f3e7429d9bb628ab02c337cb8c08a58ae1277dd0004a94c90604d2709a57850",
+    "<S1_PROJECT_ROOT>/artifacts/export-tools/llama.cpp/build/bin/libggml-base.0.25.3.dylib": "7d7f22a086bfab6452ee0bd363f512bf5e6d13ad31dc9f787eaad5439d6e2d62"
+  },
+  "compile_timeout_seconds": 120,
+  "compiler_invocations": 1,
+  "translation_units": 1,
+  "compile_parallel_jobs": 1,
+  "compiler_thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "compiler_cpu_scope": "RUSAGE_CHILDREN delta for owned serial compiler and linker; not a hardware thread cap",
+  "native_execution_performed": false,
+  "model_or_gpu_run_performed": false,
+  "compiler_exit_code": 0,
+  "compiler_wall_seconds": 20.437008084001718,
+  "compiler_user_seconds": 5.202831,
+  "compiler_system_seconds": 0.7292399999999999,
+  "binary_path": "<JEV_LAB_ROOT>/tools/native-prefix/build-20261014-v2/s1-gguf-prefix",
+  "binary_sha256": "38f2a1700f7809a6e971cacbeeaa470e32a85d3339233e8cb2891b4a5dad9f1e"
+}

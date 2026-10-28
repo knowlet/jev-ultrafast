@@ -1,0 +1,114 @@
+{
+  "schema": "jev-heldout-public-selection-v1",
+  "selection": "Explicit text evidence and derived audit only; no browser profiles or stores read",
+  "files": [
+    {
+      "original_relative_path": "benchmark/results/q4-heldout-window-20261013/decision-service.log",
+      "selected_path": "decision-service.log",
+      "sha256": "6e0cab378bc2b6db3b84f79fe4108959737e649194b92e33a61f6d67b0d884d1",
+      "bytes": 2547
+    },
+    {
+      "original_relative_path": "benchmark/results/q4-heldout-window-20261013/model-metadata.json",
+      "selected_path": "model-metadata.json",
+      "sha256": "0c59d922d2085645fb1bb85b323b5aa2f1bcc44eeebac3322a49fcde6c3b8235",
+      "bytes": 25199
+    },
+    {
+      "original_relative_path": "benchmark/results/q4-heldout-window-20261013/native-decision-time.log",
+      "selected_path": "native-decision-time.log",
+      "sha256": "e16e2580b4114f11b9fdb161c709a28bdcc2bcf713205fe6e6c0bee085dafefa",
+      "bytes": 777
+    },
+    {
+      "original_relative_path": "benchmark/results/q4-heldout-window-20261013/native-decision-time.log.native.log",
+      "selected_path": "native-decision-time.log.native.log",
+      "sha256": "dd6f44bbb845c650f66b396cd488cc43c718fd3540338f120f2e3d5950d06d88",
+      "bytes": 357599
+    },
+    {
+      "original_relative_path": "benchmark/results/q4-heldout-window-20261013/native-requests.jsonl",
+      "selected_path": "native-requests.jsonl",
+      "sha256": "c722247ed3ba2f13c18e24c0deb769eabdb295d1334d13043547bb895d8e5d0c",
+      "bytes": 495522
+    },
+    {
+      "original_relative_path": "benchmark/results/q4-heldout-window-20261013/runner.log",
+      "selected_path": "runner.log",
+      "sha256": "45912b479b939f69d2ad0f572ed05b6bbe2f1402b0345480da7ca2ec96bebd3d",
+      "bytes": 1114
+    },
+    {
+      "original_relative_path": "benchmark/results/q4-heldout-window-20261013/text-service.log",
+      "selected_path": "text-service.log",
+      "sha256": "53104aca6b8c958b15ee1edd7dc1069357201e62c763a455aef980391a24c2f2",
+      "bytes": 6124
+    },
+    {
+      "original_relative_path": "benchmark/results/q4-heldout-window-20261013/window-receipt.json",
+      "selected_path": "window-receipt.json",
+      "sha256": "a2f79286437bc77c573ba84b2d40a23cca6a0b9e875e6bafcfce5202b91d655d",
+      "bytes": 43733
+    },
+    {
+      "original_relative_path": "benchmark/results/q4-heldout-window-20261013/heldout/metadata.json",
+      "selected_path": "heldout/metadata.json",
+      "sha256": "9fa073a58e7fef61de7ceca549943367508a981ef356d5e29ba2069d1021b390",
+      "bytes": 246042
+    },
+    {
+      "original_relative_path": "benchmark/results/q4-heldout-window-20261013/heldout/runs.jsonl",
+      "selected_path": "heldout/runs.jsonl",
+      "sha256": "557211ba6875004e2e6a32b6216e88a99054135ffb554a87ee960aef39a8b1c8",
+      "bytes": 2409591
+    },
+    {
+      "original_relative_path": "benchmark/results/q4-heldout-window-20261013/heldout/summary.json",
+      "selected_path": "heldout/summary.json",
+      "sha256": "9a3229a7879329633ff981edd446db41b76296181b3fd0a6958e0c94bbca5593",
+      "bytes": 16891
+    },
+    {
+      "original_relative_path": "benchmark/diagnostics/heldout-window-20261013/memory-after.log",
+      "selected_path": "diagnostics/memory-after.log",
+      "sha256": "1eab94460e9b8ec84f22afad8abc5585d1d8701d5c6614d7b10fc45dc9fe4a18",
+      "bytes": 518
+    },
+    {
+      "original_relative_path": "benchmark/diagnostics/heldout-window-20261013/memory-before.log",
+      "selected_path": "diagnostics/memory-before.log",
+      "sha256": "c7b2b613faab051e50e8fc552cfa2386e596c9d74e858512a4480f6b3bdbb96f",
+      "bytes": 520
+    },
+    {
+      "original_relative_path": "benchmark/diagnostics/heldout-window-20261013/vm-after.log",
+      "selected_path": "diagnostics/vm-after.log",
+      "sha256": "2889ed8fc2152c05de21c39f3fcfed1edd76cbea478ffd6d268a7d8114e72e40",
+      "bytes": 1247
+    },
+    {
+      "original_relative_path": "benchmark/diagnostics/heldout-window-20261013/vm-before.log",
+      "selected_path": "diagnostics/vm-before.log",
+      "sha256": "a768a01a0ea5c02c955aec874627fc218064c35bbf0aedda91be6b354596a30c",
+      "bytes": 1247
+    },
+    {
+      "original_relative_path": "benchmark/diagnostics/heldout-window-20261013/preexecution-receipt.json",
+      "selected_path": "diagnostics/preexecution-receipt.json",
+      "sha256": "7ea3ca58ad83d81896ead5805e893d1002a1acd28040b4d84c2b8d4bd2496cf2",
+      "bytes": 1477
+    },
+    {
+      "original_relative_path": "benchmark/diagnostics/heldout-window-20261013/post-package-integrity.json",
+      "selected_path": "diagnostics/post-package-integrity.json",
+      "sha256": "fa1773dad21e91f0abfbb3281ed5b3128c3cdc3da5e2f4c4d64afbe0d91fbb38",
+      "bytes": 1905
+    },
+    {
+      "original_relative_path": "benchmark/diagnostics/heldout-window-20261013/verified-summary.json",
+      "selected_path": "audit/verified-summary.json",
+      "sha256": "fe6dba21db2abdcdaf1d623624dcaf8d2f7f9e5bf7824accfe07f74b19ffecaf",
+      "bytes": 72925
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "scope": "offline source and evidence validation only",
+  "starting_jev_revision": "b04d3a3b18166eb7eae48dfec7dd3db11429cf35",
+  "pytest": {
+    "passed": 407,
+    "failed": 0,
+    "wall_seconds": 2.22
+  },
+  "ruff": "passed",
+  "javascript_syntax": [
+    "jev_ultrafast/static/app.js",
+    "jev_ultrafast/snapshot.js"
+  ],
+  "sdist_and_wheel_build": "passed",
+  "ctest": {
+    "passed": 2,
+    "failed": 0,
+    "names": [
+      "prefix-plan",
+      "native-runtime-offline"
+    ]
+  },
+  "planner_assertions": 25913,
+  "archived_prepared_inputs_replayed_in_compiled_planner": 8,
+  "historical_audit_only_exit_code": 0,
+  "historical_parity_gate_exit_code": 1,
+  "new_native_model_calls": 0,
+  "new_browser_tasks": 0,
+  "new_jevbench_runs": 0,
+  "new_native_numerical_parity": "unexecuted",
+  "prefix_reuse_default_enabled": false,
+  "performance_improvement_established": false,
+  "validation_source_sha256": {
+    "scripts/analyze_native_prefix.py": "ee5555bbb748f383c344a5ea8503d8c1fa04b2c45a2c759d02dc26d73500e0e2",
+    "tests/test_analyze_native_prefix.py": "009301822267a5c8c48e1f5193c6acd71d22f03db8c16cf5b5d1abb55f5dcae1",
+    "tests/test_native_prefix_cpp.py": "2c8d8e8f7cb3b598f8c67da32b715a4278c8c8862418746430a6bb50cced5aa4",
+    ".github/workflows/ci.yml": "4ee77bc909d7b534effb58b1bf9bb4bebb989d4714a0efe4e0eb6b464e5208de"
+  }
+}

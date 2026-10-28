@@ -1,0 +1,132 @@
+{
+  "groups": {
+    "decision_microbenchmark": {
+      "runs": 1,
+      "successful_runs": 1,
+      "failed_runs": 0,
+      "intended_choice_runs": 1
+    }
+  },
+  "warmup_runs": 2,
+  "decision_wall_ms_all_attempts": {
+    "n": 1,
+    "p50": 4887.79291708488,
+    "p95": 4887.79291708488,
+    "min": 4887.79291708488,
+    "max": 4887.79291708488,
+    "mean": 4887.79291708488
+  },
+  "decision_wall_ms_successful": {
+    "n": 1,
+    "p50": 4887.79291708488,
+    "p95": 4887.79291708488,
+    "min": 4887.79291708488,
+    "max": 4887.79291708488,
+    "mean": 4887.79291708488
+  },
+  "decision_native_forward_ms_successful": {
+    "n": 1,
+    "p50": 4886.042249971069,
+    "p95": 4886.042249971069,
+    "min": 4886.042249971069,
+    "max": 4886.042249971069,
+    "mean": 4886.042249971069
+  },
+  "decision_native_input_tokens_per_forward_second": {
+    "n": 1,
+    "p50": 173.96493041070877,
+    "p95": 173.96493041070877,
+    "min": 173.96493041070877,
+    "max": 173.96493041070877,
+    "mean": 173.96493041070877
+  },
+  "decision_failed_calls": 0,
+  "decision_ttft_ms": null,
+  "decision_ttft_reason": "Native choices are nonstreaming forward/scoring requests, without a first token event.",
+  "helper_wall_ms_all_attempts": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "helper_failed_calls": 0,
+  "helper_first_content_delta_ms": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "helper_provider_completion_tokens_per_full_request_second": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "task_ms_all_runs": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "task_ms_successful": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "setup_ms": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "verification_ms": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "end_to_end_ms": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "browser_task_wall_ms": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "model_wall_ms_per_task": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "python_peak_rss_bytes_cumulative": 39747584,
+  "percentile_method": "linear interpolation at (n - 1) * q; p95 is descriptive for these small samples",
+  "memory_scope": "Current Python process cumulative peak only; service/Chromium RSS and cold load are external.",
+  "token_throughput_scope": "Text uses provider-reported completion_tokens/full request time. Native choices use reported input token count/native forward time, a prefill metric; no generation throughput is inferred.",
+  "batch_error": null
+}

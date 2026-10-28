@@ -105,8 +105,9 @@ function render() {
   $("confidence").textContent = d?.target_confidence != null ? percent(d.target_confidence) : "—";
   $("completion").textContent = d ? d.operation : "—";
   $("ranking-note").textContent = d ? "Ranked by Jev" : "Unranked";
-  const op = Object.entries(d?.operation_probabilities || {}).sort((a,b)=>b[1]-a[1]);
-  $("operation-choices").innerHTML = op.map(([name,p]) =>
+  const independent = d?.operation_scores;
+  const op = Object.entries(independent || d?.operation_probabilities || {}).sort((a,b)=>b[1]-a[1]);
+  $("operation-choices").innerHTML = (independent ? '<small>Independent P(true)</small>' : '') + op.map(([name,p]) =>
     `<span class="operation-choice ${name === d.operation ? 'best' : ''}">${escape(name)} <b>${percent(p)}</b></span>`).join('');
   const probability = e => d?.target_probabilities[e.index] ??
     Math.max(-1, ...(e.options || []).map(o=>d?.target_probabilities[o.index] ?? -1));

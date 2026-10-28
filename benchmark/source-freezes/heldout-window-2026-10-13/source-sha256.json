@@ -1,0 +1,11 @@
+{
+  "schema": "jev-executed-source-freeze-v1",
+  "preserved_at_utc": "2026-10-13T17:39:49.920864+00:00",
+  "source_files": {
+    "scripts/run_heldout_window.py": "e45fc7745dedb34e8b9137f6797d7f446d331f55e6c99e622c0524d3025dc988",
+    "scripts/run_heldout_benchmark.py": "a990d32f3a0fe71be014b8ed7a7c8e370591d889f6bae8949d203a3ebce6ed84"
+  },
+  "byte_identity_verified": true,
+  "execution_result_directory": "benchmark/results/q4-heldout-window-20261013",
+  "purpose": "Preserve exact executed source before future cleanup-reporting changes; raw results unchanged"
+}

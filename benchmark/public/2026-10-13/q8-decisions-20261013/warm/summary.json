@@ -1,0 +1,149 @@
+{
+  "groups": {
+    "decision_microbenchmark": {
+      "runs": 10,
+      "successful_runs": 10,
+      "failed_runs": 0,
+      "decision_wall_ms_all_attempts": {
+        "n": 10,
+        "p50": 9588.477541517932,
+        "p95": 10588.393362431088,
+        "min": 5145.376125001349,
+        "max": 10643.356249900535,
+        "mean": 8895.108908205293
+      },
+      "helper_wall_ms_all_attempts": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null,
+        "mean": null
+      },
+      "intended_choice_runs": 10
+    }
+  },
+  "warmup_runs": 2,
+  "warmup_failed_runs": 0,
+  "decision_wall_ms_all_attempts": {
+    "n": 10,
+    "p50": 9588.477541517932,
+    "p95": 10588.393362431088,
+    "min": 5145.376125001349,
+    "max": 10643.356249900535,
+    "mean": 8895.108908205293
+  },
+  "decision_wall_ms_successful": {
+    "n": 10,
+    "p50": 9588.477541517932,
+    "p95": 10588.393362431088,
+    "min": 5145.376125001349,
+    "max": 10643.356249900535,
+    "mean": 8895.108908205293
+  },
+  "decision_adapter_scoring_ms_successful": {
+    "n": 10,
+    "p50": 9586.855000059586,
+    "p95": 10586.739565245807,
+    "min": 5143.772832932882,
+    "max": 10641.687209019437,
+    "mean": 8893.479962623678
+  },
+  "decision_input_tokens_per_scoring_second": {
+    "n": 10,
+    "p50": 88.58655006559906,
+    "p95": 164.3007096877065,
+    "min": 79.78058209420252,
+    "max": 165.05394533839012,
+    "mean": 102.23375981220076
+  },
+  "decision_failed_calls": 0,
+  "decision_ttft_ms": null,
+  "decision_ttft_reason": "Native choices are nonstreaming forward/scoring requests, without a first token event.",
+  "helper_wall_ms_all_attempts": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "helper_failed_calls": 0,
+  "helper_first_content_delta_ms": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "helper_provider_completion_tokens_per_full_request_second": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "task_ms_all_runs": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "task_ms_successful": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "setup_ms": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "verification_ms": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "end_to_end_ms": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "browser_task_wall_ms": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "model_wall_ms_per_task": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "python_peak_rss_bytes_cumulative": 39829504,
+  "percentile_method": "linear interpolation at (n - 1) * q; p95 is descriptive for these small samples",
+  "memory_scope": "Current Python process cumulative peak only; service/Chromium RSS and cold load are external.",
+  "token_throughput_scope": "Text uses provider-reported completion_tokens/full request time. Choices use native_token_count divided by the typed adapter's reported latency_ms, including HF preparation and native pipe request/response. This is input scoring throughput, not native-only compute or generated tokens/s.",
+  "batch_error": null
+}

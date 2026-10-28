@@ -1,0 +1,158 @@
+{
+  "groups": {
+    "browser_task": {
+      "runs": 1,
+      "successful_runs": 1,
+      "failed_runs": 0,
+      "decision_wall_ms_all_attempts": {
+        "n": 2,
+        "p50": 52304.80004150001,
+        "p95": 62898.53177885,
+        "min": 40533.98700000002,
+        "max": 64075.613083000004,
+        "mean": 52304.80004150001
+      },
+      "helper_wall_ms_all_attempts": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null,
+        "mean": null
+      }
+    }
+  },
+  "warmup_runs": 0,
+  "warmup_failed_runs": 0,
+  "decision_wall_ms_all_attempts": {
+    "n": 2,
+    "p50": 52304.80004150001,
+    "p95": 62898.53177885,
+    "min": 40533.98700000002,
+    "max": 64075.613083000004,
+    "mean": 52304.80004150001
+  },
+  "native_scoring_requests": 9,
+  "native_model_executions_confirmed": 9,
+  "native_scoring_client_wall_ms_all_attempts": {
+    "n": 9,
+    "p50": 12052.437417000021,
+    "p95": 18146.595891800018,
+    "min": 6160.796791999985,
+    "max": 19196.815125,
+    "mean": 11613.897129666668
+  },
+  "decision_wall_ms_successful": {
+    "n": 2,
+    "p50": 52304.80004150001,
+    "p95": 62898.53177885,
+    "min": 40533.98700000002,
+    "max": 64075.613083000004,
+    "mean": 52304.80004150001
+  },
+  "decision_adapter_scoring_ms_successful": {
+    "n": 9,
+    "p50": 12045.586291999996,
+    "p95": 18139.2983414,
+    "min": 6147.95187499999,
+    "max": 19188.907540999993,
+    "mean": 11589.767412000003
+  },
+  "decision_input_tokens_per_scoring_second": {
+    "n": 9,
+    "p50": 48.06739879357632,
+    "p95": 93.60783657743839,
+    "min": 30.694816718539748,
+    "max": 95.96691906440809,
+    "mean": 59.98355490658688
+  },
+  "decision_failed_calls": 0,
+  "decision_ttft_ms": null,
+  "decision_ttft_reason": "Native choices are nonstreaming forward/scoring requests, without a first token event.",
+  "helper_wall_ms_all_attempts": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "helper_failed_calls": 0,
+  "helper_first_content_delta_ms": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "helper_provider_completion_tokens_per_full_request_second": {
+    "n": 0,
+    "p50": null,
+    "p95": null,
+    "min": null,
+    "max": null,
+    "mean": null
+  },
+  "task_ms_all_runs": {
+    "n": 1,
+    "p50": 104688.56341599996,
+    "p95": 104688.56341599996,
+    "min": 104688.56341599996,
+    "max": 104688.56341599996,
+    "mean": 104688.56341599996
+  },
+  "task_ms_successful": {
+    "n": 1,
+    "p50": 104688.56341599996,
+    "p95": 104688.56341599996,
+    "min": 104688.56341599996,
+    "max": 104688.56341599996,
+    "mean": 104688.56341599996
+  },
+  "setup_ms": {
+    "n": 1,
+    "p50": 167.7392909999753,
+    "p95": 167.7392909999753,
+    "min": 167.7392909999753,
+    "max": 167.7392909999753,
+    "mean": 167.7392909999753
+  },
+  "verification_ms": {
+    "n": 1,
+    "p50": 1.5177500000049804,
+    "p95": 1.5177500000049804,
+    "min": 1.5177500000049804,
+    "max": 1.5177500000049804,
+    "mean": 1.5177500000049804
+  },
+  "end_to_end_ms": {
+    "n": 1,
+    "p50": 104859.86474999998,
+    "p95": 104859.86474999998,
+    "min": 104859.86474999998,
+    "max": 104859.86474999998,
+    "mean": 104859.86474999998
+  },
+  "browser_task_wall_ms": {
+    "n": 1,
+    "p50": 77.42408300003945,
+    "p95": 77.42408300003945,
+    "min": 77.42408300003945,
+    "max": 77.42408300003945,
+    "mean": 77.42408300003945
+  },
+  "model_wall_ms_per_task": {
+    "n": 1,
+    "p50": 104609.60008300003,
+    "p95": 104609.60008300003,
+    "min": 104609.60008300003,
+    "max": 104609.60008300003,
+    "mean": 104609.60008300003
+  },
+  "python_peak_rss_bytes_cumulative": 56049664,
+  "percentile_method": "linear interpolation at (n - 1) * q; p95 is descriptive for these small samples",
+  "memory_scope": "Current Python process cumulative peak only; service/Chromium RSS and cold load are external.",
+  "token_throughput_scope": "Text uses provider-reported completion_tokens/full request time. Choices use native_token_count divided by the typed adapter's reported latency_ms, including HF preparation and native pipe request/response. This is input scoring throughput, not native-only compute or generated tokens/s.",
+  "batch_error": null
+}
