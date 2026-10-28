@@ -27,3 +27,28 @@ jobs:
       - run: uv run --no-sync pytest -q
       - run: node --check jev_ultrafast/static/app.js
       - run: uv build
+
+  native-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: ggml-org/llama.cpp
+          ref: 5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd
+          path: .native-deps/llama.cpp
+      - name: Configure pinned CPU build without models
+        run: >-
+          cmake -S tools/native-prefix -B .native-build
+          -DLLAMA_CPP_DIR=${{ github.workspace }}/.native-deps/llama.cpp
+          -DCMAKE_BUILD_TYPE=Release
+          -DLLAMA_BUILD_IS_DEV=OFF
+          -DGGML_CUDA=OFF -DGGML_METAL=OFF -DGGML_OPENMP=OFF
+          -DGGML_NATIVE=OFF -DGGML_CCACHE=OFF -DMTMD_VIDEO=OFF
+      - name: Compile native scorer and offline regressions
+        run: cmake --build .native-build --parallel 2
+      - name: Run offline native control-flow tests
+        run: ctest --test-dir .native-build --output-on-failure
+      - name: Check scorer CLI without loading weights
+        run: .native-build/s1-gguf-prefix --help

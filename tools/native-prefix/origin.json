@@ -1,0 +1,11 @@
+{
+  "status": "reconstructed_candidate_not_historical_source_recovery",
+  "original_repository": "https://github.com/knowlet/Gemma-4-12B-Unified-System-One",
+  "original_revision": "eef847f01b63c86f05df81027a959cf3c658d54b",
+  "original_path": "tools/gguf/s1_gguf.cpp",
+  "original_source_sha256": "8dd7f74a3ba38fda24d305c2bcbb7793d23eb38011ccb58f4f0230f677caa70e",
+  "original_license": "MIT; Copyright (c) 2026 Rami Mithalouni",
+  "pinned_llama_cpp_revision": "5fc4f3c8c7103ffd0b7ff5ee4855bcc78a3ed5cd",
+  "numerical_parity_status": "unexecuted_for_this_source",
+  "default_prefix_reuse": false
+}
