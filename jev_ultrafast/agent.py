@@ -16,13 +16,20 @@ class Agent:
             raise ValueError("Supply a task")
         plan = [task]
         self.pending_text = None
-        self.browser = Browser(url)
         self.record_dir = Path(record_dir) if record_dir else None
         self.screenshots = screenshots or bool(record_dir)
+        self.browser = Browser(url)
         try:
             page = self.browser.observe(screenshot=self.screenshots)
-        except Exception:
-            self.browser.close()
+            if self.record_dir:
+                self.record_dir.mkdir(parents=True, exist_ok=True)
+                (self.record_dir / "000000.jpg").write_bytes(base64.b64decode(page["screenshot"]))
+        except BaseException:
+            # Failed construction cannot transfer ownership to the caller.
+            try:
+                self.browser.close()
+            except BaseException:
+                pass  # Preserve the original initialization failure.
             raise
         self.state = dict(
             browser=self.browser,
@@ -39,9 +46,6 @@ class Agent:
             started_at=None,
             record=bool(self.record_dir),
         )
-        if self.record_dir:
-            self.record_dir.mkdir(parents=True, exist_ok=True)
-            (self.record_dir / "000000.jpg").write_bytes(base64.b64decode(page["screenshot"]))
 
     def snapshot(self):
         return {
